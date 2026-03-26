@@ -1,0 +1,69 @@
+{{ define "main" }}
+<article class="problem">
+  <header class="problem-header">
+    <div class="problem-meta">
+      <span class="problem-id">{{ .Params.problem_id }}</span>
+      <span class="problem-status status-{{ .Params.status | default "p-complete" }}">
+        {{ if eq .Params.status "open" }}Open{{ else }}P-complete{{ end }}
+      </span>
+    </div>
+    <h1>{{ .Title }}{{ with .Params.acronym }} <span class="acronym">({{ . }})</span>{{ end }}</h1>
+    <div class="problem-category">
+      Category: <a href="/categories/{{ .Params.category | urlize }}/">{{ .Params.category }}</a>
+    </div>
+    {{ with .Params.tags }}
+    <div class="problem-tags">
+      {{ range . }}
+        <a href="/tags/{{ . | urlize }}/" class="tag">{{ . }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </header>
+
+  <div class="problem-content">
+    {{ .Content }}
+  </div>
+
+  {{ with .Params.references }}
+  <section class="problem-references">
+    <h2>References</h2>
+    <ul>
+      {{ range . }}
+      <li>
+        {{ with .author }}{{ . }}{{ end }}{{ with .year }} ({{ . }}){{ end }}{{ with .title }}. <em>{{ . }}</em>{{ end }}{{ with .citation }} {{ . }}{{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+
+  {{ with .Params.related_problems }}
+  <section class="problem-related">
+    <h2>Related Problems</h2>
+    <ul>
+      {{ range . }}
+        {{ $related := site.GetPage (printf "/problems/%s" .id) }}
+        {{ if $related }}
+        <li>
+          <a href="{{ $related.RelPermalink }}">{{ $related.Title }}</a>
+          {{ with .relation }}<span class="relation">({{ . }})</span>{{ end }}
+        </li>
+        {{ else if .id }}
+        <li>{{ .id }} {{ with .relation }}<span class="relation">({{ . }})</span>{{ end }}</li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+</article>
+
+<nav class="problem-nav">
+  {{ with .PrevInSection }}
+  <a href="{{ .RelPermalink }}" class="prev">&larr; {{ .Title }}</a>
+  {{ end }}
+  <a href="/problems/" class="back">All Problems</a>
+  {{ with .NextInSection }}
+  <a href="{{ .RelPermalink }}" class="next">{{ .Title }} &rarr;</a>
+  {{ end }}
+</nav>
+{{ end }}

@@ -1,0 +1,51 @@
+# P-Complete Problems Compendium
+# https://gohugo.io/getting-started/configuration/
+
+baseURL = '/'
+languageCode = 'en-us'
+title = 'P-Complete Problems Compendium'
+description = 'A comprehensive collection of P-complete problems and open parallelization questions'
+
+# Enable useful features
+enableRobotsTXT = true
+enableGitInfo = false  # Will enable after first commit
+
+[params]
+  author = "P-Complete Compendium Contributors"
+  description = "A searchable compendium of P-complete problems from computational complexity theory"
+  math = true  # Enable KaTeX
+  
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  status = "statuses"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Problems"
+    url = "/problems/"
+    weight = 2
+  [[menu.main]]
+    name = "Categories"
+    url = "/categories/"
+    weight = 3
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 4
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # Allow HTML in markdown (for KaTeX)
+  [markup.highlight]
+    style = "github"
+    lineNos = false
+
+[outputs]
+  home = ["HTML", "JSON"]  # JSON for search index
+  section = ["HTML", "JSON"]

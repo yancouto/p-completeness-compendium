@@ -1,0 +1,22 @@
+# Hugo build output
+public/
+resources/_gen/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# PDF reference (too large for git, keep locally)
+*.pdf
+
+# Node (if we add any build tools)
+node_modules/
+
+# Hugo
+.hugo_build.lock
