@@ -1,8 +1,8 @@
 ---
 title: "Circuit Value Problem"
 acronym: "CVP"
-problem_id: "A.1.1"
-category: "Circuit Complexity"
+book_id: "A.1.1"
+categories: ["Circuit Complexity"]
 status: "p-complete"
 tags: ["circuits", "boolean", "fundamental"]
 draft: false
@@ -10,7 +10,8 @@ references:
   - author: "Ladner, R. E."
     title: "The Circuit Value Problem is Log Space Complete for P"
     year: 1975
-    citation: "[225]"
+    doi: "10.1145/990518.990519"
+
 related_problems:
   - id: "a-1-2-topcvp"
     relation: "variant"
@@ -22,11 +23,16 @@ related_problems:
 
 ## Given
 
-An encoding $\alpha$ of a Boolean circuit $\alpha$, inputs $x_1, \ldots, x_n$, and designated output $y$.
+A **Boolean circuit** $C$ with $n$ input gates, some number of internal gates (each computing AND, OR, or NOT of its inputs), and a designated output gate $g$. The circuit is given as a list of gates in topological order, where each gate specifies its type and input gates. Also given are Boolean input values $x_1, \ldots, x_n \in \{0, 1\}$.
 
 ## Problem
 
-Is output $y$ of $\alpha$ true on input $x_1, \ldots, x_n$?
+Does the output gate $g$ evaluate to 1 (true) when the circuit is given inputs $x_1, \ldots, x_n$?
+
+
+## Status
+
+P-complete via NC reduction [1].
 
 ## Remarks
 
@@ -40,3 +46,4 @@ For the two-input basis of Boolean functions, it is known that CVP is P-complete
 These restricted cases can be solved in NC (Goldschlager and Parberry [127], Parberry [281]).
 
 The problem remains P-complete even when the circuit is topologically ordered (TopCVP, Problem A.1.2).
+

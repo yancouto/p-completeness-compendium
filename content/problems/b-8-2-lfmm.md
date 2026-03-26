@@ -1,8 +1,8 @@
 ---
 title: "Lexicographically First Maximal Matching"
 acronym: "LFMM"
-problem_id: "B.8.2"
-category: "CC"
+book_id: "B.8.2"
+categories: ["CC"]
 status: "open"
 tags: ["graphs", "matching", "lexicographic", "open-problem"]
 draft: false
@@ -10,7 +10,7 @@ references:
   - author: "Cook, S. A."
     title: "An Overview of Computational Complexity"
     year: 1983
-    citation: "[67]"
+
 related_problems:
   - id: "b-9-7-mm"
     relation: "see-also"
@@ -20,15 +20,20 @@ related_problems:
 
 ## Given
 
-A graph $G = (V, E)$ with a fixed ordering on the edges, and an edge $e$.
+An undirected graph $G = (V, E)$ with a fixed total ordering on the edges $e_1 < e_2 < \cdots < e_m$, and a specific edge $e$.
+
+A **matching** is a set of edges with no shared vertices. A matching is **maximal** if no edge can be added without violating this property.
 
 ## Problem
 
-Is edge $e$ in the lexicographically first maximal matching of $G$?
+Is edge $e$ contained in the **lexicographically first maximal matching**? This is the matching found by the greedy algorithm that considers edges in order $e_1, e_2, \ldots$ and includes each edge if and only if it shares no vertices with previously included edges.
+
+
+## Status
+
+Open (not known to be P-complete or in NC) [1].
 
 ## Remarks
-
-A **maximal matching** is a matching (set of vertex-disjoint edges) that cannot be extended by adding another edge. The **lexicographically first** maximal matching is found by the greedy algorithm that examines edges in order and adds each edge if it doesn't share a vertex with any previously selected edge.
 
 This problem is known to be in **CC** (the comparator circuit class) but its exact complexity is open:
 - It is not known to be P-complete
@@ -41,3 +46,4 @@ This is one of several natural problems related to stable marriage and matching 
 - **Maximum Matching (MM)** — Problem B.9.7
 
 The greedy nature of the lexicographic ordering makes this problem resistant to parallelization, similar to other lexicographically-first problems in this compendium.
+

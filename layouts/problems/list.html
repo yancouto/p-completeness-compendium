@@ -1,9 +1,11 @@
 {{ define "main" }}
-<section class="problems-list">
+  <section class="problems-list">
+  {{ $allPages := where site.RegularPages "Section" "problems" }}
+  {{ $problems := where $allPages "Params.acronym" "!=" nil }}
   <header>
-    <h1>P-Complete Problems</h1>
+    <h1>Problem List</h1>
     <p class="description">
-      A searchable compendium of problems known to be P-complete or whose parallelization status is open.
+      All {{ len $problems }} problems, searchable and filterable.
     </p>
   </header>
 
@@ -15,9 +17,9 @@
       <select id="category-filter">
         <option value="">All Categories</option>
         {{ $categories := slice }}
-        {{ range .Pages }}
-          {{ with .Params.category }}
-            {{ $categories = $categories | append . }}
+        {{ range $problems }}
+          {{ with .Params.categories }}
+            {{ $categories = $categories | append (index . 0) }}
           {{ end }}
         {{ end }}
         {{ range ($categories | uniq | sort) }}
@@ -37,19 +39,18 @@
   </div>
 
   <div class="problems-count">
-    Showing <span id="visible-count">{{ len .Pages }}</span> of {{ len .Pages }} problems
+    Showing <span id="visible-count">{{ len $problems }}</span> of {{ len $problems }} problems
   </div>
 
   <div class="problems-grid" id="problems-grid">
-    {{ range .Pages.ByParam "problem_id" }}
-    <article class="problem-card" 
+    {{ range sort $problems ".Params.acronym" }}
+    <article class="problem-card"
              data-title="{{ .Title | lower }}"
              data-acronym="{{ .Params.acronym | lower }}"
-             data-category="{{ .Params.category }}"
+             data-category="{{ with .Params.categories }}{{ index . 0 }}{{ end }}"
              data-status="{{ .Params.status | default "p-complete" }}"
-             data-tags="{{ delimit .Params.tags " " | lower }}">
+             data-tags="{{ with .Params.tags }}{{ delimit . " " | lower }}{{ end }}">
       <div class="card-header">
-        <span class="problem-id">{{ .Params.problem_id }}</span>
         <span class="status status-{{ .Params.status | default "p-complete" }}">
           {{ if eq .Params.status "open" }}Open{{ else }}P-complete{{ end }}
         </span>
@@ -58,7 +59,7 @@
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         {{ with .Params.acronym }}<span class="acronym">({{ . }})</span>{{ end }}
       </h2>
-      <div class="card-category">{{ .Params.category }}</div>
+      <div class="card-category">{{ with .Params.categories }}{{ index . 0 }}{{ end }}</div>
       {{ with .Params.tags }}
       <div class="card-tags">
         {{ range . }}<span class="tag">{{ . }}</span>{{ end }}

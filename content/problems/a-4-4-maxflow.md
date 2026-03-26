@@ -1,8 +1,8 @@
 ---
 title: "Maximum Flow"
 acronym: "MaxFlow"
-problem_id: "A.4.4"
-category: "Combinatorial Optimization"
+book_id: "A.4.4"
+categories: ["Combinatorial Optimization"]
 status: "p-complete"
 tags: ["flow", "networks", "optimization", "graphs"]
 draft: false
@@ -10,7 +10,7 @@ references:
   - author: "Goldschlager, L. M., Shaw, R. A., and Staples, J."
     title: "The Maximum Flow Problem Is Log Space Complete for P"
     year: 1982
-    citation: "[128]"
+
 related_problems:
   - id: "a-4-5-hf"
     relation: "see-also"
@@ -22,11 +22,22 @@ related_problems:
 
 ## Given
 
-A directed graph $G = (V, E)$ with positive integer capacities $c(e)$ for each edge $e \in E$, designated source $s$ and sink $t$ vertices, and a positive integer $k$.
+A **flow network**: a directed graph $G = (V, E)$ with a **source** vertex $s$ (no incoming edges), a **sink** vertex $t$ (no outgoing edges), and a positive integer **capacity** $c(e)$ for each edge $e \in E$. Also given is a positive integer $k$.
+
+A **flow** assigns a non-negative value $f(e)$ to each edge such that:
+- $f(e) \le c(e)$ for all edges (capacity constraint)
+- For every vertex except $s$ and $t$, the total flow in equals the total flow out (conservation)
+
+The **value** of a flow is the total flow leaving $s$ (equivalently, entering $t$).
 
 ## Problem
 
-Is the maximum flow from $s$ to $t$ at least $k$?
+Is the maximum possible flow value from $s$ to $t$ at least $k$?
+
+
+## Status
+
+P-complete via NC reduction [1].
 
 ## Remarks
 
@@ -41,3 +52,4 @@ The P-completeness of MaxFlow has significant implications:
 The related **Lexicographically First Blocking Flow** problem (A.4.6) is also P-complete, showing that specific flow algorithms like Dinic's algorithm are inherently sequential.
 
 Many sequential maximum flow algorithms can be parallelized to run in $O(n^2)$ parallel time, but achieving polylogarithmic time remains open.
+

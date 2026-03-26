@@ -9,7 +9,7 @@
     {{ .Content }}
   </div>
   
-  {{ if .Pages }}
+  {{ if and (not .IsHome) .Pages }}
   <ul class="page-list">
     {{ range .Pages }}
     <li>

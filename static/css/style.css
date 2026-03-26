@@ -17,6 +17,15 @@
   --content-width: 800px;
 }
 
+/* WIP Banner */
+.wip-banner {
+  background: linear-gradient(90deg, #f59e0b, #d97706);
+  color: white;
+  text-align: center;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+}
+
 /* Reset */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -240,6 +249,33 @@ a:hover {
   margin-bottom: 0.5rem;
 }
 
+.external-link-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.95rem;
+  height: 0.95rem;
+  margin-left: 0.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  font-size: 0.75rem;
+  line-height: 1;
+  color: var(--color-primary);
+  text-decoration: none;
+  vertical-align: text-top;
+}
+
+.external-link-icon .material-symbols-outlined {
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.external-link-icon:hover {
+  border-color: var(--color-primary);
+  background: rgba(37, 99, 235, 0.08);
+  text-decoration: none;
+}
+
 .relation {
   color: var(--color-text-muted);
   font-size: 0.9rem;
@@ -335,8 +371,9 @@ a:hover {
 
 .problems-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1rem;
+  max-width: 900px;
 }
 
 .problem-card {
@@ -443,6 +480,70 @@ a:hover {
 /* KaTeX overrides for inline math */
 .katex {
   font-size: 1.05em;
+}
+
+/* Problems Hub */
+.problems-hub header {
+  margin-bottom: 1.5rem;
+}
+
+.problems-hub h1 {
+  margin: 0 0 0.5rem 0;
+}
+
+.problems-hub .description {
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.hub-actions {
+  margin-bottom: 2rem;
+}
+
+.problems-hub h2 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+/* Categories Grid */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.category-card {
+  display: block;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.category-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-primary);
+  text-decoration: none;
+}
+
+.category-card h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  color: var(--color-text);
+}
+
+.category-card .count {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.back-link {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
 }
 
 /* Responsive */

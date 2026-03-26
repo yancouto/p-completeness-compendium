@@ -22,7 +22,7 @@ Use this template:
 ---
 title: "Full Problem Name"
 acronym: "ABBREV"
-problem_id: "A.X.Y"
+book_id: "A.X.Y"  # optional; auto-adds Greenlaw reference
 category: "Category Name"
 status: "p-complete"  # or "open" for Appendix B problems
 tags: ["tag1", "tag2", "tag3"]
@@ -32,7 +32,8 @@ draft: false
   author = "Author, A. B."
   title = "Paper Title"
   year = 1995
-  citation = "[123]"
+  link = "https://example.org/paper"      # optional direct URL
+  doi = "10.1145/321941.321942"           # optional DOI (auto-links to doi.org)
 
 [[related_problems]]
   id = "a-1-1-cvp"
@@ -84,6 +85,7 @@ Use the standard category names from the book:
 3. **Include references**: Always cite the original P-completeness proof
 4. **Link related problems**: Use the `related_problems` field
 5. **Explain reductions**: In remarks, briefly describe the reduction hint
+6. **Reference mentions in remarks**: You can refer to numbered references as `[1]`, `[2]`, etc., matching the order shown in the References section
 
 ### Reporting Issues
 

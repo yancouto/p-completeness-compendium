@@ -2,14 +2,15 @@
 <article class="problem">
   <header class="problem-header">
     <div class="problem-meta">
-      <span class="problem-id">{{ .Params.problem_id }}</span>
       <span class="problem-status status-{{ .Params.status | default "p-complete" }}">
         {{ if eq .Params.status "open" }}Open{{ else }}P-complete{{ end }}
       </span>
     </div>
     <h1>{{ .Title }}{{ with .Params.acronym }} <span class="acronym">({{ . }})</span>{{ end }}</h1>
     <div class="problem-category">
-      Category: <a href="/categories/{{ .Params.category | urlize }}/">{{ .Params.category }}</a>
+      {{ with .Params.categories }}
+      Category: {{ range $i, $cat := . }}{{ if $i }}, {{ end }}<a href="/problems/?category={{ $cat | urlquery }}">{{ $cat }}</a>{{ end }}
+      {{ end }}
     </div>
     {{ with .Params.tags }}
     <div class="problem-tags">
@@ -24,18 +25,29 @@
     {{ .Content }}
   </div>
 
-  {{ with .Params.references }}
   <section class="problem-references">
     <h2>References</h2>
-    <ul>
+    <ol>
+      {{ with .Params.references }}
       {{ range . }}
       <li>
-        {{ with .author }}{{ . }}{{ end }}{{ with .year }} ({{ . }}){{ end }}{{ with .title }}. <em>{{ . }}</em>{{ end }}{{ with .citation }} {{ . }}{{ end }}
+        {{ with .author }}{{ . }}{{ end }}{{ with .year }} ({{ . }}){{ end }}{{ with .title }}. <em>{{ . }}</em>{{ end }}
+        {{ if .doi }}
+          <a href="https://doi.org/{{ .doi }}" target="_blank" rel="noopener noreferrer" class="external-link-icon" aria-label="Open DOI link" title="Open DOI link"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span></a>
+        {{ else if .link }}
+          <a href="{{ .link }}" target="_blank" rel="noopener noreferrer" class="external-link-icon" aria-label="Open reference link" title="Open reference link"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span></a>
+        {{ end }}
       </li>
       {{ end }}
-    </ul>
+      {{ end }}
+      {{ with .Params.book_id }}
+      <li>
+        Greenlaw, R., Hoover, H. J., &amp; Ruzzo, W. L. (1995). <em>Limits to Parallel Computation: P-Completeness Theory</em>. Oxford University Press. Problem {{ . }}.
+        <a href="https://homes.cs.washington.edu/~ruzzo/papers/limits.pdf" target="_blank" rel="noopener noreferrer" class="external-link-icon" aria-label="Open Greenlaw book PDF" title="Open Greenlaw book PDF"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span></a>
+      </li>
+      {{ end }}
+    </ol>
   </section>
-  {{ end }}
 
   {{ with .Params.related_problems }}
   <section class="problem-related">
@@ -67,3 +79,4 @@
   {{ end }}
 </nav>
 {{ end }}
+

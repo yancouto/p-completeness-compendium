@@ -16,38 +16,33 @@ This is the **NC = P?** question. The complexity class **NC** (Nick's Class) con
 
 **P-complete problems** are the hardest problems in P to parallelize. They act as a barrier: if *any* P-complete problem is in NC, then P = NC and all polynomial-time problems have efficient parallel algorithms.
 
-### The Greenlaw-Hoover-Ruzzo Book
+### Main Reference
 
-This compendium is based on the landmark textbook:
+This compendium uses the following as a core reference:
 
 > Greenlaw, R., Hoover, H. J., & Ruzzo, W. L. (1995). *Limits to Parallel Computation: P-Completeness Theory*. Oxford University Press.
 
-The book provides:
-- A comprehensive introduction to parallel complexity theory
-- The theory of P-completeness and NC reductions
-- A catalog of over 100 P-complete problems across 12 categories
-- A list of problems whose parallel complexity remains open
+It is a great reference to learn about P-completeness. This compendium aims to catalog all problems listed there, but also all new developments in the area.
 
-### Problem Categories
+### Formal definition
 
-Problems are organized into categories following the book's structure:
+A *decision problem* is a set of binary strings. An instance of a decision problem is a binary string, and solving it means determining whether it belongs to the set. Sometimes, problems are also called languages, and we say a language *accepts* an input.
 
-**Appendix A: P-Complete Problems**
-- A.1 Circuit Complexity
-- A.2 Graph Theory
-- A.3 Searching Graphs
-- A.4 Combinatorial Optimization
-- A.5 Local Optimality
-- A.6 Logic
-- A.7 Formal Languages
-- A.8 Algebra
-- A.9 Geometry
-- A.10 Real Analysis
-- A.11 Games
-- A.12 Miscellaneous
+It is common to just use *problem* instead of decision problem. Note decision problems always have a binary output. Sometimes, when talking loosely about problems, the output may not be a single bit, but another binary string (or a more complex object). Formally, there are other definitions for these classes of problems (e.g. FP vs P), though usually it is simple to transform the function problem into an equivalent decision problem.
 
-**Appendix B: Open Problems**
-- Problems whose P-completeness or membership in NC is not yet known
+[P](https://complexityzoo.net/Complexity_Zoo:P#p) is the class of problems that have polynomial time sequential algorithms (we usually assume algorithms in the [RAM model](https://en.wikipedia.org/wiki/Random-access_machine), though there are other models, and more formal circuit-based definitions). [NC](https://complexityzoo.net/Complexity_Zoo:N#nc) is the class of problemas that have polylogarithmic time parallel algorithms with polynomially many processors.
+
+A problem is P-complete if:
+1. It is in P.
+2. Every other problem in P can be reduced to it using an NC reduction.
+
+That means, if $\pi$ is P-complete and $\pi \in \NC$ then $\P \subseteq \NC$ (which is widely believed to be false).
+
+More formally, we say $\pi$ is P-complete *under NC reductions*, just as NP-complete actually means NP-complete under P reductions. Very few authors actually use the wording "NC-complete for P", which is technically more correct, but less used.
+
+Sometimes, more strict reductions are used, such as [$\NC^1$](https://complexityzoo.net/Complexity_Zoo:N#nc1), [$\NC^2$](https://complexityzoo.net/Complexity_Zoo:N#nc2) or [LOGSPACE](https://complexityzoo.net/Complexity_Zoo:L#l) (a.k.a. L), which also work since all these classes are contained in NC.
+
+
 
 ---
 
@@ -58,28 +53,29 @@ This compendium is open source and welcomes contributions! Here's how you can he
 ### Adding a New Problem
 
 1. **Fork** the repository on GitHub
-2. **Create a new problem file** in `content/problems/` following the naming convention: `{section}-{number}-{acronym}.md` (e.g., `a-1-1-cvp.md`)
+2. **Create a new problem file** in `content/problems/` (e.g., `cvp.md`)
 3. **Use the problem template** with all required fields:
 
 ```markdown
 ---
 title: "Problem Name"
 acronym: "ACRONYM"
-problem_id: "A.X.Y"
+book_id: "A.X.Y"  # optional; auto-adds Greenlaw reference
 category: "Category Name"
 status: "p-complete"  # or "open"
 tags: ["tag1", "tag2"]
 draft: false
-
-[[references]]
-  author = "Author Name"
-  title = "Paper Title"
-  year = 1995
-  citation = "[123]"
-
-[[related_problems]]
-  id = "a-1-1-cvp"
-  relation = "reduces-to"  # or: variant, reduces-from, see-also
+references:
+  - author: "Author Name"
+    title: "Paper Title"
+    year: 1995
+    link: "https://example.org/paper"      # optional direct URL
+    doi: "10.1145/321941.321942"           # optional DOI (auto-links to doi.org)
+related_problems:
+  - id = "a-1-1-cvp"
+    relation = "reduces-to"  # or: variant, reduces-from, see-also
+  - id = "a-1-3-mcvp"
+    relation = "see-also"
 ---
 
 ## Given
