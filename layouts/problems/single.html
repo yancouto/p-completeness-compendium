@@ -9,13 +9,13 @@
     <h1>{{ .Title }}{{ with .Params.acronym }} <span class="acronym">({{ . }})</span>{{ end }}</h1>
     <div class="problem-category">
       {{ with .Params.categories }}
-      Category: {{ range $i, $cat := . }}{{ if $i }}, {{ end }}<a href="/problems/?category={{ $cat | urlquery }}">{{ $cat }}</a>{{ end }}
+      Category: {{ range $i, $cat := . }}{{ if $i }}, {{ end }}<a href='{{ printf "problems/?category=%s" ($cat | urlquery) | relURL }}'>{{ $cat }}</a>{{ end }}
       {{ end }}
     </div>
     {{ with .Params.tags }}
     <div class="problem-tags">
       {{ range . }}
-        <a href="/tags/{{ . | urlize }}/" class="tag">{{ . }}</a>
+        <a href="{{ printf "tags/%s/" (. | urlize) | relURL }}" class="tag">{{ . }}</a>
       {{ end }}
     </div>
     {{ end }}
@@ -73,7 +73,7 @@
   {{ with .PrevInSection }}
   <a href="{{ .RelPermalink }}" class="prev">&larr; {{ .Title }}</a>
   {{ end }}
-  <a href="/problems/" class="back">All Problems</a>
+  <a href="{{ "problems/" | relURL }}" class="back">All Problems</a>
   {{ with .NextInSection }}
   <a href="{{ .RelPermalink }}" class="next">{{ .Title }} &rarr;</a>
   {{ end }}

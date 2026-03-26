@@ -6,11 +6,11 @@
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="manifest" href="/site.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ "apple-touch-icon.png" | relURL }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | relURL }}">
+  <link rel="icon" href="{{ "favicon.ico" | relURL }}">
+  <link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
   
   <!-- KaTeX CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300..700,0..1,-25..200&icon_names=dark_mode,light_mode,open_in_new">
   
   <!-- Site CSS -->
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 
   <script>
     (function () {
@@ -67,6 +67,6 @@
   </script>
   
   {{ block "scripts" . }}{{ end }}
-  <script src="/js/theme.js"></script>
+  <script src="{{ "js/theme.js" | relURL }}"></script>
 </body>
 </html>

@@ -11,8 +11,8 @@ A collaborative resource for parallel complexity theory.
 </p>
 
 <div class="home-cta">
-  <a href="/problems/" class="btn btn-primary">Browse Problems</a>
-  <a href="/about/" class="btn btn-secondary">Learn More</a>
+  <a href="{{< relref "/problems/_index.md" >}}" class="btn btn-primary">Browse Problems</a>
+  <a href="{{< relref "/about.md" >}}" class="btn btn-secondary">Learn More</a>
 </div>
 
 </div>
@@ -42,9 +42,9 @@ This is an open-source project! You can contribute by:
 - Improving problem descriptions and remarks
 - Fixing errors or adding references
 
-See our [Contributing Guide](/about/#contributing) for details.
+See our [Contributing Guide]({{< relref "/about.md" >}}#contributing) for details.
 
 ## Featured Problems
 
-- **[Circuit Value Problem (CVP)](/problems/a-1-1-cvp/)** — The foundational P-complete problem, analogous to SAT for NP-completeness
-- **[Monotone CVP](/problems/a-1-3-mcvp/)** — A restricted variant using only AND and OR gates
+- **[Circuit Value Problem (CVP)]({{< relref "/problems/a-1-1-cvp.md" >}})** — The foundational P-complete problem, analogous to SAT for NP-completeness
+- **[Monotone CVP]({{< relref "/problems/a-1-3-mcvp.md" >}})** — A restricted variant using only AND and OR gates
