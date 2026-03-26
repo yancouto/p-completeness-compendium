@@ -1,5 +1,23 @@
 /* P-Complete Compendium - Main Stylesheet */
 
+/* Material Symbols baseline (required for ligature icon names) */
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+  display: inline-block;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: "liga";
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+
 :root {
   --color-bg: #ffffff;
   --color-text: #1a1a1a;
@@ -11,10 +29,36 @@
   --color-card-bg: #f9fafb;
   --color-p-complete: #059669;
   --color-open: #d97706;
+  --color-header-bg: #1a1a1a;
+  --color-header-text: #ffffff;
+  --color-header-muted: rgba(255, 255, 255, 0.8);
+  --color-header-button-bg: rgba(255, 255, 255, 0.08);
+  --color-header-button-border: rgba(255, 255, 255, 0.25);
+  --color-header-button-hover: rgba(255, 255, 255, 0.16);
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   --max-width: 1200px;
   --content-width: 800px;
+}
+
+html[data-theme="dark"] {
+  /* Monokai-inspired palette */
+  --color-bg: #272822;
+  --color-text: #f8f8f2;
+  --color-text-muted: #cfcfc2;
+  --color-primary: #66d9ef;
+  --color-primary-dark: #50c7df;
+  --color-accent: #a6e22e;
+  --color-border: #49483e;
+  --color-card-bg: #2f3129;
+  --color-p-complete: #a6e22e;
+  --color-open: #fd971f;
+  --color-header-bg: #1e1f1c;
+  --color-header-text: #f8f8f2;
+  --color-header-muted: #d6d6cf;
+  --color-header-button-bg: #3b3a32;
+  --color-header-button-border: #6a6a5c;
+  --color-header-button-hover: #4a4940;
 }
 
 /* WIP Banner */
@@ -58,8 +102,8 @@ a:hover {
 
 /* Header */
 .site-header {
-  background: var(--color-text);
-  color: white;
+  background: var(--color-header-bg);
+  color: var(--color-header-text);
   padding: 1rem 0;
 }
 
@@ -74,8 +118,14 @@ a:hover {
   gap: 1rem;
 }
 
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .site-title {
-  color: white;
+  color: var(--color-header-text);
   font-size: 1.25rem;
   font-weight: 600;
 }
@@ -94,14 +144,41 @@ a:hover {
 }
 
 .nav-menu a {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-header-muted);
   font-size: 0.95rem;
 }
 
 .nav-menu a:hover,
 .nav-menu a.active {
-  color: white;
+  color: var(--color-header-text);
   text-decoration: none;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: var(--color-header-button-bg);
+  color: var(--color-header-text);
+  border: 1px solid var(--color-header-button-border);
+  border-radius: 6px;
+  padding: 0.35rem 0.55rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.theme-toggle-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.theme-toggle:hover {
+  background: var(--color-header-button-hover);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
 }
 
 /* Footer */
@@ -133,6 +210,87 @@ a:hover {
 
 .single h1 {
   margin-top: 0;
+}
+
+/* Markdown code blocks */
+pre,
+code {
+  font-family: var(--font-mono);
+}
+
+pre {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 0.85rem 1rem;
+  overflow-x: auto;
+  color: var(--color-text);
+}
+
+pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: inherit;
+}
+
+code {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 0.1rem 0.35rem;
+  color: var(--color-text);
+}
+
+/* Hugo/Chroma may emit inline light backgrounds; force dark-friendly block in dark mode */
+html[data-theme="dark"] .highlight pre {
+  background: var(--color-card-bg) !important;
+  border-color: var(--color-border);
+  color: var(--color-text) !important;
+}
+
+/* Dark-mode readability polish for markdown-heavy content */
+html[data-theme="dark"] .single .content blockquote,
+html[data-theme="dark"] .problem-content blockquote {
+  background: #303228;
+  border-left: 4px solid #66d9ef;
+  color: #e8e8df;
+  margin: 1rem 0;
+  padding: 0.6rem 0.9rem;
+}
+
+html[data-theme="dark"] .single .content table,
+html[data-theme="dark"] .problem-content table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+html[data-theme="dark"] .single .content th,
+html[data-theme="dark"] .single .content td,
+html[data-theme="dark"] .problem-content th,
+html[data-theme="dark"] .problem-content td {
+  border: 1px solid var(--color-border);
+  padding: 0.45rem 0.6rem;
+}
+
+html[data-theme="dark"] .single .content th,
+html[data-theme="dark"] .problem-content th {
+  background: #34362c;
+  color: #f8f8f2;
+}
+
+html[data-theme="dark"] .single .content a,
+html[data-theme="dark"] .problem-content a {
+  color: #78e6ff;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.12em;
+}
+
+html[data-theme="dark"] .single .content ul li,
+html[data-theme="dark"] .single .content ol li,
+html[data-theme="dark"] .problem-content ul li,
+html[data-theme="dark"] .problem-content ol li {
+  margin-bottom: 0.2rem;
 }
 
 /* Problem Page */
@@ -388,6 +546,10 @@ a:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+html[data-theme="dark"] .problem-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+}
+
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -477,6 +639,10 @@ a:hover {
   text-decoration: none;
 }
 
+.btn-secondary {
+  background: var(--color-card-bg);
+}
+
 /* KaTeX overrides for inline math */
 .katex {
   font-size: 1.05em;
@@ -551,6 +717,10 @@ a:hover {
   .nav-container {
     flex-direction: column;
     text-align: center;
+  }
+
+  .nav-controls {
+    flex-direction: column;
   }
   
   .nav-menu {
