@@ -102,7 +102,7 @@ Add any additional notes about variants, complexity, algorithms, etc.
 
 ### Reporting Issues
 
-Found an error? Have a suggestion? [Open an issue](https://github.com/yourusername/p-complete-compendium/issues) on GitHub.
+Found an error? Have a suggestion? [Open an issue](https://github.com/yancouto/p-completeness-compendium/issues) on GitHub.
 
 ---
 
