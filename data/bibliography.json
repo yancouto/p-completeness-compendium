@@ -1,3034 +1,992 @@
 {
-  "1": {
-    "id": "1",
-    "authors": "K. R. Abrahamson, N. Dadoun, D. G. Kirkpatrick, and T. Przytycka",
-    "title": "A simple parallel tree contraction algorithm",
-    "year": "1989",
-    "doi": null,
-    "citation": "K. R. Abrahamson, N. Dadoun, D. G. Kirkpatrick, and T. Przytycka. A simple parallel tree contraction algorithm. Journal of Algorithms, 10(2):287–302, 1989."
-  },
-  "2": {
-    "id": "2",
-    "authors": "K. R. Abrahamson, M. Fellows, and C. Wilson",
-    "title": "Parallel self-reducibility",
-    "year": "1992",
-    "doi": null,
-    "citation": "K. R. Abrahamson, M. Fellows, and C. Wilson. Parallel self-reducibility. In W. W. Koczkodaj, P. E. Lauer, and A. A. Toptsis, editors, Proceedings of the Fourth International Conference on Computing and Information, pages 67–70, Toronto, Ont., Canada, May 1992. IEEE."
-  },
   "3": {
-    "id": "3",
     "authors": "F. Afrati",
     "title": "The parallel complexity of single rule logic programs",
     "year": "1992",
-    "doi": null,
-    "citation": "F. Afrati. The parallel complexity of single rule logic programs. Discrete Applied Mathematics, 40(2):107–126, 10 December 1992."
+    "doi": null
   },
   "4": {
-    "id": "4",
     "authors": "F. Afrati and C. H. Papadimitriou",
     "title": "The parallel complexity of simple logic programs",
     "year": "1993",
-    "doi": null,
-    "citation": "F. Afrati and C. H. Papadimitriou. The parallel complexity of simple logic programs. Journal of the ACM, 40(4):891–916, September 1993."
+    "doi": null
   },
   "5": {
-    "id": "5",
     "authors": "A. Aggarwal and R. J. Anderson",
     "title": "A Random NC algorithm for depth first search",
     "year": "1988",
-    "doi": null,
-    "citation": "A. Aggarwal and R. J. Anderson. A Random NC algorithm for depth first search. Combinatorica, 8(1):1–12, 1988."
+    "doi": null
   },
   "6": {
-    "id": "6",
     "authors": "A. Aggarwal, R. J. Anderson, and M.-Y. Kao",
     "title": "Parallel depth-first search in general directed graphs",
     "year": "1990",
-    "doi": null,
-    "citation": "A. Aggarwal, R. J. Anderson, and M.-Y. Kao. Parallel depth-first search in general directed graphs. SIAM Journal on Computing, 19(2):397–409, April 1990."
-  },
-  "7": {
-    "id": "7",
-    "authors": "A. V. Aho, J. E. Hopcroft, and J. D. Ullman",
-    "title": "The Design and Analysis of Computer Algorithms",
-    "year": "1975",
-    "doi": null,
-    "citation": "A. V. Aho, J. E. Hopcroft, and J. D. Ullman. The Design and Analysis of Computer Algorithms. Addison-Wesley, revised edition, 1975."
-  },
-  "8": {
-    "id": "8",
-    "authors": "J. Albert and K. Culik, II",
-    "title": "A simple universal cellular automata and its one-way totalistic versions",
-    "year": "1987",
-    "doi": null,
-    "citation": "J. Albert and K. Culik, II. A simple universal cellular automata and its one-way totalistic versions. Complex Systems, 1(1):1–16, 1987."
-  },
-  "9": {
-    "id": "9",
-    "authors": "E. W. Allender",
-    "title": "P-uniform circuit complexity",
-    "year": "1989",
-    "doi": null,
-    "citation": "E. W. Allender. P-uniform circuit complexity. Journal of the ACM, 36(4):912–928, October 1989. (15, 32) 256 BIBLIOGRAPHY"
-  },
-  "10": {
-    "id": "10",
-    "authors": "N. Alon, L. Babai, and A. Itai",
-    "title": "A fast and simple randomized parallel algorithm for the maximal independent set problem",
-    "year": "1986",
-    "doi": null,
-    "citation": "N. Alon, L. Babai, and A. Itai. A fast and simple randomized parallel algorithm for the maximal independent set problem. Journal of Algorithms, 7(4):567–583, December 1986."
-  },
-  "11": {
-    "id": "11",
-    "authors": "C. `Alvarez, J. L. Balc´azar, J. Gabarr´o, and M. S´antha",
-    "title": "Parallel complexity in the design and analysis of concurrent systems",
-    "year": "1991",
-    "doi": null,
-    "citation": "C. `Alvarez, J. L. Balc´azar, J. Gabarr´o, and M. S´antha. Parallel complexity in the design and analysis of concurrent systems. In E. Aarts, J. van Leeuwen, and M. Rem, editors, PARLE ’91 Parallel Architectures and Languages Europe: Volume I, volume 505 of Lecture Notes in Computer Science, pages 288–303, Eindhoven, The Netherlands, June 1991. Springer-Verlag."
+    "doi": null
   },
   "12": {
-    "id": "12",
     "authors": "R. J. Anderson",
     "title": "The Complexity of Parallel Algorithms",
     "year": "1985",
-    "doi": null,
-    "citation": "R. J. Anderson. The Complexity of Parallel Algorithms. PhD thesis, Stanford University, 1985. Computer Science Department Technical Report STAN-CS-86-1092. (89, 94–96, 102, 145, 146, 148, 164, 241)"
+    "doi": null
   },
   "13": {
-    "id": "13",
     "authors": "R. J. Anderson",
     "title": "A parallel algorithm for the maximal path problem",
     "year": "1987",
-    "doi": null,
-    "citation": "R. J. Anderson. A parallel algorithm for the maximal path problem. Combinatorica, 7(4):315–326, 1987."
-  },
-  "14": {
-    "id": "14",
-    "authors": "R. J. Anderson and E. W. Mayr",
-    "title": "A P-complete problem and approximations to it",
-    "year": "1984",
-    "doi": null,
-    "citation": "R. J. Anderson and E. W. Mayr. A P-complete problem and approximations to it. Technical Report STAN-CS-84-1014, Stanford University, 1984."
+    "doi": null
   },
   "15": {
-    "id": "15",
     "authors": "R. J. Anderson and E. W. Mayr",
     "title": "Parallelism and greedy algorithms",
     "year": "1987",
-    "doi": null,
-    "citation": "R. J. Anderson and E. W. Mayr. Parallelism and greedy algorithms. In Advances in Computing Research, volume 4, pages 17–38. JAI Press, 1987."
+    "doi": null
   },
   "16": {
-    "id": "16",
     "authors": "R. J. Anderson and E. W. Mayr",
     "title": "Parallelism and the maximal path problem",
     "year": "1987",
-    "doi": null,
-    "citation": "R. J. Anderson and E. W. Mayr. Parallelism and the maximal path problem. Information Processing Letters, 24(2):121–126, 1987."
+    "doi": null
   },
   "17": {
-    "id": "17",
     "authors": "R. J. Anderson, E. W. Mayr, and M. K. Warmuth",
     "title": "Parallel approximation algorithms for bin packing",
     "year": "1989",
-    "doi": null,
-    "citation": "R. J. Anderson, E. W. Mayr, and M. K. Warmuth. Parallel approximation algorithms for bin packing. Information and Computation, 82(3):262–277, September 1989."
+    "doi": null
   },
   "18": {
-    "id": "18",
     "authors": "M. J. Atallah, P. Callahan, and M. T. Goodrich",
     "title": "P-complete geometric problems",
     "year": "1990",
-    "doi": null,
-    "citation": "M. J. Atallah, P. Callahan, and M. T. Goodrich. P-complete geometric problems. In Proceedings of the 1990 ACM Symposium on Parallel Algorithms and Architectures, pages 317–326, Crete, Greece, July 1990. (201–204, 233)"
+    "doi": null
   },
   "19": {
-    "id": "19",
     "authors": "J. Avenhaus and K. Madlener",
     "title": "The Nielsen reduction and P-complete problems in free groups",
     "year": "1984",
-    "doi": null,
-    "citation": "J. Avenhaus and K. Madlener. The Nielsen reduction and P-complete problems in free groups. Theoretical Computer Science, 32(1,2):61– 76, 1984. (189–192)"
+    "doi": null
   },
   "20": {
-    "id": "20",
     "authors": "J. Avenhaus and K. Madlener",
     "title": "On the complexity of intersection and conjugacy in free groups",
     "year": "1984",
-    "doi": null,
-    "citation": "J. Avenhaus and K. Madlener. On the complexity of intersection and conjugacy in free groups. Theoretical Computer Science, 32(3):279– 295, 1984. (192–194)"
+    "doi": null
   },
   "21": {
-    "id": "21",
     "authors": "L. Babai, S. Seres, and E. M. Luks. Permutation groups in NC",
     "title": "In Proceedings of the Nineteenth Annual ACM Symposium on Theory of Computing, pages 409–420, New York, NY, May 1987",
     "year": "1987",
-    "doi": null,
-    "citation": "L. Babai, S. Seres, and E. M. Luks. Permutation groups in NC. In Proceedings of the Nineteenth Annual ACM Symposium on Theory of Computing, pages 409–420, New York, NY, May 1987. (232) BIBLIOGRAPHY"
+    "doi": null
   },
   "22": {
-    "id": "22",
     "authors": "A. Bachem and R. Kannan",
     "title": "Lattices and the basis reduction algorithm",
     "year": "1984",
-    "doi": null,
-    "citation": "A. Bachem and R. Kannan. Lattices and the basis reduction algorithm. Technical Report CMU-CS-84-112, Carnegie-Mellon University, Dept. of Computer Science, 1984."
+    "doi": null
   },
   "23": {
-    "id": "23",
     "authors": "J. L. Balc´azar, J. Gabarr´o, and M. S´antha",
     "title": "Deciding bisimilarity is P-complete",
     "year": "1992",
-    "doi": null,
-    "citation": "J. L. Balc´azar, J. Gabarr´o, and M. S´antha. Deciding bisimilarity is P-complete. Formal Aspects of Computing, 4(6A):638–648, 1992."
-  },
-  "24": {
-    "id": "24",
-    "authors": "D. A. M. Barrington, N. Immerman, and H. Straubing",
-    "title": "On uniformity within NC 1",
-    "year": "1990",
-    "doi": null,
-    "citation": "D. A. M. Barrington, N. Immerman, and H. Straubing. On uniformity within NC 1. Journal of Computer and System Sciences, 41(3):274– 306, December 1990."
+    "doi": null
   },
   "25": {
-    "id": "25",
     "authors": "D. A. M. Barrington and P. McKenzie",
     "title": "Oracle branching programs and logspace versus P",
     "year": "1991",
-    "doi": null,
-    "citation": "D. A. M. Barrington and P. McKenzie. Oracle branching programs and logspace versus P. Information and Computation, 95(1):96–115, November 1991."
-  },
-  "26": {
-    "id": "26",
-    "authors": "P. W. Beame, S. A. Cook, and H. J. Hoover",
-    "title": "Log depth circuits for division and related problems",
-    "year": "1986",
-    "doi": null,
-    "citation": "P. W. Beame, S. A. Cook, and H. J. Hoover. Log depth circuits for division and related problems. SIAM Journal on Computing, 15(4):994–1003, November 1986."
-  },
-  "27": {
-    "id": "27",
-    "authors": "P. W. Beame and M. Luby",
-    "title": "Parallel search for maximal independence given minimal dependence",
-    "year": "1990",
-    "doi": null,
-    "citation": "P. W. Beame and M. Luby. Parallel search for maximal independence given minimal dependence. In Proceedings of the First Annual ACM-SIAM Symposium on Discrete Algorithms, pages 212–218, San Francisco, CA, January 1990. ACM."
-  },
-  "28": {
-    "id": "28",
-    "authors": "M. Beaudry, P. McKenzie, and P. P´eladeau",
-    "title": "Circuits with monoidal gates",
-    "year": "1992",
-    "doi": null,
-    "citation": "M. Beaudry, P. McKenzie, and P. P´eladeau. Circuits with monoidal gates. In Finkel et al."
-  },
-  "107": {
-    "id": "107",
-    "authors": "(continuation)",
-    "title": ", pages 100–109.",
-    "year": "1992",
-    "doi": null,
-    "citation": ", pages 100–109."
+    "doi": null
   },
   "29": {
-    "id": "29",
     "authors": "M. Beaudry, P. McKenzie, and D. Th´erien",
     "title": "The membership problem in aperiodic transformation monoids",
     "year": "1992",
-    "doi": null,
-    "citation": "M. Beaudry, P. McKenzie, and D. Th´erien. The membership problem in aperiodic transformation monoids. Journal of the ACM, 39(3):599– 616, July 1992."
+    "doi": null
   },
   "30": {
-    "id": "30",
     "authors": "M. Ben-Or, E. Feig, D. C. Kozen, and P. Tiwari",
     "title": "A fast parallel algorithm for determining all roots of a polynomial with real roots",
     "year": "1988",
-    "doi": null,
-    "citation": "M. Ben-Or, E. Feig, D. C. Kozen, and P. Tiwari. A fast parallel algorithm for determining all roots of a polynomial with real roots. SIAM Journal on Computing, 17(6):1081–1092, December 1988."
-  },
-  "31": {
-    "id": "31",
-    "authors": "B. Berger",
-    "title": "The fourth moment method",
-    "year": "1991",
-    "doi": null,
-    "citation": "B. Berger. The fourth moment method. In Proceedings of the Second Annual ACM-SIAM Symposium on Discrete Algorithms, pages 373– 383, San Francisco, CA, January 1991. ACM."
-  },
-  "32": {
-    "id": "32",
-    "authors": "B. Berger and P. W. Shor",
-    "title": "Approximation algorithms for the maximum acyclic subgraph problem",
-    "year": "1990",
-    "doi": null,
-    "citation": "B. Berger and P. W. Shor. Approximation algorithms for the maximum acyclic subgraph problem. In Proceedings of the First Annual ACM-SIAM Symposium on Discrete Algorithms, pages 236–243, San Francisco, CA, January 1990. ACM."
-  },
-  "33": {
-    "id": "33",
-    "authors": "E. R. Berlekamp, J. H. Conway, and R. K. Guy",
-    "title": "Winning Ways for Your Mathematical Plays, volume 2: Games in Particular",
-    "year": "1982",
-    "doi": null,
-    "citation": "E. R. Berlekamp, J. H. Conway, and R. K. Guy. Winning Ways for Your Mathematical Plays, volume 2: Games in Particular. Academic Press, 1982. (211) 258 BIBLIOGRAPHY"
+    "doi": null
   },
   "34": {
-    "id": "34",
     "authors": "A. Bertoni, M. C. Bollina, G. Mauri, and N. Sabadini",
     "title": "On characterizing classes of eﬃciently parallelizable problems",
     "year": "1984",
-    "doi": null,
-    "citation": "A. Bertoni, M. C. Bollina, G. Mauri, and N. Sabadini. On characterizing classes of eﬃciently parallelizable problems. In P. Bertolazzi and F. Luccio, editors, VLSI: Algorithms and Architectures, Proceedings of the International Workshop on Parallel Computing and VLSI, pages 13–26, Amalfi, Italy, May 1984 (published 1985). North-Holland."
-  },
-  "35": {
-    "id": "35",
-    "authors": "G. E. Blelloch",
-    "title": "Scans as primitive parallel operations",
-    "year": "1987",
-    "doi": null,
-    "citation": "G. E. Blelloch. Scans as primitive parallel operations. In International Conference on Parallel Processing, pages 355–362, 1987."
-  },
-  "36": {
-    "id": "36",
-    "authors": "G. E. Blelloch",
-    "title": "Prefix sums and their applications",
-    "year": "1975",
-    "doi": null,
-    "citation": "G. E. Blelloch. Prefix sums and their applications. In Reif"
-  },
-  "302": {
-    "id": "302",
-    "authors": "J. H. Reif, editor",
-    "title": "Synthesis of Parallel Algorithms",
-    "year": "1993",
-    "doi": null,
-    "citation": "J. H. Reif, editor. Synthesis of Parallel Algorithms. Morgan Kaufmann, 1993."
-  },
-  "37": {
-    "id": "37",
-    "authors": "J. A. Bondy and U. S. R. Murty",
-    "title": "Graph Theory with Applications",
-    "year": "1976",
-    "doi": null,
-    "citation": "J. A. Bondy and U. S. R. Murty. Graph Theory with Applications. MacMillan, 1976. Revised paperback edition, 1977."
-  },
-  "38": {
-    "id": "38",
-    "authors": "G. Bongiovanni, P. Crescenzi, and S. De Agostino",
-    "title": "Two P-complete approximation algorithms",
-    "year": "1993",
-    "doi": null,
-    "citation": "G. Bongiovanni, P. Crescenzi, and S. De Agostino. Two P-complete approximation algorithms. Manuscript, submitted 1993."
-  },
-  "39": {
-    "id": "39",
-    "authors": "R. B. Boppana and J. C. Lagarias",
-    "title": "One way functions and circuit complexity",
-    "year": "1986",
-    "doi": null,
-    "citation": "R. B. Boppana and J. C. Lagarias. One way functions and circuit complexity. In A. L. Selman, editor, Structure in Complexity Theory, volume 223 of Lecture Notes in Computer Science, pages 51–66, Berkeley, CA, June 1986. Springer-Verlag."
-  },
-  "40": {
-    "id": "40",
-    "authors": "A. Borodin",
-    "title": "On relating time and space to size and depth",
-    "year": "1977",
-    "doi": null,
-    "citation": "A. Borodin. On relating time and space to size and depth. SIAM Journal on Computing, 6(4):733–744, December 1977."
-  },
-  "41": {
-    "id": "41",
-    "authors": "A. Borodin",
-    "title": "Structured vs",
-    "year": "1982",
-    "doi": null,
-    "citation": "A. Borodin. Structured vs. general models in computational complexity. L’Enseignement Math´ematique, XXVIII(3-4):171–190, July-December 1982. Also in [244, pages 47–65]."
+    "doi": null
   },
   "42": {
-    "id": "42",
     "authors": "A. Borodin, S. A. Cook, and N. J. Pippenger",
     "title": "Parallel computation for well-endowed rings and space-bounded probabilistic machines",
     "year": "1983",
-    "doi": null,
-    "citation": "A. Borodin, S. A. Cook, and N. J. Pippenger. Parallel computation for well-endowed rings and space-bounded probabilistic machines. Information and Control, 58(1-3):113–136, 1983."
+    "doi": null
   },
   "43": {
-    "id": "43",
     "authors": "A. Borodin, J. von zur Gathen, and J. E. Hopcroft",
     "title": "Fast parallel matrix and GCD computations",
     "year": "1982",
-    "doi": null,
-    "citation": "A. Borodin, J. von zur Gathen, and J. E. Hopcroft. Fast parallel matrix and GCD computations. Information and Control, 52(3):241– 256, 1982."
-  },
-  "44": {
-    "id": "44",
-    "authors": "D. P. Bovet, S. De Agostino, and R. Petreschi",
-    "title": "Parallelism and the feedback vertex set problem",
-    "year": "1988",
-    "doi": null,
-    "citation": "D. P. Bovet, S. De Agostino, and R. Petreschi. Parallelism and the feedback vertex set problem. Information Processing Letters, 28(2):81–85, June 1988."
-  },
-  "45": {
-    "id": "45",
-    "authors": "J. F. Boyar and H. J. Karloﬀ",
-    "title": "Coloring planar graphs in parallel",
-    "year": "1987",
-    "doi": null,
-    "citation": "J. F. Boyar and H. J. Karloﬀ. Coloring planar graphs in parallel. Journal of Algorithms, 8(4):470–479, 1987."
-  },
-  "46": {
-    "id": "46",
-    "authors": "A. Z. Broder",
-    "title": "How hard is it to marry at random? (On the approximation of the permanent)",
-    "year": "1986",
-    "doi": null,
-    "citation": "A. Z. Broder. How hard is it to marry at random? (On the approximation of the permanent). In Proceedings of the Eighteenth Annual ACM Symposium on Theory of Computing, pages 50–58, Berkeley, CA, May 1986. Errata: Proceedings of the Twentieth Annual ACM Symposium on Theory of Computing, page 551, Chicago, IL, May 1988. (142, 143) BIBLIOGRAPHY"
-  },
-  "47": {
-    "id": "47",
-    "authors": "R. L. Brooks",
-    "title": "On coloring the nodes of a network",
-    "year": "1941",
-    "doi": null,
-    "citation": "R. L. Brooks. On coloring the nodes of a network. Proceedings of the Cambridge Philosophical Society, 37:194–197, 1941."
+    "doi": null
   },
   "48": {
-    "id": "48",
     "authors": "J. F. Buss and J. Goldsmith. Nondeterminism within P. In C. Choffrut and M",
     "title": "Jantzen, editors, STACS 91: 8th Annual Symposium on Theoretical Aspects of Computer Science, volume 480 of Lecture Notes in Computer Science, pages 348–359, Hamburg, Germany, February 1991",
     "year": "1991",
-    "doi": null,
-    "citation": "J. F. Buss and J. Goldsmith. Nondeterminism within P. In C. Choffrut and M. Jantzen, editors, STACS 91: 8th Annual Symposium on Theoretical Aspects of Computer Science, volume 480 of Lecture Notes in Computer Science, pages 348–359, Hamburg, Germany, February 1991. Springer-Verlag."
+    "doi": null
   },
   "49": {
-    "id": "49",
     "authors": "A. K. Chandra, D. C. Kozen, and L. J. Stockmeyer",
     "title": "Alternation",
     "year": "1981",
-    "doi": null,
-    "citation": "A. K. Chandra, D. C. Kozen, and L. J. Stockmeyer. Alternation. Journal of the ACM, 28(1):114–133, January 1981."
-  },
-  "50": {
-    "id": "50",
-    "authors": "A. K. Chandra and L. J. Stockmeyer",
-    "title": "Alternation",
-    "year": "1976",
-    "doi": null,
-    "citation": "A. K. Chandra and L. J. Stockmeyer. Alternation. In 17th Annual Symposium on Foundations of Computer Science, pages 98–108, Houston, TX, October 1976. IEEE. Preliminary Version."
+    "doi": null
   },
   "51": {
-    "id": "51",
     "authors": "A. K. Chandra and M. Tompa",
     "title": "The complexity of short two-person games",
     "year": "1990",
-    "doi": null,
-    "citation": "A. K. Chandra and M. Tompa. The complexity of short two-person games. Discrete Applied Mathematics, 29(1):21–33, November 1990."
+    "doi": null
   },
   "52": {
-    "id": "52",
     "authors": "C. L. Chang and R. C. T. Lee",
     "title": "Symbolic Logic and Mechanical Theorem Proving",
     "year": "1973",
-    "doi": null,
-    "citation": "C. L. Chang and R. C. T. Lee. Symbolic Logic and Mechanical Theorem Proving. Academic Press, 1973."
-  },
-  "53": {
-    "id": "53",
-    "authors": "B. Chazelle",
-    "title": "On the convex layers of a planar set",
-    "year": "1985",
-    "doi": null,
-    "citation": "B. Chazelle. On the convex layers of a planar set. IEEE Transactions on Information Theory, IT-31(4):509–517, 1985."
+    "doi": null
   },
   "54": {
-    "id": "54",
     "authors": "J. Cheriyan and S. N. Maheshwari",
     "title": "The parallel complexity of finding a blocking flow in a 3-layer network",
     "year": "1989",
-    "doi": null,
-    "citation": "J. Cheriyan and S. N. Maheshwari. The parallel complexity of finding a blocking flow in a 3-layer network. Information Processing Letters, 31(3):157–161, 1989."
-  },
-  "55": {
-    "id": "55",
-    "authors": "B. Chlebus, K. Diks, W. Rytter, and T. Szymacha",
-    "title": "Parallel complexity of lexicographically first problems for tree-structured graphs",
-    "year": "1989",
-    "doi": null,
-    "citation": "B. Chlebus, K. Diks, W. Rytter, and T. Szymacha. Parallel complexity of lexicographically first problems for tree-structured graphs. In A. Kreczmar and G. Mirkowska, editors, Mathematical Foundations of Computer Science 1989: Proceedings, 14th Symposium, volume 379 of Lecture Notes in Computer Science, pages 185– 195, Por¸abka-Kozubnik, Poland, August-September 1989. Springer-Verlag."
+    "doi": null
   },
   "56": {
-    "id": "56",
     "authors": "B. Chor and O. Goldreich",
     "title": "An improved parallel algorithm for integer GCD",
     "year": "1990",
-    "doi": null,
-    "citation": "B. Chor and O. Goldreich. An improved parallel algorithm for integer GCD. Algorithmica, 5:1–10, 1990."
-  },
-  "57": {
-    "id": "57",
-    "authors": "R. Cole and U. Vishkin",
-    "title": "The accelerated centroid decomposition technique for optimal tree evaluation in logarithmic time",
-    "year": "1988",
-    "doi": null,
-    "citation": "R. Cole and U. Vishkin. The accelerated centroid decomposition technique for optimal tree evaluation in logarithmic time. Algorithmica, 3(3):329–346, 1988."
-  },
-  "58": {
-    "id": "58",
-    "authors": "A. Condon",
-    "title": "A theory of strict P-completeness",
-    "year": "1992",
-    "doi": null,
-    "citation": "A. Condon. A theory of strict P-completeness. In A. Finkel and M. Jantzen, editors, STACS 92: 9th Annual Symposium on Theoretical Aspects of Computer Science, volume 577 of Lecture Notes in Computer Science, pages 33–44, Cachan, France, February 1992. Springer-Verlag. (103–107) 260 BIBLIOGRAPHY"
+    "doi": null
   },
   "59": {
-    "id": "59",
     "authors": "M. P. Consens and A. O. Mendelzon",
     "title": "Low complexity aggregation in GraphLog and Datalog",
     "year": "1990",
-    "doi": null,
-    "citation": "M. P. Consens and A. O. Mendelzon. Low complexity aggregation in GraphLog and Datalog. In S. Abiteboul and P. C. Kanellakis, editors, ICDT ’90. Third International Conference on Database Theory Proceedings, volume 470 of Lecture Notes in Computer Science, pages 379–394, Paris, France, 12-14 December 1990. Springer-Verlag."
+    "doi": null
   },
   "60": {
-    "id": "60",
     "authors": "S. A. Cook",
     "title": "Path systems and language recognition",
     "year": "1970",
-    "doi": null,
-    "citation": "S. A. Cook. Path systems and language recognition. In Conference Record of Second Annual ACM Symposium on Theory of Computing, pages 70–72, Northampton, MA, May 1970."
+    "doi": null
   },
   "61": {
-    "id": "61",
     "authors": "S. A. Cook",
     "title": "Characterizations of pushdown machines in terms of time-bounded computers",
     "year": "1971",
-    "doi": null,
-    "citation": "S. A. Cook. Characterizations of pushdown machines in terms of time-bounded computers. Journal of the ACM, 18(1):4–18, January 1971."
-  },
-  "62": {
-    "id": "62",
-    "authors": "S. A. Cook",
-    "title": "The complexity of theorem proving procedures",
-    "year": "1971",
-    "doi": null,
-    "citation": "S. A. Cook. The complexity of theorem proving procedures. In Conference Record of Third Annual ACM Symposium on Theory of Computing, pages 151–158, Shaker Heights, OH, May 1971."
-  },
-  "63": {
-    "id": "63",
-    "authors": "S. A. Cook",
-    "title": "An observation on time-storage trade oﬀ",
-    "year": "1973",
-    "doi": null,
-    "citation": "S. A. Cook. An observation on time-storage trade oﬀ. In Conference Record of Fifth Annual ACM Symposium on Theory of Computing, pages 29–33, Austin, TX, April-May 1973."
+    "doi": null
   },
   "64": {
-    "id": "64",
     "authors": "S. A. Cook",
     "title": "An observation on time-storage trade oﬀ",
     "year": "1974",
-    "doi": null,
-    "citation": "S. A. Cook. An observation on time-storage trade oﬀ. Journal of Computer and System Sciences, 9(3):308–316, December 1974."
-  },
-  "65": {
-    "id": "65",
-    "authors": "S. A. Cook",
-    "title": "Deterministic CFL’s are accepted simultaneously in polynomial time and log squared space",
-    "year": "1979",
-    "doi": null,
-    "citation": "S. A. Cook. Deterministic CFL’s are accepted simultaneously in polynomial time and log squared space. In Conference Record of the Eleventh Annual ACM Symposium on Theory of Computing, pages 338–345, Atlanta, GA, April-May 1979. See also"
-  },
-  "367": {
-    "id": "367",
-    "authors": "B. von Braunm¨uhl, S. A. Cook, K. Mehlhorn, and R. Verbeek",
-    "title": "The recognition of deterministic CFL’s in small time and space",
-    "year": "1983",
-    "doi": null,
-    "citation": "B. von Braunm¨uhl, S. A. Cook, K. Mehlhorn, and R. Verbeek. The recognition of deterministic CFL’s in small time and space. Information and Control, 56(1-2):34–51, January/February 1983. (67, 260) 284 BIBLIOGRAPHY"
-  },
-  "66": {
-    "id": "66",
-    "authors": "S. A. Cook",
-    "title": "Towards a complexity theory of synchronous parallel computation",
-    "year": "1981",
-    "doi": null,
-    "citation": "S. A. Cook. Towards a complexity theory of synchronous parallel computation. L’Enseignement Math´ematique, XXVII(1–2):99–124, January-June 1981. Also in [244, pages 75–100]."
-  },
-  "67": {
-    "id": "67",
-    "authors": "S. A. Cook",
-    "title": "A taxonomy of problems with fast parallel algorithms",
-    "year": "1985",
-    "doi": null,
-    "citation": "S. A. Cook. A taxonomy of problems with fast parallel algorithms. Information and Control, 64(1–3):2–22, January/February/March 1985."
-  },
-  "68": {
-    "id": "68",
-    "authors": "S. A. Cook and P. W. Dymond",
-    "title": "Parallel pointer machines",
-    "year": "1993",
-    "doi": null,
-    "citation": "S. A. Cook and P. W. Dymond. Parallel pointer machines. Computational Complexity, 3(1):19–30, 1993."
+    "doi": null
   },
   "69": {
-    "id": "69",
     "authors": "S. A. Cook and R. Sethi",
     "title": "Storage requirements for deterministic polynomial time recognizable languages",
     "year": "1976",
-    "doi": null,
-    "citation": "S. A. Cook and R. Sethi. Storage requirements for deterministic polynomial time recognizable languages. Journal of Computer and System Sciences, 13(1):25–37, 1976."
-  },
-  "70": {
-    "id": "70",
-    "authors": "T. H. Cormen, C. E. Leiserson, and R. L. Rivest",
-    "title": "Introduction to Algorithms",
-    "year": "1990",
-    "doi": null,
-    "citation": "T. H. Cormen, C. E. Leiserson, and R. L. Rivest. Introduction to Algorithms. MIT Press, 1990."
+    "doi": null
   },
   "71": {
-    "id": "71",
     "authors": "S. S. Cosmadakis",
     "title": "The word and generator problems for lattices",
     "year": "1988",
-    "doi": null,
-    "citation": "S. S. Cosmadakis. The word and generator problems for lattices. Information and Computation, 77(3):192–217, 1988. (196, 197) BIBLIOGRAPHY"
+    "doi": null
   },
   "72": {
-    "id": "72",
     "authors": "L. Csanky",
     "title": "Fast parallel matrix inversion algorithms",
     "year": "1976",
-    "doi": null,
-    "citation": "L. Csanky. Fast parallel matrix inversion algorithms. SIAM Journal on Computing, 5(4):618–623, 1976."
-  },
-  "73": {
-    "id": "73",
-    "authors": "F. Cucker and A. Torrecillas",
-    "title": "Two P-complete problems in the theory of the reals",
-    "year": "1992",
-    "doi": null,
-    "citation": "F. Cucker and A. Torrecillas. Two P-complete problems in the theory of the reals. Journal of Complexity, 8(4):454–466, December 1992."
+    "doi": null
   },
   "74": {
-    "id": "74",
     "authors": "E. Dahlhaus",
     "title": "Is SETL a suitable language for parallel programming — a theoretical approach",
     "year": "1987",
-    "doi": null,
-    "citation": "E. Dahlhaus. Is SETL a suitable language for parallel programming — a theoretical approach. In E. B¨orger, H. Kleine B¨uning, and M. M. Richter, editors, CSL ’87: 1st Workshop on Computer Science Logic, volume 329 of Lecture Notes in Computer Science, pages 56–63, Karlsruhe, West Germany, October 1987 (published 1988). Springer-Verlag."
-  },
-  "75": {
-    "id": "75",
-    "authors": "E. Dahlhaus",
-    "title": "The complexity of subtheories of the existential linear theory of reals",
-    "year": "1989",
-    "doi": null,
-    "citation": "E. Dahlhaus. The complexity of subtheories of the existential linear theory of reals. In E. B¨orger, H. Kleine B¨uning, and M. M. Richter, editors, CSL ’89: 3rd Workshop on Computer Science Logic, volume 440 of Lecture Notes in Computer Science, pages 76– 89, Kaiserslautern, FRG, October 1989 (published 1990). Springer-Verlag."
+    "doi": null
   },
   "76": {
-    "id": "76",
     "authors": "E. Dahlhaus, P. Hajnal, and M. Karpinski",
     "title": "Optimal parallel algorithm for the Hamiltonian cycle problem on dense graphs",
     "year": "1988",
-    "doi": null,
-    "citation": "E. Dahlhaus, P. Hajnal, and M. Karpinski. Optimal parallel algorithm for the Hamiltonian cycle problem on dense graphs. In 29th Annual Symposium on Foundations of Computer Science, pages 186– 193, White Plains, NY, October 1988. IEEE."
+    "doi": null
   },
   "77": {
-    "id": "77",
     "authors": "E. Dahlhaus, M. Karpinski, and P. Kelsen",
     "title": "An eﬃcient parallel algorithm for computing a maximal independent set in a hypergraph of dimension 3",
     "year": "1992",
-    "doi": null,
-    "citation": "E. Dahlhaus, M. Karpinski, and P. Kelsen. An eﬃcient parallel algorithm for computing a maximal independent set in a hypergraph of dimension 3. Information Processing Letters, 42(6):309–313, 24 July 1992."
+    "doi": null
   },
   "78": {
-    "id": "78",
     "authors": "B. DasGupta",
     "title": "Learning capabilities of recurrent neural networks",
     "year": "1992",
-    "doi": null,
-    "citation": "B. DasGupta. Learning capabilities of recurrent neural networks. In Proceedings SOUTHEASTCON ’92, volume 2, pages 822–823, Birmingham, AL, 12-15 April 1992. IEEE."
+    "doi": null
   },
   "79": {
-    "id": "79",
     "authors": "S. De Agostino",
     "title": "P-complete problems in data compression",
     "year": "1994",
-    "doi": null,
-    "citation": "S. De Agostino. P-complete problems in data compression. Theoretical Computer Science, 127:181–186, 1994."
+    "doi": null
   },
   "80": {
-    "id": "80",
     "authors": "S. De Agostino and J. A. Storer",
     "title": "Parallel algorithms for optimal compression using dictionaries with the prefix property",
     "year": "1992",
-    "doi": null,
-    "citation": "S. De Agostino and J. A. Storer. Parallel algorithms for optimal compression using dictionaries with the prefix property. In J. A. Storer and M. Cohn, editors, Data Compression Conference, pages 52–61, Snowbird, UT, March 1992. IEEE."
+    "doi": null
   },
   "81": {
-    "id": "81",
     "authors": "P. de la Torre and R. Greenlaw",
     "title": "Super critical tree numbering and optimal tree ranking are in NC",
     "year": "1991",
-    "doi": null,
-    "citation": "P. de la Torre and R. Greenlaw. Super critical tree numbering and optimal tree ranking are in NC. In Proceedings of the Third IEEE Symposium on Parallel and Distributed Processing, pages 767–773, Dallas, TX, December 1991. IEEE."
+    "doi": null
   },
   "82": {
-    "id": "82",
     "authors": "P. de la Torre, R. Greenlaw, and T. Przytycka",
     "title": "Optimal tree ranking is in NC",
     "year": "1992",
-    "doi": null,
-    "citation": "P. de la Torre, R. Greenlaw, and T. Przytycka. Optimal tree ranking is in NC. Parallel Processing Letters, 2(1):31–41, March 1992. (223) 262 BIBLIOGRAPHY"
+    "doi": null
   },
   "83": {
-    "id": "83",
     "authors": "P. de la Torre, R. Greenlaw, and A. A. Sch¨aﬀer",
     "title": "Optimal edge ranking of trees in polynomial time",
     "year": "1992",
-    "doi": null,
-    "citation": "P. de la Torre, R. Greenlaw, and A. A. Sch¨aﬀer. Optimal edge ranking of trees in polynomial time. Technical Report 92-10, University of New Hampshire, 1992. To appear, Algorithmica."
+    "doi": null
   },
   "84": {
-    "id": "84",
     "authors": "P. de la Torre, R. Greenlaw, and A. A. Sch¨aﬀer",
     "title": "Optimal edge ranking of trees in polynomial time",
     "year": "1993",
-    "doi": null,
-    "citation": "P. de la Torre, R. Greenlaw, and A. A. Sch¨aﬀer. Optimal edge ranking of trees in polynomial time. In Proceedings of the Fourth Annual ACM-SIAM Symposium on Discrete Algorithms, pages 138–144, Austin, TX, January 1993. ACM."
+    "doi": null
   },
   "85": {
-    "id": "85",
     "authors": "P. de la Torre and C. P. Kruskal",
     "title": "Fast parallel algorithms for all sources lexicographic search and path finding problems",
     "year": "1989",
-    "doi": null,
-    "citation": "P. de la Torre and C. P. Kruskal. Fast parallel algorithms for all sources lexicographic search and path finding problems. Technical Report Technical Report CS-TR 2283, University of Maryland, 1989. To appear, Journal of Algorithms."
+    "doi": null
   },
   "86": {
-    "id": "86",
     "authors": "P. de la Torre and C. P. Kruskal",
     "title": "Fast and eﬃcient parallel algorithms for single source lexicographic depth-first search, breadth-first search and topological-first search",
     "year": "1991",
-    "doi": null,
-    "citation": "P. de la Torre and C. P. Kruskal. Fast and eﬃcient parallel algorithms for single source lexicographic depth-first search, breadth-first search and topological-first search. In International Conference on Parallel Processing, volume 20, pages III–286–III–287, 1991."
-  },
-  "87": {
-    "id": "87",
-    "authors": "A. L. Delcher and S. R. Kosaraju",
-    "title": "An NC algorithm for evaluating monotone planar circuits",
-    "year": "1991",
-    "doi": null,
-    "citation": "A. L. Delcher and S. R. Kosaraju. An NC algorithm for evaluating monotone planar circuits. Manuscript, 1991."
+    "doi": null
   },
   "88": {
-    "id": "88",
     "authors": "L. Denenberg",
     "title": "Computational Complexity of Logical Problems",
     "year": "1984",
-    "doi": null,
-    "citation": "L. Denenberg. Computational Complexity of Logical Problems. PhD thesis, Harvard University, 1984."
-  },
-  "89": {
-    "id": "89",
-    "authors": "L. Denenberg and H. R. Lewis",
-    "title": "The complexity of the satisfiability problem for Krom formulas",
-    "year": "1984",
-    "doi": null,
-    "citation": "L. Denenberg and H. R. Lewis. The complexity of the satisfiability problem for Krom formulas. Theoretical Computer Science, 30(3):319–341, 1984."
+    "doi": null
   },
   "90": {
-    "id": "90",
     "authors": "X. Deng",
     "title": "On the parallel complexity of integer programming",
     "year": "1989",
-    "doi": null,
-    "citation": "X. Deng. On the parallel complexity of integer programming. In Proceedings of the 1989 ACM Symposium on Parallel Algorithms and Architectures, pages 110–116, Santa Fe, NM, June 1989."
+    "doi": null
   },
   "91": {
-    "id": "91",
     "authors": "A. Dessmark, A. Lingas, and A. Maheshwari",
     "title": "Multi-list ranking: complexity and applications",
     "year": "1979",
-    "doi": null,
-    "citation": "A. Dessmark, A. Lingas, and A. Maheshwari. Multi-list ranking: complexity and applications. In Finkel et al."
-  },
-  "92": {
-    "id": "92",
-    "authors": "E. A. Dinic",
-    "title": "Algorithm for solution of a problem of maximum flow in a network with power estimation",
-    "year": "1970",
-    "doi": null,
-    "citation": "E. A. Dinic. Algorithm for solution of a problem of maximum flow in a network with power estimation. Soviet Math. Doklady, 11(5):1277– 1280, 1970."
-  },
-  "93": {
-    "id": "93",
-    "authors": "D. P. Dobkin, R. J. Lipton, and S. P. Reiss",
-    "title": "Linear programming is log-space hard for P",
-    "year": "1979",
-    "doi": null,
-    "citation": "D. P. Dobkin, R. J. Lipton, and S. P. Reiss. Linear programming is log-space hard for P. Information Processing Letters, 8(2):96–97, February 1979."
-  },
-  "94": {
-    "id": "94",
-    "authors": "D. P. Dobkin and S. P. Reiss",
-    "title": "The complexity of linear programming",
-    "year": "1980",
-    "doi": null,
-    "citation": "D. P. Dobkin and S. P. Reiss. The complexity of linear programming. Theoretical Computer Science, 11(1):1–18, 1980."
+    "doi": null
   },
   "95": {
-    "id": "95",
     "authors": "D. Dolev, E. Upfal, and M. K. Warmuth",
     "title": "The parallel complexity of scheduling with precedence constraints",
     "year": "1986",
-    "doi": null,
-    "citation": "D. Dolev, E. Upfal, and M. K. Warmuth. The parallel complexity of scheduling with precedence constraints. Journal of Parallel and Distributed Computing, 3(4):553–576, 1986. (156, 157) BIBLIOGRAPHY"
+    "doi": null
   },
   "96": {
-    "id": "96",
     "authors": "C. Dwork, P. C. Kanellakis, and J. C. Mitchell",
     "title": "On the sequential nature of unification",
     "year": "1984",
-    "doi": null,
-    "citation": "C. Dwork, P. C. Kanellakis, and J. C. Mitchell. On the sequential nature of unification. Journal of Logic Programming, 1(1):35–50, 1984."
+    "doi": null
   },
   "97": {
-    "id": "97",
     "authors": "C. Dwork, P. C. Kanellakis, and L. J. Stockmeyer",
     "title": "Parallel algorithms for term matching",
     "year": "1988",
-    "doi": null,
-    "citation": "C. Dwork, P. C. Kanellakis, and L. J. Stockmeyer. Parallel algorithms for term matching. SIAM Journal on Computing, 17(4):711–731, August 1988."
-  },
-  "98": {
-    "id": "98",
-    "authors": "P. W. Dymond",
-    "title": "Simultaneous Resource Bounds and Parallel Computation",
-    "year": "1980",
-    "doi": null,
-    "citation": "P. W. Dymond. Simultaneous Resource Bounds and Parallel Computation. PhD thesis, University of Toronto, August 1980. Department of Computer Science Technical Report 145/80."
-  },
-  "99": {
-    "id": "99",
-    "authors": "P. W. Dymond and S. A. Cook",
-    "title": "Hardware complexity and parallel computation",
-    "year": "1980",
-    "doi": null,
-    "citation": "P. W. Dymond and S. A. Cook. Hardware complexity and parallel computation. In 21st Annual Symposium on Foundations of Computer Science, pages 360–372, Syracuse, NY, October 1980. IEEE."
-  },
-  "100": {
-    "id": "100",
-    "authors": "P. W. Dymond and S. A. Cook",
-    "title": "Complexity theory of parallel time and hardware",
-    "year": "1989",
-    "doi": null,
-    "citation": "P. W. Dymond and S. A. Cook. Complexity theory of parallel time and hardware. Information and Computation, 80(3):205–226, March 1989."
-  },
-  "101": {
-    "id": "101",
-    "authors": "P. W. Dymond and W. L. Ruzzo",
-    "title": "Parallel random access machines with owned global memory and deterministic context-free language recognition",
-    "year": "1986",
-    "doi": null,
-    "citation": "P. W. Dymond and W. L. Ruzzo. Parallel random access machines with owned global memory and deterministic context-free language recognition. In L. Kott, editor, Automata, Languages, and Programming: 13th International Colloquium, volume 226 of Lecture Notes in Computer Science, pages 95–104, Rennes, France, July 1986. Springer-Verlag."
-  },
-  "102": {
-    "id": "102",
-    "authors": "P. W. Dymond and M. Tompa",
-    "title": "Speedups of deterministic machines by synchronous parallel machines",
-    "year": "1985",
-    "doi": null,
-    "citation": "P. W. Dymond and M. Tompa. Speedups of deterministic machines by synchronous parallel machines. Journal of Computer and System Sciences, 30(2):149–161, April 1985."
+    "doi": null
   },
   "103": {
-    "id": "103",
     "authors": "T. Feather",
     "title": "The parallel complexity of some flow and matching problems",
     "year": "1984",
-    "doi": null,
-    "citation": "T. Feather. The parallel complexity of some flow and matching problems. Master’s thesis, University of Toronto, 1984. Department of Computer Science Technical Report 174/84."
+    "doi": null
   },
   "104": {
-    "id": "104",
     "authors": "T. Feder",
     "title": "A new fixed point approach to stable networks and stable marriages",
     "year": "1992",
-    "doi": null,
-    "citation": "T. Feder. A new fixed point approach to stable networks and stable marriages. Journal of Computer and System Sciences, 45(2):233–284, October 1992."
-  },
-  "105": {
-    "id": "105",
-    "authors": "F. E. Fich",
-    "title": "The complexity of computation on the parallel random access machine",
-    "year": "1993",
-    "doi": null,
-    "citation": "F. E. Fich. The complexity of computation on the parallel random access machine. In Reif"
+    "doi": null
   },
   "106": {
-    "id": "106",
     "authors": "F. E. Fich and M. Tompa",
     "title": "The parallel complexity of exponentiating polynomials over finite fields",
     "year": "1988",
-    "doi": null,
-    "citation": "F. E. Fich and M. Tompa. The parallel complexity of exponentiating polynomials over finite fields. Journal of the ACM, 35(3):651–667, July 1988."
-  },
-  "108": {
-    "id": "108",
-    "authors": "L. R. Ford and D. R. Fulkerson",
-    "title": "Flows in Networks",
-    "year": "1962",
-    "doi": null,
-    "citation": "L. R. Ford and D. R. Fulkerson. Flows in Networks. Princeton University Press, 1962."
-  },
-  "109": {
-    "id": "109",
-    "authors": "S. Fortune and J. C. Wyllie",
-    "title": "Parallelism in random access machines",
-    "year": "1978",
-    "doi": null,
-    "citation": "S. Fortune and J. C. Wyllie. Parallelism in random access machines. In Conference Record of the Tenth Annual ACM Symposium on Theory of Computing, pages 114–118, San Diego, CA, May 1978. (19, 22–24)"
+    "doi": null
   },
   "110": {
-    "id": "110",
     "authors": "M. L. Furst, J. E. Hopcroft, and E. M. Luks",
     "title": "Polynomial time algorithms for permutation groups",
     "year": "1980",
-    "doi": null,
-    "citation": "M. L. Furst, J. E. Hopcroft, and E. M. Luks. Polynomial time algorithms for permutation groups. In 21st Annual Symposium on Foundations of Computer Science, pages 36–41, Syracuse, NY, October 1980. IEEE."
-  },
-  "111": {
-    "id": "111",
-    "authors": "Z. Galil",
-    "title": "Two way deterministic pushdown automaton languages and some open problems in the theory of computation",
-    "year": "1974",
-    "doi": null,
-    "citation": "Z. Galil. Two way deterministic pushdown automaton languages and some open problems in the theory of computation. In 15th Annual Symposium on Switching and Automata Theory, pages 170–177, 1974. Published in journal form as"
-  },
-  "112": {
-    "id": "112",
-    "authors": "Z. Galil",
-    "title": "Some open problems in the theory of computation as questions about two-way deterministic pushdown automaton languages",
-    "year": "1977",
-    "doi": null,
-    "citation": "Z. Galil. Some open problems in the theory of computation as questions about two-way deterministic pushdown automaton languages. Mathematical Systems Theory, 10(3):211–228, 1977."
+    "doi": null
   },
   "113": {
-    "id": "113",
     "authors": "M. R. Garey and D. S. Johnson",
     "title": "Computers and Intractability: A Guide to the Theory of NP-Completeness",
     "year": "1979",
-    "doi": null,
-    "citation": "M. R. Garey and D. S. Johnson. Computers and Intractability: A Guide to the Theory of NP-Completeness. W. H. Freeman and Company, 1979. (x, 8, 47, 102, 111, 112, 132, 137, 141, 166, 189, 222)"
-  },
-  "114": {
-    "id": "114",
-    "authors": "H. Gazit, G. L. Miller, and S.-H. Teng",
-    "title": "Optimal tree contraction in the EREW model",
-    "year": "1990",
-    "doi": null,
-    "citation": "H. Gazit, G. L. Miller, and S.-H. Teng. Optimal tree contraction in the EREW model. In Tewksbury et al."
-  },
-  "353": {
-    "id": "353",
-    "authors": "S. K. Tewksbury, B. W. Dickinson, and S. C. Schwartz, editors",
-    "title": "Concurrent Computations: Algorithms, Architecture, and Technology. Plenum Press, 1988",
-    "year": "1988",
-    "doi": null,
-    "citation": "S. K. Tewksbury, B. W. Dickinson, and S. C. Schwartz, editors. Concurrent Computations: Algorithms, Architecture, and Technology. Plenum Press, 1988. Proceedings of the 1987 Princeton Workshop on Algorithm, Architecture and Technology issues for Models of Concurrent Computation, September 30 – October 1, 1987."
-  },
-  "115": {
-    "id": "115",
-    "authors": "M. Ger´eb-Graus, R. Paturi, and E. Szemer´edi",
-    "title": "There are no P-complete families of symmetric Boolean functions",
-    "year": "1989",
-    "doi": null,
-    "citation": "M. Ger´eb-Graus, R. Paturi, and E. Szemer´edi. There are no P-complete families of symmetric Boolean functions. Information Processing Letters, 30(1):47–49, 16 January 1989."
+    "doi": null
   },
   "116": {
-    "id": "116",
     "authors": "A. M. Gibbons",
     "title": "Algorithmic Graph Theory",
     "year": "1985",
-    "doi": null,
-    "citation": "A. M. Gibbons. Algorithmic Graph Theory. Cambridge University Press, 1985."
-  },
-  "117": {
-    "id": "117",
-    "authors": "A. M. Gibbons and W. Rytter",
-    "title": "Eﬃcient Parallel Algorithms",
-    "year": "1988",
-    "doi": null,
-    "citation": "A. M. Gibbons and W. Rytter. Eﬃcient Parallel Algorithms. Cambridge University Press, 1988."
+    "doi": null
   },
   "118": {
-    "id": "118",
     "authors": "P. B. Gibbons, R. M. Karp, G. L. Miller, and D. Soroker",
     "title": "Sub-tree isomorphism is in Random NC",
     "year": "1990",
-    "doi": null,
-    "citation": "P. B. Gibbons, R. M. Karp, G. L. Miller, and D. Soroker. Sub-tree isomorphism is in Random NC. Discrete Applied Mathematics, 29(1):35–62, November 1990."
+    "doi": null
   },
   "119": {
-    "id": "119",
     "authors": "G. Godbeer",
     "title": "The computational complexity of the stable configuration problem for connectionist models",
     "year": "1987",
-    "doi": null,
-    "citation": "G. Godbeer. The computational complexity of the stable configuration problem for connectionist models. Master’s thesis, University of Toronto, 1987."
+    "doi": null
   },
   "120": {
-    "id": "120",
     "authors": "A. V. Goldberg and R. E. Tarjan",
     "title": "A parallel algorithm for finding a blocking flow in an acyclic network",
     "year": "1989",
-    "doi": null,
-    "citation": "A. V. Goldberg and R. E. Tarjan. A parallel algorithm for finding a blocking flow in an acyclic network. Information Processing Letters, 31(5):265–271, 12 June 1989. (154, 239) BIBLIOGRAPHY"
-  },
-  "121": {
-    "id": "121",
-    "authors": "M. Goldberg and T. Spencer",
-    "title": "A new parallel algorithm for the maximal independent set problem",
-    "year": "1989",
-    "doi": null,
-    "citation": "M. Goldberg and T. Spencer. A new parallel algorithm for the maximal independent set problem. SIAM Journal on Computing, 18(2):419–427, April 1989."
-  },
-  "122": {
-    "id": "122",
-    "authors": "L. M. Goldschlager",
-    "title": "The monotone and planar circuit value problems are log space complete for P",
-    "year": "1977",
-    "doi": null,
-    "citation": "L. M. Goldschlager. The monotone and planar circuit value problems are log space complete for P. SIGACT News, 9(2):25–29, Summer 1977."
-  },
-  "123": {
-    "id": "123",
-    "authors": "L. M. Goldschlager",
-    "title": "Synchronous Parallel Computation",
-    "year": "1977",
-    "doi": null,
-    "citation": "L. M. Goldschlager. Synchronous Parallel Computation. PhD thesis, University of Toronto, December 1977. Computer Science Department Technical Report 114."
-  },
-  "124": {
-    "id": "124",
-    "authors": "L. M. Goldschlager",
-    "title": "A space eﬃcient algorithm for the monotone planar circuit value problem",
-    "year": "1980",
-    "doi": null,
-    "citation": "L. M. Goldschlager. A space eﬃcient algorithm for the monotone planar circuit value problem. Information Processing Letters, 10(1):25– 27, 1980."
-  },
-  "125": {
-    "id": "125",
-    "authors": "L. M. Goldschlager",
-    "title": "ϵ-productions in context-free grammars",
-    "year": "1981",
-    "doi": null,
-    "citation": "L. M. Goldschlager. ϵ-productions in context-free grammars. Acta Informatica, 16(3):303–308, 1981."
-  },
-  "126": {
-    "id": "126",
-    "authors": "L. M. Goldschlager",
-    "title": "A universal interconnection pattern for parallel computers",
-    "year": "1982",
-    "doi": null,
-    "citation": "L. M. Goldschlager. A universal interconnection pattern for parallel computers. Journal of the ACM, 29(4):1073–1086, October 1982. (15, 19, 22–24, 33, 68)"
+    "doi": null
   },
   "127": {
-    "id": "127",
     "authors": "L. M. Goldschlager and I. Parberry",
     "title": "On the construction of parallel computers from various bases of Boolean functions",
     "year": "1986",
-    "doi": null,
-    "citation": "L. M. Goldschlager and I. Parberry. On the construction of parallel computers from various bases of Boolean functions. Theoretical Computer Science, 43(1):43–58, 1986."
+    "doi": null
   },
   "128": {
-    "id": "128",
     "authors": "L. M. Goldschlager, R. A. Shaw, and J. Staples",
     "title": "The maximum flow problem is log space complete for P",
     "year": "1982",
-    "doi": null,
-    "citation": "L. M. Goldschlager, R. A. Shaw, and J. Staples. The maximum flow problem is log space complete for P. Theoretical Computer Science, 21(1):105–111, October 1982."
+    "doi": null
   },
   "129": {
-    "id": "129",
     "authors": "G. B. Goodrich",
     "title": "The Complexity of Finite Languages",
     "year": "1983",
-    "doi": null,
-    "citation": "G. B. Goodrich. The Complexity of Finite Languages. PhD thesis, University of Washington, 1983."
+    "doi": null
   },
   "130": {
-    "id": "130",
     "authors": "M. T. Goodrich",
     "title": "Triangulating a polygon in parallel",
     "year": "1989",
-    "doi": null,
-    "citation": "M. T. Goodrich. Triangulating a polygon in parallel. Journal of Algorithms, 10(3):327–351, 1989."
-  },
-  "131": {
-    "id": "131",
-    "authors": "R. L. Graham, D. E. Knuth, and O. Patashnik",
-    "title": "Concrete Mathematics: A Foundation for Computer Science",
-    "year": "1989",
-    "doi": null,
-    "citation": "R. L. Graham, D. E. Knuth, and O. Patashnik. Concrete Mathematics: A Foundation for Computer Science. Addison-Wesley, 1989."
+    "doi": null
   },
   "132": {
-    "id": "132",
     "authors": "A. G. Greenberg, B. D. Lubachevsky, and L.-C. Wang",
     "title": "Experience in massively parallel discrete event simulation",
     "year": "1993",
-    "doi": null,
-    "citation": "A. G. Greenberg, B. D. Lubachevsky, and L.-C. Wang. Experience in massively parallel discrete event simulation. In Proceedings of the 1993 ACM Symposium on Parallel Algorithms and Architectures, pages 193–202, Velen, Germany, June 1993."
+    "doi": null
   },
   "133": {
-    "id": "133",
     "authors": "R. Greenlaw",
     "title": "The Complexity of Parallel Computations: Inherently Sequential Algorithms and P-Complete Problems",
     "year": "1988",
-    "doi": null,
-    "citation": "R. Greenlaw. The Complexity of Parallel Computations: Inherently Sequential Algorithms and P-Complete Problems. PhD thesis, University of Washington, December 1988. Department of Computer Science Technical Report 88–12–01. (94, 96, 137, 146–148) 266 BIBLIOGRAPHY"
+    "doi": null
   },
   "134": {
-    "id": "134",
     "authors": "R. Greenlaw",
     "title": "Ordered vertex removal and subgraph problems",
     "year": "1989",
-    "doi": null,
-    "citation": "R. Greenlaw. Ordered vertex removal and subgraph problems. Journal of Computer and System Sciences, 39(3):323–342, December 1989."
+    "doi": null
   },
   "135": {
-    "id": "135",
     "authors": "R. Greenlaw",
     "title": "A model classifying algorithms as inherently sequential with applications to graph searching",
     "year": "1992",
-    "doi": null,
-    "citation": "R. Greenlaw. A model classifying algorithms as inherently sequential with applications to graph searching. Information and Computation, 97(2):133–149, April 1992."
-  },
-  "136": {
-    "id": "136",
-    "authors": "R. Greenlaw",
-    "title": "The parallel complexity of approximation algorithms for the maximum acyclic subgraph problem",
-    "year": "1992",
-    "doi": null,
-    "citation": "R. Greenlaw. The parallel complexity of approximation algorithms for the maximum acyclic subgraph problem. Mathematical Systems Theory, 25(3):161–175, 1992."
-  },
-  "137": {
-    "id": "137",
-    "authors": "R. Greenlaw",
-    "title": "Towards understanding the eﬀective parallelization of sequential algorithms",
-    "year": "1992",
-    "doi": null,
-    "citation": "R. Greenlaw. Towards understanding the eﬀective parallelization of sequential algorithms. In R. Baeza-Yates and U. Manber, editors, Computer Science: Research and Applications, chapter 30, pages 395–406. Plenum Press, 1992."
-  },
-  "138": {
-    "id": "138",
-    "authors": "R. Greenlaw",
-    "title": "Polynomial completeness and parallel computation",
-    "year": "1989",
-    "doi": null,
-    "citation": "R. Greenlaw. Polynomial completeness and parallel computation. In Reif"
+    "doi": null
   },
   "139": {
-    "id": "139",
     "authors": "R. Greenlaw",
     "title": "Breadth-depth search is P-complete",
     "year": "1993",
-    "doi": null,
-    "citation": "R. Greenlaw. Breadth-depth search is P-complete. Parallel Processing Letters, 3(3):209–222, 1993."
+    "doi": null
   },
   "140": {
-    "id": "140",
     "authors": "R. Greenlaw, H. J. Hoover, and W. L. Ruzzo",
     "title": "Limits to Parallel Computation: P-Completeness Theory . Computing Science Series, editor Z. Galil",
     "year": "1995",
-    "doi": null,
-    "citation": "R. Greenlaw, H. J. Hoover, and W. L. Ruzzo. Limits to Parallel Computation: P-Completeness Theory . Computing Science Series, editor Z. Galil. Oxford University Press, 1995. This Work."
-  },
-  "141": {
-    "id": "141",
-    "authors": "R. Greenlaw and J. Machta",
-    "title": "The parallel complexity of algorithms for pattern formation models",
-    "year": "1994",
-    "doi": null,
-    "citation": "R. Greenlaw and J. Machta. The parallel complexity of algorithms for pattern formation models. In Canada/France Conference on Parallel Computing, volume 805 of Lecture Notes in Computer Science, pages 23–34, Montreal, Canada, May 1994. Springer-Verlag."
-  },
-  "142": {
-    "id": "142",
-    "authors": "R. Greenlaw and J. Machta",
-    "title": "The parallel complexity of Eden growth, solid-on-solid growth and ballistic deposition",
-    "year": "1994",
-    "doi": null,
-    "citation": "R. Greenlaw and J. Machta. The parallel complexity of Eden growth, solid-on-solid growth and ballistic deposition. In Second European Symposium on Algorithms, volume 855 of Lecture Notes in Computer Science, pages 436–447, Utrecht, The Netherlands, September 1994. Springer-Verlag."
+    "doi": null
   },
   "143": {
-    "id": "143",
     "authors": "D. Y. Grigoriev and M. Karpinski",
     "title": "The matching problem for bipartite graphs with polynomially bounded permanents is in NC",
     "year": "1987",
-    "doi": null,
-    "citation": "D. Y. Grigoriev and M. Karpinski. The matching problem for bipartite graphs with polynomially bounded permanents is in NC. In 28th Annual Symposium on Foundations of Computer Science, pages 166–172, Los Angeles, CA, October 1987. IEEE."
+    "doi": null
   },
   "144": {
-    "id": "144",
     "authors": "D. Y. Grigoriev, M. Karpinski, and M. F. Singer",
     "title": "Fast parallel algorithms for sparse multivariate polynomial interpolation over finite fields",
     "year": "1990",
-    "doi": null,
-    "citation": "D. Y. Grigoriev, M. Karpinski, and M. F. Singer. Fast parallel algorithms for sparse multivariate polynomial interpolation over finite fields. SIAM Journal on Computing, 19(6):1059–1063, December 1990."
-  },
-  "145": {
-    "id": "145",
-    "authors": "T. Hagerup",
-    "title": "Planar depth-first search in O(log n) parallel time",
-    "year": "1990",
-    "doi": null,
-    "citation": "T. Hagerup. Planar depth-first search in O(log n) parallel time. SIAM Journal on Computing, 19(4):678–704, August 1990. (146) BIBLIOGRAPHY"
-  },
-  "146": {
-    "id": "146",
-    "authors": "P. Hajnal and E. Szemer´edi",
-    "title": "Brooks coloring in parallel",
-    "year": "1990",
-    "doi": null,
-    "citation": "P. Hajnal and E. Szemer´edi. Brooks coloring in parallel. SIAM Journal on Discrete Mathematics, 3(1):74–80, 1990."
-  },
-  "147": {
-    "id": "147",
-    "authors": "M. A. Harrison",
-    "title": "Introduction to Formal Language Theory",
-    "year": "1979",
-    "doi": null,
-    "citation": "M. A. Harrison. Introduction to Formal Language Theory. Addison Wesley, 1979."
-  },
-  "148": {
-    "id": "148",
-    "authors": "J. Hartmanis, P. M. Lewis, II, and R. E. Stearns",
-    "title": "Hierarchies of memory limited computations",
-    "year": "1965",
-    "doi": null,
-    "citation": "J. Hartmanis, P. M. Lewis, II, and R. E. Stearns. Hierarchies of memory limited computations. In Conference Record on Switching Circuit Theory and Logical Design, pages 179–190, Ann Arbor, MI, 1965."
-  },
-  "149": {
-    "id": "149",
-    "authors": "J. H˚astad",
-    "title": "Computational Limitations of Small-Depth Circuits",
-    "year": "1987",
-    "doi": null,
-    "citation": "J. H˚astad. Computational Limitations of Small-Depth Circuits. MIT Press, 1987. ACM Doctoral Dissertation Award Series (1986)."
-  },
-  "150": {
-    "id": "150",
-    "authors": "J. H˚astad",
-    "title": "One-way permutations in NC 0",
-    "year": "1987",
-    "doi": null,
-    "citation": "J. H˚astad. One-way permutations in NC 0. Information Processing Letters, 26(3):153–155, 23 November 1987."
-  },
-  "151": {
-    "id": "151",
-    "authors": "X. He",
-    "title": "Eﬃcient parallel algorithms for solving some tree problems",
-    "year": "1986",
-    "doi": null,
-    "citation": "X. He. Eﬃcient parallel algorithms for solving some tree problems. In Proceedings, Twenty-Fourth Annual Allerton Conference on Communication, Control and Computing, pages 777–786, Monticello, IL, September 1986."
-  },
-  "152": {
-    "id": "152",
-    "authors": "X. He and Y. Yesha",
-    "title": "A nearly optimal parallel algorithm for constructing depth first spanning trees in planar graphs",
-    "year": "1988",
-    "doi": null,
-    "citation": "X. He and Y. Yesha. A nearly optimal parallel algorithm for constructing depth first spanning trees in planar graphs. SIAM Journal on Computing, 17(3):486–491, 1988."
+    "doi": null
   },
   "153": {
-    "id": "153",
     "authors": "D. Helmbold and E. W. Mayr",
     "title": "Perfect graphs and parallel algorithms",
     "year": "1986",
-    "doi": null,
-    "citation": "D. Helmbold and E. W. Mayr. Perfect graphs and parallel algorithms. In International Conference on Parallel Processing, pages 853–860. IEEE, 1986."
+    "doi": null
   },
   "154": {
-    "id": "154",
     "authors": "D. Helmbold and E. W. Mayr",
     "title": "Fast scheduling algorithms on parallel computers",
     "year": "1987",
-    "doi": null,
-    "citation": "D. Helmbold and E. W. Mayr. Fast scheduling algorithms on parallel computers. In Advances in Computing Research, volume 4, pages 39– 68. JAI Press, 1987."
+    "doi": null
   },
   "155": {
-    "id": "155",
     "authors": "F. Henglein",
     "title": "Fast left-linear semi-unification",
     "year": "1990",
-    "doi": null,
-    "citation": "F. Henglein. Fast left-linear semi-unification. In S. G. Akl, F. Fiala, and W. W. Koczkodaj, editors, Advances in Computing and Information – ICCI ’90, volume 468 of Lecture Notes in Computer Science, pages 82–91, Niagara Falls, Ont., Canada, May 1990. Springer-Verlag."
+    "doi": null
   },
   "156": {
-    "id": "156",
     "authors": "J. Hershberger",
     "title": "Upper envelope onion peeling",
     "year": "1992",
-    "doi": null,
-    "citation": "J. Hershberger. Upper envelope onion peeling. Computational Geometry: Theory and Applications, 2(2):93–110, October 1992."
-  },
-  "157": {
-    "id": "157",
-    "authors": "J.-W. Hong",
-    "title": "Similarity and duality in computation",
-    "year": "1984",
-    "doi": null,
-    "citation": "J.-W. Hong. Similarity and duality in computation. Information and Control, 62(1):109–128, 1984."
-  },
-  "158": {
-    "id": "158",
-    "authors": "H. J. Hoover",
-    "title": "Feasible real functions and arithmetic circuits",
-    "year": "1990",
-    "doi": null,
-    "citation": "H. J. Hoover. Feasible real functions and arithmetic circuits. SIAM Journal on Computing, 19(1):182–204, February 1990."
-  },
-  "159": {
-    "id": "159",
-    "authors": "H. J. Hoover",
-    "title": "Real functions, contraction mappings, and P-completeness",
-    "year": "1991",
-    "doi": null,
-    "citation": "H. J. Hoover. Real functions, contraction mappings, and P-completeness. Information and Computation, 93(2):333–349, August 1991. (206, 207) 268 BIBLIOGRAPHY"
-  },
-  "160": {
-    "id": "160",
-    "authors": "H. J. Hoover, M. M. Klawe, and N. J. Pippenger",
-    "title": "Bounding fan-out in logical networks",
-    "year": "1984",
-    "doi": null,
-    "citation": "H. J. Hoover, M. M. Klawe, and N. J. Pippenger. Bounding fan-out in logical networks. Journal of the ACM, 31(1):13–18, January 1984."
-  },
-  "161": {
-    "id": "161",
-    "authors": "J. E. Hopcroft and J. D. Ullman",
-    "title": "Formal Languages and their Relation to Automata",
-    "year": "1969",
-    "doi": null,
-    "citation": "J. E. Hopcroft and J. D. Ullman. Formal Languages and their Relation to Automata. Addison-Wesley, 1969."
-  },
-  "162": {
-    "id": "162",
-    "authors": "J. E. Hopcroft and J. D. Ullman",
-    "title": "Introduction to Automata Theory, Languages, and Computation",
-    "year": "1979",
-    "doi": null,
-    "citation": "J. E. Hopcroft and J. D. Ullman. Introduction to Automata Theory, Languages, and Computation. Addison-Wesley, 1979."
-  },
-  "163": {
-    "id": "163",
-    "authors": "E. Horowitz and S. Sahni",
-    "title": "Fundamentals of Computer Algorithms",
-    "year": "1978",
-    "doi": null,
-    "citation": "E. Horowitz and S. Sahni. Fundamentals of Computer Algorithms. Computer Science Press, 1978."
-  },
-  "164": {
-    "id": "164",
-    "authors": "R. A. Howard",
-    "title": "Dynamic Programming and Markov Processes",
-    "year": "1960",
-    "doi": null,
-    "citation": "R. A. Howard. Dynamic Programming and Markov Processes. MIT Press, 1960."
+    "doi": null
   },
   "165": {
-    "id": "165",
     "authors": "O. H. Ibarra, T. Jiang, and J. H. Chang",
     "title": "On iterative and cellular tree arrays",
     "year": "1989",
-    "doi": null,
-    "citation": "O. H. Ibarra, T. Jiang, and J. H. Chang. On iterative and cellular tree arrays. Journal of Computer and System Sciences, 38(3):452– 473, June 1989."
-  },
-  "166": {
-    "id": "166",
-    "authors": "O. H. Ibarra and S. M. Kim",
-    "title": "Characterizations and computational complexity of systolic trellis automata",
-    "year": "1984",
-    "doi": null,
-    "citation": "O. H. Ibarra and S. M. Kim. Characterizations and computational complexity of systolic trellis automata. Theoretical Computer Science, 29(1,2):123–153, 1984."
+    "doi": null
   },
   "167": {
-    "id": "167",
     "authors": "O. H. Ibarra, S. Moran, and L. E. Rosier",
     "title": "A note on the parallel complexity of computing the rank of order n matrices",
     "year": "1980",
-    "doi": null,
-    "citation": "O. H. Ibarra, S. Moran, and L. E. Rosier. A note on the parallel complexity of computing the rank of order n matrices. Information Processing Letters, 11(4-5):162, 12 December 1980."
-  },
-  "168": {
-    "id": "168",
-    "authors": "N. Immerman",
-    "title": "Number of quantifiers is better than number of tape cells",
-    "year": "1981",
-    "doi": null,
-    "citation": "N. Immerman. Number of quantifiers is better than number of tape cells. Journal of Computer and System Sciences, 22(3):384–406, 1981."
-  },
-  "169": {
-    "id": "169",
-    "authors": "N. Immerman",
-    "title": "Languages that capture complexity classes",
-    "year": "1987",
-    "doi": null,
-    "citation": "N. Immerman. Languages that capture complexity classes. SIAM Journal on Computing, 16(4):760–778, 1987."
-  },
-  "170": {
-    "id": "170",
-    "authors": "(continuation)",
-    "title": ", pages 532–541 (Volume 2).",
-    "year": "1990",
-    "doi": null,
-    "citation": ", pages 532–541 (Volume 2)."
-  },
-  "171": {
-    "id": "171",
-    "authors": "A",
-    "title": "Itai. Two–commodity flow. Journal of the ACM, 25(4):596–611, 1978.",
-    "year": "1978",
-    "doi": null,
-    "citation": "A. Itai. Two–commodity flow. Journal of the ACM, 25(4):596–611, 1978."
-  },
-  "172": {
-    "id": "172",
-    "authors": "J. J´aJ´a",
-    "title": "An Introduction to Parallel Algorithms",
-    "year": "1992",
-    "doi": null,
-    "citation": "J. J´aJ´a. An Introduction to Parallel Algorithms. Addison-Wesley, 1992."
-  },
-  "173": {
-    "id": "173",
-    "authors": "M. Jerrum and A. Sinclair",
-    "title": "Conductance and the rapid mixing property for Markov chains: The approximation of the permanent resolved",
-    "year": "1988",
-    "doi": null,
-    "citation": "M. Jerrum and A. Sinclair. Conductance and the rapid mixing property for Markov chains: The approximation of the permanent resolved. In Proceedings of the Twentieth Annual ACM Symposium on Theory of Computing, pages 235–244, Chicago, IL, May 1988. (143) BIBLIOGRAPHY"
-  },
-  "174": {
-    "id": "174",
-    "authors": "D. B. Johnson",
-    "title": "Parallel algorithms for minimum cuts and maximum flows in planar networks",
-    "year": "1987",
-    "doi": null,
-    "citation": "D. B. Johnson. Parallel algorithms for minimum cuts and maximum flows in planar networks. Journal of the ACM, 34(4):950–967, 1987."
-  },
-  "175": {
-    "id": "175",
-    "authors": "D. B. Johnson and S. M. Venkatesan",
-    "title": "Parallel algorithms for minimum cuts and maximum flows in planar networks (preliminary version)",
-    "year": "1982",
-    "doi": null,
-    "citation": "D. B. Johnson and S. M. Venkatesan. Parallel algorithms for minimum cuts and maximum flows in planar networks (preliminary version). In 23rd Annual Symposium on Foundations of Computer Science, pages 244–254, Chicago, IL, November 1982. IEEE."
-  },
-  "176": {
-    "id": "176",
-    "authors": "D. S. Johnson",
-    "title": "The NP-completeness column: An ongoing guide (7th)",
-    "year": "1983",
-    "doi": null,
-    "citation": "D. S. Johnson. The NP-completeness column: An ongoing guide (7th). Journal of Algorithms, 4(2):189–203, 1983."
-  },
-  "177": {
-    "id": "177",
-    "authors": "D. S. Johnson",
-    "title": "A catalog of complexity classes",
-    "year": "1990",
-    "doi": null,
-    "citation": "D. S. Johnson. A catalog of complexity classes. In van Leeuwen"
-  },
-  "360": {
-    "id": "360",
-    "authors": "J. van Leeuwen, editor",
-    "title": "Handbook of Theoretical Computer Science, volume A: Algorithms and Complexity",
-    "year": "1990",
-    "doi": null,
-    "citation": "J. van Leeuwen, editor. Handbook of Theoretical Computer Science, volume A: Algorithms and Complexity. M.I.T. Press/Elsevier, 1990."
+    "doi": null
   },
   "178": {
-    "id": "178",
     "authors": "D. S. Johnson, C. H. Papadimitriou, and M. Yannakakis",
     "title": "How easy is local search? Journal of Computer and System Sciences, 37(1):79– 100, 1988.",
     "year": "1988",
-    "doi": null,
-    "citation": "D. S. Johnson, C. H. Papadimitriou, and M. Yannakakis. How easy is local search? Journal of Computer and System Sciences, 37(1):79– 100, 1988."
-  },
-  "179": {
-    "id": "179",
-    "authors": "N. D. Jones",
-    "title": "Space-bounded reducibility among combinatorial problems",
-    "year": "1975",
-    "doi": null,
-    "citation": "N. D. Jones. Space-bounded reducibility among combinatorial problems. Journal of Computer and System Sciences, 11:68–85, 1975."
-  },
-  "180": {
-    "id": "180",
-    "authors": "N. D. Jones and W. T. Laaser",
-    "title": "Complete problems for deterministic polynomial time",
-    "year": "1974",
-    "doi": null,
-    "citation": "N. D. Jones and W. T. Laaser. Complete problems for deterministic polynomial time. In Conference Record of Sixth Annual ACM Symposium on Theory of Computing, pages 40–46, Seattle, WA, April-May 1974."
+    "doi": null
   },
   "181": {
-    "id": "181",
     "authors": "N. D. Jones and W. T. Laaser",
     "title": "Complete problems for deterministic polynomial time",
     "year": "1976",
-    "doi": null,
-    "citation": "N. D. Jones and W. T. Laaser. Complete problems for deterministic polynomial time. Theoretical Computer Science, 3(1):105–117, 1976."
-  },
-  "182": {
-    "id": "182",
-    "authors": "Y. Kaji, R. Nakanishi, H. Seki, and T. Kasami",
-    "title": "The universal recognition problems for parallel multiple context-free grammars and for their subclasses",
-    "year": "1992",
-    "doi": null,
-    "citation": "Y. Kaji, R. Nakanishi, H. Seki, and T. Kasami. The universal recognition problems for parallel multiple context-free grammars and for their subclasses. IEICE Transactions on Information and Systems, E75-D(4):499–508, July 1992."
-  },
-  "183": {
-    "id": "183",
-    "authors": "P. C. Kanellakis and S. A. Smolka",
-    "title": "CCS expressions, finite state processes, and three problems of equivalence",
-    "year": "1990",
-    "doi": null,
-    "citation": "P. C. Kanellakis and S. A. Smolka. CCS expressions, finite state processes, and three problems of equivalence. Information and Computation, 86(1):43–68, May 1990."
+    "doi": null
   },
   "184": {
-    "id": "184",
     "authors": "R. Kannan, G. L. Miller, and L. Rudolph",
     "title": "Sublinear parallel algorithm for computing the greatest common divisor of two integers",
     "year": "1987",
-    "doi": null,
-    "citation": "R. Kannan, G. L. Miller, and L. Rudolph. Sublinear parallel algorithm for computing the greatest common divisor of two integers. SIAM Journal on Computing, 16(1):7–16, February 1987."
+    "doi": null
   },
   "185": {
-    "id": "185",
     "authors": "W. M. Kantor",
     "title": "Sylow’s theorem in polynomial time",
     "year": "1985",
-    "doi": null,
-    "citation": "W. M. Kantor. Sylow’s theorem in polynomial time. Journal of Computer and System Sciences, 30(3):359–394, 1985."
-  },
-  "186": {
-    "id": "186",
-    "authors": "M.-Y. Kao",
-    "title": "All graphs have cycle separators and planar directed depth-first search is in DNC",
-    "year": "1991",
-    "doi": null,
-    "citation": "M.-Y. Kao. All graphs have cycle separators and planar directed depth-first search is in DNC. In Reif"
-  },
-  "301": {
-    "id": "301",
-    "authors": "J. H. Reif, editor",
-    "title": "VLSI Algorithms and Architectures, 3rd Aegean Workshop on Computing, AWOC 88, volume 319 of Lecture Notes in Computer Science, Corfu, Greece, June-July 1988",
-    "year": "1988",
-    "doi": null,
-    "citation": "J. H. Reif, editor. VLSI Algorithms and Architectures, 3rd Aegean Workshop on Computing, AWOC 88, volume 319 of Lecture Notes in Computer Science, Corfu, Greece, June-July 1988. Springer-Verlag."
-  },
-  "187": {
-    "id": "187",
-    "authors": "M. Karchmer and J. Naor",
-    "title": "A fast parallel algorithm to color a graph with ∆colors",
-    "year": "1988",
-    "doi": null,
-    "citation": "M. Karchmer and J. Naor. A fast parallel algorithm to color a graph with ∆colors. Journal of Algorithms, 9(1):83–91, 1988. (132) 270 BIBLIOGRAPHY"
+    "doi": null
   },
   "188": {
-    "id": "188",
     "authors": "H. J. Karloﬀ",
     "title": "A Las Vegas RNC algorithm for maximum matching",
     "year": "1986",
-    "doi": null,
-    "citation": "H. J. Karloﬀ. A Las Vegas RNC algorithm for maximum matching. Combinatorica, 6(4):387–391, 1986."
-  },
-  "189": {
-    "id": "189",
-    "authors": "H. J. Karloﬀ",
-    "title": "An NC algorithm for Brooks’ Theorem",
-    "year": "1989",
-    "doi": null,
-    "citation": "H. J. Karloﬀ. An NC algorithm for Brooks’ Theorem. Theoretical Computer Science, 68(1):89–103, 16 October 1989."
+    "doi": null
   },
   "190": {
-    "id": "190",
     "authors": "H. J. Karloﬀand W. L. Ruzzo",
     "title": "The iterated mod problem",
     "year": "1989",
-    "doi": null,
-    "citation": "H. J. Karloﬀand W. L. Ruzzo. The iterated mod problem. Information and Computation, 80(3):193–204, March 1989."
+    "doi": null
   },
   "191": {
-    "id": "191",
     "authors": "H. J. Karloﬀand D. B. Shmoys",
     "title": "Eﬃcient parallel algorithms for edge coloring problems",
     "year": "1987",
-    "doi": null,
-    "citation": "H. J. Karloﬀand D. B. Shmoys. Eﬃcient parallel algorithms for edge coloring problems. Journal of Algorithms, 8(1):39–52, 1987."
-  },
-  "192": {
-    "id": "192",
-    "authors": "N. Karmarkar",
-    "title": "A new polynomial-time algorithm for linear programming",
-    "year": "1984",
-    "doi": null,
-    "citation": "N. Karmarkar. A new polynomial-time algorithm for linear programming. Combinatorica, 4(4):373–395, 1984."
-  },
-  "193": {
-    "id": "193",
-    "authors": "R. M. Karp",
-    "title": "Reducibility among combinatorial problems",
-    "year": "1972",
-    "doi": null,
-    "citation": "R. M. Karp. Reducibility among combinatorial problems. In R. E. Miller and J. W. Thatcher, editors, Complexity of Computer Computations, pages 85–104. Plenum Press, New York, 1972. (47, 139–141)"
-  },
-  "194": {
-    "id": "194",
-    "authors": "R. M",
-    "title": "Karp. Talk at the University of Toronto, 1984.",
-    "year": "1984",
-    "doi": null,
-    "citation": "R. M. Karp. Talk at the University of Toronto, 1984."
-  },
-  "195": {
-    "id": "195",
-    "authors": "R. M. Karp and V. Ramachandran",
-    "title": "Parallel algorithms for shared-memory machines",
-    "year": "1990",
-    "doi": null,
-    "citation": "R. M. Karp and V. Ramachandran. Parallel algorithms for shared-memory machines. In van Leeuwen"
+    "doi": null
   },
   "196": {
-    "id": "196",
     "authors": "R. M. Karp, E. Upfal, and A. Wigderson",
     "title": "Constructing a perfect matching is in Random NC",
     "year": "1986",
-    "doi": null,
-    "citation": "R. M. Karp, E. Upfal, and A. Wigderson. Constructing a perfect matching is in Random NC. Combinatorica, 6(1):35–48, 1986."
-  },
-  "197": {
-    "id": "197",
-    "authors": "R. M. Karp, E. Upfal, and A. Wigderson",
-    "title": "The complexity of parallel search",
-    "year": "1988",
-    "doi": null,
-    "citation": "R. M. Karp, E. Upfal, and A. Wigderson. The complexity of parallel search. Journal of Computer and System Sciences, 36(2):225–253, April 1988."
-  },
-  "198": {
-    "id": "198",
-    "authors": "R. M. Karp and A. Wigderson",
-    "title": "A fast parallel algorithm for the maximal independent set problem",
-    "year": "1985",
-    "doi": null,
-    "citation": "R. M. Karp and A. Wigderson. A fast parallel algorithm for the maximal independent set problem. Journal of the ACM, 32(4):762– 773, 1985."
+    "doi": null
   },
   "199": {
-    "id": "199",
     "authors": "M. Karpinski",
     "title": "Boolean circuit complexity of algebraic interpolation problems",
     "year": "1988",
-    "doi": null,
-    "citation": "M. Karpinski. Boolean circuit complexity of algebraic interpolation problems. In E. B¨orger, H. Kleine B¨uning, and M. M. Richter, editors, CSL ’88: 2nd Workshop on Computer Science Logic, volume 385 of Lecture Notes in Computer Science, pages 138–147. Springer-Verlag, Duisburg, Germany, October 1988."
+    "doi": null
   },
   "200": {
-    "id": "200",
     "authors": "M. Karpinski and K. W. Wagner",
     "title": "The computational complexity of graph problems with succinct multigraph representation",
     "year": "1988",
-    "doi": null,
-    "citation": "M. Karpinski and K. W. Wagner. The computational complexity of graph problems with succinct multigraph representation. Zeitschrift f¨ur Operations Research, 32(3):201–211, 1988."
+    "doi": null
   },
   "201": {
-    "id": "201",
     "authors": "T. Kasai, A. Adachi, and S. Iwata",
     "title": "Classes of pebble games and complete problems",
     "year": "1990",
-    "doi": null,
-    "citation": "T. Kasai, A. Adachi, and S. Iwata. Classes of pebble games and complete problems. SIAM Journal on Computing, 8(4):574–586, 1979. (213, 214) BIBLIOGRAPHY"
+    "doi": null
   },
   "202": {
-    "id": "202",
     "authors": "S. Kasif",
     "title": "On the parallel complexity of some constraint satisfaction problems",
     "year": "1986",
-    "doi": null,
-    "citation": "S. Kasif. On the parallel complexity of some constraint satisfaction problems. In Proceedings, AAAI-86: Fifth National Conference on Artificial Intelligence, pages 349–353, Philadelphia, PA, August 1986. American Association for Artificial Intelligence."
+    "doi": null
   },
   "203": {
-    "id": "203",
     "authors": "S. Kasif",
     "title": "On the parallel complexity of discrete relaxation in constraint satisfaction networks",
     "year": "1990",
-    "doi": null,
-    "citation": "S. Kasif. On the parallel complexity of discrete relaxation in constraint satisfaction networks. Artificial Intelligence, 3(45):275–286, October 1990."
+    "doi": null
   },
   "204": {
-    "id": "204",
     "authors": "S. Kasif",
     "title": "Analysis of local consistency in parallel constraint satisfaction networks",
     "year": "1991",
-    "doi": null,
-    "citation": "S. Kasif. Analysis of local consistency in parallel constraint satisfaction networks. In Symposium: Constraint-Based Reasoning, Spring Symposium Series, pages 154–163. AAAI, March 1991. (Extended Abstract)."
-  },
-  "205": {
-    "id": "205",
-    "authors": "D. Kavadias, L. M. Kirousis, and P. G. Spirakis",
-    "title": "The complexity of the reliable connectivity problem",
-    "year": "1991",
-    "doi": null,
-    "citation": "D. Kavadias, L. M. Kirousis, and P. G. Spirakis. The complexity of the reliable connectivity problem. Information Processing Letters, 39(5):245–252, 13 September 1991."
+    "doi": null
   },
   "206": {
-    "id": "206",
     "authors": "P. Kelsen",
     "title": "On computing a maximal independent set in a hypergraph of constant dimension in parallel",
     "year": "1992",
-    "doi": null,
-    "citation": "P. Kelsen. On computing a maximal independent set in a hypergraph of constant dimension in parallel. In Proceedings of the Twenty-Fourth Annual ACM Symposium on Theory of Computing, pages 339–369, Victoria, B.C., Canada, May 1992."
-  },
-  "207": {
-    "id": "207",
-    "authors": "L. G. Khachian",
-    "title": "A polynomial time algorithm for linear programming",
-    "year": "1979",
-    "doi": null,
-    "citation": "L. G. Khachian. A polynomial time algorithm for linear programming. Doklady Akademii Nauk SSSR, n.s., 244(5):1093–1096, 1979. English translation in Soviet Math. Dokl. 20, 191–194."
+    "doi": null
   },
   "208": {
-    "id": "208",
     "authors": "S. Khuller",
     "title": "On computing graph closures",
     "year": "1989",
-    "doi": null,
-    "citation": "S. Khuller. On computing graph closures. Information Processing Letters, 31(5):249–255, 12 June 1989."
-  },
-  "209": {
-    "id": "209",
-    "authors": "S. Khuller and B. Schieber",
-    "title": "Eﬃcient parallel algorithms for testing k-connectivity and finding disjoint s−t paths in graphs",
-    "year": "1991",
-    "doi": null,
-    "citation": "S. Khuller and B. Schieber. Eﬃcient parallel algorithms for testing k-connectivity and finding disjoint s−t paths in graphs. SIAM Journal on Computing, 20(2):352–375, April 1991."
-  },
-  "210": {
-    "id": "210",
-    "authors": "G. A. P. Kindervater and J. K. Lenstra",
-    "title": "An introduction to parallelism in combinatorial optimization",
-    "year": "1985",
-    "doi": null,
-    "citation": "G. A. P. Kindervater and J. K. Lenstra. An introduction to parallelism in combinatorial optimization. In J. van Leeuwen and J. K. Lenstra, editors, Parallel Computers and Computation, volume 9 of CWI Syllabus, pages 163–184. Center for Mathematics and Computer Science, Amsterdam, The Netherlands, 1985."
-  },
-  "211": {
-    "id": "211",
-    "authors": "G. A. P. Kindervater and J. K. Lenstra",
-    "title": "Parallel algorithms",
-    "year": "1985",
-    "doi": null,
-    "citation": "G. A. P. Kindervater and J. K. Lenstra. Parallel algorithms. In M. O’hEigeartaigh, J. K. Lenstra, and A. H. G. Rinnooy Kan, editors, Combinatorial Optimization: Annotated Bibliographies, chapter 8, pages 106–128. John Wiley & Sons, Chichester, 1985."
-  },
-  "212": {
-    "id": "212",
-    "authors": "G. A. P. Kindervater, J. K. Lenstra, and D. B. Shmoys",
-    "title": "The parallel complexity of TSP heuristics",
-    "year": "1989",
-    "doi": null,
-    "citation": "G. A. P. Kindervater, J. K. Lenstra, and D. B. Shmoys. The parallel complexity of TSP heuristics. Journal of Algorithms, 10(2):249–270, June 1989. (138) 272 BIBLIOGRAPHY"
-  },
-  "213": {
-    "id": "213",
-    "authors": "G. A. P. Kindervater and H. W. J. M. Trienekens",
-    "title": "Experiments with parallel algorithms for combinatorial problems",
-    "year": "1985",
-    "doi": null,
-    "citation": "G. A. P. Kindervater and H. W. J. M. Trienekens. Experiments with parallel algorithms for combinatorial problems. Technical Report 8550/A, Erasmus University Rotterdam, Econometric Inst., 1985."
-  },
-  "214": {
-    "id": "214",
-    "authors": "L. M. Kirousis, M. J. Serna, and P. G. Spirakis",
-    "title": "The parallel complexity of the connected subgraph problem",
-    "year": "1993",
-    "doi": null,
-    "citation": "L. M. Kirousis, M. J. Serna, and P. G. Spirakis. The parallel complexity of the connected subgraph problem. SIAM Journal on Computing, 22(3):573–586, June 1993."
+    "doi": null
   },
   "215": {
-    "id": "215",
     "authors": "L. M. Kirousis and P. G. Spirakis",
     "title": "Probabilistic log-space reductions and problems probabilistically hard for P",
     "year": "1988",
-    "doi": null,
-    "citation": "L. M. Kirousis and P. G. Spirakis. Probabilistic log-space reductions and problems probabilistically hard for P. In R. Karlsson and A. Lingas, editors, SWAT88. 1st Scandanavian Workshop on Algorithm Theory, volume 318 of Lecture Notes in Computer Science, pages 163–175, Halmstad, Sweden, July 1988. Springer-Verlag."
-  },
-  "216": {
-    "id": "216",
-    "authors": "P. N. Klein and J. H. Reif",
-    "title": "Parallel time O(log n) acceptance of deterministic CFLs on an exclusive-write P-RAM",
-    "year": "1988",
-    "doi": null,
-    "citation": "P. N. Klein and J. H. Reif. Parallel time O(log n) acceptance of deterministic CFLs on an exclusive-write P-RAM. SIAM Journal on Computing, 17(3):463–485, June 1988."
+    "doi": null
   },
   "217": {
-    "id": "217",
     "authors": "D. E. Knuth, C. H. Papadimitriou, and J. N. Tsitsiklis",
     "title": "A note on strategy elimination in bimatrix games",
     "year": "1988",
-    "doi": null,
-    "citation": "D. E. Knuth, C. H. Papadimitriou, and J. N. Tsitsiklis. A note on strategy elimination in bimatrix games. Operations Research Letters, 7(3):103–107, June 1988."
-  },
-  "218": {
-    "id": "218",
-    "authors": "K.-I. Ko",
-    "title": "Binary search for roots of real functions",
-    "year": "1990",
-    "doi": null,
-    "citation": "K.-I. Ko. Binary search for roots of real functions. In S. R. Buss and P. J. Scott, editors, Feasible Mathematics, pages 239– 257, A Mathematical Sciences Institute Workshop, Ithaca, NY, 1990. Birkh¨auser."
-  },
-  "219": {
-    "id": "219",
-    "authors": "S. R. Kosaraju",
-    "title": "On the parallel evaluation of classes of circuits",
-    "year": "1990",
-    "doi": null,
-    "citation": "S. R. Kosaraju. On the parallel evaluation of classes of circuits. In K. V. Nori and C. E. Veni Madhavan, editors, Foundations of Software Technology and Theoretical Computer Science, Tenth Conference, volume 472 of Lecture Notes in Computer Science, pages 232–237, Bangalore, India, December 1990. Springer-Verlag."
-  },
-  "220": {
-    "id": "220",
-    "authors": "S. R. Kosaraju and A. L. Delcher",
-    "title": "Optimal parallel evaluation of tree-structured computations by raking",
-    "year": "1988",
-    "doi": null,
-    "citation": "S. R. Kosaraju and A. L. Delcher. Optimal parallel evaluation of tree-structured computations by raking. In Reif"
-  },
-  "221": {
-    "id": "221",
-    "authors": "D. C. Kozen",
-    "title": "Complexity of finitely presented algebras",
-    "year": "1977",
-    "doi": null,
-    "citation": "D. C. Kozen. Complexity of finitely presented algebras. In Conference Record of the Ninth Annual ACM Symposium on Theory of Computing, pages 164–177, Boulder, CO, May 1977."
+    "doi": null
   },
   "222": {
-    "id": "222",
     "authors": "M. W. Krentel",
     "title": "On finding and verifying locally optimal solutions",
     "year": "1990",
-    "doi": null,
-    "citation": "M. W. Krentel. On finding and verifying locally optimal solutions. SIAM Journal on Computing, 19(4):742–749, August 1990."
-  },
-  "223": {
-    "id": "223",
-    "authors": "C. P. Kruskal, L. Rudolph, and M. Snir",
-    "title": "The power of parallel prefix computation",
-    "year": "1985",
-    "doi": null,
-    "citation": "C. P. Kruskal, L. Rudolph, and M. Snir. The power of parallel prefix computation. In International Conference on Parallel Processing, pages 180–185, 1985."
+    "doi": null
   },
   "224": {
-    "id": "224",
     "authors": "G. M. Kuper, K. W. McAloon, K. V. Palem, and K. J. Perry",
     "title": "A note on the parallel complexity of anti-unification",
     "year": "1992",
-    "doi": null,
-    "citation": "G. M. Kuper, K. W. McAloon, K. V. Palem, and K. J. Perry. A note on the parallel complexity of anti-unification. Journal of Automated Reasoning, 9(3):381–389, 1992. (172) BIBLIOGRAPHY"
-  },
-  "225": {
-    "id": "225",
-    "authors": "R. E. Ladner",
-    "title": "The circuit value problem is log space complete for P",
-    "year": "1975",
-    "doi": null,
-    "citation": "R. E. Ladner. The circuit value problem is log space complete for P. SIGACT News, 7(1):18–20, January 1975."
-  },
-  "226": {
-    "id": "226",
-    "authors": "R. E. Ladner and M. J. Fischer",
-    "title": "Parallel prefix computation",
-    "year": "1980",
-    "doi": null,
-    "citation": "R. E. Ladner and M. J. Fischer. Parallel prefix computation. Journal of the ACM, 27(4):831–838, October 1980."
-  },
-  "227": {
-    "id": "227",
-    "authors": "E. L. Lawler",
-    "title": "Combinatorial Optimization: Networks and Matroids",
-    "year": "1976",
-    "doi": null,
-    "citation": "E. L. Lawler. Combinatorial Optimization: Networks and Matroids. Holt, Rinehart and Winston, New York, 1976."
-  },
-  "228": {
-    "id": "228",
-    "authors": "F. T. Leighton",
-    "title": "Introduction to Parallel Algorithms and Architectures: Arrays, Trees, Hypercubes",
-    "year": "1992",
-    "doi": null,
-    "citation": "F. T. Leighton. Introduction to Parallel Algorithms and Architectures: Arrays, Trees, Hypercubes. Morgan Kaufmann, 1992."
-  },
-  "229": {
-    "id": "229",
-    "authors": "T",
-    "title": "Lengauer. VLSI theory. In van Leeuwen",
-    "year": "1990",
-    "doi": null,
-    "citation": "T. Lengauer. VLSI theory. In van Leeuwen"
-  },
-  "230": {
-    "id": "230",
-    "authors": "T. Lengauer and R. E. Tarjan",
-    "title": "Asymptotically tight bounds on time-space trade-oﬀs in a pebble game",
-    "year": "1990",
-    "doi": null,
-    "citation": "T. Lengauer and R. E. Tarjan. Asymptotically tight bounds on time-space trade-oﬀs in a pebble game. Journal of the ACM, 29(4):1087– 1130, October 1982."
+    "doi": null
   },
   "231": {
-    "id": "231",
     "authors": "T. Lengauer and K. W. Wagner",
     "title": "The binary network flow problem is logspace complete for P",
     "year": "1988",
-    "doi": null,
-    "citation": "T. Lengauer and K. W. Wagner. The binary network flow problem is logspace complete for P. Theoretical Computer Science, 75(3):357– 363, 1 October 1990. (129–131, 152)"
+    "doi": null
   },
   "232": {
-    "id": "232",
     "authors": "A. K. Lenstra, H. W. Lenstra, Jr., and L. Lov´asz",
     "title": "Factoring polynomials with rational coeﬃcients",
     "year": "1982",
-    "doi": null,
-    "citation": "A. K. Lenstra, H. W. Lenstra, Jr., and L. Lov´asz. Factoring polynomials with rational coeﬃcients. Mathematische Annalen, 261(4):515– 534, December 1982."
-  },
-  "233": {
-    "id": "233",
-    "authors": "H. R. Lewis and C. H. Papadimitriou",
-    "title": "Symmetric space-bounded computation",
-    "year": "1982",
-    "doi": null,
-    "citation": "H. R. Lewis and C. H. Papadimitriou. Symmetric space-bounded computation. Theoretical Computer Science, 19(2):161–187, August 1982."
-  },
-  "234": {
-    "id": "234",
-    "authors": "P. M. Lewis, II, R. E. Stearns, and J. Hartmanis",
-    "title": "Memory bounds for recognition of context-free and context-sensitive languages",
-    "year": "1965",
-    "doi": null,
-    "citation": "P. M. Lewis, II, R. E. Stearns, and J. Hartmanis. Memory bounds for recognition of context-free and context-sensitive languages. In Proceedings of the Sixth Annual Symposium on Switching Circuit Theory and Logic Design, pages 191–202. IEEE, 1965."
+    "doi": null
   },
   "235": {
-    "id": "235",
     "authors": "S. Lin and B. W. Kernighan",
     "title": "An eﬀective heuristic algorithm for the traveling salesman problem",
     "year": "1973",
-    "doi": null,
-    "citation": "S. Lin and B. W. Kernighan. An eﬀective heuristic algorithm for the traveling salesman problem. Operations Research, 21(1):498–516, January-February 1973."
+    "doi": null
   },
   "236": {
-    "id": "236",
     "authors": "Y. Lin",
     "title": "Parallel Computational Methods in Integer Linear Programming",
     "year": "1991",
-    "doi": null,
-    "citation": "Y. Lin. Parallel Computational Methods in Integer Linear Programming. PhD thesis, The City University of New York, 1991."
+    "doi": null
   },
   "237": {
-    "id": "237",
     "authors": "Y. Lin-Kriz and V. Pan",
     "title": "On parallel complexity of integer linear programming, GCD and the iterated mod function",
     "year": "1992",
-    "doi": null,
-    "citation": "Y. Lin-Kriz and V. Pan. On parallel complexity of integer linear programming, GCD and the iterated mod function. In Proceedings of the Third Annual ACM-SIAM Symposium on Discrete Algorithms, pages 124–137, Orlando, FL, January 1992."
+    "doi": null
   },
   "238": {
-    "id": "238",
     "authors": "S. Lindell",
     "title": "A logspace algorithm for tree canonization",
     "year": "1992",
-    "doi": null,
-    "citation": "S. Lindell. A logspace algorithm for tree canonization. In Proceedings of the Twenty-Fourth Annual ACM Symposium on Theory of Computing, pages 400–404, Victoria, B.C., Canada, May 1992. (223, 242, 243) 274 BIBLIOGRAPHY"
+    "doi": null
   },
   "239": {
-    "id": "239",
     "authors": "K. Lindgren and M. G. Nordahl",
     "title": "Universal computation in simple one-dimensional cellular automata",
     "year": "1990",
-    "doi": null,
-    "citation": "K. Lindgren and M. G. Nordahl. Universal computation in simple one-dimensional cellular automata. Complex Systems, 4(3):299–318, 1990."
-  },
-  "240": {
-    "id": "240",
-    "authors": "A. Lingas",
-    "title": "A note on a parallel heuristic for minimum vertex cover",
-    "year": "1990",
-    "doi": null,
-    "citation": "A. Lingas. A note on a parallel heuristic for minimum vertex cover. Bulletin of the European Association for Theoretical Computer Science, 42:174–177, October 1990."
+    "doi": null
   },
   "241": {
-    "id": "241",
     "authors": "A. Lingas and M. Karpinski",
     "title": "Subtree isomorphism is NC reducible to bipartite perfect matching",
     "year": "1989",
-    "doi": null,
-    "citation": "A. Lingas and M. Karpinski. Subtree isomorphism is NC reducible to bipartite perfect matching. Information Processing Letters, 30(1):27– 32, 16 January 1989."
+    "doi": null
   },
   "242": {
-    "id": "242",
     "authors": "J. Lipscomb",
     "title": "On the computational complexity of finding a connectionist model’s stable state vectors",
     "year": "1987",
-    "doi": null,
-    "citation": "J. Lipscomb. On the computational complexity of finding a connectionist model’s stable state vectors. Master’s thesis, University of Toronto, 1987."
+    "doi": null
   },
   "243": {
-    "id": "243",
     "authors": "R. J. Lipton and Y. Zalcstein",
     "title": "Word problems solvable in log space",
     "year": "1977",
-    "doi": null,
-    "citation": "R. J. Lipton and Y. Zalcstein. Word problems solvable in log space. Journal of the ACM, 24(3):522–526, 1977."
-  },
-  "244": {
-    "id": "244",
-    "authors": "Logic and Algorithmic, An International Symposium Held in Honor of Ernst Specker, Z¨urich, February 5–11, 1980. Monographie No",
-    "title": "30 de L’Enseignement Math´ematique, Universit´e de Gen`eve, 1982.",
-    "year": "1980",
-    "doi": null,
-    "citation": "Logic and Algorithmic, An International Symposium Held in Honor of Ernst Specker, Z¨urich, February 5–11, 1980. Monographie No. 30 de L’Enseignement Math´ematique, Universit´e de Gen`eve, 1982."
-  },
-  "245": {
-    "id": "245",
-    "authors": "P. M. Long and M. K. Warmuth",
-    "title": "Composite geometric concepts and polynomial predictability",
-    "year": "1994",
-    "doi": null,
-    "citation": "P. M. Long and M. K. Warmuth. Composite geometric concepts and polynomial predictability. Information and Computation, 113(2):230–252, September 1994."
+    "doi": null
   },
   "246": {
-    "id": "246",
     "authors": "M. Luby",
     "title": "A simple parallel algorithm for the maximal independent set problem",
     "year": "1986",
-    "doi": null,
-    "citation": "M. Luby. A simple parallel algorithm for the maximal independent set problem. SIAM Journal on Computing, 15(4):1036–1053, 1986."
+    "doi": null
   },
   "247": {
-    "id": "247",
     "authors": "M. Luby",
     "title": "Removing randomness in parallel computation without a processor penalty",
     "year": "1988",
-    "doi": null,
-    "citation": "M. Luby. Removing randomness in parallel computation without a processor penalty. In 29th Annual Symposium on Foundations of Computer Science, pages 162–173, White Plains, NY, October 1988. IEEE."
+    "doi": null
   },
   "248": {
-    "id": "248",
     "authors": "G. S. Lueker, N. Megiddo, and V. Ramachandran",
     "title": "Linear programming with two variables per inequality in poly-log time",
     "year": "1990",
-    "doi": null,
-    "citation": "G. S. Lueker, N. Megiddo, and V. Ramachandran. Linear programming with two variables per inequality in poly-log time. SIAM Journal on Computing, 19(6):1000–1010, December 1990."
-  },
-  "249": {
-    "id": "249",
-    "authors": "J. Machta",
-    "title": "The computational complexity of pattern formation",
-    "year": "1993",
-    "doi": null,
-    "citation": "J. Machta. The computational complexity of pattern formation. Journal of Statistical Physics, 70(3-4):949–966, February 1993."
+    "doi": null
   },
   "250": {
-    "id": "250",
     "authors": "J. Machta and R. Greenlaw",
     "title": "The parallel complexity of growth models",
     "year": "1994",
-    "doi": null,
-    "citation": "J. Machta and R. Greenlaw. The parallel complexity of growth models. Technical Report TR 94-05, University of New Hampshire, 1994."
-  },
-  "251": {
-    "id": "251",
-    "authors": "L. Mak",
-    "title": "Are parallel machines always faster than sequential machines? Submitted for publication, August 1993",
-    "year": "1993",
-    "doi": null,
-    "citation": "L. Mak. Are parallel machines always faster than sequential machines? Submitted for publication, August 1993. (63) BIBLIOGRAPHY"
-  },
-  "252": {
-    "id": "252",
-    "authors": "L. Mak",
-    "title": "Parallelism always helps",
-    "year": "1993",
-    "doi": null,
-    "citation": "L. Mak. Parallelism always helps. Submitted for publication, August 1993."
-  },
-  "253": {
-    "id": "253",
-    "authors": "E. W. Mayr",
-    "title": "The dynamic tree expression problem",
-    "year": "1988",
-    "doi": null,
-    "citation": "E. W. Mayr. The dynamic tree expression problem. In Tewksbury et al."
+    "doi": null
   },
   "254": {
-    "id": "254",
     "authors": "E. W. Mayr",
     "title": "Parallel approximation algorithms",
     "year": "1988",
-    "doi": null,
-    "citation": "E. W. Mayr. Parallel approximation algorithms. In Institute for New Generation Computer Technology (ICOT)"
+    "doi": null
   },
   "255": {
-    "id": "255",
     "authors": "E. W. Mayr and A. Subramanian",
     "title": "The complexity of circuit value and network stability",
     "year": "1992",
-    "doi": null,
-    "citation": "E. W. Mayr and A. Subramanian. The complexity of circuit value and network stability. Journal of Computer and System Sciences, 44(2):302–323, April 1992. (235–238)"
-  },
-  "256": {
-    "id": "256",
-    "authors": "W. F. McColl. Planar crossovers",
-    "title": "IEEE Transactions on Computers, C-30(3):223–225, 1981.",
-    "year": "1981",
-    "doi": null,
-    "citation": "W. F. McColl. Planar crossovers. IEEE Transactions on Computers, C-30(3):223–225, 1981."
-  },
-  "257": {
-    "id": "257",
-    "authors": "N. Megiddo",
-    "title": "A note on approximate linear programming",
-    "year": "1992",
-    "doi": null,
-    "citation": "N. Megiddo. A note on approximate linear programming. Information Processing Letters, 42(1):53, 27 April 1992."
-  },
-  "258": {
-    "id": "258",
-    "authors": "G. L. Miller, V. Ramachandran, and E. Kaltofen",
-    "title": "Eﬃcient parallel evaluation of straight-line code and arithmetic circuits",
-    "year": "1988",
-    "doi": null,
-    "citation": "G. L. Miller, V. Ramachandran, and E. Kaltofen. Eﬃcient parallel evaluation of straight-line code and arithmetic circuits. SIAM Journal on Computing, 17(4):687–695, August 1988."
-  },
-  "259": {
-    "id": "259",
-    "authors": "G. L. Miller and J. H. Reif",
-    "title": "Parallel tree contraction and its applications",
-    "year": "1985",
-    "doi": null,
-    "citation": "G. L. Miller and J. H. Reif. Parallel tree contraction and its applications. In 26th Annual Symposium on Foundations of Computer Science, pages 478–489, Portland, OR, October 1985. IEEE."
-  },
-  "260": {
-    "id": "260",
-    "authors": "G. L. Miller and J. H. Reif",
-    "title": "Parallel tree contraction, Part 1: Fundamentals",
-    "year": "1986",
-    "doi": null,
-    "citation": "G. L. Miller and J. H. Reif. Parallel tree contraction, Part 1: Fundamentals. In S. Micali, editor, Advances in Computing Research, Volume 5: Randomness and Computation, pages 47–72. JAI Press Inc., Greenwich, CT, 1989. Series Editor, F. P. Preparata."
-  },
-  "261": {
-    "id": "261",
-    "authors": "G. L. Miller and J. H. Reif",
-    "title": "Parallel tree contraction, Part 2: Further applications",
-    "year": "1988",
-    "doi": null,
-    "citation": "G. L. Miller and J. H. Reif. Parallel tree contraction, Part 2: Further applications. SIAM Journal on Computing, 20(6):1128–1147, 1991."
+    "doi": null
   },
   "262": {
-    "id": "262",
     "authors": "M. Minsky",
     "title": "Computation: Finite and Infinite Machines",
     "year": "1967",
-    "doi": null,
-    "citation": "M. Minsky. Computation: Finite and Infinite Machines. Prentice Hall, 1967."
-  },
-  "263": {
-    "id": "263",
-    "authors": "S. Miyano",
-    "title": "Parallel complexity and P-complete problems",
-    "year": "1988",
-    "doi": null,
-    "citation": "S. Miyano. Parallel complexity and P-complete problems. In Institute for New Generation Computer Technology (ICOT)"
+    "doi": null
   },
   "264": {
-    "id": "264",
     "authors": "S. Miyano",
     "title": "A parallelizable lexicographically first maximal edge-induced subgraph problem",
     "year": "1988",
-    "doi": null,
-    "citation": "S. Miyano. A parallelizable lexicographically first maximal edge-induced subgraph problem. Information Processing Letters, 27(2):75– 78, 29 February 1988."
+    "doi": null
   },
   "265": {
-    "id": "265",
     "authors": "S. Miyano",
     "title": "The lexicographically first maximal subgraph problems: P-completeness and NC algorithms",
     "year": "1989",
-    "doi": null,
-    "citation": "S. Miyano. The lexicographically first maximal subgraph problems: P-completeness and NC algorithms. Mathematical Systems Theory, 22(1):47–73, 1989. (91, 128, 139, 143, 225, 226) 276 BIBLIOGRAPHY"
-  },
-  "266": {
-    "id": "266",
-    "authors": "S. Miyano",
-    "title": "Systematized approaches to the complexity of subgraph problems",
-    "year": "1990",
-    "doi": null,
-    "citation": "S. Miyano. Systematized approaches to the complexity of subgraph problems. Journal of Information Processing, 13(4):442–448, 1990."
+    "doi": null
   },
   "267": {
-    "id": "267",
     "authors": "S. Miyano and M. Haraguchi",
     "title": "The computational complexity of incomplete table recovery",
     "year": "1982",
-    "doi": null,
-    "citation": "S. Miyano and M. Haraguchi. The computational complexity of incomplete table recovery. Research Report 100, Kyushu University Research Institute of Fundamental Information Science, September 1982."
-  },
-  "268": {
-    "id": "268",
-    "authors": "S. Miyano, S. Shiraishi, and T. Shoudai",
-    "title": "A list of P-complete problems",
-    "year": "1989",
-    "doi": null,
-    "citation": "S. Miyano, S. Shiraishi, and T. Shoudai. A list of P-complete problems. Technical Report RIFIS-TR-CS-17, Kyushu University 33, Research Institute of Fundamental Information Science, 1989. Revised, December 29, 1990. 68 pages."
-  },
-  "269": {
-    "id": "269",
-    "authors": "A. Monti and A. Roncato",
-    "title": "On the complexity of some reachability problems",
-    "year": "1994",
-    "doi": null,
-    "citation": "A. Monti and A. Roncato. On the complexity of some reachability problems. In M. Bonuccelli, P. Crescenzi, and R. Petreschi, editors, Algorithms and Complexity: Second Italian Conference, CIAC ’94, volume 778 of Lecture Notes in Computer Science, pages 192–202, Rome, Italy, February 1994. Springer-Verlag."
+    "doi": null
   },
   "270": {
-    "id": "270",
     "authors": "K. Mulmuley",
     "title": "A fast parallel algorithm to compute the rank of a matrix over an arbitrary field",
     "year": "1987",
-    "doi": null,
-    "citation": "K. Mulmuley. A fast parallel algorithm to compute the rank of a matrix over an arbitrary field. Combinatorica, 7(1):101–104, 1987."
+    "doi": null
   },
   "271": {
-    "id": "271",
     "authors": "K. Mulmuley, U. V. Vazirani, and V. V. Vazirani",
     "title": "Matching is as easy as matrix inversion",
     "year": "1987",
-    "doi": null,
-    "citation": "K. Mulmuley, U. V. Vazirani, and V. V. Vazirani. Matching is as easy as matrix inversion. Combinatorica, 7(1):105–113, 1987."
-  },
-  "272": {
-    "id": "272",
-    "authors": "J. Naor",
-    "title": "A fast parallel coloring of planar graphs with five colors",
-    "year": "1990",
-    "doi": null,
-    "citation": "J. Naor. A fast parallel coloring of planar graphs with five colors. Information Processing Letters, 25(1):51–53, 20 April 1987."
-  },
-  "273": {
-    "id": "273",
-    "authors": "Y. P. Ofman",
-    "title": "On the algorithmic complexity of discrete functions",
-    "year": "1963",
-    "doi": null,
-    "citation": "Y. P. Ofman. On the algorithmic complexity of discrete functions. Soviet Physics Doklady, 7(7):589–591, 1963."
+    "doi": null
   },
   "274": {
-    "id": "274",
     "authors": "W. F. Ogden, W. E. Riddle, and W. C. Rounds",
     "title": "Complexity of expressions allowing concurrency",
     "year": "1978",
-    "doi": null,
-    "citation": "W. F. Ogden, W. E. Riddle, and W. C. Rounds. Complexity of expressions allowing concurrency. In Conference Record of the Fifth Annual ACM Symposium on Principles of Programming Languages, pages 185–194, Tucson, AZ, January 1978."
+    "doi": null
   },
   "275": {
-    "id": "275",
     "authors": "C. N. K. Osiakwan and S. G. Akl",
     "title": "The maximum weight perfect matching problem for complete weighted graphs is in PC",
     "year": "1990",
-    "doi": null,
-    "citation": "C. N. K. Osiakwan and S. G. Akl. The maximum weight perfect matching problem for complete weighted graphs is in PC. In Proceedings of the Second IEEE Symposium on Parallel and Distributed Processing, pages 880–887, Dallas, TX, December 1990. IEEE."
+    "doi": null
   },
   "276": {
-    "id": "276",
     "authors": "V. Pan and J. H. Reif",
     "title": "Fast and eﬃcient parallel solution of dense linear systems",
     "year": "1989",
-    "doi": null,
-    "citation": "V. Pan and J. H. Reif. Fast and eﬃcient parallel solution of dense linear systems. Computers and Mathematics with Applications, 17(11):1481–1491, 1989."
-  },
-  "277": {
-    "id": "277",
-    "authors": "C. H. Papadimitriou",
-    "title": "Eﬃcient search for rationals",
-    "year": "1990",
-    "doi": null,
-    "citation": "C. H. Papadimitriou. Eﬃcient search for rationals. Information Processing Letters, 8(1):1–4, 1978. (151) BIBLIOGRAPHY"
+    "doi": null
   },
   "278": {
-    "id": "278",
     "authors": "C. H. Papadimitriou, A. A. Sch¨aﬀer, and M. Yannakakis",
     "title": "On the complexity of local search",
     "year": "1990",
-    "doi": null,
-    "citation": "C. H. Papadimitriou, A. A. Sch¨aﬀer, and M. Yannakakis. On the complexity of local search. In Proceedings of the Twenty-Second Annual ACM Symposium on Theory of Computing, pages 438–445, Baltimore, MD, May 1990. (Extended Abstract)."
+    "doi": null
   },
   "279": {
-    "id": "279",
     "authors": "C. H. Papadimitriou and J. N. Tsitsiklis",
     "title": "The complexity of Markov decision processes",
     "year": "1987",
-    "doi": null,
-    "citation": "C. H. Papadimitriou and J. N. Tsitsiklis. The complexity of Markov decision processes. Mathematics of Operations Research, 12(3):441– 450, 1987. (185–187)"
-  },
-  "280": {
-    "id": "280",
-    "authors": "I. Parberry",
-    "title": "Parallel speedup of sequential machines: A defense of the parallel computation thesis",
-    "year": "1986",
-    "doi": null,
-    "citation": "I. Parberry. Parallel speedup of sequential machines: A defense of the parallel computation thesis. SIGACT News, 18(1):54–67, Summer 1986."
+    "doi": null
   },
   "281": {
-    "id": "281",
     "authors": "I. Parberry",
     "title": "Parallel Complexity Theory",
     "year": "1987",
-    "doi": null,
-    "citation": "I. Parberry. Parallel Complexity Theory. Research Notes in Theoretical Computer Science. Pitman/Wiley, 1987."
-  },
-  "282": {
-    "id": "282",
-    "authors": "M. S. Paterson and L. G. Valiant",
-    "title": "Circuit size is nonlinear in depth",
-    "year": "1976",
-    "doi": null,
-    "citation": "M. S. Paterson and L. G. Valiant. Circuit size is nonlinear in depth. Theoretical Computer Science, 2(3):397–400, 1976."
-  },
-  "283": {
-    "id": "283",
-    "authors": "W. J. Paul, R. E. Tarjan, and J. R. Celoni",
-    "title": "Space bounds for a game on graphs",
-    "year": "1977",
-    "doi": null,
-    "citation": "W. J. Paul, R. E. Tarjan, and J. R. Celoni. Space bounds for a game on graphs. Mathematical Systems Theory, 10(3):239–251, 1977. Correction, ibid. 11(1):85, 1977."
-  },
-  "284": {
-    "id": "284",
-    "authors": "N. J. Pippenger",
-    "title": "Fast simulation of combinational logic networks by machines without random-access storage",
-    "year": "1987",
-    "doi": null,
-    "citation": "N. J. Pippenger. Fast simulation of combinational logic networks by machines without random-access storage. In Proceedings, Fifteenth Annual Allerton Conference on Communication, Control and Computing, pages 25–33, Monticello, IL, September 1977."
-  },
-  "285": {
-    "id": "285",
-    "authors": "N. J. Pippenger",
-    "title": "On simultaneous resource bounds",
-    "year": "1979",
-    "doi": null,
-    "citation": "N. J. Pippenger. On simultaneous resource bounds. In 20th Annual Symposium on Foundations of Computer Science, pages 307–311, San Juan, Puerto Rico, October 1979. IEEE."
-  },
-  "286": {
-    "id": "286",
-    "authors": "N. J. Pippenger. Pebbling",
-    "title": "In Proceedings of the Fifth IBM Symposium on Mathematical Foundations of Computer Science",
-    "year": "1980",
-    "doi": null,
-    "citation": "N. J. Pippenger. Pebbling. In Proceedings of the Fifth IBM Symposium on Mathematical Foundations of Computer Science. IBM Japan, May 1980."
-  },
-  "287": {
-    "id": "287",
-    "authors": "N. J. Pippenger",
-    "title": "Pebbling with an auxiliary pushdown",
-    "year": "1981",
-    "doi": null,
-    "citation": "N. J. Pippenger. Pebbling with an auxiliary pushdown. Journal of Computer and System Sciences, 23(2):151–165, October 1981."
-  },
-  "288": {
-    "id": "288",
-    "authors": "N. J. Pippenger. Advances in pebbling",
-    "title": "Research Report RJ3466, IBM Research Division, Thomas J",
-    "year": "1982",
-    "doi": null,
-    "citation": "N. J. Pippenger. Advances in pebbling. Research Report RJ3466, IBM Research Division, Thomas J. Watson Research Center, Yorktown Heights, NY, April 1982."
-  },
-  "289": {
-    "id": "289",
-    "authors": "N. J. Pippenger and M. J. Fischer",
-    "title": "Relations among complexity measures",
-    "year": "1979",
-    "doi": null,
-    "citation": "N. J. Pippenger and M. J. Fischer. Relations among complexity measures. Journal of the ACM, 26(2):361–381, April 1979."
+    "doi": null
   },
   "290": {
-    "id": "290",
     "authors": "D. A. Plaisted",
     "title": "Complete problems in the first-order predicate calculus",
     "year": "1984",
-    "doi": null,
-    "citation": "D. A. Plaisted. Complete problems in the first-order predicate calculus. Journal of Computer and System Sciences, 29(1):8–35, 1984."
+    "doi": null
   },
   "291": {
-    "id": "291",
     "authors": "G. P´olya, R. E. Tarjan, and D. R. Woods",
     "title": "Notes on Introductory Combinatorics",
     "year": "1983",
-    "doi": null,
-    "citation": "G. P´olya, R. E. Tarjan, and D. R. Woods. Notes on Introductory Combinatorics. Birkh¨auser, Boston, 1983. (237) 278 BIBLIOGRAPHY"
+    "doi": null
   },
   "292": {
-    "id": "292",
     "authors": "E. L. Post",
     "title": "The Two-Valued Iterative Systems of Mathematical Logic",
     "year": "1941",
-    "doi": null,
-    "citation": "E. L. Post. The Two-Valued Iterative Systems of Mathematical Logic. Number 5 in Annals of Math. Studies. Princeton University Press, 1941."
-  },
-  "293": {
-    "id": "293",
-    "authors": "V. R. Pratt and L. J. Stockmeyer",
-    "title": "A characterization of the power of vector machines",
-    "year": "1976",
-    "doi": null,
-    "citation": "V. R. Pratt and L. J. Stockmeyer. A characterization of the power of vector machines. Journal of Computer and System Sciences, 12(2):198–221, April 1976."
-  },
-  "294": {
-    "id": "294",
-    "authors": "S. Rajasekaran and J. H. Reif",
-    "title": "Randomized parallel computation",
-    "year": "1990",
-    "doi": null,
-    "citation": "S. Rajasekaran and J. H. Reif. Randomized parallel computation. In Tewksbury et al."
-  },
-  "295": {
-    "id": "295",
-    "authors": "V. Ramachandran",
-    "title": "The complexity of minimum cut and maximum flow problems in an acyclic network",
-    "year": "1987",
-    "doi": null,
-    "citation": "V. Ramachandran. The complexity of minimum cut and maximum flow problems in an acyclic network. Networks, 17(4):387–392, 1987."
-  },
-  "296": {
-    "id": "296",
-    "authors": "V. Ramachandran",
-    "title": "Fast and processor-eﬃcient parallel algorithms for reducible flow graphs",
-    "year": "1988",
-    "doi": null,
-    "citation": "V. Ramachandran. Fast and processor-eﬃcient parallel algorithms for reducible flow graphs. Technical Report UILU-ENG-88-2257, ACT-103, University of Illinois at Urbana-Champaign, 1988."
-  },
-  "297": {
-    "id": "297",
-    "authors": "V. Ramachandran",
-    "title": "Fast parallel algorithms for reducible flow graphs",
-    "year": "1990",
-    "doi": null,
-    "citation": "V. Ramachandran. Fast parallel algorithms for reducible flow graphs. In Tewksbury et al."
+    "doi": null
   },
   "298": {
-    "id": "298",
     "authors": "V. Ramachandran and L.-C. Wang",
     "title": "Parallel algorithms and complexity results for telephone link simulation",
     "year": "1991",
-    "doi": null,
-    "citation": "V. Ramachandran and L.-C. Wang. Parallel algorithms and complexity results for telephone link simulation. In Proceedings of the Third IEEE Symposium on Parallel and Distributed Processing, pages 378– 385, Dallas, TX, December 1991. IEEE."
-  },
-  "299": {
-    "id": "299",
-    "authors": "J. H. Reif",
-    "title": "On synchronous parallel computations with independent probabilistic choice",
-    "year": "1984",
-    "doi": null,
-    "citation": "J. H. Reif. On synchronous parallel computations with independent probabilistic choice. SIAM Journal on Computing, 13(1):46–56, February 1984."
-  },
-  "300": {
-    "id": "300",
-    "authors": "J. H. Reif",
-    "title": "Depth-first search is inherently sequential",
-    "year": "1985",
-    "doi": null,
-    "citation": "J. H. Reif. Depth-first search is inherently sequential. Information Processing Letters, 20(5):229–234, 12 June 1985."
+    "doi": null
   },
   "303": {
-    "id": "303",
     "authors": "J. H. Reif, J. D. Tygar, and A. Yoshida",
     "title": "The computability and complexity of optical beam tracing",
     "year": "1990",
-    "doi": null,
-    "citation": "J. H. Reif, J. D. Tygar, and A. Yoshida. The computability and complexity of optical beam tracing. In Proceedings 31st Annual Symposium on Foundations of Computer Science, pages 106–114, St. Louis, MO, October 1990. IEEE."
-  },
-  "304": {
-    "id": "304",
-    "authors": "S. P. Reiss. Rational search",
-    "title": "Information Processing Letters, 8(2):87– 90, 1978.",
-    "year": "1978",
-    "doi": null,
-    "citation": "S. P. Reiss. Rational search. Information Processing Letters, 8(2):87– 90, 1978."
+    "doi": null
   },
   "305": {
-    "id": "305",
     "authors": "J. A. Robinson",
     "title": "A machine oriented logic based on the resolution principle",
     "year": "1965",
-    "doi": null,
-    "citation": "J. A. Robinson. A machine oriented logic based on the resolution principle. Journal of the ACM, 12(1):23–41, 1965. (171) BIBLIOGRAPHY"
+    "doi": null
   },
   "306": {
-    "id": "306",
     "authors": "W. L. Ruzzo",
     "title": "Complete pushdown languages",
     "year": "1979",
-    "doi": null,
-    "citation": "W. L. Ruzzo. Complete pushdown languages. Unpublished manuscript, 1979."
-  },
-  "307": {
-    "id": "307",
-    "authors": "W. L. Ruzzo",
-    "title": "Tree-size bounded alternation",
-    "year": "1980",
-    "doi": null,
-    "citation": "W. L. Ruzzo. Tree-size bounded alternation. Journal of Computer and System Sciences, 21(2):218–235, October 1980."
-  },
-  "308": {
-    "id": "308",
-    "authors": "W. L. Ruzzo",
-    "title": "On uniform circuit complexity",
-    "year": "1981",
-    "doi": null,
-    "citation": "W. L. Ruzzo. On uniform circuit complexity. Journal of Computer and System Sciences, 22(3):365–383, June 1981."
-  },
-  "309": {
-    "id": "309",
-    "authors": "W. Rytter",
-    "title": "On the recognition of context-free languages",
-    "year": "1984",
-    "doi": null,
-    "citation": "W. Rytter. On the recognition of context-free languages. In A. Skowron, editor, Computation Theory: Fifth Symposium, volume 208 of Lecture Notes in Computer Science, pages 318–325, Zabor´ow, Poland, December 1984 (published 1985). Springer-Verlag."
-  },
-  "310": {
-    "id": "310",
-    "authors": "W. Rytter",
-    "title": "Parallel time O(log n) recognition of unambiguous context-free languages",
-    "year": "1987",
-    "doi": null,
-    "citation": "W. Rytter. Parallel time O(log n) recognition of unambiguous context-free languages. Information and Computation, 73(1):75–86, 1987."
+    "doi": null
   },
   "311": {
-    "id": "311",
     "authors": "S. Sairam, J. S. Vitter, and R. Tamassia",
     "title": "A complexity theoretic approach to incremental computation",
     "year": "1992",
-    "doi": null,
-    "citation": "S. Sairam, J. S. Vitter, and R. Tamassia. A complexity theoretic approach to incremental computation. In Finkel et al."
+    "doi": null
   },
   "312": {
-    "id": "312",
     "authors": "Sang Cho and D. T. Huynh",
     "title": "The complexity of membership for deterministic growing context-sensitive grammars",
     "year": "1990",
-    "doi": null,
-    "citation": "Sang Cho and D. T. Huynh. The complexity of membership for deterministic growing context-sensitive grammars. International Journal of Computer Mathematics, 37(3-4):185–188, 1990."
+    "doi": null
   },
   "313": {
-    "id": "313",
     "authors": "Sang Cho and D. T. Huynh",
     "title": "The parallel complexity of coarsest set partition problems",
     "year": "1992",
-    "doi": null,
-    "citation": "Sang Cho and D. T. Huynh. The parallel complexity of coarsest set partition problems. Information Processing Letters, 42(2):89–94, 11 May 1992."
+    "doi": null
   },
   "314": {
-    "id": "314",
     "authors": "Sang Cho and D. T. Huynh",
     "title": "The parallel complexity of finite-state automata problems",
     "year": "1992",
-    "doi": null,
-    "citation": "Sang Cho and D. T. Huynh. The parallel complexity of finite-state automata problems. Information and Computation, 97(1):1–22, 1992."
-  },
-  "315": {
-    "id": "315",
-    "authors": "J. L. C. Sanz, editor",
-    "title": "Opportunities and Constraints of Parallel Computing",
-    "year": "1989",
-    "doi": null,
-    "citation": "J. L. C. Sanz, editor. Opportunities and Constraints of Parallel Computing. Springer-Verlag, 1989. Papers presented at a workshop, December 5–6, 1988, at the IBM Almaden Research Center, San Jose, CA."
+    "doi": null
   },
   "316": {
-    "id": "316",
     "authors": "R. Sarnath and X. He",
     "title": "A P-complete graph partition problem",
     "year": "1990",
-    "doi": null,
-    "citation": "R. Sarnath and X. He. A P-complete graph partition problem. Theoretical Computer Science, 76(2,3):343–351, 21 November 1990."
-  },
-  "317": {
-    "id": "317",
-    "authors": "J. E. Savage",
-    "title": "Computational work and time on finite machines",
-    "year": "1972",
-    "doi": null,
-    "citation": "J. E. Savage. Computational work and time on finite machines. Journal of the ACM, 19(4):660–674, October 1972."
+    "doi": null
   },
   "318": {
-    "id": "318",
     "authors": "J. E. Savage and M. G. Wloka",
     "title": "A parallel algorithm for channel routing",
     "year": "1988",
-    "doi": null,
-    "citation": "J. E. Savage and M. G. Wloka. A parallel algorithm for channel routing. In J. van Leeuwen, editor, Proceedings of the International Workshop on Graph-Theoretic Concepts in Computer Science, volume 344 of Lecture Notes in Computer Science, pages 288–303, Amsterdam, Netherlands, June 1988 (published 1989). Springer-Verlag. (166) 280 BIBLIOGRAPHY"
+    "doi": null
   },
   "319": {
-    "id": "319",
     "authors": "J. E. Savage and M. G. Wloka",
     "title": "On parallelizing graph-partitioning heuristics",
     "year": "1990",
-    "doi": null,
-    "citation": "J. E. Savage and M. G. Wloka. On parallelizing graph-partitioning heuristics. In M. S. Paterson, editor, Automata, Languages, and Programming: 17th International Colloquium, volume 443 of Lecture Notes in Computer Science, pages 476–489, Warwick University, England, July 1990. Springer-Verlag."
+    "doi": null
   },
   "320": {
-    "id": "320",
     "authors": "J. E. Savage and M. G. Wloka",
     "title": "Parallelism in graph-partitioning",
     "year": "1991",
-    "doi": null,
-    "citation": "J. E. Savage and M. G. Wloka. Parallelism in graph-partitioning. Journal of Parallel and Distributed Computing, 13(3):257–272, November 1991."
+    "doi": null
   },
   "321": {
-    "id": "321",
     "authors": "J. E. Savage and M. G. Wloka",
     "title": "The parallel complexity of minimizing column conflicts",
     "year": "1992",
-    "doi": null,
-    "citation": "J. E. Savage and M. G. Wloka. The parallel complexity of minimizing column conflicts. In N. Sherwani, editor, Proceedings of the Second Great Lakes Symposium on VLSI, Design Automation of VLSI Systems in the 90’s, pages 30–34, Kalamazoo, MI, February 1992. IEEE."
-  },
-  "322": {
-    "id": "322",
-    "authors": "W. J. Savitch",
-    "title": "Relationships between nondeterministic and deterministic tape complexities",
-    "year": "1970",
-    "doi": null,
-    "citation": "W. J. Savitch. Relationships between nondeterministic and deterministic tape complexities. Journal of Computer and System Sciences, 4(2):177–192, 1970."
-  },
-  "323": {
-    "id": "323",
-    "authors": "W. J. Savitch and M. J. Stimson",
-    "title": "Time bounded random access machines with parallel processing",
-    "year": "1979",
-    "doi": null,
-    "citation": "W. J. Savitch and M. J. Stimson. Time bounded random access machines with parallel processing. Journal of the ACM, 26(1):103– 118, 1979."
+    "doi": null
   },
   "324": {
-    "id": "324",
     "authors": "A. A. Sch¨aﬀer and M. Yannakakis",
     "title": "Simple local search problems that are hard to solve",
     "year": "1991",
-    "doi": null,
-    "citation": "A. A. Sch¨aﬀer and M. Yannakakis. Simple local search problems that are hard to solve. SIAM Journal on Computing, 20(1):56–87, February 1991. (159–164, 251)"
-  },
-  "325": {
-    "id": "325",
-    "authors": "C. A. Schevon and J. S. Vitter",
-    "title": "A parallel algorithm for recognizing unordered depth-first search",
-    "year": "1988",
-    "doi": null,
-    "citation": "C. A. Schevon and J. S. Vitter. A parallel algorithm for recognizing unordered depth-first search. Information Processing Letters, 28(2):105–110, 24 June 1988."
-  },
-  "326": {
-    "id": "326",
-    "authors": "M. J. Serna",
-    "title": "The Parallel Approximability of P-Complete Problems",
-    "year": "1990",
-    "doi": null,
-    "citation": "M. J. Serna. The Parallel Approximability of P-Complete Problems. PhD thesis, Universitat Politecnica de Catalunya, Barcelona, 1990."
+    "doi": null
   },
   "327": {
-    "id": "327",
     "authors": "M. J. Serna",
     "title": "Approximating linear programming is log-space complete for P",
     "year": "1991",
-    "doi": null,
-    "citation": "M. J. Serna. Approximating linear programming is log-space complete for P. Information Processing Letters, 37(4):233–236, 28 February 1991."
+    "doi": null
   },
   "328": {
-    "id": "328",
     "authors": "M. J. Serna and P. G. Spirakis",
     "title": "The approximability of problems complete for P",
     "year": "1989",
-    "doi": null,
-    "citation": "M. J. Serna and P. G. Spirakis. The approximability of problems complete for P. In H. Djidjev, editor, Optimal Algorithms, International Symposium Proceedings. Varna, Bulgaria., volume 401 of Lecture Notes in Computer Science, pages 193–204. Springer-Verlag, 29 May–2 June 1989."
+    "doi": null
   },
   "329": {
-    "id": "329",
     "authors": "D. Shallcross, V. Pan, and Y. Lin-Kriz",
     "title": "The NC equivalence of planar integer linear programming and Euclidean GCD",
     "year": "1993",
-    "doi": null,
-    "citation": "D. Shallcross, V. Pan, and Y. Lin-Kriz. The NC equivalence of planar integer linear programming and Euclidean GCD. In Proceedings 34th Annual Symposium on Foundations of Computer Science, pages 557– 564, Palo Alto, CA, November 1993. IEEE. (226, 229, 230) BIBLIOGRAPHY"
+    "doi": null
   },
   "330": {
-    "id": "330",
     "authors": "S. Shimozono and S. Miyano",
     "title": "Complexity of finding alphabet indexing",
     "year": "1994",
-    "doi": null,
-    "citation": "S. Shimozono and S. Miyano. Complexity of finding alphabet indexing. Manuscript, 1994."
-  },
-  "331": {
-    "id": "331",
-    "authors": "T. Shoudai",
-    "title": "The lexicographically first topological order problem is NLOG-complete",
-    "year": "1989",
-    "doi": null,
-    "citation": "T. Shoudai. The lexicographically first topological order problem is NLOG-complete. Information Processing Letters, 33(3):121–124, 30 November 1989."
+    "doi": null
   },
   "332": {
-    "id": "332",
     "authors": "T. Shoudai",
     "title": "A P-complete language describable with iterated shuﬄe",
     "year": "1992",
-    "doi": null,
-    "citation": "T. Shoudai. A P-complete language describable with iterated shuﬄe. Information Processing Letters, 41(5):233–238, 3 April 1992."
-  },
-  "333": {
-    "id": "333",
-    "authors": "A. R. Smith, III",
-    "title": "Simple computation-universal cellular spaces",
-    "year": "1971",
-    "doi": null,
-    "citation": "A. R. Smith, III. Simple computation-universal cellular spaces. Journal of the ACM, 18(3):339–353, 1971."
+    "doi": null
   },
   "334": {
-    "id": "334",
     "authors": "J. R. Smith",
     "title": "Parallel algorithms for depth first searches I: Planar graphs",
     "year": "1986",
-    "doi": null,
-    "citation": "J. R. Smith. Parallel algorithms for depth first searches I: Planar graphs. SIAM Journal on Computing, 15(3):814–830, 1986."
+    "doi": null
   },
   "335": {
-    "id": "335",
     "authors": "J. Sorenson",
     "title": "The k-ary GCD algorithm",
     "year": "1991",
-    "doi": null,
-    "citation": "J. Sorenson. The k-ary GCD algorithm. Technical Report 979, University of Wisconsin, Madison, WI, April 1991."
+    "doi": null
   },
   "336": {
-    "id": "336",
     "authors": "J. Sorenson. Two fast GCD algorithms",
     "title": "Manuscript, Department of Mathematics and Computer Science, Bulter University, Indianapolis, IN, January 1992.",
     "year": "1992",
-    "doi": null,
-    "citation": "J. Sorenson. Two fast GCD algorithms. Manuscript, Department of Mathematics and Computer Science, Bulter University, Indianapolis, IN, January 1992."
+    "doi": null
   },
   "337": {
-    "id": "337",
     "authors": "P. G. Spirakis",
     "title": "The parallel complexity of deadlock detection",
     "year": "1987",
-    "doi": null,
-    "citation": "P. G. Spirakis. The parallel complexity of deadlock detection. Theoretical Computer Science, 52(1,2):155–163, 1987."
-  },
-  "338": {
-    "id": "338",
-    "authors": "P. G. Spirakis",
-    "title": "Fast parallel algorithms and the complexity of parallelism (basic issues and recent advances)",
-    "year": "1988",
-    "doi": null,
-    "citation": "P. G. Spirakis. Fast parallel algorithms and the complexity of parallelism (basic issues and recent advances). In G. Wolf, T. Legendi, and U. Schendel, editors, Parcella ’88. Fourth International Workshop on Parallel Processing by Cellular Automata and Arrays Proceedings, volume 342 of Lecture Notes in Computer Science, pages 177– 189, Berlin, East Germany, October 1988 (published 1989). Springer-Verlag."
-  },
-  "339": {
-    "id": "339",
-    "authors": "C. Stein and J. Wein",
-    "title": "Approximating the minimum-cost maximum flow is P-complete",
-    "year": "1992",
-    "doi": null,
-    "citation": "C. Stein and J. Wein. Approximating the minimum-cost maximum flow is P-complete. Information Processing Letters, 42(6):315–319, 24 July 1992."
-  },
-  "340": {
-    "id": "340",
-    "authors": "I. A. Stewart",
-    "title": "Complete problems for symmetric logspace involving free groups",
-    "year": "1991",
-    "doi": null,
-    "citation": "I. A. Stewart. Complete problems for symmetric logspace involving free groups. Information Processing Letters, 40(5):263–267, 13 December 1991."
+    "doi": null
   },
   "341": {
-    "id": "341",
     "authors": "I. A. Stewart",
     "title": "Refining known results on the generalized word problem for free groups",
     "year": "1992",
-    "doi": null,
-    "citation": "I. A. Stewart. Refining known results on the generalized word problem for free groups. International Journal of Algebra and Computation, 2(2):221–236, June 1992."
-  },
-  "342": {
-    "id": "342",
-    "authors": "I. A. Stewart",
-    "title": "On parallelizing a greedy heuristic for finding small dominant sets",
-    "year": "1993",
-    "doi": null,
-    "citation": "I. A. Stewart. On parallelizing a greedy heuristic for finding small dominant sets. BIT, 33(1):57–62, 1993."
-  },
-  "343": {
-    "id": "343",
-    "authors": "I. A. Stewart",
-    "title": "On two approximation algorithms for the clique problem",
-    "year": "1993",
-    "doi": null,
-    "citation": "I. A. Stewart. On two approximation algorithms for the clique problem. International Journal of Foundations of Computer Science, 4(2):117–133, 1993. (128, 129) 282 BIBLIOGRAPHY"
-  },
-  "344": {
-    "id": "344",
-    "authors": "L. J. Stockmeyer and A. R. Meyer",
-    "title": "Word problems requiring exponential time",
-    "year": "1973",
-    "doi": null,
-    "citation": "L. J. Stockmeyer and A. R. Meyer. Word problems requiring exponential time. In Conference Record of Fifth Annual ACM Symposium on Theory of Computing, pages 1–9, Austin, TX, April-May 1973."
-  },
-  "345": {
-    "id": "345",
-    "authors": "L. J. Stockmeyer and U. Vishkin",
-    "title": "Simulation of parallel random access machines by circuits",
-    "year": "1984",
-    "doi": null,
-    "citation": "L. J. Stockmeyer and U. Vishkin. Simulation of parallel random access machines by circuits. SIAM Journal on Computing, 13(2):409– 422, May 1984."
+    "doi": null
   },
   "346": {
-    "id": "346",
     "authors": "A. Subramanian",
     "title": "A new approach to stable matching problems",
     "year": "1989",
-    "doi": null,
-    "citation": "A. Subramanian. A new approach to stable matching problems. Technical Report STAN-CS-89-1275, Stanford University, Department of Computer Science, 1989."
+    "doi": null
   },
   "347": {
-    "id": "347",
     "authors": "A. Subramanian",
     "title": "The Computational Complexity of the Circuit Value and Network Stability Problems",
     "year": "1990",
-    "doi": null,
-    "citation": "A. Subramanian. The Computational Complexity of the Circuit Value and Network Stability Problems. PhD thesis, Stanford University, 1990. Department of Computer Science Technical Report STAN-CS90-1311."
-  },
-  "348": {
-    "id": "348",
-    "authors": "I. H. Sudborough",
-    "title": "On the tape complexity of deterministic context-free languages",
-    "year": "1978",
-    "doi": null,
-    "citation": "I. H. Sudborough. On the tape complexity of deterministic context-free languages. Journal of the ACM, 25(3):405–414, 1978."
+    "doi": null
   },
   "349": {
-    "id": "349",
     "authors": "S. Sunder and X. He",
     "title": "Scheduling interval ordered tasks in parallel",
     "year": "1993",
-    "doi": null,
-    "citation": "S. Sunder and X. He. Scheduling interval ordered tasks in parallel. In Finkel et al."
-  },
-  "350": {
-    "id": "350",
-    "authors": "R. E. Tarjan and U. Vishkin",
-    "title": "Finding biconnected components and computing tree functions in logarithmic parallel time",
-    "year": "1984",
-    "doi": null,
-    "citation": "R. E. Tarjan and U. Vishkin. Finding biconnected components and computing tree functions in logarithmic parallel time. In 25th Annual Symposium on Foundations of Computer Science, pages 12–20, Singer Island, FL, October 1984. IEEE."
-  },
-  "351": {
-    "id": "351",
-    "authors": "R. E. Tarjan and U. Vishkin",
-    "title": "An eﬃcient parallel biconnectivity algorithm",
-    "year": "1985",
-    "doi": null,
-    "citation": "R. E. Tarjan and U. Vishkin. An eﬃcient parallel biconnectivity algorithm. SIAM Journal on Computing, 14(4):862–874, November 1985."
-  },
-  "352": {
-    "id": "352",
-    "authors": "S.-H. Teng",
-    "title": "Matching randomly in parallel",
-    "year": "1989",
-    "doi": null,
-    "citation": "S.-H. Teng. Matching randomly in parallel. Department of Computer Science CMU-CS-89-149, Carnegie Mellon University, Pittsburgh, PA, 1989."
-  },
-  "354": {
-    "id": "354",
-    "authors": "M. Tompa",
-    "title": "Unpublished notes on NC reductions among problems in RP, 1983.",
-    "year": "1983",
-    "doi": null,
-    "citation": "M. Tompa. Unpublished notes on NC reductions among problems in RP, 1983."
+    "doi": null
   },
   "355": {
-    "id": "355",
     "authors": "J. D. Ullman and A. Van Gelder",
     "title": "Parallel complexity of logical query programs",
     "year": "1988",
-    "doi": null,
-    "citation": "J. D. Ullman and A. Van Gelder. Parallel complexity of logical query programs. Algorithmica, 3(1):5–42, 1988."
-  },
-  "356": {
-    "id": "356",
-    "authors": "L. G. Valiant",
-    "title": "Parallel computation",
-    "year": "1982",
-    "doi": null,
-    "citation": "L. G. Valiant. Parallel computation. Technical Report TR-16-82, Harvard, Center of Research in Computing Technology, April 1982. Presented at the 7th IBM Symposium on Mathematical Foundations BIBLIOGRAPHY 283 of Computer Science, Hakone, Kanagawa, Japan, May 24–26, 1982."
-  },
-  "357": {
-    "id": "357",
-    "authors": "L. G. Valiant",
-    "title": "Reducibility by algebraic projections",
-    "year": "1982",
-    "doi": null,
-    "citation": "L. G. Valiant. Reducibility by algebraic projections. L’Enseignement Math´ematique, XXVIII:253–268, 1982. Also in [244, pages 365–380]."
-  },
-  "358": {
-    "id": "358",
-    "authors": "L. G. Valiant, S. Skyum, S. Berkowitz, and C. W. Rackoﬀ",
-    "title": "Fast parallel computation of polynomials using few processors",
-    "year": "1983",
-    "doi": null,
-    "citation": "L. G. Valiant, S. Skyum, S. Berkowitz, and C. W. Rackoﬀ. Fast parallel computation of polynomials using few processors. SIAM Journal on Computing, 12(4):641–644, November 1983."
-  },
-  "359": {
-    "id": "359",
-    "authors": "P. van Emde Boas",
-    "title": "The second machine class: Models of parallelism",
-    "year": "1985",
-    "doi": null,
-    "citation": "P. van Emde Boas. The second machine class: Models of parallelism. In J. van Leeuwen and J. K. Lenstra, editors, Parallel Computers and Computation, volume 9 of CWI Syllabus, pages 133–161. Center for Mathematics and Computer Science, Amsterdam, The Netherlands, 1985."
+    "doi": null
   },
   "361": {
-    "id": "361",
     "authors": "S. Vavasis",
     "title": "Gaussian elimination with pivoting is P-complete",
     "year": "1989",
-    "doi": null,
-    "citation": "S. Vavasis. Gaussian elimination with pivoting is P-complete. SIAM Journal on Discrete Mathematics, 2(3):413–423, 1989."
-  },
-  "362": {
-    "id": "362",
-    "authors": "H. Venkateswaran",
-    "title": "Two dynamic programming algorithms for which interpreted pebbling helps",
-    "year": "1991",
-    "doi": null,
-    "citation": "H. Venkateswaran. Two dynamic programming algorithms for which interpreted pebbling helps. Information and Computation, 92(2):237–252, 1991."
-  },
-  "363": {
-    "id": "363",
-    "authors": "H. Venkateswaran and M. Tompa",
-    "title": "A new pebble game that characterizes parallel complexity classes",
-    "year": "1989",
-    "doi": null,
-    "citation": "H. Venkateswaran and M. Tompa. A new pebble game that characterizes parallel complexity classes. SIAM Journal on Computing, 18(3):533–549, June 1989."
-  },
-  "364": {
-    "id": "364",
-    "authors": "U. Vishkin",
-    "title": "Synchronous parallel computation — a survey",
-    "year": "1983",
-    "doi": null,
-    "citation": "U. Vishkin. Synchronous parallel computation — a survey. Preprint, 1983. Courant Institute, New York University."
-  },
-  "365": {
-    "id": "365",
-    "authors": "S. Vishwanathan and M. A. Sridhar",
-    "title": "Some results on graph coloring in parallel",
-    "year": "1988",
-    "doi": null,
-    "citation": "S. Vishwanathan and M. A. Sridhar. Some results on graph coloring in parallel. In F. A. Briggs, editor, Proceedings of the 1988 International Conference on Parallel Processing, pages 299–303, volume 3, University Park, PA, 15-19 August 1988. Pennsylvania State University."
+    "doi": null
   },
   "366": {
-    "id": "366",
     "authors": "J. S. Vitter and R. A. Simons",
     "title": "New classes for parallel complexity: A study of unification and other complete problems for P",
     "year": "1986",
-    "doi": null,
-    "citation": "J. S. Vitter and R. A. Simons. New classes for parallel complexity: A study of unification and other complete problems for P. IEEE Transactions on Computers, TC-35:403–418, May 1986. Reprinted in [370, pages 135–150]."
+    "doi": null
   },
   "368": {
-    "id": "368",
     "authors": "J. von zur Gathen",
     "title": "Parallel algorithms for algebraic problems",
     "year": "1984",
-    "doi": null,
-    "citation": "J. von zur Gathen. Parallel algorithms for algebraic problems. SIAM Journal on Computing, 13(4):802–824, November 1984."
+    "doi": null
   },
   "369": {
-    "id": "369",
     "authors": "J. von zur Gathen",
     "title": "Computing powers in parallel",
     "year": "1987",
-    "doi": null,
-    "citation": "J. von zur Gathen. Computing powers in parallel. SIAM Journal on Computing, 16(5):930–945, October 1987."
-  },
-  "370": {
-    "id": "370",
-    "authors": "B. Wah and G. J. Li, editors",
-    "title": "Computers for Artificial Intelligence Applications",
-    "year": "1986",
-    "doi": null,
-    "citation": "B. Wah and G. J. Li, editors. Computers for Artificial Intelligence Applications. IEEE Computer Society Press, Washington, DC, 1986."
-  },
-  "371": {
-    "id": "371",
-    "authors": "C.-C. Wang, E. L. Lloyd, and M. L. Soﬀa",
-    "title": "Feedback vertex sets and cyclically reducible graphs",
-    "year": "1985",
-    "doi": null,
-    "citation": "C.-C. Wang, E. L. Lloyd, and M. L. Soﬀa. Feedback vertex sets and cyclically reducible graphs. Journal of the ACM, 32(2):296–313, April 1985."
-  },
-  "372": {
-    "id": "372",
-    "authors": "A. Wigderson",
-    "title": "Improving the performance guarantee for approximate graph coloring",
-    "year": "1983",
-    "doi": null,
-    "citation": "A. Wigderson. Improving the performance guarantee for approximate graph coloring. Journal of the ACM, 30(4):729–735, 1983."
-  },
-  "373": {
-    "id": "373",
-    "authors": "R. Wilber. White pebbles help",
-    "title": "Journal of Computer and System Sciences, 36(2):108–124, April 1988.",
-    "year": "1988",
-    "doi": null,
-    "citation": "R. Wilber. White pebbles help. Journal of Computer and System Sciences, 36(2):108–124, April 1988."
-  },
-  "374": {
-    "id": "374",
-    "authors": "H. Yasuura",
-    "title": "The reachability problem on directed hypergraphs and computational complexity",
-    "year": "1983",
-    "doi": null,
-    "citation": "H. Yasuura. The reachability problem on directed hypergraphs and computational complexity. Yajima Lab. Research Report ER 83-02, Department of Information Science, Kyoto University, November 1983."
-  },
-  "375": {
-    "id": "375",
-    "authors": "H. Yasuura",
-    "title": "On parallel computational complexity of unification",
-    "year": "1984",
-    "doi": null,
-    "citation": "H. Yasuura. On parallel computational complexity of unification. In Institute for New Generation Computer Technology (ICOT), editor, Fifth Generation Computer Systems 1984: Proceedings of the International Conference on Fifth Generation Computer Systems 1984, pages 235–243, Tokyo, Japan, November 1984. OHMSHA, LTD./North-Holland."
+    "doi": null
   },
   "376": {
-    "id": "376",
     "authors": "T. Zeugmann",
     "title": "Computing large polynomial powers very fast in parallel",
     "year": "1990",
-    "doi": null,
-    "citation": "T. Zeugmann. Computing large polynomial powers very fast in parallel. In B. Rovan, editor, Mathematical Foundations of Computer Science 1990: Proceedings, 15th Symposium, volume 452 of Lecture Notes in Computer Science, pages 538–545. Springer-Verlag, Bansk´a Bystrica, Czechoslovakia, August 1990."
+    "doi": null
   },
   "377": {
-    "id": "377",
     "authors": "T. Zeugmann",
     "title": "Highly parallel computations modulo a number having only small prime factors",
     "year": "1992",
-    "doi": null,
-    "citation": "T. Zeugmann. Highly parallel computations modulo a number having only small prime factors. Information and Computation, 96(1):95– 114, 1992."
+    "doi": null
   },
   "378": {
-    "id": "378",
     "authors": "S. Zhang and S. A. Smolka",
     "title": "Towards eﬃcient parallelization of equivalence checking algorithms",
     "year": "1990",
-    "doi": null,
-    "citation": "S. Zhang and S. A. Smolka. Towards eﬃcient parallelization of equivalence checking algorithms. In Fifth International Conference on Formal Description Techniques for Distributed Systems and Communications Protocols — FORTE ’92, pages 121–135, Perros-Guirec, France, October 1992 (published 1993)."
-  },
-  "379": {
-    "id": "379",
-    "authors": "Y. Zhang",
-    "title": "Parallel Algorithms for Problems Involving Directed Graphs",
-    "year": "1986",
-    "doi": null,
-    "citation": "Y. Zhang. Parallel Algorithms for Problems Involving Directed Graphs. PhD thesis, Drexel University, 1986."
+    "doi": null
   }
 }
