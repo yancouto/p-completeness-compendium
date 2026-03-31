@@ -31,29 +31,15 @@
       {{ with .Params.references }}
       {{ range . }}
       <li>
-        {{- $ref := . -}}
-        {{- $refId := "" -}}
-        {{- $bibEntry := false -}}
-        {{- /* Handle different reference formats */ -}}
-        {{- if reflect.IsMap . -}}
-          {{- /* Old format: object with citation field */ -}}
-          {{ with .citation }}{{ . }}{{ end }}
-          {{- if .doi -}}
-            <a href="https://doi.org/{{ .doi }}" target="_blank" rel="noopener noreferrer" class="external-link-icon" aria-label="Open DOI link" title="Open DOI link"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span></a>
+        {{- $refId := printf "%v" . -}}
+        {{- $bib := index hugo.Data.bibliography $refId -}}
+        {{- if $bib -}}
+          [{{ $refId }}] {{ $bib.authors }} ({{ $bib.year }}). <em>{{ $bib.title }}</em>.
+          {{- with $bib.doi }}
+            <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener noreferrer" class="external-link-icon" aria-label="Open DOI link" title="Open DOI link"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span></a>
           {{- end -}}
         {{- else -}}
-          {{- /* New format: string or number ID - look up in bibliography */ -}}
-          {{- $refId = printf "%v" . -}}
-          {{- $bibEntry = index hugo.Data.bibliography $refId -}}
-          {{- if $bibEntry -}}
-            [{{ $refId }}] {{ $bibEntry.citation }}
-            {{- with $bibEntry.doi }}
-              <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener noreferrer" class="external-link-icon" aria-label="Open DOI link" title="Open DOI link"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span></a>
-            {{- end -}}
-          {{- else -}}
-            {{- /* Plain string citation */ -}}
-            {{ . }}
-          {{- end -}}
+          {{ . }}
         {{- end -}}
       </li>
       {{ end }}
