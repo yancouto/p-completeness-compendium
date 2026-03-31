@@ -73,9 +73,9 @@
   },
   "21": {
     "authors": "L. Babai, S. Seres, and E. M. Luks. Permutation groups in NC",
-    "title": "In Proceedings of the Nineteenth Annual ACM Symposium on Theory of Computing, pages 409\u2013420, New York, NY, May 1987",
+    "title": "Permutation groups in NC",
     "year": "1987",
-    "doi": null
+    "doi": "10.1145/28395.28439"
   },
   "22": {
     "authors": "A. Bachem and R. Kannan",
@@ -84,7 +84,7 @@
     "doi": null
   },
   "23": {
-    "authors": "J. L. Balc\u00b4azar, J. Gabarr\u00b4o, and M. S\u00b4antha",
+    "authors": "J. L. Balc´azar, J. Gabarr´o, and M. S´antha",
     "title": "Deciding bisimilarity is P-complete",
     "year": "1992",
     "doi": null
@@ -96,7 +96,7 @@
     "doi": "10.1007/3-540-51486-4_84"
   },
   "29": {
-    "authors": "M. Beaudry, P. McKenzie, and D. Th\u00b4erien",
+    "authors": "M. Beaudry, P. McKenzie, and D. Th´erien",
     "title": "The membership problem in aperiodic transformation monoids",
     "year": "1992",
     "doi": "10.1145/146637.146661"
@@ -109,7 +109,7 @@
   },
   "34": {
     "authors": "A. Bertoni, M. C. Bollina, G. Mauri, and N. Sabadini",
-    "title": "On characterizing classes of e\ufb03ciently parallelizable problems",
+    "title": "On characterizing classes of eﬃciently parallelizable problems",
     "year": "1984",
     "doi": null
   },
@@ -127,9 +127,9 @@
   },
   "48": {
     "authors": "J. F. Buss and J. Goldsmith. Nondeterminism within P. In C. Choffrut and M",
-    "title": "Jantzen, editors, STACS 91: 8th Annual Symposium on Theoretical Aspects of Computer Science, volume 480 of Lecture Notes in Computer Science, pages 348\u2013359, Hamburg, Germany, February 1991",
+    "title": "Nondeterminism within P",
     "year": "1991",
-    "doi": null
+    "doi": "10.1007/bfb0020811"
   },
   "49": {
     "authors": "A. K. Chandra, D. C. Kozen, and L. J. Stockmeyer",
@@ -147,7 +147,8 @@
     "authors": "C. L. Chang and R. C. T. Lee",
     "title": "Symbolic Logic and Mechanical Theorem Proving",
     "year": "1973",
-    "doi": null
+    "doi": null,
+    "url": "https://www.sciencedirect.com/book/9780121703509/symbolic-logic-and-mechanical-theorem-proving"
   },
   "54": {
     "authors": "J. Cheriyan and S. N. Maheshwari",
@@ -181,9 +182,9 @@
   },
   "64": {
     "authors": "S. A. Cook",
-    "title": "An observation on time-storage trade o\ufb00",
+    "title": "An observation on time-storage trade oﬀ",
     "year": "1974",
-    "doi": null
+    "doi": "10.1016/s0022-0000(74)80046-2"
   },
   "69": {
     "authors": "S. A. Cook and R. Sethi",
@@ -205,7 +206,7 @@
   },
   "74": {
     "authors": "E. Dahlhaus",
-    "title": "Is SETL a suitable language for parallel programming \u2014 a theoretical approach",
+    "title": "Is SETL a suitable language for parallel programming — a theoretical approach",
     "year": "1987",
     "doi": "10.1007/3-540-50241-6_29"
   },
@@ -217,7 +218,7 @@
   },
   "77": {
     "authors": "E. Dahlhaus, M. Karpinski, and P. Kelsen",
-    "title": "An e\ufb03cient parallel algorithm for computing a maximal independent set in a hypergraph of dimension 3",
+    "title": "An eﬃcient parallel algorithm for computing a maximal independent set in a hypergraph of dimension 3",
     "year": "1992",
     "doi": "10.1016/0020-0190(92)90228-n"
   },
@@ -252,13 +253,13 @@
     "doi": "10.1142/s0129626492000155"
   },
   "83": {
-    "authors": "P. de la Torre, R. Greenlaw, and A. A. Sch\u00a8a\ufb00er",
+    "authors": "P. de la Torre, R. Greenlaw, and A. A. Sch¨aﬀer",
     "title": "Optimal edge ranking of trees in polynomial time",
     "year": "1992",
     "doi": "10.1007/bf01189071"
   },
   "84": {
-    "authors": "P. de la Torre, R. Greenlaw, and A. A. Sch\u00a8a\ufb00er",
+    "authors": "P. de la Torre, R. Greenlaw, and A. A. Sch¨aﬀer",
     "title": "Optimal edge ranking of trees in polynomial time",
     "year": "1993",
     "doi": "10.1007/bf01189071"
@@ -271,7 +272,7 @@
   },
   "86": {
     "authors": "P. de la Torre and C. P. Kruskal",
-    "title": "Fast and e\ufb03cient parallel algorithms for single source lexicographic depth-first search, breadth-first search and topological-first search",
+    "title": "Fast and eﬃcient parallel algorithms for single source lexicographic depth-first search, breadth-first search and topological-first search",
     "year": "1991",
     "doi": null
   },
@@ -339,19 +340,20 @@
     "authors": "M. R. Garey and D. S. Johnson",
     "title": "Computers and Intractability: A Guide to the Theory of NP-Completeness",
     "year": "1979",
-    "doi": null
+    "doi": "10.1137/1024022"
   },
   "116": {
     "authors": "A. M. Gibbons",
     "title": "Algorithmic Graph Theory",
     "year": "1985",
-    "doi": null
+    "doi": null,
+    "url": "https://www.cambridge.org/core/books/algorithmic-graph-theory/1B43065B7B7C0FC78F68F7E0DD2E23F2"
   },
   "118": {
     "authors": "P. B. Gibbons, R. M. Karp, G. L. Miller, and D. Soroker",
     "title": "Sub-tree isomorphism is in Random NC",
     "year": "1990",
-    "doi": null
+    "doi": "10.1016/0166-218x(90)90081-m"
   },
   "119": {
     "authors": "G. Godbeer",
@@ -423,7 +425,7 @@
     "authors": "R. Greenlaw, H. J. Hoover, and W. L. Ruzzo",
     "title": "Limits to Parallel Computation: P-Completeness Theory . Computing Science Series, editor Z. Galil",
     "year": "1995",
-    "doi": null
+    "doi": "10.1093/oso/9780195085914.001.0001"
   },
   "143": {
     "authors": "D. Y. Grigoriev and M. Karpinski",
@@ -475,9 +477,9 @@
   },
   "178": {
     "authors": "D. S. Johnson, C. H. Papadimitriou, and M. Yannakakis",
-    "title": "How easy is local search? Journal of Computer and System Sciences, 37(1):79\u2013 100, 1988.",
+    "title": "How easy is local search?",
     "year": "1988",
-    "doi": null
+    "doi": "10.1016/0022-0000(88)90046-3"
   },
   "181": {
     "authors": "N. D. Jones and W. T. Laaser",
@@ -493,27 +495,27 @@
   },
   "185": {
     "authors": "W. M. Kantor",
-    "title": "Sylow\u2019s theorem in polynomial time",
+    "title": "Sylow’s theorem in polynomial time",
     "year": "1985",
     "doi": "10.1016/0022-0000(85)90052-2"
   },
   "188": {
-    "authors": "H. J. Karlo\ufb00",
+    "authors": "H. J. Karloﬀ",
     "title": "A Las Vegas RNC algorithm for maximum matching",
     "year": "1986",
-    "doi": null
+    "doi": "10.1007/bf02579264"
   },
   "190": {
-    "authors": "H. J. Karlo\ufb00and W. L. Ruzzo",
+    "authors": "H. J. Karloﬀand W. L. Ruzzo",
     "title": "The iterated mod problem",
     "year": "1989",
     "doi": "10.1016/0890-5401(89)90008-4"
   },
   "191": {
-    "authors": "H. J. Karlo\ufb00and D. B. Shmoys",
-    "title": "E\ufb03cient parallel algorithms for edge coloring problems",
+    "authors": "H. J. Karloﬀand D. B. Shmoys",
+    "title": "Eﬃcient parallel algorithms for edge coloring problems",
     "year": "1987",
-    "doi": null
+    "doi": "10.1016/0196-6774(87)90026-5"
   },
   "196": {
     "authors": "R. M. Karp, E. Upfal, and A. Wigderson",
@@ -541,9 +543,9 @@
   },
   "202": {
     "authors": "S. Kasif",
-    "title": "On the parallel complexity of some constraint satisfaction problems",
+    "title": "On the parallel complexity of discrete relaxation in constraint satisfaction networks",
     "year": "1986",
-    "doi": null
+    "doi": "10.1016/0004-3702(90)90009-o"
   },
   "203": {
     "authors": "S. Kasif",
@@ -561,7 +563,7 @@
     "authors": "P. Kelsen",
     "title": "On computing a maximal independent set in a hypergraph of constant dimension in parallel",
     "year": "1992",
-    "doi": null
+    "doi": "10.1145/129712.129745"
   },
   "208": {
     "authors": "S. Khuller",
@@ -600,14 +602,14 @@
     "doi": "10.1016/0304-3975(90)90101-m"
   },
   "232": {
-    "authors": "A. K. Lenstra, H. W. Lenstra, Jr., and L. Lov\u00b4asz",
-    "title": "Factoring polynomials with rational coe\ufb03cients",
+    "authors": "A. K. Lenstra, H. W. Lenstra, Jr., and L. Lov´asz",
+    "title": "Factoring polynomials with rational coeﬃcients",
     "year": "1982",
-    "doi": null
+    "doi": "10.1007/bf01457454"
   },
   "235": {
     "authors": "S. Lin and B. W. Kernighan",
-    "title": "An e\ufb00ective heuristic algorithm for the traveling salesman problem",
+    "title": "An eﬀective heuristic algorithm for the traveling salesman problem",
     "year": "1973",
     "doi": "10.1287/opre.21.2.498"
   },
@@ -627,7 +629,7 @@
     "authors": "S. Lindell",
     "title": "A logspace algorithm for tree canonization",
     "year": "1992",
-    "doi": null
+    "doi": "10.1145/129712.129750"
   },
   "239": {
     "authors": "K. Lindgren and M. G. Nordahl",
@@ -643,7 +645,7 @@
   },
   "242": {
     "authors": "J. Lipscomb",
-    "title": "On the computational complexity of finding a connectionist model\u2019s stable state vectors",
+    "title": "On the computational complexity of finding a connectionist model’s stable state vectors",
     "year": "1987",
     "doi": null
   },
@@ -651,7 +653,7 @@
     "authors": "R. J. Lipton and Y. Zalcstein",
     "title": "Word problems solvable in log space",
     "year": "1977",
-    "doi": null
+    "doi": "10.1145/322017.322031"
   },
   "246": {
     "authors": "M. Luby",
@@ -739,12 +741,12 @@
   },
   "276": {
     "authors": "V. Pan and J. H. Reif",
-    "title": "Fast and e\ufb03cient parallel solution of dense linear systems",
+    "title": "Fast and eﬃcient parallel solution of dense linear systems",
     "year": "1989",
     "doi": "10.1016/0898-1221(89)90081-3"
   },
   "278": {
-    "authors": "C. H. Papadimitriou, A. A. Sch\u00a8a\ufb00er, and M. Yannakakis",
+    "authors": "C. H. Papadimitriou, A. A. Sch¨aﬀer, and M. Yannakakis",
     "title": "On the complexity of local search",
     "year": "1990",
     "doi": "10.1145/100216.100274"
@@ -759,7 +761,8 @@
     "authors": "I. Parberry",
     "title": "Parallel Complexity Theory",
     "year": "1987",
-    "doi": null
+    "doi": null,
+    "url": "https://ianparberry.com/pubs/pct.pdf"
   },
   "290": {
     "authors": "D. A. Plaisted",
@@ -768,10 +771,11 @@
     "doi": "10.1016/0022-0000(84)90010-2"
   },
   "291": {
-    "authors": "G. P\u00b4olya, R. E. Tarjan, and D. R. Woods",
+    "authors": "G. P´olya, R. E. Tarjan, and D. R. Woods",
     "title": "Notes on Introductory Combinatorics",
     "year": "1983",
-    "doi": null
+    "doi": null,
+    "url": "https://link.springer.com/book/10.1007/978-0-8176-4828-2"
   },
   "292": {
     "authors": "E. L. Post",
@@ -858,7 +862,7 @@
     "doi": "10.1109/glsv.1992.218368"
   },
   "324": {
-    "authors": "A. A. Sch\u00a8a\ufb00er and M. Yannakakis",
+    "authors": "A. A. Sch¨aﬀer and M. Yannakakis",
     "title": "Simple local search problems that are hard to solve",
     "year": "1991",
     "doi": null
@@ -883,15 +887,15 @@
   },
   "330": {
     "authors": "S. Shimozono and S. Miyano",
-    "title": "Complexity of finding alphabet indexing",
+    "title": "Finding alphabet indexing for decision trees over regular patterns: an approach to bioinformatical knowledge acquisition",
     "year": "1994",
-    "doi": null
+    "doi": "10.1109/hicss.1993.270664"
   },
   "332": {
     "authors": "T. Shoudai",
-    "title": "A P-complete language describable with iterated shu\ufb04e",
+    "title": "A P-complete language describable with iterated shuﬄe",
     "year": "1992",
-    "doi": null
+    "doi": "10.1016/0020-0190(92)90165-r"
   },
   "334": {
     "authors": "J. R. Smith",
@@ -985,7 +989,7 @@
   },
   "378": {
     "authors": "S. Zhang and S. A. Smolka",
-    "title": "Towards e\ufb03cient parallelization of equivalence checking algorithms",
+    "title": "Towards eﬃcient parallelization of equivalence checking algorithms",
     "year": "1990",
     "doi": null
   }
