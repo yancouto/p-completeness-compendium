@@ -34,7 +34,7 @@
         {{- $refId := printf "%v" . -}}
         {{- $bib := index hugo.Data.bibliography $refId -}}
         {{- if $bib -}}
-          [{{ $refId }}] {{ $bib.authors }} ({{ $bib.year }}). <em>{{ $bib.title }}</em>.
+          {{ $bib.authors }} ({{ $bib.year }}). <em>{{ $bib.title }}</em>.
           {{- with $bib.doi }}
             <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener noreferrer" class="external-link-icon" aria-label="Open DOI link" title="Open DOI link"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span></a>
           {{- else }}{{- with $bib.url }}

@@ -46,5 +46,5 @@ See our [Contributing Guide]({{< relref "/about.md" >}}#contributing) for detail
 
 ## Featured Problems
 
-- **[Circuit Value Problem (CVP)]({{< relref "/problems/a-1-1-cvp.md" >}})** — The foundational P-complete problem, analogous to SAT for NP-completeness
-- **[Monotone CVP]({{< relref "/problems/a-1-3-mcvp.md" >}})** — A restricted variant using only AND and OR gates
+- **[Circuit Value Problem (CVP)]({{< relref "/problems/a-1-1.md" >}})** — The foundational P-complete problem, analogous to SAT for NP-completeness
+- **[Monotone CVP]({{< relref "/problems/a-1-3.md" >}})** — A restricted variant using only AND and OR gates
