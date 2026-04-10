@@ -31,17 +31,63 @@
       {{ with .Params.references }}
       {{ range . }}
       <li>
-        {{- $refId := printf "%v" . -}}
-        {{- $bib := index hugo.Data.bibliography $refId -}}
-        {{- if $bib -}}
+        {{- $ref := . -}}
+        {{- $bib := dict -}}
+        {{- $hasBib := false -}}
+        {{- $inline := dict -}}
+        {{- if reflect.IsMap $ref -}}
+          {{- $inline = $ref -}}
+          {{- with index $ref "id" -}}
+            {{- $refId := printf "%v" . -}}
+            {{- with index hugo.Data.bibliography $refId -}}
+              {{- $bib = . -}}
+              {{- $hasBib = true -}}
+            {{- end -}}
+          {{- end -}}
+        {{- else -}}
+          {{- $refId := printf "%v" $ref -}}
+          {{- with index hugo.Data.bibliography $refId -}}
+            {{- $bib = . -}}
+            {{- $hasBib = true -}}
+          {{- end -}}
+        {{- end -}}
+        {{- if $hasBib -}}
           {{ $bib.authors }} ({{ $bib.year }}). <em>{{ $bib.title }}</em>.
           {{- with $bib.doi }}
             <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener noreferrer" class="external-link-icon" aria-label="Open DOI link" title="Open DOI link"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span></a>
           {{- else }}{{- with $bib.url }}
             <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="external-link-icon" aria-label="Open link" title="Open link"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span></a>
           {{- end }}{{- end -}}
+        {{- else if reflect.IsMap $ref -}}
+          {{- $citation := printf "%v" (index $inline "citation") -}}
+          {{- $authors := "" -}}
+          {{- with index $inline "authors" -}}
+            {{- if reflect.IsSlice . -}}
+              {{- $authors = delimit . ", " -}}
+            {{- else -}}
+              {{- $authors = printf "%v" . -}}
+            {{- end -}}
+          {{- else -}}
+            {{- with index $inline "author" -}}
+              {{- $authors = printf "%v" . -}}
+            {{- end -}}
+          {{- end -}}
+          {{- $title := printf "%v" (index $inline "title") -}}
+          {{- $year := printf "%v" (index $inline "year") -}}
+          {{- if and (index $inline "citation") (ne $citation "<nil>") -}}
+            {{ $citation }}
+          {{- else -}}
+            {{- with $authors -}}{{ . }}{{- end -}}
+            {{- if and (ne $year "") (ne $year "<nil>") }} ({{ $year }}){{ end -}}
+            {{- if and (ne $title "") (ne $title "<nil>") }}. <em>{{ $title }}</em>{{ end -}}.
+          {{- end -}}
+          {{- with index $inline "doi" }}
+            <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener noreferrer" class="external-link-icon" aria-label="Open DOI link" title="Open DOI link"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span></a>
+          {{- else }}{{- with index $inline "url" }}
+            <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="external-link-icon" aria-label="Open link" title="Open link"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span></a>
+          {{- end }}{{- end -}}
         {{- else -}}
-          {{ . }}
+          {{ $ref }}
         {{- end -}}
       </li>
       {{ end }}
@@ -85,4 +131,3 @@
   {{ end }}
 </nav>
 {{ end }}
-
