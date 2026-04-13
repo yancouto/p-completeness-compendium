@@ -109,7 +109,7 @@
         {{ $related := site.GetPage (printf "/problems/%s" .id) }}
         {{ if $related }}
         <li>
-          <a href="{{ $related.RelPermalink }}">{{ $related.Title }}</a>
+          <a href="{{ $related.RelPermalink }}">{{ with $related.Params.acronym }}{{ . }} – {{ end }}{{ $related.Title }}</a>
           {{ with .relation }}<span class="relation">({{ . }})</span>{{ end }}
         </li>
         {{ else if .id }}
