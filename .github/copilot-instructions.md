@@ -7,7 +7,7 @@ hugo server -D          # Development server with drafts
 hugo --minify           # Production build (output: public/)
 ```
 
-No tests or linters are configured.
+No linters are configured.
 
 ## Architecture
 
@@ -23,10 +23,14 @@ This is a Hugo static site cataloging P-complete problems from computational com
 
 Problems can reference bibliography entries in two ways:
 
-1. **ID-based** (preferred): `references: ["127", "281"]` - looks up in `data/bibliography.json`
+1. **ID-based** (preferred): `references: [127, 281]` (or strings) - looks up in `data/bibliography.json`
 2. **Inline objects** (legacy): `references: [{citation: "...", year: "1986"}]`
 
 The template (`layouts/problems/single.html`) handles both formats. When using IDs, citations display as `[127] Author. Title...`
+
+Each problem page automatically appends the Greenlaw book as the last entry in the rendered references list (using `book_id`). This means the in-text book citation index is always `len(references) + 1`.
+
+Preferred status format is: `$\P$-complete (Author [i], Other Author [j]).`
 
 ### Problem File Structure
 

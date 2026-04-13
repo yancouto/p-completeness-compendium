@@ -22,3 +22,7 @@ node_modules/
 # Hugo
 .hugo_build.lock
 .worktrees/
+
+# Python
+__pycache__/
+*.pyc
