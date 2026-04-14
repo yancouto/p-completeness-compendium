@@ -42,6 +42,19 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+
+      - name: Run autolink script tests
+        run: python -m unittest scripts/test_auto_link_problems.py
+
+      - name: Check problem autolinks
+        id: autolink_check
+        continue-on-error: true
+        run: python scripts/auto_link_problems.py --check
+
+      - name: Warn if problem autolinks are out of date
+        if: steps.autolink_check.outcome == 'failure'
+        run: |
+          echo "::warning title=Problem autolinks out of date::Run 'python scripts/auto_link_problems.py' locally and commit updated problem files."
       
       - name: Build with Hugo
         env:
