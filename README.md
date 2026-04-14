@@ -15,6 +15,13 @@ hugo server -D
 # Open http://localhost:1313
 ```
 
+## Makefile shortcuts
+
+```bash
+make help
+# common: make dev, make build, make test, make autolink, make autolink-check, make verify
+```
+
 ## Autolink script
 
 Requires [uv](https://docs.astral.sh/uv/).

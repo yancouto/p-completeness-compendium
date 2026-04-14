@@ -18,6 +18,10 @@ FRONTMATTER_PATTERN = re.compile(
     re.DOTALL,
 )
 EXCLUDED_SPAN_PATTERNS = (
+    re.compile(r"(?<!\\)\$\$(?:.|\n)*?(?<!\\)\$\$", re.DOTALL),
+    re.compile(r"(?<!\\)\$(?!\$)(?:\\.|[^$\\\n])*(?<!\\)\$(?!\$)"),
+    re.compile(r"\\\((?:.|\n)*?\\\)", re.DOTALL),
+    re.compile(r"\\\[(?:.|\n)*?\\\]", re.DOTALL),
     re.compile(r"`[^`\n]*`"),
     re.compile(r"!\[[^\]]*\]\([^)]+\)"),
     re.compile(r"\[[^\]]+\]\([^)]+\)"),

@@ -28,6 +28,7 @@
   --color-border: #e5e7eb;
   --color-card-bg: #f9fafb;
   --color-p-complete: #059669;
+  --color-p-hard: #dc2626;
   --color-open: #d97706;
   --color-header-bg: #1a1a1a;
   --color-header-text: #ffffff;
@@ -52,6 +53,7 @@ html[data-theme="dark"] {
   --color-border: #49483e;
   --color-card-bg: #2f3129;
   --color-p-complete: #a6e22e;
+  --color-p-hard: #ff6188;
   --color-open: #fd971f;
   --color-header-bg: #1e1f1c;
   --color-header-text: #f8f8f2;
@@ -334,6 +336,11 @@ html[data-theme="dark"] .problem-content ol li {
 .status-p-complete {
   background: rgba(5, 150, 105, 0.1);
   color: var(--color-p-complete);
+}
+
+.status-p-hard {
+  background: rgba(220, 38, 38, 0.1);
+  color: var(--color-p-hard);
 }
 
 .status-open {

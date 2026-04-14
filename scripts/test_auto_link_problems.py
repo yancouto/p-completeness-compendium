@@ -124,6 +124,39 @@ class AutoLinkProblemsTests(unittest.TestCase):
             encoding="utf-8",
         )
 
+        (problems_dir / "a-8-7.md").write_text(
+            textwrap.dedent(
+                """\
+                ---
+                title: "Sample SC Problem"
+                acronym: "SC"
+                ---
+
+                ## Remarks
+
+                Defines SC acronym target.
+                """
+            ),
+            encoding="utf-8",
+        )
+
+        (problems_dir / "a-8-26.md").write_text(
+            textwrap.dedent(
+                """\
+                ---
+                title: "Math Mode Sample"
+                acronym: "MMS"
+                ---
+
+                ## Remarks
+
+                Inside math: $\\mathsf{SC}^k$ should stay unchanged.
+                Outside math: SC should become link.
+                """
+            ),
+            encoding="utf-8",
+        )
+
     def tearDown(self):
         shutil.rmtree(self.temp_dir)
 
@@ -213,6 +246,16 @@ class AutoLinkProblemsTests(unittest.TestCase):
         self.assertIn("relation: reduces-from", source_updated)
         self.assertNotIn("- id: a-2-3\n    relation: see-also", source_updated)
         self.assertIn("- id: a-2-4\n    relation: see-also", source_updated)
+
+    def test_does_not_link_acronyms_inside_latex_math(self):
+        first = self.run_script()
+        self.assertEqual(first.returncode, 0, first.stderr)
+
+        updated = (self.temp_dir / "content" / "problems" / "a-8-26.md").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("Inside math: $\\mathsf{SC}^k$ should stay unchanged.", updated)
+        self.assertIn('Outside math: [SC]({{< relref "./a-8-7.md" >}}) should become link.', updated)
 
 
 if __name__ == "__main__":

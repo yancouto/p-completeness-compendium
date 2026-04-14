@@ -33,6 +33,7 @@
       <select id="status-filter">
         <option value="">All</option>
         <option value="p-complete">P-complete</option>
+        <option value="p-hard">P-hard</option>
         <option value="open">Open</option>
       </select>
     </div>
@@ -52,7 +53,7 @@
              data-tags="{{ with .Params.tags }}{{ delimit . " " | lower }}{{ end }}">
       <div class="card-header">
         <span class="status status-{{ .Params.status | default "p-complete" }}">
-          {{ if eq .Params.status "open" }}Open{{ else }}P-complete{{ end }}
+          {{ if eq .Params.status "open" }}Open{{ else if eq .Params.status "p-hard" }}P-hard{{ else }}P-complete{{ end }}
         </span>
       </div>
       <h2>

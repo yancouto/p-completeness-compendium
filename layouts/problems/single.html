@@ -3,7 +3,7 @@
   <header class="problem-header">
     <div class="problem-meta">
       <span class="problem-status status-{{ .Params.status | default "p-complete" }}">
-        {{ if eq .Params.status "open" }}Open{{ else }}P-complete{{ end }}
+        {{ if eq .Params.status "open" }}Open{{ else if eq .Params.status "p-hard" }}P-hard{{ else }}P-complete{{ end }}
       </span>
     </div>
     <h1>{{ .Title }}{{ with .Params.acronym }} <span class="acronym">({{ . }})</span>{{ end }}</h1>
