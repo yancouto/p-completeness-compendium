@@ -2,16 +2,21 @@
 from __future__ import annotations
 
 import argparse
-import copy
 import re
 import sys
 from dataclasses import dataclass
+from io import StringIO
 from pathlib import Path
 from typing import Iterable
 
-import frontmatter
+from ruamel.yaml import YAML
+from ruamel.yaml.comments import CommentedMap, CommentedSeq
 
 
+FRONTMATTER_PATTERN = re.compile(
+    r"^(?P<bom>\ufeff?)(?P<open>---\r?\n)(?P<front>.*?)(?P<close>\r?\n---\r?\n?)(?P<body>.*)$",
+    re.DOTALL,
+)
 EXCLUDED_SPAN_PATTERNS = (
     re.compile(r"`[^`\n]*`"),
     re.compile(r"!\[[^\]]*\]\([^)]+\)"),
@@ -21,51 +26,64 @@ EXCLUDED_SPAN_PATTERNS = (
 CUSTOM_ACRONYM_TARGETS = {
     "NORCVP": "a-1-5.md",
 }
+RECIPROCAL_RELATIONS = {
+    "reduces-from": "reduces-to",
+    "reduces-to": "reduces-from",
+}
+
+YAML_RT = YAML()
+YAML_RT.preserve_quotes = True
+YAML_RT.indent(mapping=2, sequence=4, offset=2)
 
 
 @dataclass
 class ProblemFile:
     path: Path
     bom: str
+    open_delim: str
+    close_delim: str
     newline: str
-    post: frontmatter.Post
+    original_text: str
+    frontmatter: CommentedMap
+    body: str
     acronym: str | None
 
-    def render(self, post: frontmatter.Post) -> str:
-        rendered = frontmatter.dumps(post)
+    def render(self) -> str:
+        stream = StringIO()
+        YAML_RT.dump(self.frontmatter, stream)
+        dumped = stream.getvalue().rstrip("\n")
         if self.newline == "\r\n":
-            rendered = rendered.replace("\n", "\r\n")
-        return f"{self.bom}{rendered}"
+            dumped = dumped.replace("\n", "\r\n")
+        return f"{self.bom}{self.open_delim}{dumped}{self.close_delim}{self.body}"
 
 
 def parse_problem_file(path: Path) -> ProblemFile:
     text = path.read_text(encoding="utf-8")
-    bom = "\ufeff" if text.startswith("\ufeff") else ""
-    text_without_bom = text[len(bom) :]
-    newline = "\r\n" if "\r\n" in text else "\n"
-
-    if not text_without_bom.startswith("---"):
+    match = FRONTMATTER_PATTERN.match(text)
+    if not match:
         raise ValueError(f"Missing or malformed frontmatter in {path}")
 
-    try:
-        post = frontmatter.loads(text_without_bom)
-    except Exception as error:  # pragma: no cover - parser-specific exceptions
-        raise ValueError(f"Missing or malformed frontmatter in {path}: {error}") from error
+    frontmatter_text = match.group("front")
+    loaded = YAML_RT.load(frontmatter_text)
+    if loaded is None:
+        loaded = CommentedMap()
+    if not isinstance(loaded, CommentedMap):
+        raise ValueError(f"Frontmatter must be a YAML mapping in {path}")
 
-    acronym_value = post.metadata.get("acronym")
+    acronym_value = loaded.get("acronym")
     acronym = str(acronym_value) if acronym_value is not None else None
 
     return ProblemFile(
         path=path,
-        bom=bom,
-        newline=newline,
-        post=post,
+        bom=match.group("bom"),
+        open_delim=match.group("open"),
+        close_delim=match.group("close"),
+        newline="\r\n" if "\r\n" in text else "\n",
+        original_text=text,
+        frontmatter=loaded,
+        body=match.group("body"),
         acronym=acronym,
     )
-
-
-def clone_post(post: frontmatter.Post) -> frontmatter.Post:
-    return frontmatter.Post(post.content, **copy.deepcopy(post.metadata))
 
 
 def merge_spans(spans: Iterable[tuple[int, int]]) -> list[tuple[int, int]]:
@@ -99,10 +117,7 @@ def build_excluded_spans(text: str) -> list[tuple[int, int]]:
     return merge_spans(spans)
 
 
-def link_acronyms(
-    body: str,
-    acronym_targets: dict[str, str],
-) -> tuple[str, set[str]]:
+def link_acronyms(body: str, acronym_targets: dict[str, str]) -> tuple[str, set[str]]:
     if not acronym_targets:
         return body, set()
 
@@ -119,9 +134,7 @@ def link_acronyms(
 
         token = match.group("token")
         target_filename = acronym_targets[token]
-        target_problem_id = target_filename.removesuffix(".md")
-        linked_problem_ids.add(target_problem_id)
-
+        linked_problem_ids.add(target_filename.removesuffix(".md"))
         result_parts.append(body[cursor : match.start()])
         result_parts.append(f'[{token}]({{{{< relref "./{target_filename}" >}}}})')
         cursor = match.end()
@@ -133,41 +146,68 @@ def link_acronyms(
     return "".join(result_parts), linked_problem_ids
 
 
-def add_related_problems(
-    post: frontmatter.Post,
-    new_problem_ids: set[str],
-    source_path: Path,
-) -> frontmatter.Post:
-    if not new_problem_ids:
-        return post
-
-    updated_post = clone_post(post)
-    related_value = updated_post.metadata.get("related_problems")
-    if related_value is None:
-        related_entries: list[object] = []
-    elif isinstance(related_value, list):
-        related_entries = related_value
-    else:
+def get_related_entries(frontmatter: CommentedMap, source_path: Path, create: bool) -> list[object] | None:
+    related = frontmatter.get("related_problems")
+    if related is None:
+        if not create:
+            return None
+        related = CommentedSeq()
+        frontmatter["related_problems"] = related
+        return related
+    if not isinstance(related, list):
         raise ValueError(f"'related_problems' must be a YAML list in {source_path}")
+    return related
 
-    existing_ids: set[str] = set()
-    for entry in related_entries:
-        if isinstance(entry, dict):
-            entry_id = entry.get("id")
-            if entry_id is not None:
-                existing_ids.add(str(entry_id))
-        elif isinstance(entry, str):
-            existing_ids.add(entry)
 
-    to_add = [problem_id for problem_id in sorted(new_problem_ids) if problem_id not in existing_ids]
-    if not to_add:
-        return post
+def has_relation_entry(entries: list[object], target_id: str, relation: str) -> bool:
+    for entry in entries:
+        if not isinstance(entry, dict):
+            continue
+        if str(entry.get("id")) == target_id and str(entry.get("relation")) == relation:
+            return True
+    return False
 
-    for problem_id in to_add:
-        related_entries.append({"id": problem_id, "relation": "see-also"})
 
-    updated_post.metadata["related_problems"] = related_entries
-    return updated_post
+def add_relation_entry(problem: ProblemFile, target_id: str, relation: str) -> None:
+    entries = get_related_entries(problem.frontmatter, problem.path, create=True)
+    assert entries is not None
+    if has_relation_entry(entries, target_id, relation):
+        return
+    entries.append(CommentedMap({"id": target_id, "relation": relation}))
+
+
+def add_related_problems(problem: ProblemFile, new_problem_ids: set[str]) -> None:
+    if not new_problem_ids:
+        return
+    for problem_id in sorted(new_problem_ids):
+        add_relation_entry(problem, problem_id, "see-also")
+
+
+def synchronize_reciprocal_relations(problem_files: list[ProblemFile]) -> None:
+    by_problem_id = {problem.path.stem: problem for problem in problem_files}
+
+    for source in problem_files:
+        source_entries = get_related_entries(source.frontmatter, source.path, create=False)
+        if source_entries is None:
+            continue
+
+        for entry in source_entries:
+            if not isinstance(entry, dict):
+                continue
+            target_id_raw = entry.get("id")
+            relation_raw = entry.get("relation")
+            if target_id_raw is None or relation_raw is None:
+                continue
+
+            relation = str(relation_raw)
+            reciprocal = RECIPROCAL_RELATIONS.get(relation)
+            if reciprocal is None:
+                continue
+
+            target_problem = by_problem_id.get(str(target_id_raw))
+            if target_problem is None:
+                continue
+            add_relation_entry(target_problem, source.path.stem, reciprocal)
 
 
 def build_acronym_index(problem_files: list[ProblemFile]) -> dict[str, str]:
@@ -190,6 +230,7 @@ def run(root: Path, check: bool) -> int:
 
     paths = sorted(path for path in problems_dir.glob("*.md") if path.name != "_index.md")
     problem_files = [parse_problem_file(path) for path in paths]
+    synchronize_reciprocal_relations(problem_files)
     acronym_index = build_acronym_index(problem_files)
 
     changed_files: list[Path] = []
@@ -200,18 +241,13 @@ def run(root: Path, check: bool) -> int:
             for acronym, filename in acronym_index.items()
             if filename != current_filename
         }
+        linked_body, related_problem_ids = link_acronyms(problem.body, link_targets)
+        problem.body = linked_body
+        add_related_problems(problem, related_problem_ids)
 
-        linked_body, related_problem_ids = link_acronyms(problem.post.content, link_targets)
-        updated_post = add_related_problems(problem.post, related_problem_ids, problem.path)
-        if linked_body != updated_post.content:
-            updated_post.content = linked_body
-
-        updated_text = problem.render(updated_post)
-        original_text = problem.render(problem.post)
-
-        if updated_text == original_text:
+        updated_text = problem.render()
+        if updated_text == problem.original_text:
             continue
-
         changed_files.append(problem.path)
         if not check:
             problem.path.write_text(updated_text, encoding="utf-8")

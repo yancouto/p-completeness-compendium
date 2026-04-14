@@ -5,6 +5,7 @@ import tempfile
 import textwrap
 import unittest
 from pathlib import Path
+import re
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -68,6 +69,41 @@ class AutoLinkProblemsTests(unittest.TestCase):
             encoding="utf-8",
         )
 
+        (problems_dir / "a-2-2.md").write_text(
+            textwrap.dedent(
+                """\
+                ---
+                title: "Reciprocity Source"
+                acronym: "SRC"
+                related_problems:
+                  - id: a-2-3
+                    relation: reduces-from
+                ---
+
+                ## Remarks
+
+                Source node.
+                """
+            ),
+            encoding="utf-8",
+        )
+
+        (problems_dir / "a-2-3.md").write_text(
+            textwrap.dedent(
+                """\
+                ---
+                title: "Reciprocity Target"
+                acronym: "TGT"
+                ---
+
+                ## Remarks
+
+                Target node.
+                """
+            ),
+            encoding="utf-8",
+        )
+
     def tearDown(self):
         shutil.rmtree(self.temp_dir)
 
@@ -109,6 +145,42 @@ class AutoLinkProblemsTests(unittest.TestCase):
 
         second = self.run_script("--check")
         self.assertEqual(second.returncode, 0, second.stdout + second.stderr)
+
+    def test_preserves_frontmatter_style_and_appends_related_at_end(self):
+        original = (self.temp_dir / "content" / "problems" / "a-2-1.md").read_text(encoding="utf-8")
+        original_frontmatter = re.match(
+            r"^\ufeff?---\r?\n(?P<front>.*?)(?:\r?\n)---\r?\n",
+            original,
+            re.DOTALL,
+        ).group("front")
+        self.assertIn('title: "Sample"', original_frontmatter)
+        self.assertIn('acronym: "SAMPLE"', original_frontmatter)
+        self.assertIn("references: [1]", original_frontmatter)
+
+        first = self.run_script()
+        self.assertEqual(first.returncode, 0, first.stderr)
+
+        updated = (self.temp_dir / "content" / "problems" / "a-2-1.md").read_text(encoding="utf-8")
+        updated_frontmatter = re.match(
+            r"^\ufeff?---\r?\n(?P<front>.*?)(?:\r?\n)---\r?\n",
+            updated,
+            re.DOTALL,
+        ).group("front")
+
+        self.assertIn('title: "Sample"', updated_frontmatter)
+        self.assertIn('acronym: "SAMPLE"', updated_frontmatter)
+        self.assertIn("references: [1]", updated_frontmatter)
+        self.assertTrue(updated_frontmatter.rstrip().endswith("relation: see-also"))
+
+    def test_adds_reciprocal_reduction_relation(self):
+        first = self.run_script()
+        self.assertEqual(first.returncode, 0, first.stderr)
+
+        target_updated = (self.temp_dir / "content" / "problems" / "a-2-3.md").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("- id: a-2-2", target_updated)
+        self.assertIn("relation: reduces-to", target_updated)
 
 
 if __name__ == "__main__":
