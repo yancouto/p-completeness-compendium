@@ -77,7 +77,11 @@ class AutoLinkProblemsTests(unittest.TestCase):
                 acronym: "SRC"
                 related_problems:
                   - id: a-2-3
+                    relation: see-also
+                  - id: a-2-3
                     relation: reduces-from
+                  - id: a-2-4
+                    relation: see-also
                 ---
 
                 ## Remarks
@@ -99,6 +103,22 @@ class AutoLinkProblemsTests(unittest.TestCase):
                 ## Remarks
 
                 Target node.
+                """
+            ),
+            encoding="utf-8",
+        )
+
+        (problems_dir / "a-2-4.md").write_text(
+            textwrap.dedent(
+                """\
+                ---
+                title: "Unrelated Target"
+                acronym: "UTGT"
+                ---
+
+                ## Remarks
+
+                Target with only see-also.
                 """
             ),
             encoding="utf-8",
@@ -181,6 +201,18 @@ class AutoLinkProblemsTests(unittest.TestCase):
         )
         self.assertIn("- id: a-2-2", target_updated)
         self.assertIn("relation: reduces-to", target_updated)
+
+    def test_reduction_relations_override_see_also(self):
+        first = self.run_script()
+        self.assertEqual(first.returncode, 0, first.stderr)
+
+        source_updated = (self.temp_dir / "content" / "problems" / "a-2-2.md").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("- id: a-2-3", source_updated)
+        self.assertIn("relation: reduces-from", source_updated)
+        self.assertNotIn("- id: a-2-3\n    relation: see-also", source_updated)
+        self.assertIn("- id: a-2-4\n    relation: see-also", source_updated)
 
 
 if __name__ == "__main__":

@@ -183,6 +183,43 @@ def add_related_problems(problem: ProblemFile, new_problem_ids: set[str]) -> Non
         add_relation_entry(problem, problem_id, "see-also")
 
 
+def prune_see_also_when_reduction_exists(problem: ProblemFile) -> None:
+    entries = get_related_entries(problem.frontmatter, problem.path, create=False)
+    if entries is None:
+        return
+
+    reduction_targets: set[str] = set()
+    for entry in entries:
+        if not isinstance(entry, dict):
+            continue
+        target_id_raw = entry.get("id")
+        relation_raw = entry.get("relation")
+        if target_id_raw is None or relation_raw is None:
+            continue
+        if str(relation_raw) in RECIPROCAL_RELATIONS:
+            reduction_targets.add(str(target_id_raw))
+
+    if not reduction_targets:
+        return
+
+    filtered_entries = CommentedSeq()
+    for entry in entries:
+        if isinstance(entry, dict):
+            target_id_raw = entry.get("id")
+            relation_raw = entry.get("relation")
+            if (
+                target_id_raw is not None
+                and relation_raw is not None
+                and str(relation_raw) == "see-also"
+                and str(target_id_raw) in reduction_targets
+            ):
+                continue
+        filtered_entries.append(entry)
+
+    if len(filtered_entries) != len(entries):
+        problem.frontmatter["related_problems"] = filtered_entries
+
+
 def synchronize_reciprocal_relations(problem_files: list[ProblemFile]) -> None:
     by_problem_id = {problem.path.stem: problem for problem in problem_files}
 
@@ -244,6 +281,7 @@ def run(root: Path, check: bool) -> int:
         linked_body, related_problem_ids = link_acronyms(problem.body, link_targets)
         problem.body = linked_body
         add_related_problems(problem, related_problem_ids)
+        prune_see_also_when_reduction_exists(problem)
 
         updated_text = problem.render()
         if updated_text == problem.original_text:
