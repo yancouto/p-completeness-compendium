@@ -15,6 +15,17 @@ hugo server -D
 # Open http://localhost:1313
 ```
 
+## Autolink script
+
+Requires [uv](https://docs.astral.sh/uv/).
+
+```bash
+uv sync --locked
+uv run python scripts/auto_link_problems.py
+uv run python scripts/auto_link_problems.py --check
+uv run python -m unittest scripts/test_auto_link_problems.py
+```
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) or the [About page](https://yancouto.github.io/p-completeness-compendium/about/#contributing) on the website.

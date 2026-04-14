@@ -2,19 +2,16 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import re
 import sys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
 
+import frontmatter
 
-FRONTMATTER_PATTERN = re.compile(
-    r"^(?P<bom>\ufeff?)(?P<open>---\r?\n)(?P<front>.*?)(?P<close>\r?\n---\r?\n?)(?P<body>.*)$",
-    re.DOTALL,
-)
-ACRONYM_PATTERN = re.compile(r'(?m)^acronym:\s*"?(?P<acronym>[A-Z0-9]+)"?\s*$')
-RELATED_PROBLEM_ID_PATTERN = re.compile(r'(?m)^\s*-\s*id:\s*"?(?P<id>[a-z]-\d+-\d+)"?\s*$')
+
 EXCLUDED_SPAN_PATTERNS = (
     re.compile(r"`[^`\n]*`"),
     re.compile(r"!\[[^\]]*\]\([^)]+\)"),
@@ -30,39 +27,45 @@ CUSTOM_ACRONYM_TARGETS = {
 class ProblemFile:
     path: Path
     bom: str
-    open_delim: str
-    frontmatter: str
-    close_delim: str
-    body: str
+    newline: str
+    post: frontmatter.Post
     acronym: str | None
 
-    @property
-    def newline(self) -> str:
-        return "\r\n" if "\r\n" in self.open_delim else "\n"
-
-    def render(self, frontmatter: str, body: str) -> str:
-        return f"{self.bom}{self.open_delim}{frontmatter}{self.close_delim}{body}"
+    def render(self, post: frontmatter.Post) -> str:
+        rendered = frontmatter.dumps(post)
+        if self.newline == "\r\n":
+            rendered = rendered.replace("\n", "\r\n")
+        return f"{self.bom}{rendered}"
 
 
 def parse_problem_file(path: Path) -> ProblemFile:
     text = path.read_text(encoding="utf-8")
-    match = FRONTMATTER_PATTERN.match(text)
-    if not match:
+    bom = "\ufeff" if text.startswith("\ufeff") else ""
+    text_without_bom = text[len(bom) :]
+    newline = "\r\n" if "\r\n" in text else "\n"
+
+    if not text_without_bom.startswith("---"):
         raise ValueError(f"Missing or malformed frontmatter in {path}")
 
-    frontmatter = match.group("front")
-    acronym_match = ACRONYM_PATTERN.search(frontmatter)
-    acronym = acronym_match.group("acronym") if acronym_match else None
+    try:
+        post = frontmatter.loads(text_without_bom)
+    except Exception as error:  # pragma: no cover - parser-specific exceptions
+        raise ValueError(f"Missing or malformed frontmatter in {path}: {error}") from error
+
+    acronym_value = post.metadata.get("acronym")
+    acronym = str(acronym_value) if acronym_value is not None else None
 
     return ProblemFile(
         path=path,
-        bom=match.group("bom"),
-        open_delim=match.group("open"),
-        frontmatter=frontmatter,
-        close_delim=match.group("close"),
-        body=match.group("body"),
+        bom=bom,
+        newline=newline,
+        post=post,
         acronym=acronym,
     )
+
+
+def clone_post(post: frontmatter.Post) -> frontmatter.Post:
+    return frontmatter.Post(post.content, **copy.deepcopy(post.metadata))
 
 
 def merge_spans(spans: Iterable[tuple[int, int]]) -> list[tuple[int, int]]:
@@ -130,46 +133,41 @@ def link_acronyms(
     return "".join(result_parts), linked_problem_ids
 
 
-def add_related_problems(frontmatter: str, new_problem_ids: set[str], newline: str) -> str:
+def add_related_problems(
+    post: frontmatter.Post,
+    new_problem_ids: set[str],
+    source_path: Path,
+) -> frontmatter.Post:
     if not new_problem_ids:
-        return frontmatter
+        return post
 
-    existing_ids = {match.group("id") for match in RELATED_PROBLEM_ID_PATTERN.finditer(frontmatter)}
+    updated_post = clone_post(post)
+    related_value = updated_post.metadata.get("related_problems")
+    if related_value is None:
+        related_entries: list[object] = []
+    elif isinstance(related_value, list):
+        related_entries = related_value
+    else:
+        raise ValueError(f"'related_problems' must be a YAML list in {source_path}")
+
+    existing_ids: set[str] = set()
+    for entry in related_entries:
+        if isinstance(entry, dict):
+            entry_id = entry.get("id")
+            if entry_id is not None:
+                existing_ids.add(str(entry_id))
+        elif isinstance(entry, str):
+            existing_ids.add(entry)
+
     to_add = [problem_id for problem_id in sorted(new_problem_ids) if problem_id not in existing_ids]
     if not to_add:
-        return frontmatter
+        return post
 
-    lines = frontmatter.splitlines(keepends=True)
-    if not lines:
-        lines = [newline]
-
-    if lines[-1] and not lines[-1].endswith(("\n", "\r")):
-        lines[-1] = f"{lines[-1]}{newline}"
-
-    related_index = next(
-        (index for index, line in enumerate(lines) if line.strip() == "related_problems:"),
-        None,
-    )
-
-    insertion_lines: list[str] = []
     for problem_id in to_add:
-        insertion_lines.append(f"  - id: {problem_id}{newline}")
-        insertion_lines.append(f"    relation: see-also{newline}")
+        related_entries.append({"id": problem_id, "relation": "see-also"})
 
-    if related_index is None:
-        lines.append(f"related_problems:{newline}")
-        lines.extend(insertion_lines)
-        return "".join(lines).rstrip("\r\n")
-
-    insert_at = related_index + 1
-    while insert_at < len(lines):
-        current = lines[insert_at]
-        if current.startswith("  ") or current.strip() == "":
-            insert_at += 1
-            continue
-        break
-    lines[insert_at:insert_at] = insertion_lines
-    return "".join(lines).rstrip("\r\n")
+    updated_post.metadata["related_problems"] = related_entries
+    return updated_post
 
 
 def build_acronym_index(problem_files: list[ProblemFile]) -> dict[str, str]:
@@ -203,14 +201,13 @@ def run(root: Path, check: bool) -> int:
             if filename != current_filename
         }
 
-        linked_body, related_problem_ids = link_acronyms(problem.body, link_targets)
-        updated_frontmatter = add_related_problems(
-            problem.frontmatter,
-            related_problem_ids,
-            problem.newline,
-        )
-        updated_text = problem.render(updated_frontmatter, linked_body)
-        original_text = problem.render(problem.frontmatter, problem.body)
+        linked_body, related_problem_ids = link_acronyms(problem.post.content, link_targets)
+        updated_post = add_related_problems(problem.post, related_problem_ids, problem.path)
+        if linked_body != updated_post.content:
+            updated_post.content = linked_body
+
+        updated_text = problem.render(updated_post)
+        original_text = problem.render(problem.post)
 
         if updated_text == original_text:
             continue

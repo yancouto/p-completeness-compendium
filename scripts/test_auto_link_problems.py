@@ -1,5 +1,6 @@
 import shutil
 import subprocess
+import sys
 import tempfile
 import textwrap
 import unittest
@@ -21,7 +22,7 @@ class AutoLinkProblemsTests(unittest.TestCase):
                 """\
                 ---
                 title: "Circuit Value Problem"
-                acronym: "CVP"
+                acronym: 'CVP'
                 ---
 
                 ## Remarks
@@ -72,7 +73,7 @@ class AutoLinkProblemsTests(unittest.TestCase):
 
     def run_script(self, *args):
         return subprocess.run(
-            ["python", str(SCRIPT_PATH), "--root", str(self.temp_dir), *args],
+            [sys.executable, str(SCRIPT_PATH), "--root", str(self.temp_dir), *args],
             cwd=REPO_ROOT,
             capture_output=True,
             text=True,
