@@ -3,7 +3,7 @@ title: '{{ replace .File.ContentBaseName "-" " " | title }}'
 acronym: ""
 book_id: ""  # e.g., "A.4.4" (optional, for Greenlaw et al. mapping)
 categories: []
-status: "p-complete"
+status: "p-complete"  # allowed values: see data/problem_constraints.yaml
 tags: []
 date: '{{ .Date }}'
 draft: true
@@ -15,7 +15,7 @@ references:
     link: ""  # optional direct URL if DOI not present
 related_problems:
   - id: ""
-    relation: ""  # variant, reduces-to, reduces-from, see-also
+    relation: ""  # allowed values: see data/problem_constraints.yaml
 ---
 
 ## Given

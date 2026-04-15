@@ -33,6 +33,8 @@ uv run python scripts/auto_link_problems.py --check
 uv run python -m unittest scripts/test_auto_link_problems.py
 ```
 
+Validation rules used by the autolink script are centralized in `data/problem_constraints.yaml`.
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) or the [About page](https://yancouto.github.io/p-completeness-compendium/about/#contributing) on the website.

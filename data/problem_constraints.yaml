@@ -1,0 +1,38 @@
+statuses:
+  - p-complete
+  - p-hard
+  - open
+
+categories:
+  - Circuit Complexity
+  - Graph Theory
+  - Searching Graphs
+  - Combinatorial Optimization
+  - Local Optimality
+  - Logic
+  - Formal Languages
+  - Algebra
+  - Geometry
+  - Real Analysis
+  - Games
+  - Miscellaneous
+  - Matching
+  - Network Flows
+
+tags:
+  - CC
+  - RNC
+
+relations:
+  - see-also
+  - reduces-from
+  - reduces-from-variant-of
+  - reduces-to
+  - equivalent
+  - variant
+
+relation_reciprocals:
+  reduces-from: reduces-to
+  reduces-to: reduces-from
+  equivalent: equivalent
+  variant: variant

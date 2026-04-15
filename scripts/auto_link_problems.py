@@ -33,12 +33,6 @@ EXCLUDED_SPAN_PATTERNS = (
 CUSTOM_ACRONYM_TARGETS = {
     "NORCVP": "a-1-5.md",
 }
-RECIPROCAL_RELATIONS = {
-    "reduces-from": "reduces-to",
-    "reduces-to": "reduces-from",
-    "equivalent": "equivalent",
-    "variant": "variant",
-}
 REFERENCE_CITATION_PATTERN = re.compile(
     r"(?<!\\)\[(?P<num>\d+)(?P<detail>,\s*[^\d\]\s][^\]]*)?\]"
 )
@@ -49,10 +43,22 @@ REFERENCE_CITATION_TOKEN_PATTERN = re.compile(
     r'|(?P<markdown>\[(?P<markdown_num>\d+)(?P<markdown_detail>,\s*[^\d\]\s][^\]]*)?\]\(#(?:(?:ref-)?)(?P<markdown_href_num>\d+)\))'
     r"|(?P<plain>(?<!\\)\[(?P<plain_num>\d+)(?P<plain_detail>,\s*[^\d\]\s][^\]]*)?\])"
 )
+BOOK_ID_PATTERN = re.compile(r"^[AB]\.\d+\.\d+$")
+PROBLEM_STEM_PATTERN = re.compile(r"^(?P<appendix>[ab])-(?P<section>\d+)-(?P<number>\d+)$")
 
 YAML_RT = YAML()
 YAML_RT.preserve_quotes = True
 YAML_RT.indent(mapping=2, sequence=4, offset=2)
+YAML_SAFE = YAML(typ="safe")
+
+
+@dataclass(frozen=True)
+class ProblemConstraints:
+    statuses: set[str]
+    categories: set[str]
+    tags: set[str]
+    relations: set[str]
+    relation_reciprocals: dict[str, str]
 
 
 @dataclass
@@ -102,6 +108,52 @@ def parse_problem_file(path: Path) -> ProblemFile:
         frontmatter=loaded,
         body=match.group("body"),
         acronym=acronym,
+    )
+
+
+def load_problem_constraints(root: Path) -> ProblemConstraints:
+    constraints_path = root / "data" / "problem_constraints.yaml"
+    if not constraints_path.is_file():
+        raise ValueError(f"Missing constraints data file: {constraints_path}")
+
+    loaded = YAML_SAFE.load(constraints_path.read_text(encoding="utf-8")) or {}
+    if not isinstance(loaded, dict):
+        raise ValueError(f"Constraints file must be a YAML mapping: {constraints_path}")
+
+    statuses = {str(item) for item in loaded.get("statuses", [])}
+    categories = {str(item) for item in loaded.get("categories", [])}
+    tags = {str(item) for item in loaded.get("tags", [])}
+    relations = {str(item) for item in loaded.get("relations", [])}
+    relation_reciprocals = {
+        str(relation): str(reciprocal)
+        for relation, reciprocal in (loaded.get("relation_reciprocals") or {}).items()
+    }
+
+    if not statuses:
+        raise ValueError("Constraints must define at least one status.")
+    if not categories:
+        raise ValueError("Constraints must define at least one category.")
+    if not relations:
+        raise ValueError("Constraints must define at least one relation.")
+
+    invalid_reciprocal_keys = sorted(key for key in relation_reciprocals if key not in relations)
+    invalid_reciprocal_values = sorted(
+        value for value in relation_reciprocals.values() if value not in relations
+    )
+    if invalid_reciprocal_keys or invalid_reciprocal_values:
+        details: list[str] = []
+        if invalid_reciprocal_keys:
+            details.append(f"invalid reciprocal keys: {', '.join(invalid_reciprocal_keys)}")
+        if invalid_reciprocal_values:
+            details.append(f"invalid reciprocal values: {', '.join(invalid_reciprocal_values)}")
+        raise ValueError("relation_reciprocals is invalid: " + "; ".join(details))
+
+    return ProblemConstraints(
+        statuses=statuses,
+        categories=categories,
+        tags=tags,
+        relations=relations,
+        relation_reciprocals=relation_reciprocals,
     )
 
 
@@ -383,6 +435,148 @@ def link_reference_citations(body: str, reference_count: int) -> str:
     return "".join(result_parts)
 
 
+def validate_problem_metadata(
+    problem: ProblemFile,
+    constraints: ProblemConstraints,
+    valid_problem_ids: set[str],
+) -> list[str]:
+    errors: list[str] = []
+    prefix = f"{problem.path.name}:"
+    frontmatter = problem.frontmatter
+
+    status_raw = frontmatter.get("status")
+    if status_raw is not None and str(status_raw) not in constraints.statuses:
+        errors.append(f"{prefix} invalid status '{status_raw}'")
+
+    categories = frontmatter.get("categories")
+    if categories is not None:
+        if not isinstance(categories, list):
+            errors.append(f"{prefix} categories must be a YAML list")
+        else:
+            for category in categories:
+                category_name = str(category)
+                if category_name not in constraints.categories:
+                    errors.append(f"{prefix} invalid category '{category_name}'")
+
+    tags = frontmatter.get("tags")
+    if tags is not None:
+        if not isinstance(tags, list):
+            errors.append(f"{prefix} tags must be a YAML list")
+        else:
+            for tag in tags:
+                tag_name = str(tag)
+                if tag_name not in constraints.tags:
+                    errors.append(f"{prefix} invalid tag '{tag_name}'")
+
+    references_value = frontmatter.get("references")
+    references = (
+        references_value
+        if isinstance(references_value, list)
+        else ([] if references_value is None else [references_value])
+    )
+    seen_reference_ids: set[str] = set()
+    for reference in references:
+        if isinstance(reference, dict):
+            ref_id_raw = reference.get("id")
+            if ref_id_raw is None:
+                continue
+            ref_id = str(ref_id_raw)
+        else:
+            ref_id = str(reference)
+
+        if ref_id in seen_reference_ids:
+            errors.append(f"{prefix} duplicate reference id '{ref_id}'")
+        seen_reference_ids.add(ref_id)
+
+    related_entries = get_related_entries(frontmatter, problem.path, create=False)
+    if related_entries is not None:
+        seen_relations: set[tuple[str, str]] = set()
+        for entry in related_entries:
+            if not isinstance(entry, dict):
+                errors.append(f"{prefix} related_problems entries must be objects")
+                continue
+
+            target_id_raw = entry.get("id")
+            relation_raw = entry.get("relation")
+            if target_id_raw is None:
+                errors.append(f"{prefix} related_problems entry missing id")
+                continue
+            if relation_raw is None:
+                errors.append(f"{prefix} related_problems entry missing relation for id '{target_id_raw}'")
+                continue
+
+            target_id = str(target_id_raw)
+            relation = str(relation_raw)
+            if relation not in constraints.relations:
+                errors.append(f"{prefix} invalid related_problems relation '{relation}' for id '{target_id}'")
+            if target_id not in valid_problem_ids:
+                errors.append(f"{prefix} related problem '{target_id}' does not exist")
+            if target_id == problem.path.stem:
+                errors.append(f"{prefix} related problem points to itself ('{target_id}')")
+
+            relation_key = (target_id, relation)
+            if relation_key in seen_relations:
+                errors.append(f"{prefix} duplicate related_problems entry id='{target_id}' relation='{relation}'")
+            seen_relations.add(relation_key)
+
+    reference_count = count_reference_entries(problem)
+    excluded_spans = build_excluded_spans(
+        problem.body,
+        exclude_html_anchors=False,
+        exclude_markdown_links=False,
+    )
+    for start, _, citation_number, _, _ in iter_reference_citation_tokens(problem.body):
+        if is_in_spans(start, excluded_spans):
+            continue
+        if citation_number < 1 or citation_number > reference_count:
+            errors.append(
+                f"{prefix} citation [{citation_number}] points to missing reference "
+                f"(available: 1..{reference_count})"
+            )
+
+    book_id_raw = frontmatter.get("book_id")
+    if book_id_raw is not None and str(book_id_raw).strip() != "":
+        book_id = str(book_id_raw)
+        if BOOK_ID_PATTERN.match(book_id) is None:
+            errors.append(f"{prefix} invalid book_id format '{book_id}'")
+        stem_match = PROBLEM_STEM_PATTERN.match(problem.path.stem)
+        if stem_match is not None:
+            expected_book_id = (
+                f"{stem_match.group('appendix').upper()}."
+                f"{stem_match.group('section')}."
+                f"{stem_match.group('number')}"
+            )
+            if book_id != expected_book_id:
+                errors.append(
+                    f"{prefix} book_id '{book_id}' does not match filename-derived id '{expected_book_id}'"
+                )
+
+    stem_match = PROBLEM_STEM_PATTERN.match(problem.path.stem)
+    if stem_match is not None and status_raw is not None:
+        appendix = stem_match.group("appendix")
+        status = str(status_raw)
+        if appendix == "b" and status != "open":
+            errors.append(f"{prefix} appendix B problem must have status 'open' (found '{status}')")
+        if appendix == "a" and status == "open":
+            errors.append(f"{prefix} appendix A problem cannot have status 'open'")
+
+    return errors
+
+
+def validate_global_metadata(problem_files: list[ProblemFile]) -> list[str]:
+    errors: list[str] = []
+    by_acronym: dict[str, list[str]] = {}
+    for problem in problem_files:
+        if not problem.acronym:
+            continue
+        by_acronym.setdefault(problem.acronym, []).append(problem.path.name)
+
+    for acronym, files in sorted(by_acronym.items()):
+        if len(files) > 1:
+            errors.append(f"duplicate acronym '{acronym}' in files: {', '.join(sorted(files))}")
+    return errors
+
+
 def get_related_entries(frontmatter: CommentedMap, source_path: Path, create: bool) -> list[object] | None:
     related = frontmatter.get("related_problems")
     if related is None:
@@ -420,7 +614,10 @@ def add_related_problems(problem: ProblemFile, new_problem_ids: set[str]) -> Non
         add_relation_entry(problem, problem_id, "see-also")
 
 
-def prune_see_also_when_reduction_exists(problem: ProblemFile) -> None:
+def prune_see_also_when_reduction_exists(
+    problem: ProblemFile,
+    reciprocal_relations: dict[str, str],
+) -> None:
     entries = get_related_entries(problem.frontmatter, problem.path, create=False)
     if entries is None:
         return
@@ -433,7 +630,7 @@ def prune_see_also_when_reduction_exists(problem: ProblemFile) -> None:
         relation_raw = entry.get("relation")
         if target_id_raw is None or relation_raw is None:
             continue
-        if str(relation_raw) in RECIPROCAL_RELATIONS:
+        if str(relation_raw) in reciprocal_relations:
             reduction_targets.add(str(target_id_raw))
 
     if not reduction_targets:
@@ -457,7 +654,10 @@ def prune_see_also_when_reduction_exists(problem: ProblemFile) -> None:
         problem.frontmatter["related_problems"] = filtered_entries
 
 
-def synchronize_reciprocal_relations(problem_files: list[ProblemFile]) -> None:
+def synchronize_reciprocal_relations(
+    problem_files: list[ProblemFile],
+    reciprocal_relations: dict[str, str],
+) -> None:
     by_problem_id = {problem.path.stem: problem for problem in problem_files}
 
     for source in problem_files:
@@ -474,7 +674,7 @@ def synchronize_reciprocal_relations(problem_files: list[ProblemFile]) -> None:
                 continue
 
             relation = str(relation_raw)
-            reciprocal = RECIPROCAL_RELATIONS.get(relation)
+            reciprocal = reciprocal_relations.get(relation)
             if reciprocal is None:
                 continue
 
@@ -501,13 +701,17 @@ def run(root: Path, check: bool) -> int:
     if not problems_dir.is_dir():
         print(f"Problems directory not found: {problems_dir}", file=sys.stderr)
         return 2
+    constraints = load_problem_constraints(root)
 
     paths = sorted(path for path in problems_dir.glob("*.md") if path.name != "_index.md")
     problem_files = [parse_problem_file(path) for path in paths]
-    synchronize_reciprocal_relations(problem_files)
+    valid_problem_ids = {problem.path.stem for problem in problem_files}
+    synchronize_reciprocal_relations(problem_files, constraints.relation_reciprocals)
     acronym_index = build_acronym_index(problem_files)
 
     changed_files: list[Path] = []
+    rendered_updates: dict[Path, str] = {}
+    validation_errors: list[str] = []
     for problem in problem_files:
         current_filename = problem.path.name
         normalize_reference_order(problem)
@@ -521,14 +725,36 @@ def run(root: Path, check: bool) -> int:
         linked_body, related_problem_ids = link_acronyms(body_with_reference_links, link_targets)
         problem.body = linked_body
         add_related_problems(problem, related_problem_ids)
-        prune_see_also_when_reduction_exists(problem)
+        prune_see_also_when_reduction_exists(problem, constraints.relation_reciprocals)
+        validation_errors.extend(
+            validate_problem_metadata(
+                problem,
+                constraints=constraints,
+                valid_problem_ids=valid_problem_ids,
+            )
+        )
 
         updated_text = problem.render()
         if updated_text == problem.original_text:
             continue
         changed_files.append(problem.path)
-        if not check:
-            problem.path.write_text(updated_text, encoding="utf-8")
+        rendered_updates[problem.path] = updated_text
+
+    validation_errors.extend(validate_global_metadata(problem_files))
+    if validation_errors:
+        shown_errors = validation_errors[:200]
+        message = ["Validation failed:"] + [f"- {error}" for error in shown_errors]
+        if len(validation_errors) > len(shown_errors):
+            message.append(
+                f"- ... and {len(validation_errors) - len(shown_errors)} more validation errors"
+            )
+        raise ValueError("\n".join(message))
+
+    if changed_files and not check:
+        for path in changed_files:
+            problem_text = rendered_updates.get(path)
+            assert problem_text is not None
+            path.write_text(problem_text, encoding="utf-8")
 
     if changed_files:
         for path in changed_files:

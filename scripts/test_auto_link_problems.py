@@ -17,7 +17,38 @@ class AutoLinkProblemsTests(unittest.TestCase):
         self.temp_dir = Path(tempfile.mkdtemp(prefix="autolink-test-"))
         problems_dir = self.temp_dir / "content" / "problems"
         problems_dir.mkdir(parents=True, exist_ok=True)
+        data_dir = self.temp_dir / "data"
+        data_dir.mkdir(parents=True, exist_ok=True)
 
+        (data_dir / "problem_constraints.yaml").write_text(
+            textwrap.dedent(
+                """\
+                statuses:
+                  - p-complete
+                  - p-hard
+                  - open
+                categories:
+                  - Circuit Complexity
+                  - Graph Theory
+                tags:
+                  - CC
+                  - RNC
+                relations:
+                  - see-also
+                  - reduces-from
+                  - reduces-from-variant-of
+                  - reduces-to
+                  - equivalent
+                  - variant
+                relation_reciprocals:
+                  reduces-from: reduces-to
+                  reduces-to: reduces-from
+                  equivalent: equivalent
+                  variant: variant
+                """
+            ),
+            encoding="utf-8",
+        )
         (problems_dir / "a-1-1.md").write_text(
             textwrap.dedent(
                 """\
@@ -75,13 +106,17 @@ class AutoLinkProblemsTests(unittest.TestCase):
                 ---
                 title: "Reciprocity Source"
                 acronym: "SRC"
+                status: "p-complete"
+                categories: ["Graph Theory"]
+                tags: []
+                book_id: "A.2.2"
                 related_problems:
                   - id: a-2-3
                     relation: see-also
                   - id: a-2-3
                     relation: reduces-from
                   - id: a-2-4
-                    relation: see-also
+                    relation: reduces-from-variant-of
                 ---
 
                 ## Remarks
@@ -173,7 +208,6 @@ class AutoLinkProblemsTests(unittest.TestCase):
                 Split citations [1][2] should both link.
                 Range [1,2] should remain unchanged for now.
                 Book citation [3] should link.
-                Out of range [4] should not.
                 Inside code `[1]` stays.
                 Inside math $[1]$ stays.
                 Already linked [[1]](#1) stays.
@@ -292,7 +326,12 @@ class AutoLinkProblemsTests(unittest.TestCase):
         self.assertIn("- id: a-2-3", source_updated)
         self.assertIn("relation: reduces-from", source_updated)
         self.assertNotIn("- id: a-2-3\n    relation: see-also", source_updated)
-        self.assertIn("- id: a-2-4\n    relation: see-also", source_updated)
+        self.assertIn("- id: a-2-4\n    relation: reduces-from-variant-of", source_updated)
+
+        variant_target_updated = (self.temp_dir / "content" / "problems" / "a-2-4.md").read_text(
+            encoding="utf-8"
+        )
+        self.assertNotIn("- id: a-2-2", variant_target_updated)
 
     def test_does_not_link_acronyms_inside_latex_math(self):
         first = self.run_script()
@@ -324,7 +363,6 @@ class AutoLinkProblemsTests(unittest.TestCase):
             "Book citation [[3]](#3) should link.",
             updated,
         )
-        self.assertIn("Out of range [4] should not.", updated)
         self.assertIn("Inside code `[1]` stays.", updated)
         self.assertIn("Inside math $[1]$ stays.", updated)
         self.assertIn("Already linked [[1]](#1) stays.", updated)
@@ -354,6 +392,31 @@ class AutoLinkProblemsTests(unittest.TestCase):
             updated,
         )
         self.assertRegex(updated, r"references:\s*\[\s*303,\s*101,\s*202\s*\]")
+
+    def test_fails_on_missing_in_page_reference(self):
+        (self.temp_dir / "content" / "problems" / "a-3-7.md").write_text(
+            textwrap.dedent(
+                """\
+                ---
+                title: "Bad Reference"
+                acronym: "BADREF"
+                status: "p-complete"
+                categories: ["Graph Theory"]
+                tags: []
+                book_id: "A.3.7"
+                references: [1]
+                ---
+
+                ## Remarks
+
+                Uses [3].
+                """
+            ),
+            encoding="utf-8",
+        )
+        result = self.run_script("--check")
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("citation [3] points to missing reference", result.stderr)
 
 
 if __name__ == "__main__":
