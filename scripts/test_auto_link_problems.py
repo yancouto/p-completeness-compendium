@@ -182,6 +182,27 @@ class AutoLinkProblemsTests(unittest.TestCase):
             encoding="utf-8",
         )
 
+        (problems_dir / "b-9-9.md").write_text(
+            textwrap.dedent(
+                """\
+                ---
+                title: "Reference Normalization Sample"
+                acronym: "RNS"
+                references: [101, 202, 303]
+                book_id: "B.9.9"
+                ---
+
+                ## Remarks
+
+                Book citation may stay as [4, Appendix A].
+                First non-book is [3, Theorem 2.1].
+                Existing linked citation <a href="#ref-1" class="reference-citation">[1]</a> should normalize too.
+                Then [2] appears.
+                """
+            ),
+            encoding="utf-8",
+        )
+
     def tearDown(self):
         shutil.rmtree(self.temp_dir)
 
@@ -306,6 +327,31 @@ class AutoLinkProblemsTests(unittest.TestCase):
         self.assertIn("Inside code `[1]` stays.", updated)
         self.assertIn("Inside math $[1]$ stays.", updated)
         self.assertIn("Already linked [1](#ref-1) stays.", updated)
+
+    def test_normalizes_reference_order_by_first_appearance(self):
+        first = self.run_script()
+        self.assertEqual(first.returncode, 0, first.stderr)
+
+        updated = (self.temp_dir / "content" / "problems" / "b-9-9.md").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn(
+            'Book citation may stay as <a href="#ref-4" class="reference-citation">[4, Appendix A]</a>.',
+            updated,
+        )
+        self.assertIn(
+            'First non-book is <a href="#ref-1" class="reference-citation">[1, Theorem 2.1]</a>.',
+            updated,
+        )
+        self.assertIn(
+            'Existing linked citation <a href="#ref-2" class="reference-citation">[2]</a> should normalize too.',
+            updated,
+        )
+        self.assertIn(
+            'Then <a href="#ref-3" class="reference-citation">[3]</a> appears.',
+            updated,
+        )
+        self.assertRegex(updated, r"references:\s*\[\s*303,\s*101,\s*202\s*\]")
 
 
 if __name__ == "__main__":

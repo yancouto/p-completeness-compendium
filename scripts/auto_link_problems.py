@@ -17,6 +17,7 @@ FRONTMATTER_PATTERN = re.compile(
     r"^(?P<bom>\ufeff?)(?P<open>---\r?\n)(?P<front>.*?)(?P<close>\r?\n---\r?\n?)(?P<body>.*)$",
     re.DOTALL,
 )
+HTML_ANCHOR_PATTERN = re.compile(r"<a\b[^>]*>.*?</a>", re.DOTALL | re.IGNORECASE)
 EXCLUDED_SPAN_PATTERNS = (
     re.compile(r"(?<!\\)\$\$(?:.|\n)*?(?<!\\)\$\$", re.DOTALL),
     re.compile(r"(?<!\\)\$(?!\$)(?:\\.|[^$\\\n])*(?<!\\)\$(?!\$)"),
@@ -25,7 +26,7 @@ EXCLUDED_SPAN_PATTERNS = (
     re.compile(r"`[^`\n]*`"),
     re.compile(r"!\[[^\]]*\]\([^)]+\)"),
     re.compile(r"\[[^\]]+\]\([^)]+\)"),
-    re.compile(r"<a\b[^>]*>.*?</a>", re.DOTALL | re.IGNORECASE),
+    HTML_ANCHOR_PATTERN,
     re.compile(r"\{\{<[^>]+>\}\}"),
 )
 CUSTOM_ACRONYM_TARGETS = {
@@ -37,6 +38,10 @@ RECIPROCAL_RELATIONS = {
 }
 REFERENCE_CITATION_PATTERN = re.compile(
     r"(?<!\\)\[(?P<num>\d+)(?P<detail>,\s*[^\d\]\s][^\]]*)?\]"
+)
+REFERENCE_CITATION_TOKEN_PATTERN = re.compile(
+    r'(?P<anchor><a href="#ref-(?P<anchor_href_num>\d+)" class="reference-citation">\[(?P<anchor_num>\d+)(?P<anchor_detail>,\s*[^\d\]\s][^\]]*)?\]</a>)'
+    r"|(?P<plain>(?<!\\)\[(?P<plain_num>\d+)(?P<plain_detail>,\s*[^\d\]\s][^\]]*)?\])"
 )
 
 YAML_RT = YAML()
@@ -118,9 +123,16 @@ def is_in_spans(index: int, spans: list[tuple[int, int]]) -> bool:
     return False
 
 
-def build_excluded_spans(text: str) -> list[tuple[int, int]]:
+def build_excluded_spans(text: str, *, exclude_html_anchors: bool = True) -> list[tuple[int, int]]:
     spans: list[tuple[int, int]] = []
-    for pattern in EXCLUDED_SPAN_PATTERNS:
+    patterns = EXCLUDED_SPAN_PATTERNS
+    if not exclude_html_anchors:
+        patterns = tuple(
+            pattern
+            for pattern in EXCLUDED_SPAN_PATTERNS
+            if pattern is not HTML_ANCHOR_PATTERN
+        )
+    for pattern in patterns:
         spans.extend((match.start(), match.end()) for match in pattern.finditer(text))
     return merge_spans(spans)
 
@@ -167,6 +179,135 @@ def count_reference_entries(problem: ProblemFile) -> int:
     if book_id not in (None, ""):
         count += 1
     return count
+
+
+def count_non_book_reference_entries(problem: ProblemFile) -> int:
+    references = problem.frontmatter.get("references")
+    if isinstance(references, list):
+        return len(references)
+    if references is None:
+        return 0
+    return 1
+
+
+def iter_reference_citation_tokens(
+    text: str,
+) -> Iterable[tuple[int, int, int, str]]:
+    for match in REFERENCE_CITATION_TOKEN_PATTERN.finditer(text):
+        if match.group("anchor") is not None:
+            number = int(match.group("anchor_num"))
+            detail = match.group("anchor_detail") or ""
+        else:
+            number = int(match.group("plain_num"))
+            detail = match.group("plain_detail") or ""
+        yield (match.start(), match.end(), number, detail)
+
+
+def build_reference_normalization_map(
+    body: str,
+    non_book_reference_count: int,
+) -> dict[int, int]:
+    if non_book_reference_count <= 1:
+        return {}
+
+    excluded_spans = build_excluded_spans(body, exclude_html_anchors=False)
+    seen: set[int] = set()
+    in_order: list[int] = []
+
+    for start, _, number, _ in iter_reference_citation_tokens(body):
+        if is_in_spans(start, excluded_spans):
+            continue
+        if number < 1 or number > non_book_reference_count:
+            continue
+        if number in seen:
+            continue
+        seen.add(number)
+        in_order.append(number)
+
+    if not in_order:
+        return {}
+
+    full_order = in_order + [index for index in range(1, non_book_reference_count + 1) if index not in seen]
+    normalization_map = {old_index: new_index for new_index, old_index in enumerate(full_order, start=1)}
+
+    if all(old_index == new_index for old_index, new_index in normalization_map.items()):
+        return {}
+    return normalization_map
+
+
+def normalize_reference_citations(
+    body: str,
+    normalization_map: dict[int, int],
+    non_book_reference_count: int,
+) -> str:
+    if not normalization_map or non_book_reference_count <= 0:
+        return body
+
+    excluded_spans = build_excluded_spans(body, exclude_html_anchors=False)
+    result_parts: list[str] = []
+    cursor = 0
+    changed = False
+
+    for start, end, number, detail in iter_reference_citation_tokens(body):
+        if is_in_spans(start, excluded_spans):
+            continue
+        if number < 1 or number > non_book_reference_count:
+            continue
+
+        new_number = normalization_map.get(number)
+        if new_number is None:
+            continue
+
+        result_parts.append(body[cursor:start])
+        result_parts.append(
+            f'<a href="#ref-{new_number}" class="reference-citation">[{new_number}{detail}]</a>'
+        )
+        cursor = end
+        changed = True
+
+    if not changed:
+        return body
+
+    result_parts.append(body[cursor:])
+    return "".join(result_parts)
+
+
+def reorder_references_frontmatter(problem: ProblemFile, normalization_map: dict[int, int]) -> None:
+    if not normalization_map:
+        return
+
+    references = problem.frontmatter.get("references")
+    if not isinstance(references, list):
+        return
+    if len(references) <= 1:
+        return
+
+    ordered_old_indices = [
+        old_index
+        for old_index, _ in sorted(normalization_map.items(), key=lambda item: item[1])
+    ]
+    reordered = [references[old_index - 1] for old_index in ordered_old_indices]
+    references[:] = reordered
+
+
+def normalize_reference_order(problem: ProblemFile) -> None:
+    non_book_reference_count = count_non_book_reference_entries(problem)
+    if non_book_reference_count <= 1:
+        return
+
+    normalization_map = build_reference_normalization_map(
+        problem.body,
+        non_book_reference_count,
+    )
+    if not normalization_map:
+        return
+
+    problem.body = normalize_reference_citations(
+        problem.body,
+        normalization_map,
+        non_book_reference_count,
+    )
+    reorder_references_frontmatter(problem, normalization_map)
 
 
 def link_reference_citations(body: str, reference_count: int) -> str:
@@ -328,6 +469,7 @@ def run(root: Path, check: bool) -> int:
     changed_files: list[Path] = []
     for problem in problem_files:
         current_filename = problem.path.name
+        normalize_reference_order(problem)
         link_targets = {
             acronym: filename
             for acronym, filename in acronym_index.items()
