@@ -18,6 +18,7 @@ FRONTMATTER_PATTERN = re.compile(
     re.DOTALL,
 )
 HTML_ANCHOR_PATTERN = re.compile(r"<a\b[^>]*>.*?</a>", re.DOTALL | re.IGNORECASE)
+MARKDOWN_LINK_PATTERN = re.compile(r"\[[^\]]+\]\([^)]+\)")
 EXCLUDED_SPAN_PATTERNS = (
     re.compile(r"(?<!\\)\$\$(?:.|\n)*?(?<!\\)\$\$", re.DOTALL),
     re.compile(r"(?<!\\)\$(?!\$)(?:\\.|[^$\\\n])*(?<!\\)\$(?!\$)"),
@@ -25,7 +26,7 @@ EXCLUDED_SPAN_PATTERNS = (
     re.compile(r"\\\[(?:.|\n)*?\\\]", re.DOTALL),
     re.compile(r"`[^`\n]*`"),
     re.compile(r"!\[[^\]]*\]\([^)]+\)"),
-    re.compile(r"\[[^\]]+\]\([^)]+\)"),
+    MARKDOWN_LINK_PATTERN,
     HTML_ANCHOR_PATTERN,
     re.compile(r"\{\{<[^>]+>\}\}"),
 )
@@ -35,12 +36,16 @@ CUSTOM_ACRONYM_TARGETS = {
 RECIPROCAL_RELATIONS = {
     "reduces-from": "reduces-to",
     "reduces-to": "reduces-from",
+    "equivalent": "equivalent",
 }
 REFERENCE_CITATION_PATTERN = re.compile(
     r"(?<!\\)\[(?P<num>\d+)(?P<detail>,\s*[^\d\]\s][^\]]*)?\]"
 )
 REFERENCE_CITATION_TOKEN_PATTERN = re.compile(
     r'(?P<anchor><a href="#ref-(?P<anchor_href_num>\d+)" class="reference-citation">\[(?P<anchor_num>\d+)(?P<anchor_detail>,\s*[^\d\]\s][^\]]*)?\]</a>)'
+    r'|(?P<malformed>\[\[\[(?P<malformed_num>\d+)(?P<malformed_detail>,\s*[^\d\]\s][^\]]*)?\]\]\((?P<malformed_inner_num>\d+)\)\]\(#(?:ref-)?(?P<malformed_href_num>\d+)\))'
+    r'|(?P<canonical>\[\[(?P<canonical_num>\d+)(?P<canonical_detail>,\s*[^\d\]\s][^\]]*)?\]\]\(#(?P<canonical_href_num>\d+)\))'
+    r'|(?P<markdown>\[(?P<markdown_num>\d+)(?P<markdown_detail>,\s*[^\d\]\s][^\]]*)?\]\(#(?:(?:ref-)?)(?P<markdown_href_num>\d+)\))'
     r"|(?P<plain>(?<!\\)\[(?P<plain_num>\d+)(?P<plain_detail>,\s*[^\d\]\s][^\]]*)?\])"
 )
 
@@ -123,14 +128,20 @@ def is_in_spans(index: int, spans: list[tuple[int, int]]) -> bool:
     return False
 
 
-def build_excluded_spans(text: str, *, exclude_html_anchors: bool = True) -> list[tuple[int, int]]:
+def build_excluded_spans(
+    text: str,
+    *,
+    exclude_html_anchors: bool = True,
+    exclude_markdown_links: bool = True,
+) -> list[tuple[int, int]]:
     spans: list[tuple[int, int]] = []
     patterns = EXCLUDED_SPAN_PATTERNS
-    if not exclude_html_anchors:
+    if not exclude_html_anchors or not exclude_markdown_links:
         patterns = tuple(
             pattern
             for pattern in EXCLUDED_SPAN_PATTERNS
-            if pattern is not HTML_ANCHOR_PATTERN
+            if (exclude_html_anchors or pattern is not HTML_ANCHOR_PATTERN)
+            and (exclude_markdown_links or pattern is not MARKDOWN_LINK_PATTERN)
         )
     for pattern in patterns:
         spans.extend((match.start(), match.end()) for match in pattern.finditer(text))
@@ -192,15 +203,33 @@ def count_non_book_reference_entries(problem: ProblemFile) -> int:
 
 def iter_reference_citation_tokens(
     text: str,
-) -> Iterable[tuple[int, int, int, str]]:
+) -> Iterable[tuple[int, int, int, str, str]]:
     for match in REFERENCE_CITATION_TOKEN_PATTERN.finditer(text):
         if match.group("anchor") is not None:
             number = int(match.group("anchor_num"))
             detail = match.group("anchor_detail") or ""
+            token_kind = "anchor"
+        elif match.group("malformed") is not None:
+            number = int(match.group("malformed_num"))
+            detail = match.group("malformed_detail") or ""
+            token_kind = "malformed"
+        elif match.group("canonical") is not None:
+            number = int(match.group("canonical_num"))
+            detail = match.group("canonical_detail") or ""
+            token_kind = "canonical"
+        elif match.group("markdown") is not None:
+            number = int(match.group("markdown_num"))
+            detail = match.group("markdown_detail") or ""
+            token_kind = "markdown"
         else:
             number = int(match.group("plain_num"))
             detail = match.group("plain_detail") or ""
-        yield (match.start(), match.end(), number, detail)
+            token_kind = "plain"
+        yield (match.start(), match.end(), number, detail, token_kind)
+
+
+def format_reference_citation_link(number: int, detail: str) -> str:
+    return f"[[{number}{detail}]](#{number})"
 
 
 def build_reference_normalization_map(
@@ -210,11 +239,15 @@ def build_reference_normalization_map(
     if non_book_reference_count <= 1:
         return {}
 
-    excluded_spans = build_excluded_spans(body, exclude_html_anchors=False)
+    excluded_spans = build_excluded_spans(
+        body,
+        exclude_html_anchors=False,
+        exclude_markdown_links=False,
+    )
     seen: set[int] = set()
     in_order: list[int] = []
 
-    for start, _, number, _ in iter_reference_citation_tokens(body):
+    for start, _, number, _, _ in iter_reference_citation_tokens(body):
         if is_in_spans(start, excluded_spans):
             continue
         if number < 1 or number > non_book_reference_count:
@@ -243,12 +276,16 @@ def normalize_reference_citations(
     if not normalization_map or non_book_reference_count <= 0:
         return body
 
-    excluded_spans = build_excluded_spans(body, exclude_html_anchors=False)
+    excluded_spans = build_excluded_spans(
+        body,
+        exclude_html_anchors=False,
+        exclude_markdown_links=False,
+    )
     result_parts: list[str] = []
     cursor = 0
     changed = False
 
-    for start, end, number, detail in iter_reference_citation_tokens(body):
+    for start, end, number, detail, _ in iter_reference_citation_tokens(body):
         if is_in_spans(start, excluded_spans):
             continue
         if number < 1 or number > non_book_reference_count:
@@ -259,9 +296,7 @@ def normalize_reference_citations(
             continue
 
         result_parts.append(body[cursor:start])
-        result_parts.append(
-            f'<a href="#ref-{new_number}" class="reference-citation">[{new_number}{detail}]</a>'
-        )
+        result_parts.append(format_reference_citation_link(new_number, detail))
         cursor = end
         changed = True
 
@@ -314,25 +349,30 @@ def link_reference_citations(body: str, reference_count: int) -> str:
     if reference_count <= 0:
         return body
 
-    excluded_spans = build_excluded_spans(body)
+    excluded_spans = build_excluded_spans(
+        body,
+        exclude_html_anchors=False,
+        exclude_markdown_links=False,
+    )
     result_parts: list[str] = []
     cursor = 0
     changed = False
 
-    for match in REFERENCE_CITATION_PATTERN.finditer(body):
-        if is_in_spans(match.start(), excluded_spans):
+    for start, end, ref_number, detail, token_kind in iter_reference_citation_tokens(body):
+        if is_in_spans(start, excluded_spans):
             continue
 
-        ref_number = int(match.group("num"))
         if ref_number < 1 or ref_number > reference_count:
             continue
 
-        citation_text = match.group(0)
-        result_parts.append(body[cursor : match.start()])
-        result_parts.append(
-            f'<a href="#ref-{ref_number}" class="reference-citation">{citation_text}</a>'
-        )
-        cursor = match.end()
+        replacement = format_reference_citation_link(ref_number, detail)
+        original = body[start:end]
+        if token_kind == "canonical" and original == replacement:
+            continue
+
+        result_parts.append(body[cursor:start])
+        result_parts.append(replacement)
+        cursor = end
         changed = True
 
     if not changed:

@@ -176,7 +176,8 @@ class AutoLinkProblemsTests(unittest.TestCase):
                 Out of range [4] should not.
                 Inside code `[1]` stays.
                 Inside math $[1]$ stays.
-                Already linked [1](#ref-1) stays.
+                Already linked [[1]](#1) stays.
+                Malformed [[[1]](1)](#ref-1) should be fixed.
                 """
             ),
             encoding="utf-8",
@@ -196,7 +197,7 @@ class AutoLinkProblemsTests(unittest.TestCase):
 
                 Book citation may stay as [4, Appendix A].
                 First non-book is [3, Theorem 2.1].
-                Existing linked citation <a href="#ref-1" class="reference-citation">[1]</a> should normalize too.
+                Existing linked citation [[1]](#1) should normalize too.
                 Then [2] appears.
                 """
             ),
@@ -311,22 +312,23 @@ class AutoLinkProblemsTests(unittest.TestCase):
             encoding="utf-8"
         )
         self.assertIn(
-            'Bounded <a href="#ref-1" class="reference-citation">[1]</a> and <a href="#ref-2" class="reference-citation">[2, Theorem 2.3]</a> are standard.',
+            "Bounded [[1]](#1) and [[2, Theorem 2.3]](#2) are standard.",
             updated,
         )
         self.assertIn(
-            'Split citations <a href="#ref-1" class="reference-citation">[1]</a><a href="#ref-2" class="reference-citation">[2]</a> should both link.',
+            "Split citations [[1]](#1)[[2]](#2) should both link.",
             updated,
         )
         self.assertIn("Range [1,2] should remain unchanged for now.", updated)
         self.assertIn(
-            'Book citation <a href="#ref-3" class="reference-citation">[3]</a> should link.',
+            "Book citation [[3]](#3) should link.",
             updated,
         )
         self.assertIn("Out of range [4] should not.", updated)
         self.assertIn("Inside code `[1]` stays.", updated)
         self.assertIn("Inside math $[1]$ stays.", updated)
-        self.assertIn("Already linked [1](#ref-1) stays.", updated)
+        self.assertIn("Already linked [[1]](#1) stays.", updated)
+        self.assertIn("Malformed [[1]](#1) should be fixed.", updated)
 
     def test_normalizes_reference_order_by_first_appearance(self):
         first = self.run_script()
@@ -336,19 +338,19 @@ class AutoLinkProblemsTests(unittest.TestCase):
             encoding="utf-8"
         )
         self.assertIn(
-            'Book citation may stay as <a href="#ref-4" class="reference-citation">[4, Appendix A]</a>.',
+            "Book citation may stay as [[4, Appendix A]](#4).",
             updated,
         )
         self.assertIn(
-            'First non-book is <a href="#ref-1" class="reference-citation">[1, Theorem 2.1]</a>.',
+            "First non-book is [[1, Theorem 2.1]](#1).",
             updated,
         )
         self.assertIn(
-            'Existing linked citation <a href="#ref-2" class="reference-citation">[2]</a> should normalize too.',
+            "Existing linked citation [[2]](#2) should normalize too.",
             updated,
         )
         self.assertIn(
-            'Then <a href="#ref-3" class="reference-citation">[3]</a> appears.',
+            "Then [[3]](#3) appears.",
             updated,
         )
         self.assertRegex(updated, r"references:\s*\[\s*303,\s*101,\s*202\s*\]")

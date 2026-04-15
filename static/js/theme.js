@@ -57,21 +57,23 @@
   }
 
   function setupReferenceCitationHighlights() {
-    const links = document.querySelectorAll('.problem-content .reference-citation[href^="#ref-"]');
+    const links = document.querySelectorAll('.problem-content a[href^="#"]');
     links.forEach(function (link) {
+      const hash = link.getAttribute('href');
+      if (!hash || !/^#\d+$/.test(hash)) return;
+      link.classList.add('reference-citation');
+
       link.addEventListener('click', function () {
-        const hash = link.getAttribute('href');
-        if (!hash) return;
         flashReferenceTarget(hash.slice(1));
       });
     });
 
-    if (window.location.hash && window.location.hash.startsWith('#ref-')) {
+    if (window.location.hash && /^#\d+$/.test(window.location.hash)) {
       flashReferenceTarget(window.location.hash.slice(1));
     }
 
     window.addEventListener('hashchange', function () {
-      if (window.location.hash && window.location.hash.startsWith('#ref-')) {
+      if (window.location.hash && /^#\d+$/.test(window.location.hash)) {
         flashReferenceTarget(window.location.hash.slice(1));
       }
     });
@@ -95,4 +97,3 @@
     }
   });
 })();
-
