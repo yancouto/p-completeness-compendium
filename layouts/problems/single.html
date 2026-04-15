@@ -27,10 +27,12 @@
 
   <section class="problem-references">
     <h2>References</h2>
+    {{- $refIndex := 0 -}}
     <ol>
       {{ with .Params.references }}
       {{ range . }}
-      <li>
+      {{- $refIndex = add $refIndex 1 -}}
+      <li id="ref-{{ $refIndex }}" class="reference-item">
         {{- $ref := . -}}
         {{- $bib := dict -}}
         {{- $hasBib := false -}}
@@ -93,7 +95,8 @@
       {{ end }}
       {{ end }}
       {{ with .Params.book_id }}
-      <li>
+      {{- $refIndex = add $refIndex 1 -}}
+      <li id="ref-{{ $refIndex }}" class="reference-item">
         Greenlaw, R., Hoover, H. J., &amp; Ruzzo, W. L. (1995). <em>Limits to Parallel Computation: P-Completeness Theory</em>. Oxford University Press. Problem {{ . }}.
         <a href="https://homes.cs.washington.edu/~ruzzo/papers/limits.pdf" target="_blank" rel="noopener noreferrer" class="external-link-icon" aria-label="Open Greenlaw book PDF" title="Open Greenlaw book PDF"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span></a>
       </li>

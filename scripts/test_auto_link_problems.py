@@ -157,6 +157,31 @@ class AutoLinkProblemsTests(unittest.TestCase):
             encoding="utf-8",
         )
 
+        (problems_dir / "a-9-9.md").write_text(
+            textwrap.dedent(
+                """\
+                ---
+                title: "Reference Link Sample"
+                acronym: "RLS"
+                references: [1, 2]
+                book_id: "A.9.9"
+                ---
+
+                ## Remarks
+
+                Bounded [1] and [2, Theorem 2.3] are standard.
+                Split citations [1][2] should both link.
+                Range [1,2] should remain unchanged for now.
+                Book citation [3] should link.
+                Out of range [4] should not.
+                Inside code `[1]` stays.
+                Inside math $[1]$ stays.
+                Already linked [1](#ref-1) stays.
+                """
+            ),
+            encoding="utf-8",
+        )
+
     def tearDown(self):
         shutil.rmtree(self.temp_dir)
 
@@ -256,6 +281,31 @@ class AutoLinkProblemsTests(unittest.TestCase):
         )
         self.assertIn("Inside math: $\\mathsf{SC}^k$ should stay unchanged.", updated)
         self.assertIn('Outside math: [SC]({{< relref "./a-8-7.md" >}}) should become link.', updated)
+
+    def test_links_in_page_reference_citations(self):
+        first = self.run_script()
+        self.assertEqual(first.returncode, 0, first.stderr)
+
+        updated = (self.temp_dir / "content" / "problems" / "a-9-9.md").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn(
+            'Bounded <a href="#ref-1" class="reference-citation">[1]</a> and <a href="#ref-2" class="reference-citation">[2, Theorem 2.3]</a> are standard.',
+            updated,
+        )
+        self.assertIn(
+            'Split citations <a href="#ref-1" class="reference-citation">[1]</a><a href="#ref-2" class="reference-citation">[2]</a> should both link.',
+            updated,
+        )
+        self.assertIn("Range [1,2] should remain unchanged for now.", updated)
+        self.assertIn(
+            'Book citation <a href="#ref-3" class="reference-citation">[3]</a> should link.',
+            updated,
+        )
+        self.assertIn("Out of range [4] should not.", updated)
+        self.assertIn("Inside code `[1]` stays.", updated)
+        self.assertIn("Inside math $[1]$ stays.", updated)
+        self.assertIn("Already linked [1](#ref-1) stays.", updated)
 
 
 if __name__ == "__main__":

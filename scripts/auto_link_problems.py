@@ -25,6 +25,7 @@ EXCLUDED_SPAN_PATTERNS = (
     re.compile(r"`[^`\n]*`"),
     re.compile(r"!\[[^\]]*\]\([^)]+\)"),
     re.compile(r"\[[^\]]+\]\([^)]+\)"),
+    re.compile(r"<a\b[^>]*>.*?</a>", re.DOTALL | re.IGNORECASE),
     re.compile(r"\{\{<[^>]+>\}\}"),
 )
 CUSTOM_ACRONYM_TARGETS = {
@@ -34,6 +35,9 @@ RECIPROCAL_RELATIONS = {
     "reduces-from": "reduces-to",
     "reduces-to": "reduces-from",
 }
+REFERENCE_CITATION_PATTERN = re.compile(
+    r"(?<!\\)\[(?P<num>\d+)(?P<detail>,\s*[^\d\]\s][^\]]*)?\]"
+)
 
 YAML_RT = YAML()
 YAML_RT.preserve_quotes = True
@@ -148,6 +152,53 @@ def link_acronyms(body: str, acronym_targets: dict[str, str]) -> tuple[str, set[
 
     result_parts.append(body[cursor:])
     return "".join(result_parts), linked_problem_ids
+
+
+def count_reference_entries(problem: ProblemFile) -> int:
+    references = problem.frontmatter.get("references")
+    if isinstance(references, list):
+        count = len(references)
+    elif references is None:
+        count = 0
+    else:
+        count = 1
+
+    book_id = problem.frontmatter.get("book_id")
+    if book_id not in (None, ""):
+        count += 1
+    return count
+
+
+def link_reference_citations(body: str, reference_count: int) -> str:
+    if reference_count <= 0:
+        return body
+
+    excluded_spans = build_excluded_spans(body)
+    result_parts: list[str] = []
+    cursor = 0
+    changed = False
+
+    for match in REFERENCE_CITATION_PATTERN.finditer(body):
+        if is_in_spans(match.start(), excluded_spans):
+            continue
+
+        ref_number = int(match.group("num"))
+        if ref_number < 1 or ref_number > reference_count:
+            continue
+
+        citation_text = match.group(0)
+        result_parts.append(body[cursor : match.start()])
+        result_parts.append(
+            f'<a href="#ref-{ref_number}" class="reference-citation">{citation_text}</a>'
+        )
+        cursor = match.end()
+        changed = True
+
+    if not changed:
+        return body
+
+    result_parts.append(body[cursor:])
+    return "".join(result_parts)
 
 
 def get_related_entries(frontmatter: CommentedMap, source_path: Path, create: bool) -> list[object] | None:
@@ -282,7 +333,9 @@ def run(root: Path, check: bool) -> int:
             for acronym, filename in acronym_index.items()
             if filename != current_filename
         }
-        linked_body, related_problem_ids = link_acronyms(problem.body, link_targets)
+        reference_count = count_reference_entries(problem)
+        body_with_reference_links = link_reference_citations(problem.body, reference_count)
+        linked_body, related_problem_ids = link_acronyms(body_with_reference_links, link_targets)
         problem.body = linked_body
         add_related_problems(problem, related_problem_ids)
         prune_see_also_when_reduction_exists(problem)

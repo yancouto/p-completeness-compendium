@@ -414,6 +414,63 @@ html[data-theme="dark"] .problem-content ol li {
   margin-bottom: 0.5rem;
 }
 
+.problem-content .reference-citation {
+  text-decoration: none;
+}
+
+.problem-content .reference-citation:hover {
+  text-decoration: underline;
+}
+
+.problem-references li.reference-item {
+  scroll-margin-top: 1.5rem;
+  border-radius: 4px;
+  padding: 0.15rem 0.3rem;
+  transition: background-color 0.4s ease;
+}
+
+.problem-references li.reference-item:target,
+.problem-references li.reference-item.reference-item-highlight {
+  background: rgba(37, 99, 235, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.22);
+}
+
+html[data-theme="dark"] .problem-references li.reference-item:target,
+html[data-theme="dark"] .problem-references li.reference-item.reference-item-highlight {
+  background: rgba(102, 217, 239, 0.18);
+  box-shadow: inset 0 0 0 1px rgba(102, 217, 239, 0.35);
+}
+
+@keyframes reference-highlight-flash {
+  0% {
+    background: rgba(37, 99, 235, 0.26);
+    box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.32);
+  }
+  100% {
+    background: rgba(37, 99, 235, 0.12);
+    box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.22);
+  }
+}
+
+@keyframes reference-highlight-flash-dark {
+  0% {
+    background: rgba(102, 217, 239, 0.3);
+    box-shadow: inset 0 0 0 1px rgba(102, 217, 239, 0.45);
+  }
+  100% {
+    background: rgba(102, 217, 239, 0.18);
+    box-shadow: inset 0 0 0 1px rgba(102, 217, 239, 0.35);
+  }
+}
+
+.problem-references li.reference-item.reference-item-highlight {
+  animation: reference-highlight-flash 1.4s ease-out;
+}
+
+html[data-theme="dark"] .problem-references li.reference-item.reference-item-highlight {
+  animation: reference-highlight-flash-dark 1.4s ease-out;
+}
+
 .external-link-icon {
   display: inline-flex;
   align-items: center;

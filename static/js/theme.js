@@ -45,21 +45,54 @@
     if (label) label.textContent = isDark ? 'Light' : 'Dark';
   }
 
+  function flashReferenceTarget(referenceId) {
+    const target = document.getElementById(referenceId);
+    if (!target || !target.classList.contains('reference-item')) return;
+    target.classList.remove('reference-item-highlight');
+    void target.offsetWidth;
+    target.classList.add('reference-item-highlight');
+    window.setTimeout(function () {
+      target.classList.remove('reference-item-highlight');
+    }, 1600);
+  }
+
+  function setupReferenceCitationHighlights() {
+    const links = document.querySelectorAll('.problem-content .reference-citation[href^="#ref-"]');
+    links.forEach(function (link) {
+      link.addEventListener('click', function () {
+        const hash = link.getAttribute('href');
+        if (!hash) return;
+        flashReferenceTarget(hash.slice(1));
+      });
+    });
+
+    if (window.location.hash && window.location.hash.startsWith('#ref-')) {
+      flashReferenceTarget(window.location.hash.slice(1));
+    }
+
+    window.addEventListener('hashchange', function () {
+      if (window.location.hash && window.location.hash.startsWith('#ref-')) {
+        flashReferenceTarget(window.location.hash.slice(1));
+      }
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     const theme = getInitialTheme();
     applyTheme(theme);
     updateToggle(theme);
+    setupReferenceCitationHighlights();
 
     const button = document.getElementById('theme-toggle');
-    if (!button) return;
-
-    button.addEventListener('click', function () {
-      const current = document.documentElement.getAttribute('data-theme') || getInitialTheme();
-      const next = current === 'dark' ? 'light' : 'dark';
-      applyTheme(next);
-      setStoredTheme(next);
-      updateToggle(next);
-    });
+    if (button) {
+      button.addEventListener('click', function () {
+        const current = document.documentElement.getAttribute('data-theme') || getInitialTheme();
+        const next = current === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+        setStoredTheme(next);
+        updateToggle(next);
+      });
+    }
   });
 })();
 
