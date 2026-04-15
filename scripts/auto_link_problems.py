@@ -37,6 +37,7 @@ RECIPROCAL_RELATIONS = {
     "reduces-from": "reduces-to",
     "reduces-to": "reduces-from",
     "equivalent": "equivalent",
+    "variant": "variant",
 }
 REFERENCE_CITATION_PATTERN = re.compile(
     r"(?<!\\)\[(?P<num>\d+)(?P<detail>,\s*[^\d\]\s][^\]]*)?\]"
