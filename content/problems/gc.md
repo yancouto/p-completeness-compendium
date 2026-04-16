@@ -39,4 +39,4 @@ $P$-complete under $\LOGSPACE$ reductions (Monti [[1]](#1)).
 An $O(n^3)$ algorithm solving the problem is given in [[1]](#1).
 Monti shows the $(N+k)$-closure problem is $\P$-complete for any (fixed) integer $k$. As for the $(2N-k)$-closure problem, it is trivial for $k \leq 4$, in $\LOGSPACE$ for $k=5$ and $\P$-complete for $k \geq 6$ [[1]](#1). All reductions are from [MCVP]({{< relref "./mcvp.md" >}}).
 
-The problem was stated as "Open" in the classic Greenlaw, Hoover, and Ruzzo book [3], but the completeness was settled shortly after.
+The problem was stated as "Open" in the classic Greenlaw, Hoover, and Ruzzo book [[3]](#3), but the completeness was settled shortly after.

@@ -19,7 +19,7 @@ related_problems:
     relation: see-also
   - id: agap
     relation: reduces-to
-  - id: hds
+  - id: kcore
     relation: reduces-to
   - id: hcs
     relation: reduces-to
@@ -28,6 +28,14 @@ related_problems:
   - id: lfbf
     relation: reduces-to
   - id: ffdbp
+    relation: reduces-to
+  - id: ktruss
+    relation: reduces-to
+  - id: abbcore
+    relation: reduces-to
+  - id: kldcore
+    relation: reduces-to
+  - id: ne-k-core
     relation: reduces-to
 ---
 
