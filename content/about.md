@@ -54,15 +54,15 @@ This compendium is open source and welcomes contributions! Here's how you can he
 
 1. **Fork** the repository on GitHub
 2. **Create a new problem file** in `content/problems/` (e.g., `cvp-xy.md`)
-3. **Use the problem template** with all required fields:
+3. **Use the problem template** (see `archetypes/problems.md`) with the current frontmatter format:
 
 ```markdown
 ---
 title: "Problem Name"
 acronym: "ACRONYM"
-category: "Category Name"
+categories: ["Circuit Complexity"]
 status: "p-complete"  # or "open" or "p-hard"
-tags: ["tag1", "tag2"]
+tags: []
 references:
   - author: "Author Name"
     title: "Paper Title"
@@ -70,10 +70,10 @@ references:
     link: "https://example.org/paper"      # optional direct URL
     doi: "10.1145/321941.321942"           # optional DOI (auto-links to doi.org)
 related_problems:
-  - id = "a-1-1"
-    relation = "reduces-to"  # or: variant, reduces-from, see-also
-  - id = "a-1-3"
-    relation = "see-also"
+  - id: a-1-1
+    relation: reduces-from
+  - id: a-1-3
+    relation: see-also
 ---
 
 ## Given
@@ -85,9 +85,13 @@ There are macros for common complexity classes like $\P$ and $\NC$.
 
 State the decision question clearly.
 
+## Definitions
+
+Define any notation or variant-specific concepts if needed.
+
 ## Status
 
-P-complete [citation].
+$\P$-complete (Author [[1]](#1)).
 
 ## Remarks
 

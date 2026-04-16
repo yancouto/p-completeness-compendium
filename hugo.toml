@@ -14,7 +14,7 @@ enableGitInfo = false  # Will enable after first commit
   author = "P-Complete Compendium Contributors"
   description = "A searchable compendium of P-complete problems from computational complexity theory"
   math = true  # Enable KaTeX
-  githup_repo = "yancouto/p-completeness-compendium"
+  github_repo = "yancouto/p-completeness-compendium"
   
 [taxonomies]
   category = "categories"
