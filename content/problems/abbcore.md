@@ -1,6 +1,6 @@
 ---
-title: "AB-Bcore"
-acronym: "AB-Bcore"
+title: "αβ-Bcore"
+acronym: "αβ-Bcore"
 categories: ["Graph Theory"]
 status: "p-complete"
 tags: []

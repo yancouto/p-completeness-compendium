@@ -58,7 +58,7 @@ Let the core value $C_G(v)$ of $v$ be the largest $k$ such that $v$ is in the $k
 
 For any $\epsilon > 0$, there is a $(2+\epsilon)$-approximation algorithm for finding $C_G(v)$ [[1]](#1), that is, computing $x$ such that $C_G(v) \leq x \leq (2+\epsilon)C_G(v)$. Furthermore, computing any $(2-\epsilon)$-approximation is $\P$-hard.
 
-Several variants of this problem, for directed graphs ([KL-Dcore]({{< relref "./kldcore.md" >}})), bipartite graphs ([AB-Bcore]({{< relref "./abbcore.md" >}})), and the [k-Truss]({{< relref "./ktruss.md" >}}) are also $\P$-complete [[2]](#2).
+Several variants of this problem, for directed graphs ([KL-Dcore]({{< relref "./kldcore.md" >}})), bipartite graphs ([αβ-Bcore]({{< relref "./abbcore.md" >}})), and the [k-Truss]({{< relref "./ktruss.md" >}}) are also $\P$-complete [[2]](#2).
 
 The complementary Low Degree Subgraph Problem has also been studied and for several natural decision problems it is $\NP$-complete (Greenlaw [[3]](#3)). Decision problems based on ordered vertex removal relating to subgraph computations are also $\P$-complete [[3]](#3).
 

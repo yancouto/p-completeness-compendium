@@ -42,7 +42,7 @@ That means, if $\pi$ is $\P$-complete and $\pi \in \NC$ then $\P \subseteq \NC$ 
 
 More formally, we say $\pi$ is $\P$-complete *under NC reductions*, just as $\NP$-complete actually means $\NP$-complete under $\P$ reductions. It is technically more correct to say "$\NC$-complete for $\P$", but it is rarely used by authors.
 
-Sometimes, more strict reductions are used, such as [$\NC^1$](https://complexityzoo.net/Complexity_Zoo:N#nc1), [$\NC^2$](https://complexityzoo.net/Complexity_Zoo:N#nc2) or [LOGSPACE](https://complexityzoo.net/Complexity_Zoo:L#l) (a.k.a. $\mathsf{L}$), which also work since all these classes are contained in $\NC$.
+Sometimes, more strict reductions are used, such as [$\NC^1$](https://complexityzoo.net/Complexity_Zoo:N#nc1), [$\NC^2$](https://complexityzoo.net/Complexity_Zoo:N#nc2) or [$\masthsf{LOGSPACE}](https://complexityzoo.net/Complexity_Zoo:L#l) (a.k.a. $\mathsf{L}$), which also work since all these classes are contained in $\NC$.
 
 ---
 
@@ -107,12 +107,8 @@ Add any additional notes about variants, complexity, algorithms, etc.
 - **Related problems**: Link to problems used in reductions
 - **Remarks**: Note interesting variants, special cases in $\NC$, approximation algorithms, etc.
 
-### Reporting Issues
-
-Found an error? Have a suggestion? [Open an issue](https://github.com/yancouto/p-completeness-compendium/issues) on GitHub.
-
 ---
 
 ## Contact
 
-This project is maintained by the open-source community. For questions or suggestions, please use GitHub issues.
+Found an error? Have a suggestion? [Open an issue](https://github.com/yancouto/p-completeness-compendium/issues) on GitHub.
