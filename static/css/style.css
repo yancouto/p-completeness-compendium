@@ -63,15 +63,6 @@ html[data-theme="dark"] {
   --color-header-button-hover: #4a4940;
 }
 
-/* WIP Banner */
-.wip-banner {
-  background: linear-gradient(90deg, #f59e0b, #d97706);
-  color: white;
-  text-align: center;
-  padding: 0.6rem 1rem;
-  font-size: 0.9rem;
-}
-
 /* Reset */
 *, *::before, *::after {
   box-sizing: border-box;

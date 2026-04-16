@@ -25,4 +25,4 @@ Open (von zur Gathen [[1]](#1)).
 
 ## Remarks
 
-UPFQ is $\NC^1$ reducible to Short Vectors, Problem B.7.1 [[1]](#1).
+UPFQ is $\NC^1$ reducible to [SV]({{< relref "./sv.md" >}}) [[1]](#1).

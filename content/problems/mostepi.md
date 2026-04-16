@@ -9,6 +9,8 @@ references: [74]
 related_problems:
   - id: mcvp
     relation: reduces-from
+  - id: clwer
+    relation: see-also
 ---
 
 ## Given
@@ -26,4 +28,4 @@ $\P$-complete (Dahlhaus [[1]](#1)).
 ## Remarks
 
 The reduction to show hardness is from [MCVP]({{< relref "./mcvp.md" >}}).
-The result indicates that the programming language SETL may not be well suited to parallelism [[1]](#1). See Problem B.3.1 for a related open problem.
+The result indicates that the programming language SETL may not be well suited to parallelism [[1]](#1). See [CLWER]({{< relref "./clwer.md" >}}) for a related open problem.

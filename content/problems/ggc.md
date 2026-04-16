@@ -34,4 +34,4 @@ $\P$-complete (Khuller [[1]](#1)).
 An $O(n^3)$ algorithm solving the problem is given in [[1]](#1).
 The reduction to show hardness is from [MCVP]({{< relref "./mcvp.md" >}}).
 
-The complexity of the *General Graph Closure Problem* in which $E' = V \times V - E$ is open, see [GC]({{< relref "./gc.md" >}}).
+This was initially modified from the *Graph Closure Problem* ([GC]({{< relref "./gc.md" >}})), in which $E' = V \times V - E$, since it was an open problem. However, it has now been proved $\P$-complete.

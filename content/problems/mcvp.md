@@ -81,5 +81,5 @@ $\P$-complete under $\NC^1$ reductions (Greenlaw, Hoover and Ruzzo  [[3, Theorem
 
 ## Remarks
 
-The reduction to show hardness is from [CVP]({{< relref "./cvp.md" >}}) or [GMSP]({{< relref "./gmsp.md" >}}).
+The reduction to show hardness is from [CVP]({{< relref "./cvp.md" >}}) or [GMSP]({{< relref "./gmsp.md" >}}). It remains complete when the fan-in and fan-out is 2, which is often implied in several reductions, while the more technically correct term would be MCVP2.
 Vitter and Simmons give a $\sqrt{n}$ time parallel algorithm for the non-sparse version of the problem [[2]](#2).
