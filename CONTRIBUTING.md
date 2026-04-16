@@ -1,4 +1,4 @@
-# Contributing to the P-Complete Problems Compendium
+# Contributing to the P-completeness Compendium
 
 Thank you for your interest in contributing!
 

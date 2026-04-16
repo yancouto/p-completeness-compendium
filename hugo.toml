@@ -1,18 +1,18 @@
-# P-Complete Problems Compendium
+# P-completeness Compendium
 # https://gohugo.io/getting-started/configuration/
 
 baseURL = '/'
 languageCode = 'en-us'
-title = 'P-Complete Problems Compendium'
-description = 'A comprehensive collection of P-complete problems and open parallelization questions'
+title = 'P-completeness Compendium'
+description = 'A collaborative resource for parallel complexity theory.'
 
 # Enable useful features
 enableRobotsTXT = true
 enableGitInfo = false  # Will enable after first commit
 
 [params]
-  author = "P-Complete Compendium Contributors"
-  description = "A searchable compendium of P-complete problems from computational complexity theory"
+  author = "P-completeness Compendium Contributors"
+  description = "A collaborative resource for parallel complexity theory."
   math = true  # Enable KaTeX
   github_repo = "yancouto/p-completeness-compendium"
   

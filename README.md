@@ -1,4 +1,4 @@
-# P-Complete Problems Compendium
+# P-completeness Compendium
 
 A searchable compendium of **P-complete problems** — computational problems believed to have no efficient parallel algorithms.
 

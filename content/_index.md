@@ -1,10 +1,6 @@
----
-title: "P-Complete Problems Compendium"
----
-
 <div class="home-hero">
 
-# P-Complete Problems Compendium
+# P-completeness Compendium
 
 <p class="lead">
 A collaborative resource for parallel complexity theory.
@@ -17,7 +13,7 @@ A collaborative resource for parallel complexity theory.
 
 </div>
 
-## What is P-Completeness?
+## What is P-completeness?
 
 **P-complete** problems are the hardest problems in P to parallelize. Just as NP-complete problems are believed to have no efficient sequential algorithms, P-complete problems are believed to have no efficient *parallel* algorithms, and are said to be inherently sequential.
 
@@ -31,13 +27,13 @@ If *any* P-complete problem can be solved efficiently in parallel (in NC), then 
 
 This compendium uses the following as a main reference:
 
-> Greenlaw, R., Hoover, H. J., & Ruzzo, W. L. (1995). *Limits to Parallel Computation: P-Completeness Theory*. Oxford University Press.
+> Greenlaw, R., Hoover, H. J., and Ruzzo, W. L. (1995). *Limits to Parallel Computation: P-Completeness Theory*. Oxford University Press.
 
 These references cover foundational results and broad problem catalogs across circuit complexity, graph theory, logic, algebra, and more.
 
 ### Contributing
 
-This is an open-source project! You can contribute by:
+**This is an open-source project!** You can contribute by:
 - Adding new P-complete problems
 - Improving problem descriptions and remarks
 - Fixing errors or adding references

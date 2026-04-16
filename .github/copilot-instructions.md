@@ -1,4 +1,4 @@
-# Copilot Instructions for P-Complete Problems Compendium
+# Copilot Instructions for P-completeness Compendium
 
 ## Build Commands
 

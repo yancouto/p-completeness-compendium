@@ -4,9 +4,9 @@ title: "About"
 
 ## About This Compendium
 
-The **P-Complete Problems Compendium** is a collaborative, open-source resource cataloging problems from computational complexity theory that are **P-complete** — problems believed to have no efficient parallel algorithms.
+The **P-completeness Compendium** is a collaborative, open-source resource cataloging problems from computational complexity theory that are **P-complete** — problems believed to have no efficient parallel algorithms.
 
-### Why P-Completeness Matters
+### Why P-completeness Matters
 
 In complexity theory, we study not just *whether* problems can be solved efficiently, but *how* they can be solved. While the famous **P vs NP** question asks about sequential computation, an equally important question concerns parallel computation:
 
