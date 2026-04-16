@@ -6,6 +6,9 @@ categories: ["Network Flows"]
 status: "open"
 tags: ["RNC"]
 references: [103, 196, 271, 188]
+related_problems:
+  - id: pme
+    relation: see-also
 ---
 
 ## Given
@@ -26,4 +29,6 @@ Open (Feather [[1]](#1), Karp, Upfal, and Wigderson [[2]](#2), Mulmuley, Vaziran
 
 ## Remarks
 
-Feather shows that the problem of finding the *size* of a maximum matching is in $\mathsf{RNC}$ [[1]](#1). Karp, Upfal, and Wigderson gave the first $\mathsf{RNC}$ algorithm for *finding* the maximum matching [[2]](#2). A more efficient algorithm was given by Mulmuley, Vazirani, and Vazirani [[3]](#3). Karloff shows how any $\mathsf{RNC}$ algorithm for matching can be made errorless [[4]](#4). *Maximum Edge-weighted Matching* for unary edge weights and *Maximum Vertex-weighted Matching* for binary vertex weights are also known to be in $\mathsf{RNC}$ [[2]](#2)[[3]](#3).
+Feather shows that the problem of finding the *size* of a maximum matching is in $\mathsf{RNC}$ [[1]](#1). Karp, Upfal, and Wigderson gave the first $\mathsf{RNC}$ algorithm for *finding* the maximum matching [[2]](#2). A more efficient algorithm was given by Mulmuley, Vazirani, and Vazirani [[3]](#3).
+
+Karloff shows how any $\mathsf{RNC}$ algorithm for matching can be made errorless [[4]](#4). *Maximum Edge-weighted Matching* for unary edge weights and *Maximum Vertex-weighted Matching* for binary vertex weights are also known to be in $\mathsf{RNC}$ [[2]](#2)[[3]](#3). See also [PME]({{< relref "./pme.md" >}}).

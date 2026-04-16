@@ -42,4 +42,4 @@ Open (Karloff and Shmoys [[1]](#1)).
 
 An $\NC$ algorithm is known for polylogarithmic $\Delta$ [[1]](#1). Karloff and Shmoys give an $\mathsf{RNC}$ algorithm on the COMMON CRCW-PRAM that uses $\Delta + 20 \cdot \Delta^{1/2 + \epsilon}$ colors with running time $(\log |V|)^{O(1)}$ and processors $|V|^{O(1)}$, where the running time is for a fixed $\epsilon > 0$ and the processor bound is independent of $\epsilon$. Also see Problems [LFDVC]({{< relref "./lfdvc.md" >}}) and [ER]({{< relref "./er.md" >}}).
 
-Recently, the distributed version of this problem has been widely studied [2]. However, the parallel hardness of this problem remains open [3].
+Recently, the distributed version of this problem has been widely studied [[2]](#2). However, the parallel hardness of this problem remains open [[3]](#3).
