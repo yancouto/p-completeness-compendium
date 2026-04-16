@@ -10,18 +10,29 @@
   </header>
 
   <div class="search-filters">
-    <input type="text" id="search-input" placeholder="Search problems..." class="search-box">
-    
-    <div class="filter-group">
-      <label for="category-filter">Category:</label>
-      <select id="category-filter">
-        <option value="">All Categories</option>
-        {{ $categories := slice }}
-        {{ range $problems }}
-          {{ with .Params.categories }}
-            {{ $categories = $categories | append (index . 0) }}
-          {{ end }}
+    <div class="search-panel">
+      <label for="search-input" class="sr-only">Search problems</label>
+      <input type="text" id="search-input" placeholder="Search by title, acronym, or tag..." class="search-box search-box-modern">
+    </div>
+
+    {{ $categories := slice }}
+    {{ $tags := slice }}
+    {{ range $problems }}
+      {{ with .Params.categories }}
+        {{ range . }}
+          {{ $categories = $categories | append . }}
         {{ end }}
+      {{ end }}
+      {{ with .Params.tags }}
+        {{ range . }}
+          {{ $tags = $tags | append . }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    <div class="filter-group">
+      <label for="category-filter">Categories</label>
+      <select id="category-filter" multiple size="5">
         {{ range ($categories | uniq | sort) }}
           <option value="{{ . }}">{{ . }}</option>
         {{ end }}
@@ -29,12 +40,20 @@
     </div>
 
     <div class="filter-group">
-      <label for="status-filter">Status:</label>
-      <select id="status-filter">
-        <option value="">All</option>
+      <label for="status-filter">Status</label>
+      <select id="status-filter" multiple size="3">
         <option value="p-complete">P-complete</option>
         <option value="p-hard">P-hard</option>
         <option value="open">Open</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="tag-filter">Tags</label>
+      <select id="tag-filter" multiple size="5">
+        {{ range ($tags | uniq | sort) }}
+          <option value="{{ . }}">{{ . }}</option>
+        {{ end }}
       </select>
     </div>
   </div>
@@ -48,9 +67,9 @@
     <article class="problem-card"
              data-title="{{ .Title | lower }}"
              data-acronym="{{ .Params.acronym | lower }}"
-             data-category="{{ with .Params.categories }}{{ index . 0 }}{{ end }}"
+             data-category="{{ with .Params.categories }}{{ delimit . "|" | lower }}{{ end }}"
              data-status="{{ .Params.status | default "p-complete" }}"
-             data-tags="{{ with .Params.tags }}{{ delimit . " " | lower }}{{ end }}">
+             data-tags="{{ with .Params.tags }}{{ delimit . "|" | lower }}{{ end }}">
       <div class="card-header">
         <span class="status status-{{ .Params.status | default "p-complete" }}">
           {{ if eq .Params.status "open" }}Open{{ else if eq .Params.status "p-hard" }}P-hard{{ else }}P-complete{{ end }}
@@ -63,7 +82,8 @@
       <div class="card-category">{{ with .Params.categories }}{{ index . 0 }}{{ end }}</div>
       {{ with .Params.tags }}
       <div class="card-tags">
-        {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+        <span class="card-tags-label">Tags:</span>
+        {{ range . }}<span class="problem-tag">{{ . }}</span>{{ end }}
       </div>
       {{ end }}
     </article>

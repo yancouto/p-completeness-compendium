@@ -1,0 +1,46 @@
+{{ define "main" }}
+{{ $allPages := where site.RegularPages "Section" "problems" }}
+{{ $problems := where $allPages "Params.acronym" "!=" nil }}
+<section class="home-hero">
+  <h1>{{ .Site.Title }}</h1>
+  <p class="lead">{{ .Site.Params.description }}</p>
+
+  <div class="search-panel home-search-panel">
+    <label for="home-problem-search" class="sr-only">Search for a problem</label>
+    <input type="text" id="home-problem-search" class="search-box search-box-modern" placeholder="Search by problem name or acronym…" autocomplete="off">
+    <ul id="home-search-results" class="autocomplete-menu" hidden></ul>
+  </div>
+
+  <div class="home-cta">
+    <a href="{{ "problems/" | relURL }}" class="btn btn-primary">Advanced Search</a>
+  </div>
+</section>
+
+<section class="home-content single">
+  <div class="content">
+    {{ .Content }}
+  </div>
+</section>
+
+<div class="home-learn-more">
+  <a href="{{ "about/" | relURL }}" class="btn btn-secondary">Learn More</a>
+</div>
+
+<script>
+  window.homeProblems = [
+    {{- range $i, $problem := sort $problems ".Title" -}}
+      {{- if $i }},{{ end -}}
+      {
+        "title": {{ $problem.Title | jsonify }},
+        "acronym": {{ $problem.Params.acronym | default "" | jsonify }},
+        "status": {{ $problem.Params.status | default "p-complete" | jsonify }},
+        "url": {{ $problem.RelPermalink | jsonify }}
+      }
+    {{- end -}}
+  ];
+</script>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="{{ "js/home-search.js" | relURL }}"></script>
+{{ end }}

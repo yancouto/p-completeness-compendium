@@ -1,18 +1,3 @@
-<div class="home-hero">
-
-# P-completeness Compendium
-
-<p class="lead">
-A collaborative resource for parallel complexity theory.
-</p>
-
-<div class="home-cta">
-  <a href="{{< relref "/problems/_index.md" >}}" class="btn btn-primary">Browse Problems</a>
-  <a href="{{< relref "/about.md" >}}" class="btn btn-secondary">Learn More</a>
-</div>
-
-</div>
-
 ## What is P-completeness?
 
 **P-complete** problems are the hardest problems in P to parallelize. Just as NP-complete problems are believed to have no efficient sequential algorithms, P-complete problems are believed to have no efficient *parallel* algorithms, and are said to be inherently sequential.
