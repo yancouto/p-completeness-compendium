@@ -18,7 +18,7 @@ related_problems:
 
 ## Given
 
-An undirected bipartice graph $G = (A \cup B, E)$, a vertex $v$, and integers $\alpha$ and $\beta$.
+An undirected bipartite graph $G = (A \cup B, E)$, a vertex $v$, and integers $\alpha$ and $\beta$.
 
 ## Problem
 

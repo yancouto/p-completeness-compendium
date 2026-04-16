@@ -18,7 +18,7 @@ related_problems:
 
 ## Given
 
-A directed graph $G = (V, E)$, a vertex $v$, and integers $k$ and $l$.
+A directed graph $G = (V, E)$, a vertex $v$, and integers $k$ and $\ell$.
 
 ## Problem
 

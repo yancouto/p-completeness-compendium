@@ -1,0 +1,52 @@
+{{ define "main" }}
+  {{ $allPages := where site.RegularPages "Section" "problems" }}
+  {{ $problems := where $allPages "Params.acronym" "!=" nil }}
+  {{ $about := site.GetPage "/about.md" }}
+
+  <section class="home-hero">
+    <h1>P-completeness Compendium</h1>
+    <p class="lead">
+      A collaborative resource for parallel complexity theory.
+    </p>
+
+    <div class="home-search-panel">
+      <label for="home-search-input" class="search-label">Search problems</label>
+      <div class="home-search-box">
+        <input
+          id="home-search-input"
+          class="search-box search-box-modern"
+          type="search"
+          placeholder="Start typing a problem name or acronym..."
+          autocomplete="off"
+          aria-autocomplete="list"
+          aria-controls="home-search-results"
+          aria-expanded="false">
+        <ul id="home-search-results" class="home-search-results" role="listbox" hidden></ul>
+      </div>
+      <div class="home-cta home-cta-advanced">
+        <a href="{{ "problems/" | relURL }}" class="problem-back-button">Advanced Search</a>
+      </div>
+    </div>
+  </section>
+
+  <article class="single home-content">
+    <div class="content">
+      {{ .Content }}
+    </div>
+  </article>
+
+  <div class="home-page-footer-cta">
+    <a href="{{ if $about }}{{ $about.RelPermalink }}{{ else }}{{ "about/" | relURL }}{{ end }}" class="btn btn-secondary">Learn More</a>
+  </div>
+
+  {{ $items := slice }}
+  {{ range sort $problems "Title" }}
+    {{ $status := .Params.status | default "p-complete" }}
+    {{ $items = $items | append (dict "title" .Title "acronym" (.Params.acronym | default "") "status" $status "url" .RelPermalink) }}
+  {{ end }}
+  <script id="home-problems-data" type="application/json">{{ $items | jsonify }}</script>
+{{ end }}
+
+{{ define "scripts" }}
+  <script src="{{ "js/search.js" | relURL }}"></script>
+{{ end }}

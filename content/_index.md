@@ -1,18 +1,3 @@
-<div class="home-hero">
-
-# P-completeness Compendium
-
-<p class="lead">
-A collaborative resource for parallel complexity theory.
-</p>
-
-<div class="home-cta">
-  <a href="{{< relref "/problems/_index.md" >}}" class="btn btn-primary">Browse Problems</a>
-  <a href="{{< relref "/about.md" >}}" class="btn btn-secondary">Learn More</a>
-</div>
-
-</div>
-
 ## What is P-completeness?
 
 **P-complete** problems are the hardest problems in P to parallelize. Just as NP-complete problems are believed to have no efficient sequential algorithms, P-complete problems are believed to have no efficient *parallel* algorithms, and are said to be inherently sequential.
@@ -40,7 +25,7 @@ These references cover foundational results and broad problem catalogs across ci
 
 See our [Contributing Guide]({{< relref "/about.md" >}}#contributing) for details.
 
-## Featured Problems
+## Base P-complete problems
 
 - **[Circuit Value Problem (CVP)]({{< relref "/problems/cvp.md" >}})** — The foundational P-complete problem, analogous to SAT for NP-completeness
-- **[Monotone CVP]({{< relref "/problems/mcvp.md" >}})** — A restricted variant using only AND and OR gates
+- **[Generic Machine Simulation Problem (GMSP)]({{< relref "/problems/gmsp.md" >}})** — The base problem of simulating a Turing machine efficiently in parallel

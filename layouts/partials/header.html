@@ -1,6 +1,8 @@
 <header class="site-header">
-  <nav class="nav-container">
+  <nav class="nav-container{{ if .IsHome }} nav-home{{ end }}">
+    {{ if not .IsHome }}
     <a href="{{ .Site.Home.RelPermalink }}" class="site-title">P-completeness Compendium</a>
+    {{ end }}
     <div class="nav-controls">
       <ul class="nav-menu">
         {{ range .Site.Menus.main }}

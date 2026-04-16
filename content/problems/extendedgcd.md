@@ -9,6 +9,8 @@ references: [43, 90, 329]
 related_problems:
   - id: opt2ilp
     relation: see-also
+  - id: integergcd
+    relation: variant
 ---
 
 ## Given
@@ -25,4 +27,4 @@ Open (Borodin, von zur Gathen, and Hopcroft [[1]](#1)).
 
 ## Remarks
 
-The analogous problem for $n^\text{th}$ degree polynomials is in $\NC$ [[1]](#1). Deng shows several other problems are $\NC$-equivalent to a closely related problem [[2]](#2). Two of these are expanding the continued fraction of the ratio of two integers and computing the sequence of convergents of two integers. See also Shallcross, Pan, and Lin-Kriz [[3]](#3) and the remarks for [Opt2ILP]({{< relref "./opt2ilp.md" >}}).
+The analogous problem for $n^\text{th}$ degree polynomials is in $\NC$ [[1]](#1). Deng shows several other problems are $\NC$-equivalent to a closely related problem [[2]](#2). Two of these are expanding the continued fraction of the ratio of two integers and computing the sequence of convergents of two integers. See also Shallcross, Pan, and Lin-Kriz [[3]](#3) and the remarks for [Opt2ILP]({{< relref "./opt2ilp.md" >}}) and [IntegerGCD]({{< relref "./integergcd.md" >}}).

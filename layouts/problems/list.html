@@ -2,6 +2,22 @@
   <section class="problems-list">
   {{ $allPages := where site.RegularPages "Section" "problems" }}
   {{ $problems := where $allPages "Params.acronym" "!=" nil }}
+  {{ $categories := slice }}
+  {{ $statuses := slice }}
+  {{ $tags := slice }}
+  {{ range $problems }}
+    {{ with .Params.categories }}
+      {{ range . }}
+        {{ $categories = $categories | append . }}
+      {{ end }}
+    {{ end }}
+    {{ $statuses = $statuses | append (.Params.status | default "p-complete") }}
+    {{ with .Params.tags }}
+      {{ range . }}
+        {{ $tags = $tags | append . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
   <header>
     <h1>Problem List</h1>
     <p class="description">
@@ -10,32 +26,81 @@
   </header>
 
   <div class="search-filters">
-    <input type="text" id="search-input" placeholder="Search problems..." class="search-box">
-    
     <div class="filter-group">
-      <label for="category-filter">Category:</label>
-      <select id="category-filter">
-        <option value="">All Categories</option>
-        {{ $categories := slice }}
-        {{ range $problems }}
-          {{ with .Params.categories }}
-            {{ $categories = $categories | append (index . 0) }}
-          {{ end }}
-        {{ end }}
-        {{ range ($categories | uniq | sort) }}
-          <option value="{{ . }}">{{ . }}</option>
-        {{ end }}
-      </select>
+      <label for="search-input" class="search-label">Search</label>
+      <input type="search" id="search-input" placeholder="Search by title, acronym, category, or tag..." class="search-box search-box-modern">
     </div>
 
     <div class="filter-group">
-      <label for="status-filter">Status:</label>
-      <select id="status-filter">
-        <option value="">All</option>
-        <option value="p-complete">P-complete</option>
-        <option value="p-hard">P-hard</option>
-        <option value="open">Open</option>
-      </select>
+      <span class="search-label" id="category-filter-label">Category</span>
+      <div class="multi-select" data-filter-group="category" data-query-key="category" data-placeholder="All categories">
+        <button
+          id="category-filter"
+          class="multi-select-toggle"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-labelledby="category-filter-label category-filter">
+          <span class="multi-select-text">All categories</span>
+        </button>
+        <div class="multi-select-panel" hidden>
+          {{ range ($categories | uniq | sort) }}
+            <label class="multi-select-option">
+              <input type="checkbox" value="{{ . }}">
+              <span>{{ . }}</span>
+            </label>
+          {{ end }}
+        </div>
+        <div class="selected-chips" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <span class="search-label" id="status-filter-label">Status</span>
+      <div class="multi-select" data-filter-group="status" data-query-key="status" data-placeholder="All statuses">
+        <button
+          id="status-filter"
+          class="multi-select-toggle"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-labelledby="status-filter-label status-filter">
+          <span class="multi-select-text">All statuses</span>
+        </button>
+        <div class="multi-select-panel" hidden>
+          {{ range ($statuses | uniq | sort) }}
+            <label class="multi-select-option">
+              <input type="checkbox" value="{{ . }}" data-label="{{ if eq . "open" }}Open{{ else if eq . "p-hard" }}P-hard{{ else }}P-complete{{ end }}">
+              <span>{{ if eq . "open" }}Open{{ else if eq . "p-hard" }}P-hard{{ else }}P-complete{{ end }}</span>
+            </label>
+          {{ end }}
+        </div>
+        <div class="selected-chips" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <span class="search-label" id="tag-filter-label">Tags</span>
+      <div class="multi-select" data-filter-group="tag" data-query-key="tag" data-placeholder="All tags">
+        <button
+          id="tag-filter"
+          class="multi-select-toggle"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-labelledby="tag-filter-label tag-filter">
+          <span class="multi-select-text">All tags</span>
+        </button>
+        <div class="multi-select-panel" hidden>
+          {{ range ($tags | uniq | sort) }}
+            <label class="multi-select-option">
+              <input type="checkbox" value="{{ . }}">
+              <span>{{ . }}</span>
+            </label>
+          {{ end }}
+        </div>
+        <div class="selected-chips" aria-live="polite"></div>
+      </div>
     </div>
   </div>
 
@@ -45,25 +110,43 @@
 
   <div class="problems-grid" id="problems-grid">
     {{ range sort $problems ".Params.acronym" }}
+    {{ $status := .Params.status | default "p-complete" }}
+    {{ $categoryValues := slice }}
+    {{ with .Params.categories }}
+      {{ range . }}
+        {{ $categoryValues = $categoryValues | append (lower .) }}
+      {{ end }}
+    {{ end }}
+    {{ $tagValues := slice }}
+    {{ with .Params.tags }}
+      {{ range . }}
+        {{ $tagValues = $tagValues | append (lower .) }}
+      {{ end }}
+    {{ end }}
     <article class="problem-card"
              data-title="{{ .Title | lower }}"
-             data-acronym="{{ .Params.acronym | lower }}"
-             data-category="{{ with .Params.categories }}{{ index . 0 }}{{ end }}"
-             data-status="{{ .Params.status | default "p-complete" }}"
-             data-tags="{{ with .Params.tags }}{{ delimit . " " | lower }}{{ end }}">
+             data-acronym="{{ .Params.acronym | default "" | lower }}"
+             data-categories="{{ delimit $categoryValues "|" }}"
+             data-status="{{ lower $status }}"
+             data-tags="{{ delimit $tagValues "|" }}">
       <div class="card-header">
-        <span class="status status-{{ .Params.status | default "p-complete" }}">
-          {{ if eq .Params.status "open" }}Open{{ else if eq .Params.status "p-hard" }}P-hard{{ else }}P-complete{{ end }}
+        <span class="status status-{{ $status }}">
+          {{ if eq $status "open" }}Open{{ else if eq $status "p-hard" }}P-hard{{ else }}P-complete{{ end }}
         </span>
       </div>
       <h2>
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         {{ with .Params.acronym }}<span class="acronym">({{ . }})</span>{{ end }}
       </h2>
-      <div class="card-category">{{ with .Params.categories }}{{ index . 0 }}{{ end }}</div>
+      {{ with .Params.categories }}
+      <div class="card-category">Category: {{ delimit . ", " }}</div>
+      {{ end }}
       {{ with .Params.tags }}
-      <div class="card-tags">
-        {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+      <div class="card-tags-row">
+        <span class="card-tags-label">Tags:</span>
+        <div class="card-tags">
+          {{ range . }}<span class="tag tag-topic">{{ . }}</span>{{ end }}
+        </div>
       </div>
       {{ end }}
     </article>

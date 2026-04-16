@@ -1,6 +1,9 @@
 {{ define "main" }}
 <article class="problem">
   <header class="problem-header">
+    <div class="problem-back-top">
+      <a href="{{ "problems/" | relURL }}" class="problem-back-button">&larr; All Problems</a>
+    </div>
     <div class="problem-meta">
       <span class="problem-status status-{{ .Params.status | default "p-complete" }}">
         {{ if eq .Params.status "open" }}Open{{ else if eq .Params.status "p-hard" }}P-hard{{ else }}P-complete{{ end }}
@@ -13,10 +16,13 @@
       {{ end }}
     </div>
     {{ with .Params.tags }}
-    <div class="problem-tags">
-      {{ range . }}
-        <a href="{{ printf "tags/%s/" (. | urlize) | relURL }}" class="tag">{{ . }}</a>
-      {{ end }}
+    <div class="problem-tags-row">
+      <span class="problem-tags-label">Tags:</span>
+      <div class="problem-tags">
+        {{ range . }}
+          <a href="{{ printf "tags/%s/" (. | urlize) | relURL }}" class="tag tag-topic">{{ . }}</a>
+        {{ end }}
+      </div>
     </div>
     {{ end }}
   </header>
@@ -123,14 +129,4 @@
   </section>
   {{ end }}
 </article>
-
-<nav class="problem-nav">
-  {{ with .PrevInSection }}
-  <a href="{{ .RelPermalink }}" class="prev">&larr; {{ .Title }}</a>
-  {{ end }}
-  <a href="{{ "problems/" | relURL }}" class="back">All Problems</a>
-  {{ with .NextInSection }}
-  <a href="{{ .RelPermalink }}" class="next">{{ .Title }} &rarr;</a>
-  {{ end }}
-</nav>
 {{ end }}

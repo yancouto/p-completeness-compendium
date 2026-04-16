@@ -62,5 +62,5 @@ Several variants of this problem, for directed graphs ([KL-Dcore]({{< relref "./
 
 The complementary Low Degree Subgraph Problem has also been studied and for several natural decision problems it is $\NP$-complete (Greenlaw [[3]](#3)). Decision problems based on ordered vertex removal relating to subgraph computations are also $\P$-complete [[3]](#3).
 
-A special case of k-Core is the Color Index Problem (Vishwanathan and Sridhar [[4]](#4)): given an undirected graph $G = (V, E)$, is the color index of $G$ less than or equal to four? The *color index* is the maximum over all subgraphs $H$ of $G$, of the minimum degree of $H$. Asking if the color index is less than or equal to four is complementary to asking if there are any high degree subgraphs of order five.
+A special case of k-Core is the Color Index Problem (Vishwanathan and Sridhar [[4]](#4)): given an undirected graph $G = (V, E)$, is the color index of $G$ less than or equal to four? The *color index* is the maximum over all subgraphs $H$ of $G$, of the minimum degree of $H$. Asking if the color index is less than or equal to four is complementary to asking if the 5-core is nonempty.
 The original reduction for Color Index is from [OLDVR]({{< relref "./oldvr.md" >}}).
