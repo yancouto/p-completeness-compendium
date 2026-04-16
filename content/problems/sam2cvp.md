@@ -1,0 +1,38 @@
+---
+title: "Synchronous Alternating Monotone Fanout 2 CVP"
+acronym: "SAM2CVP"
+book_id: "A.1.6"
+categories: ["Circuit Complexity"]
+status: "p-complete"
+tags: []
+references: []
+related_problems:
+  - id: am2cvp
+    relation: reduces-from
+  - id: sbts
+    relation: reduces-to
+  - id: cvp
+    relation: see-also
+  - id: sbfs
+    relation: reduces-to
+---
+
+## Given
+
+An encoding $\overline{\alpha}$ of a Boolean circuit $\alpha$, inputs $x_1, \ldots, x_n$ and designated output $y$. In addition to the restrictions of [AM2CVP]({{< relref "problems/am2cvp.md" >}}), this version requires the circuit to be synchronous. 
+
+## Problem
+
+Is output $y$ of $\alpha$ true on inputs $x_1, \ldots, x_n$?
+
+## Definitions
+
+See [CVP]({{< relref "./cvp.md" >}}). A circuit is *synchronous* if each level in the circuit can receive its inputs only from gates on the preceding level.
+
+## Status
+
+$\P$-complete under $\NC^1$ reductions (Greenlaw, Hoover and Ruzzo [[1, Theorem 6.2.5]](#1)).
+
+## Remarks
+
+The reduction to show hardness is from [AM2CVP]({{< relref "./am2cvp.md" >}}).

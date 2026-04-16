@@ -70,9 +70,9 @@ references:
     link: "https://example.org/paper"      # optional direct URL
     doi: "10.1145/321941.321942"           # optional DOI (auto-links to doi.org)
 related_problems:
-  - id: a-1-1
+  - id: cvp
     relation: reduces-from
-  - id: a-1-3
+  - id: mcvp
     relation: see-also
 ---
 

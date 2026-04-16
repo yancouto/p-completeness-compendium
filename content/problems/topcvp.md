@@ -1,0 +1,35 @@
+---
+title: "Topologically Ordered Circuit Value Problem"
+acronym: "TopCVP"
+book_id: "A.1.2"
+categories: ["Circuit Complexity"]
+status: "p-complete"
+tags: []
+references: []
+related_problems:
+  - id: cvp
+    relation: variant
+  - id: gmsp
+    relation: reduces-from
+---
+
+## Given
+
+An encoding $\overline{\alpha}$ of a Boolean circuit $\alpha$, inputs $x_1, \ldots, x_n$ and designated output $y$, with the additional assumption that the vertices in the circuit are numbered and listed in topological order.
+
+## Problem
+
+Is output $y$ of $\alpha$ true on inputs $x_1, \ldots, x_n$?
+
+## Definitions
+
+See [CVP]({{< relref "./cvp.md" >}}).
+
+## Status
+
+$\P$-complete under $\NC^1$ reductions (Greenlaw, Hoover and Ruzzo [[1, Theorem 6.2.1]](#1)).
+
+## Remarks
+
+The reduction to show hardness is from [GMSP]({{< relref "./gmsp.md" >}}).
+Most circuit value reductions preserve topological ordering, so the restrictions of most variants of the Circuit Value Problem to topologically ordered instances remain $\P$-complete.

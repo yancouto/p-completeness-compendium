@@ -1,0 +1,32 @@
+---
+title: "Relation Coarsest Set Partition"
+acronym: "RCSP"
+book_id: "A.7.14"
+categories: ["Formal Languages"]
+status: "p-complete"
+tags: []
+references: [313, 183]
+related_problems:
+  - id: sbts
+    relation: see-also
+  - id: sbdts
+    relation: see-also
+---
+
+## Given
+
+A finite set $S$, an initial partition $\pi_0$ of $S$, a designated set $S' \subseteq S$, and a set of binary relations $R_1, \ldots, R_k$ on $S$.
+
+## Problem
+
+Is $S'$ a member of the coarsest refinement $\pi$ of $\pi_0$ such that for each pair of blocks $B_1$ and $B_2$ of $\pi$, and for each integer $i = 1, \ldots, k$ either $$B_1 \subseteq PI_i(B_2) \text{ or } B_1 \cap PI_i(B_2) = \varnothing,$$ where $PI_i(B_2)$ is the pre-image set $PI_i(B_2) = \\{x \mid \text{there is a } y \in B_2 \text{ with } x R_i y\\}$.
+
+## Status
+
+$\P$-complete (Sang Cho and Huynh [[1]](#1)).
+
+## Remarks
+
+In [[1]](#1), they observe that Kanellakis and Smolka [[2]](#2) showed the $\NC^1$ equivalence of RCSP to a $\P$-complete variant of [SBTS]({{< relref "./sbts.md" >}}).
+
+Even if there is only a single relation, $k$ equals one, the problem is $\P$-complete [[1]](#1). Sang Cho and Huynh give a $\log n$ time, $O(n^2)$ processor CREW-PRAM algorithm for the *single function* Coarsest Set Partition Problem as well as a $\log n$ time, $O(n^3)$ processor EREW-PRAM algorithm for the same problem [[1]](#1). See also the remarks for [SBTS]({{< relref "./sbts.md" >}}) and [SBDTS]({{< relref "./sbdts.md" >}}).

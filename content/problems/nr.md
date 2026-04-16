@@ -1,0 +1,35 @@
+---
+title: "Neighborhood Removal"
+acronym: "NR"
+book_id: "A.2.13"
+categories: ["Graph Theory"]
+status: "p-complete"
+tags: []
+references: [133, 372, 240]
+related_problems:
+  - id: ohdvr
+    relation: reduces-from
+---
+
+## Given
+
+An undirected graph $G = (V, E)$ with a numbering on the vertices in $V$, and two designated vertices $u$ and $v$.
+
+## Problem
+
+Is vertex $u$ removed before vertex $v$ when the neighborhood removal algorithm is run on $G$?
+
+## Definitions
+
+The *neighborhood removal algorithm* processes maximum degree vertices in the remaining subgraph of $G$ that have the lowest vertex numbers. It iterates through such vertices, deleting them as well as their neighborhoods from the remaining subgraph.
+
+## Status
+
+$\P$-complete (Greenlaw [[1]](#1)).
+
+## Remarks
+
+The reduction to show hardness is from [OHDVR]({{< relref "./ohdvr.md" >}}).
+
+The neighborhood removal algorithm (or a slight variant of it) is used as a subroutine in Wigderson's heuristic algorithm for the *Graph Coloring Problem* [[2]](#2) and also in a heuristic algorithm for the Minimum Vertex Cover Problem (Lingas [[3]](#3)). In light of the fact that NR is $\P$-complete, it is unlikely that heuristic algorithms using the neighborhood removal algorithm as a subroutine will parallelize well.
+

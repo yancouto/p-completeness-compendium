@@ -1,0 +1,36 @@
+---
+title: "Eden Growth"
+acronym: "EG"
+book_id: "A.12.5"
+categories: ["Miscellaneous"]
+status: "p-complete"
+tags: []
+references: [250]
+related_problems:
+  - id: nandcvp
+    relation: reduces-from-variant-of
+  - id: nandcvp
+    relation: see-also
+---
+
+## Given
+
+An undirected graph $G = (V, E)$ in which each vertex in $V$ has an $O(|V|)$ fixed length, label sequence of $m$ distinct numbers from $\\{1, \ldots, m\\}$, a designated source vertex $s$, and a designated vertex $t$.
+
+## Problem
+
+Is vertex $t$ added to the *Eden cluster* formed on $G$?
+
+## Definitions
+
+The initial cluster consists of vertex $s$. At each step $i$, $1 \leq i \leq m$, the vertex adjacent to the current cluster, whose $i^\text{th}$ label is smallest, is added to the cluster.
+
+## Status
+
+$\P$-complete (Greenlaw, Hoover and Ruzzo [[2]](#2)).
+
+## Remarks
+
+The reduction to show hardness is from a topologically ordered variant of [NORCVP]({{< relref "./nandcvp.md" >}}).
+
+Eden growth is a process that is used for studying tumor growth. See Machta and Greenlaw [[1]](#1) for additional information about the parallel complexity of Eden growth and related growth models.

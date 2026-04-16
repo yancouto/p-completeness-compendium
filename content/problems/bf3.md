@@ -1,0 +1,34 @@
+---
+title: "Blocking Flow in a Three Layered Network"
+acronym: "BF3"
+book_id: "B.9.1"
+categories: ["Network Flows"]
+status: "open"
+tags: ["RNC"]
+references: [54, 15, 120]
+related_problems:
+  - id: lfbf
+    relation: variant
+---
+
+## Given
+
+A three layered network $G = (V, E)$ with each edge labeled with a capacity $c_i \geq 0$, and two distinguished vertices, source $s$ and sink $t$.
+
+## Problem
+
+Find a blocking flow. 
+
+## Definitions
+
+A *three layered network* is one in which all source to sink paths have length three.
+A *blocking flow* is a flow in which every path from $s$ to $t$ has a *saturated edge* --- an edge whose flow is equal to its capacity.
+
+
+## Status
+
+Open (Cheriyan and Maheshwari [[1]](#1)).
+
+## Remarks
+
+The problem is in $\mathsf{RNC}$ [[1]](#1). The problem of finding the lexicographically first blocking flow in a three layered network is $\P$-complete (Anderson and Mayr [[2]](#2)), see [LFBF]({{< relref "./lfbf.md" >}}). The problem of finding a blocking flow in an acyclic network is also open [[3]](#3). In this case Goldberg and Tarjan give an EREW-PRAM algorithm that uses $O(n \log n)$ time and $m$ processors for an $n$-vertex, $m$-edge network [[3]](#3).

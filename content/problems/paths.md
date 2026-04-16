@@ -1,0 +1,34 @@
+---
+title: "Maximal Vertex Disjoint Paths"
+acronym: "PATHS"
+book_id: "A.3.2"
+categories: ["Searching Graphs"]
+status: "p-complete"
+tags: []
+references: [12, 5, 6]
+related_problems:
+  - id: dfs
+    relation: see-also
+  - id: cvp
+    relation: reduces-from-variant-of
+  - id: mdp
+    relation: variant
+---
+
+## Given
+
+An undirected graph $G = (V, E)$, a subset $U \subseteq V$, an integer $k$, and a designated vertex $v$.
+
+## Problem
+
+Is vertex $v$ on the $k^\text{th}$ path found when constructing paths greedily from vertices in $U$? The paths are formed by taking lexicographically first paths from vertices in $U$. The set is maximal in the sense that no more paths joining vertices in $U$ can be added.
+
+## Status
+
+$\P$-complete (Anderson [[1]](#1)).
+
+## Remarks
+
+The reduction to show hardness is from a restricted version of [CVP]({{< relref "./cvp.md" >}}).
+
+The construction of maximal sets of vertex disjoint paths is important for developing fast, parallel, randomized algorithms for depth-first search (Aggarwal and Anderson [[2]](#2), Aggarwal, Anderson, and Kao [[3]](#3)). See [DFS]({{< relref "./dfs.md" >}}) and [MDP]({{< relref "./mdp.md" >}}).

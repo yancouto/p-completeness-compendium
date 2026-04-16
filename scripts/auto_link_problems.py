@@ -31,8 +31,10 @@ EXCLUDED_SPAN_PATTERNS = (
     HTML_ANCHOR_PATTERN,
     re.compile(r"\{\{<[^>]+>\}\}"),
 )
+# Custom textual acronyms that should link to an existing problem acronym.
+# Key: token found in prose, Value: canonical acronym to link to.
 CUSTOM_ACRONYM_TARGETS = {
-    "NORCVP": "a-1-5.md",
+    "NORCVP": "NANDCVP",
 }
 REFERENCE_CITATION_PATTERN = re.compile(
     r"(?<!\\)\[(?P<num>\d+)(?P<detail>,\s*[^\d\]\s][^\]]*)?\]"
@@ -721,8 +723,10 @@ def build_acronym_index(problem_files: list[ProblemFile]) -> dict[str, str]:
             continue
         index[problem.acronym] = problem.path.name
 
-    for custom_acronym, target in CUSTOM_ACRONYM_TARGETS.items():
-        index[custom_acronym] = target
+    for custom_acronym, target_acronym in CUSTOM_ACRONYM_TARGETS.items():
+        target_filename = index.get(target_acronym)
+        if target_filename is not None:
+            index[custom_acronym] = target_filename
     return index
 
 

@@ -1,0 +1,37 @@
+---
+title: "Unit Resolution"
+acronym: "UNIT"
+book_id: "A.6.1"
+categories: ["Logic"]
+status: "p-complete"
+tags: []
+references: [181, 52, 328, 202, 290]
+related_problems:
+  - id: cvp
+    relation: reduces-from
+  - id: gen
+    relation: reduces-to
+---
+
+## Given
+
+A Boolean formula $F$ in conjunctive normal form.
+
+## Problem
+
+Can the empty clause $\square$ be deduced from $F$ by *unit resolution*?
+
+## Definitions
+
+A unit is a clause with only one term. For example, the unit resolvent of $A \vee B_1 \vee \cdots \vee B_m$ and the unit $\neg A$ is $B_1 \vee \cdots \vee B_m$.
+
+## Status
+
+$\P$-complete (Jones and Laaser [[1]](#1)).
+
+## Remarks
+
+Jones and Laaser provide a polynomial time algorithm for unit resolution [[1]](#1).
+The reduction to show hardness is from [CVP]({{< relref "./cvp.md" >}}).
+
+See Chang and Lee [[2]](#2) for an introduction to mechanical theorem proving. Under the appropriate definitions, it is known that approximating this problem is also $\P$-complete (Serna and Spirakis [[3]](#3)).

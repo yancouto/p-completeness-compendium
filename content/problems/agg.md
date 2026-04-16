@@ -1,0 +1,36 @@
+---
+title: "Acyclic Geography Game"
+acronym: "AGG"
+book_id: "A.11.3"
+categories: ["Games"]
+status: "p-complete"
+tags: []
+references: [51]
+related_problems:
+  - id: mcvp
+    relation: reduces-from
+  - id: longcake
+    relation: reduces-to
+---
+
+## Given
+
+An acyclic directed graph $G = (V, E)$.
+
+## Problem
+
+Does player one have a winning strategy on $G$?
+
+## Description
+
+The *Acyclic Geography Game* is played on $G$ by two players. A *configuration* of the game is a vertex $u \in V$. Players take turns choosing an edge $(u, v) \in G$, thereby changing the game configuration from $u$ to $v$. The initial configuration is $u = 1$. The first player with no move left loses.
+
+
+## Status
+
+$\P$-complete (Chandra and Tompa [[1]](#1)).
+
+## Remarks
+
+The reduction to show hardness is from [MCVP]({{< relref "./mcvp.md" >}}).
+Chandra and Tompa show that a depth constrained version of the Geography Game, called SHORTGEOG, is complete for $\mathsf{AC}^1$ [[1]](#1).

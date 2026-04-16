@@ -1,0 +1,58 @@
+---
+title: "High Degree Subgraph"
+acronym: "HDS"
+book_id: "A.2.7"
+categories: ["Graph Theory"]
+status: "p-complete"
+tags: []
+references:
+  - 14
+  - author: "Y. S. Couto, C. G. Fernandes"
+    title: "Hardness of Dynamic Core and Truss Decompositions"
+    year: 2025
+    doi: "10.1007/978-3-032-06706-7_5"
+  - 134
+  - 365
+related_problems:
+  - id: am2cvp
+    relation: reduces-from
+  - id: oldvr
+    relation: see-also
+---
+
+## Given
+
+An undirected graph $G = (V, E)$, a vertex $v$, and an integer $k$.
+
+## Problem
+
+Is $v$ contained in the $k$-core of $G$?
+
+## Definitions
+
+The $k$-core of a graph is its maximum subgraph with minimum degree at least $k$. It is unique.
+
+## Status
+
+$\P$-complete (Anderson and Mayr [[1]](#1)).
+
+## Remarks
+
+The reduction to show hardness is from [AM2CVP]({{< relref "./am2cvp.md" >}}), and it follows even when $k \leq 3$ (3-Core) on graphs of maximum degree 4.
+
+In the late 90's, the problem used to be called High Degree Subgraph (HDS), but more recent research calls this the k-Core problem. However, it is recently more explored in other models (dynamic, distributed) rather than in a classic PRAM model.
+
+In the original paper for the $\P$-completeness, the problem is stated as here (except it's called HDS), while in [[5]](#5) the task is to decide whether a non-empty $k$-core exists (we shall hence refer to this as NE-k-Core). These are slightly different variants, but both are shown to be $\P$-complete in [[1]](#1).
+
+There is an $\NC$ algorithm computing the 2-core of a graph (and thus deciding 2-Core and NE-2-Core).
+
+Let the core value $C_G(v)$ of $v$ be the largest $k$ such that $v$ is in the $k$-core of $G$, and $C(G)$ the largest value of $C_G(v)$. We can consider the optimization problem of finding $C_G(v)$ for a fixed $v$, or $C(G)$ for the graph.
+
+For any $\epsilon > 0$, there is a $(2+\epsilon)$-approximation algorithm for finding $C_G(v)$ [[1]](#1), that is, computing $e$ such that $C_G(v) \leq x \leq (2+\epsilon)C_G(v)$. Furthermore, computing any $(2-\epsilon)$-approximation is $\P$-hard.
+
+Several variants of this problem, for directed graphs, bipartite graphs, and the k-Truss are also $\P$-complete [[2]](#2).
+
+The complementary Low Degree Subgraph Problem has also been studied and for several natural decision problems it is $\NP$-complete (Greenlaw [[3]](#3)). Decision problems based on ordered vertex removal relating to subgraph computations are also $\P$-complete [[3]](#3).
+
+A special case of k-Core is the Color Index Problem (Vishwanathan and Sridhar [[4]](#4)): given an undirected graph $G = (V, E)$, is the color index of $G$ less than or equal to four? The *color index* is the maximum over all subgraphs $H$ of $G$, of the minimum degree of $H$. Asking if the color index is less than or equal to four is complementary to asking if there are any high degree subgraphs of order five.
+The original reduction for Color Index is from [OLDVR]({{< relref "./oldvr.md" >}}).

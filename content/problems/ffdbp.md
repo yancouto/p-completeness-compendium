@@ -1,0 +1,33 @@
+---
+title: "First Fit Decreasing Bin Packing"
+acronym: "FFDBP"
+book_id: "A.4.7"
+categories: ["Combinatorial Optimization"]
+status: "p-complete"
+tags: []
+references: [17, 254]
+related_problems:
+  - id: am2cvp
+    relation: reduces-from
+  - id: maxflow
+    relation: see-also
+---
+
+## Given
+
+A list of $n$ items $v_1, \ldots, v_n$, where each $v_i$ is rational number between $0$ and $1$, and two distinguished indices $i$ and $b$.
+
+## Problem
+
+Is the $i^\text{th}$ item packed into the $b^\text{th}$ bin by the first fit decreasing bin packing heuristic?
+
+## Status
+
+$\P$-complete (Anderson, Mayr, and Warmuth [[1]](#1)).
+
+## Remarks
+
+The reduction to show hardness is from [AM2CVP]({{< relref "./am2cvp.md" >}}).
+The problem remains $\P$-complete even if unary representations are used for the numbers involved. This is one of the first such problem where large numbers do not appear to be required for $\P$-completeness (in contrast see [MaxFlow]({{< relref "./maxflow.md" >}})).
+
+The problem of determining if $I$ is the packing produced by the *best fit decreasing algorithm* is also $\P$-complete [[1]](#1). In [[1]](#1) there is an $\NC$ algorithm that produces a packing within $\frac{11}{9}$ of optimal. This is the same performance as for first fit decreasing. Mayr also describes $\NC$ approximation algorithms for bin packing [[2]](#2).

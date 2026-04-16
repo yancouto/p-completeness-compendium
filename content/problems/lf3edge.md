@@ -1,0 +1,28 @@
+---
+title: "Lexicographically First Maximal Three-cycle Free Edge Induced Subgraph"
+acronym: "LF3Edge"
+book_id: "B.1.8"
+categories: ["Circuit Complexity"]
+status: "open"
+tags: []
+references: [264, 265]
+related_problems:
+  - id: lfedge
+    relation: see-also
+---
+
+## Given
+
+An undirected graph $G = (V, E)$ with an ordering on the edges in $E$ and having a maximum degree of five or less.
+
+## Problem
+
+Compute the lexicographically first maximal three-cycle free edge induced subgraph of $G$. That is, the lexicographically first maximal edge induced subgraph that does not contain any cycles of size three or more.
+
+## Status
+
+Open (Miyano [[1]](#1)[[2]](#2)).
+
+## Remarks
+
+Numerous variants of this problem are $\P$-complete. See [LFEdge]({{< relref "./lfedge.md" >}}) for a description of several of them. LF3Edge is in $\NC^2$ when the degree restriction on $G$ is four. For planar graphs, the complexity of the problem is also open. That is, there is no known degree restriction for LF3Edge that makes the problem $\P$-complete nor is it clear when the problem is in $\NC$ [[1]](#1).

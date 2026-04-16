@@ -1,0 +1,40 @@
+---
+title: "Gaussian Elimination with Partial Pivoting"
+acronym: "GEPP"
+book_id: "A.8.4"
+categories: ["Algebra"]
+status: "p-complete"
+tags: []
+references: [361, 43, 72, 167, 270, 276]
+related_problems:
+  - id: nandcvp
+    relation: reduces-from
+  - id: geppff
+    relation: see-also
+  - id: lud
+    relation: see-also
+---
+
+## Given
+
+An $n \times n$ matrix $A$ with entries over the rationals and an integer $l$.
+
+## Problem
+
+Is the pivot value for the $l^\text{th}$ column positive when Gaussian elimination with partial pivoting is performed on $A$?
+
+## Definitions
+
+*Partial pivoting* is a technique used to obtain numerical stability in which rows of the matrix are exchanged so that the largest value in a given column can be used to perform the elimination.
+
+## Status
+
+$\P$-complete (Vavasis [[1]](#1)).
+
+## Remarks
+
+The standard Gaussian elimination algorithm requires $O(n^3)$ operations. Since the size of the numbers involved can be bounded by a polynomial in $n$ (see [[1]](#1)), the problem is in $\P$. The reduction to show hardness is from [NANDCVP]({{< relref "./nandcvp.md" >}}).
+
+The reduction does not rely on large numbers; therefore, it shows that the problem is strongly $\P$-complete. Another decision problem that is strongly complete for $\P$ based on Gaussian elimination with partial pivoting is as follows: given matrix $A$, and integers $i$ and $j$, is the pivot used to eliminate the $j^\text{th}$ column taken from the initial $i^\text{th}$ row?
+
+Vavasis also shows that Gaussian elimination with complete pivoting is $\P$-complete. In *complete pivoting* both rows and columns are interchanged so that the largest remaining matrix entry can be used as a pivot. Complete pivoting is known to be numerically stable. The reduction for complete pivoting does not show the problem is strongly $\P$-complete. This question is open. Some additional references regarding the parallel complexities of this and related problems are (Borodin, von zur Gathen, and Hopcroft [[2]](#2), Csanky [[3]](#3), Ibarra, Moran, and Rosier [[4]](#4), Mulmuley [[5]](#5), and Pan and Reif [[6]](#6)). For further open questions see [GEPPFF]({{< relref "./geppff.md" >}}) and [LUD]({{< relref "./lud.md" >}}).

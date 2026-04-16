@@ -1,0 +1,49 @@
+---
+title: "Minimum Set Cover Approximation"
+acronym: "MSCA"
+book_id: "A.5.11"
+categories: ["Local Optimality"]
+status: "p-complete"
+tags: []
+references: [38, 113]
+related_problems:
+  - id: cvp
+    relation: reduces-from-variant-of
+---
+
+## Given
+
+A finite set $S$, a collection $C$ of subsets of $S$, a special subset $t$ of $S$, and an integer $i$.
+
+## Problem
+
+Is $t$ a subset of $s'$, where $s'$ is the $i^\text{th}$ set chosen by the *minimum set cover approximation algorithm*?
+
+## Definitions
+
+A *set cover* is a collection of sets $C'$ such that each element of $S$ is contained in at least one set from $C'$. A *minimum set cover* is a set cover of smallest cardinality. The minimum set cover approximation algorithm is outlined below. Its input is the same as for MSCA.
+
+<div>
+\[
+\begin{aligned}
+&\text{begin} \\
+&\quad \text{solution} \leftarrow \varnothing \\
+&\quad \text{uncovered} \leftarrow S \\
+&\quad \text{while } \text{uncovered} \neq \varnothing \text{ do} \\
+&\qquad \text{choose } s' \text{ a ``remaining set'' from } C \text{ such that } |s'| \text{ is maximized} \\
+&\qquad \text{solution} \leftarrow \text{solution} \cup \text{index}(s') \\
+&\qquad \text{uncovered} \leftarrow \text{uncovered} \setminus s' \\
+&\qquad \text{remove the elements of } s' \text{ from all remaining sets} \\
+&\quad \text{end}
+\end{aligned}
+\]
+</div>
+
+## Status
+
+$\P$-complete (Bongiovanni, Crescenzi, and De Agostino [[1]](#1)).
+
+## Remarks
+
+The reduction to show hardness is from a variant of [CVP]({{< relref "./cvp.md" >}}) that consists of OR and NOT gates.
+The *Minimum Set Cover Problem* is $\NP$-complete (Garey and Johnson [[2]](#2)). The algorithm specified above *$\log$-approximates* MSCA. The result shows that this sequential algorithm for approximating Minimum Set Cover is unlikely to be made feasibly highly parallel.

@@ -1,0 +1,36 @@
+---
+title: "Homologous Flow"
+acronym: "HF"
+book_id: "A.4.5"
+categories: ["Combinatorial Optimization"]
+status: "p-complete"
+tags: []
+references: [171]
+related_problems:
+  - id: le
+    relation: reduces-from-variant-of
+  - id: maxflow
+    relation: variant
+---
+
+## Given
+
+A directed graph $G = (V, E)$ with each edge $(v, w)$ labeled by a lower and upper bound on flow capacity $l(v, w)$, $u(v, w)$ $\geq 0$ and two distinguished vertices, source $s$ and sink $t$.
+
+## Problem
+
+Is there a feasible flow in the network?
+
+## Definitions
+
+A *feasible flow* is one in which the flow assigned to each arc falls within the lower and upper bounds for the arc. A *homologous flow* is a flow in which pairs of edges are required to have the same flow.
+
+## Status
+
+$\P$-complete via $\LOGSPACE$ reductions (Itai [[1]](#1)).
+
+## Remarks
+
+The reduction to show hardness is from $[-1,1]$-[LE]({{< relref "./le.md" >}}), see [LE]({{< relref "./le.md" >}}).
+
+

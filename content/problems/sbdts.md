@@ -1,0 +1,38 @@
+---
+title: "Strong Bisimilarity in Deterministic Transition Systems"
+acronym: "SBDTS"
+book_id: "B.4.1"
+categories: ["Combinatorial Optimization"]
+status: "open"
+tags: []
+references: [11, 23]
+related_problems:
+  - id: sbts
+    relation: see-also
+---
+
+## Given
+
+An encoding of a finite labeled deterministic transition system $N$, and two designated states $p$ and $q$.
+
+## Problem
+
+Are $p$ and $q$ strongly bisimilar?
+
+## Definitions
+
+A *finite labeled transition system* is a triple $M = \langle Q, \Sigma, T \rangle$, where $Q$ is a finite set of states, $\Sigma$ is a finite alphabet, and $T \subseteq Q \times \Sigma \times Q$ is the set of transitions. The system is *deterministic* if for each $a \in \Sigma$ and $q' \in Q$ there is a unique triple in $T$, $(q', a, p')$, where $p' \in Q$. A relation $S \subseteq Q \times Q$ is a *strong bisimulation* of $M$ if $(s_1, s_2) \in S$ implies for all $x \in \Sigma$ that
+1. whenever $(s_1, x, t_1) \in T$, then for some state $t_2$, $(s_2, x, t_2) \in T$ and $(t_1, t_2) \in S$; and
+2. whenever $(s_2, x, t_2) \in T$, then for some state $t_1$, $(s_1, x, t_1) \in T$ and $(t_1, t_2) \in S$.
+
+The *strong bisimulation relation* is defined as the union of all strong bisimulations of $M$.
+States $p$ and $q$ are *strongly bisimilar* if $(p, q)$ is in the strong bisimulation relation of $M$.
+
+
+## Status
+
+Open (Àlvarez et al. [[1]](#1), Balcázar, Gabarró, and Sántha [[2]](#2))
+
+## Remarks
+
+The problem is $\P$-complete if the system is allowed to be nondeterministic [[2]](#2), see [SBTS]({{< relref "./sbts.md" >}}). The complexity of the problem is also open if states are restricted to have indegree one [[2]](#2).

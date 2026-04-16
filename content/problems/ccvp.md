@@ -1,0 +1,46 @@
+---
+title: "Comparator Circuit Value Problem"
+acronym: "CCVP"
+book_id: "B.8.1"
+categories: ["Matching"]
+status: "open"
+tags: ["CC"]
+references: [255, 311, 104, 298, 346, 347]
+related_problems:
+  - id: cvp
+    relation: variant
+  - id: sm
+    relation: equivalent
+  - id: lfmm
+    relation: equivalent
+  - id: smfp
+    relation: equivalent
+  - id: smsp
+    relation: equivalent
+---
+
+## Given
+
+An encoding $\overline{\alpha}$ of a circuit $\alpha$ composed of comparator gates, plus inputs $x_1, \ldots, x_n$, and a designated output $y$.
+
+## Problem
+
+Is output $y$ of $\alpha$ true on input $x_1, \ldots, x_n$?
+
+## Definitions
+
+A *comparator gate* outputs the minimum (AND) of its two inputs on its first output wire and outputs the maximum (OR) of its two inputs on its second output wire. The gate is further restricted so that each output has fanout at most one.
+
+## Status
+
+Open (Mayr and Subramanian [[1]](#1)).
+
+## Remarks
+
+Cook shows that CCVP is $\NC$ equivalent to computing the lexicographically first maximal matching in a bipartite graph. Mayr and Subramanian show that this matching problem is $\NC$ equivalent to [SM]({{< relref "./sm.md" >}}) [[1]](#1). Sairam, Vitter, and Tamassia address the "incremental" complexity of CCVP in [[2]](#2).
+
+Several researchers (including Anderson, Cook, Gupta, Mayr, and Subramanian) suggested looking at the complexity of the CCVP. $\CC$ is defined as the class of problems $\NC$ many-one reducible to CCVP (Mayr and Subramanian [[2]](#2)).
+
+While the evidence is less compelling than that for $\mathsf{RNC}$ problems, it is generally considered unlikely that these problems are $\P$-complete, because of the lack of fanout in comparator circuits. On the other hand, no fast parallel algorithms are known for them, with the partial exception of $\sqrt{n}(\log n)^{O(1)}$ algorithms for CCVP and some related problems. Such algorithms were independently discovered by Danny Soroker and by Mayr and Subramanian [[1]](#1). Richard J. Anderson has improved the algorithms so as to use only $\sqrt{n}$ processors. Mayr and Subramanian note that these algorithms are $\P$-complete, in the sense of [X, Chapter 8].
+
+It is known that $\mathsf{NLOG} \subseteq \CC \subseteq \P$ [[1]](#1). At present $\NC$ and $\CC$ are incomparable as are $\mathsf{RNC}$ and $\CC$. That is, the classes cannot be related using the $\subseteq$ relation. See also (Feder [[1]](#1), Ramachandran and Wang [[1]](#1), Subramanian [[1]](#1)[[1]](#1)) for more research on $\CC$.

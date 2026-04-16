@@ -1,0 +1,28 @@
+---
+title: "0–1 Maximum Flow"
+acronym: "0–1 MaxFlow"
+book_id: "B.9.6"
+categories: ["Network Flows"]
+status: "open"
+tags: ["RNC"]
+references: [103, 196, 200]
+related_problems:
+  - id: maxflow
+    relation: variant
+---
+
+## Given
+
+A directed graph $G = (V, E)$ with each edge labeled in unary with a capacity $c_i \geq 0$, and two distinguished vertices, source $s$ and sink $t$.
+
+## Problem
+
+Find a maximum flow.
+
+## Status
+
+Open (Feather [[1]](#1), Karp, Upfal, and Wigderson [[2]](#2)).
+
+## Remarks
+
+Feather shows the problem of finding the value of the maximum flow to be in $\mathsf{RNC}$ [[1]](#1). Karp, Upfal, and Wigderson show how to construct a maximum flow, also in $\mathsf{RNC}$ [[2]](#2). Both problems remain in $\mathsf{RNC}$ when capacities are polynomially bounded. Both are $\P$-complete when capacities are arbitrary, see [MaxFlow]({{< relref "./maxflow.md" >}}). Karpinski and Wagner show that when $G$ is given by its vertex multiplicity graph representation the Unary Network Flow Problem becomes $\P$-complete [[3]](#3).

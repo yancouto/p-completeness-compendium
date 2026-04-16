@@ -1,0 +1,34 @@
+---
+title: "Maximal Independent Set Hypergraph"
+acronym: "MISH"
+book_id: "B.1.6"
+categories: ["Circuit Complexity"]
+status: "open"
+tags: []
+references: [27, 206, 77]
+related_problems:
+  - id: lfmis
+    relation: see-also
+---
+
+## Given
+
+A hypergraph $H = (V, E)$, where the elements in $E$ are subsets (called *hyperedges*) of $V$.
+
+## Problem
+
+Find a maximal independent set $I$.
+
+## Definitions
+
+A set $I \subseteq V$ is independent if for all $e \in E$ there is at least one $v \in e$ such that $v \notin I$. An independent set $I$ is *maximal* if for every $v \in V - I$, $I \cup \\{v\\}$ is not independent.
+
+## Status
+
+Open (Beame and Luby [[1]](#1)).
+
+## Remarks
+
+If the edges are two element sets ("dimension two"), the problem becomes the *Maximal Independent Set Problem*, which is known to be in $\NC$, see [LFMIS]({{< relref "./lfmis.md" >}}). Beame and Luby give an $\mathsf{RNC}$ algorithm for dimension $O(1)$. Kelsen cites a personal communication to Beame indicating that Beame and Luby's analysis in fact only holds for dimension three [[2]](#2). Beame and Luby also give an algorithm for the general problem that is conjectured to be $\mathsf{RNC}$. Kelsen shows this algorithm is in $\mathsf{RNC}$ for constant dimension [[2]](#2).
+
+Dahlhaus, Karpinski, and Kelsen give an $\NC$ algorithm for dimension three [[3]](#3). Let $n$ denote the number of vertices in the hypergraph and $m$ the number of edges. Their algorithm runs in $O((\log n)^4)$ time and uses $n + m$ processors on an EREW-PRAM.

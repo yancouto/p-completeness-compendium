@@ -1,0 +1,52 @@
+---
+title: "Maximum Satisfiability Approximation"
+acronym: "MSA"
+book_id: "A.5.10"
+categories: ["Local Optimality"]
+status: "p-complete"
+tags: []
+references: [38]
+related_problems:
+  - id: cvp
+    relation: reduces-from-variant-of
+---
+
+## Given
+
+A Boolean formula $F$ with clauses $c_1, \ldots, c_m$ and variables $x_1, \ldots, x_n$, plus an integer $l$.
+
+## Problem
+
+Does variable $x_l$ get assigned a value true by the *maximum satisfiability approximation algorithm*?
+
+## Definitions
+
+The algorithm is sketched below. Its input is the same as for MSA.
+
+<div>
+\[
+\begin{aligned}
+&\text{begin} \\
+&\quad \text{for } i \leftarrow 1 \text{ to } n \text{ do} \\
+&\qquad \text{for } j \leftarrow 1 \text{ to } m \text{ do} \\
+&\qquad\qquad f_T(i,j) \leftarrow \text{the fraction of truth assignments for the remaining} \\
+&\qquad\qquad\qquad \text{variables of clause } j \text{ that satisfy clause } j \text{ with } x_i \text{ set to true} \\
+&\qquad\qquad f_F(i,j) \leftarrow 1 - f_T(i,j) \\
+&\qquad \text{if } \sum_{j=1}^{m} f_T(i,j) \ge \sum_{j=1}^{m} f_F(i,j) \text{ then} \\
+&\qquad\qquad x_i \leftarrow \text{true} \\
+&\qquad \text{else} \\
+&\qquad\qquad x_i \leftarrow \text{false} \\
+&\qquad \text{update the clauses} \\
+&\text{end}
+\end{aligned}
+\]
+</div>
+
+## Status
+
+$\P$-complete (Bongiovanni, Crescenzi, and De Agostino [[1]](#1)).
+
+## Remarks
+
+The reduction to show hardness is from a variant of [CVP]({{< relref "./cvp.md" >}}) consisting of OR and NOT gates.
+The algorithm specified above *$1/2$-approximates* MSA. The result shows that this sequential algorithm for approximating *Maximum Satisfiability* is unlikely to be made feasibly highly parallel.

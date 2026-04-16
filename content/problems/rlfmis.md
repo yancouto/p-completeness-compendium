@@ -1,0 +1,28 @@
+---
+title: "Restricted Lexicographically First Maximal Independent Set"
+acronym: "RLFMIS"
+book_id: "B.1.7"
+categories: ["Circuit Complexity"]
+status: "open"
+tags: []
+references: [265]
+related_problems:
+  - id: lfmis
+    relation: see-also
+---
+
+## Given
+
+An undirected, planar, bipartite graph $G = (V, E)$ with a numbering on the vertices in $V$.
+
+## Problem
+
+Find the lexicographically first maximal independent set.
+
+## Status
+
+Open (Miyano [[1]](#1)).
+
+## Remarks
+
+See [LFMIS]({{< relref "./lfmis.md" >}}). Finding the lexicographically first maximal subgraph of maximum degree one in planar, bipartite graphs of degree at most three is $\P$-complete [[1]](#1).

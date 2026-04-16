@@ -1,0 +1,37 @@
+---
+title: "Unweighted Maximum Cut SWAP"
+acronym: "UMCS"
+book_id: "A.5.4"
+categories: ["Local Optimality"]
+status: "p-hard"
+tags: []
+references: [278, 324, 247, 316, 119, 242]
+related_problems:
+  - id: unae3sat
+    relation: reduces-from
+  - id: lfdtml
+    relation: see-also
+  - id: u2satflip
+    relation: reduces-to
+---
+
+## Given
+
+An undirected graph $G = (V, E)$.
+
+## Problem
+
+Find a locally optimal subset of vertices.
+
+## Definitions
+
+A subset is *locally optimal* if it has maximum cost among its neighbors. The *cost* is the sum of the number of edges leaving vertices in the subset; each edge has a weight of one. A *neighbor* of a subset $S$ is a set of size $|S|$ whose symmetric difference with $S$ contains one vertex.
+
+## Status
+
+$\P$-hard or $\FP$-complete (Papadimitriou, Schäffer, and Yannakakis [[1]](#1), Schäffer and Yannakakis [[2]](#2)).
+
+## Remarks
+
+The reduction to show hardness is from [UNAE3SAT]({{< relref "./unae3sat.md" >}}).
+The weighted version of the problem in which each edge is given an integer weight encoded in binary is $\mathsf{PLS}$-complete [[1]](#1)[[2]](#2). If the edge weights are encoded in unary, the problem is $\mathsf{FP}$-complete. The *Different than Majority Labeling Problem* is equivalent to this problem [[2]](#2). A different than majority labeling of an undirected graph $G = (V, E)$ is a labeling of the vertices with either $0$ or $1$ such that each vertex is labeled differently than at least half of its neighbors. Luby describes an $\NC$ algorithm for a related problem [[3]](#3). Sarnath and He show that a lexicographic version of the problem is $\P$-complete [[4]](#4), see [LFDTML]({{< relref "./lfdtml.md" >}}).

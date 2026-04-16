@@ -1,0 +1,32 @@
+---
+title: "Edge-weighted Matching"
+acronym: "EWM"
+book_id: "B.1.3"
+categories: ["Circuit Complexity"]
+status: "open"
+tags: []
+references: [196]
+related_problems:
+  - id: lfmm
+    relation: see-also
+---
+
+## Given
+
+An undirected graph $G = (V, E)$ with positive integer weights on the edges.
+
+## Problem
+
+Find a matching of maximum weight.
+
+## Definitions
+
+A matching is a subset of edges that share no endpoints.
+
+## Status
+
+Open (Karp, Upfal, and Wigderson [[1]](#1)).
+
+## Remarks
+
+EWM is in $\mathsf{RNC}$ if all weights are polynomially bounded [[1]](#1). Even in this restricted case, the problem is not known to be in $\NC$. Define $\text{rank}(e)$ to be the position of edge $e$'s weight in the sorted list of edge weights, where the sorting is done in increasing order. [LFMM]({{< relref "./lfmm.md" >}}) (and hence all of $\CC$), is $\NC$ reducible to EWM, by assigning weight $2^{\text{rank}(e)}$ to edge $e$.

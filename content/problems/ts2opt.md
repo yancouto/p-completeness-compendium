@@ -1,0 +1,34 @@
+---
+title: "Traveling Salesman 2-Opt"
+acronym: "TS2Opt"
+book_id: "A.5.9"
+categories: ["Local Optimality"]
+status: "p-hard"
+tags: []
+references: [235, 12]
+related_problems:
+  - id: cvp
+    relation: reduces-from-variant-of
+  - id: nntsh
+    relation: see-also
+---
+
+## Given
+
+A finite set $C = \\{C_1, \ldots, C_n\\}$ of cities, and a distance matrix $D$ with entries $d_{ij}$ that are positive integers ($1 \leq i, j \leq n$), and an initial tour $T_0$.
+
+## Problem
+
+Find a sequence of tours $T_0, \ldots, T_m$ such that $T_i$ is the result of a 2-opt of $T_{i-1}$, the cost of $T_i$ is less than the cost of $T_{i-1}$, and either $T_m$ is a locally optimal tour or $m \geq n$.
+
+## Definitions
+
+A *2-opt* refers to a neighborhood transformation done on the tours, see Lin and Kernighan [[1]](#1).
+
+## Status
+
+$\P$-complete (Anderson [[2]](#2)).
+
+## Remarks
+
+The reduction to show hardness is from a variant of [CVP]({{< relref "./cvp.md" >}}). See also [NNTSH]({{< relref "./nntsh.md" >}}).

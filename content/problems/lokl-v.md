@@ -1,0 +1,35 @@
+---
+title: "Local Optimality Kernighan-Lin Verification"
+acronym: "LOKL V"
+book_id: "A.5.2"
+categories: ["Local Optimality"]
+status: "p-complete"
+tags: []
+references: [178, 319, 320, 324]
+related_problems:
+  - id: mcvp
+    relation: reduces-from-variant-of
+---
+
+## Given
+
+An undirected graph $G = (V, E)$ with unit weights on the edges, and a partition of $V$ into two equal size subsets $A$ and $B$.
+
+## Problem
+
+Is the cost of the partition, $c(A, B)$, a local optimum among the *neighbors of the partition*?
+
+## Definitions
+
+The *cost of the partition* is defined to be the sum of the costs of all edges going between the sets $A$ and $B$. We follow the presentation given by Johnson, Papadimitriou, and Yannakakis to define the neighbors [[1]](#1). A *swap* of partition $(A, B)$ is a partition $(C, D)$ such that $(C, D)$ is obtained from $(A, B)$ by swapping one element of $A$ with an element of $B$. The swap $(C, D)$ is a *greedy* swap if $c(C, D) - c(A, B)$ is minimized over all swaps of $(A, B)$. If $(C, D)$ is the lexicographically smallest over all greedy swaps, then $(C, D)$ is said to be the *lexicographically greedy swap* of $(A, B)$. A sequence of partitions $(A_i, B_i)$, each obtained by a swap from the preceding partition, is *monotonic* if the differences $A_i - A_0$ and $B_i - B_0$ are monotonically increasing. A partition $(C, D)$ is a neighbor of $(A, B)$ if it occurs in the unique maximal monotonic sequence of lexicographic greedy swaps starting with $(A, B)$.
+
+
+## Status
+
+$\P$-complete (Johnson, Papadimitriou, and Yannakakis [[1]](#1), Savage and Wloka [[2]](#2)[[3]](#3)).
+
+## Remarks
+
+Since the weights are one, the range of solution values is polynomial and the problem is in $\P$. The reduction presented in [[3]](#3) is from a variant of [MCVP]({{< relref "./mcvp.md" >}}).
+
+The reduction in [[1]](#1) showed that the problem was $\P$-complete if the edge weights were encoded in unary. A problem called *Weak Local Optimum for Kernighan-Lin Verification* in which the neighborhoods are larger is also $\P$-complete [[1]](#1). The general versions of these problems, *Local Optimality Kernighan-Lin* and *Weak Local Optimality Kernighan-Lin*, in which the weights are encoded in binary are both $\mathsf{PLS}$-complete [[1]](#1). Schäffer and Yannakakis deduce that a complete local search using Kernighan-Lin on graphs with unit weights is $\P$-complete [[4]](#4). Since the result is for a single neighborhood, the result in [[3]](#3) implies the one in [[4]](#4).

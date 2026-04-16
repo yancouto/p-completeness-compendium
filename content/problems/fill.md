@@ -1,0 +1,38 @@
+---
+title: "Fill Slots"
+acronym: "FILL"
+book_id: "A.8.25"
+categories: ["Algebra"]
+status: "p-complete"
+tags: []
+references: [84, 83]
+related_problems:
+  - id: mcvp
+    relation: reduces-from-variant-of
+  - id: mcvp
+    relation: see-also
+  - id: er
+    relation: see-also
+---
+
+## Given
+
+A Boolean matrix $M$, and three integers $i$, $j$, and $k$.
+
+## Problem
+
+Is a $1$ in row $k$ used to cover values in column $i$ when $j$ is the highest row of the matrix that procedure Fill Slots is applied to?
+
+## Definitions
+
+The *Fill Slots* procedure basically processes rows of the matrix from $j$ downward. It looks for the first row $r$ that does not contain a $1$. A $1$ is inserted in that row while "covering" the column whose bits if treated as an integer below $r$ is largest (ties may be broken arbitrarily). The bits that were covered are then zeroed. The process is repeated until the bottom of the matrix is reached.
+
+## Status
+
+$\P$-complete (de la Torre, Greenlaw, and Schäffer [[1]](#1)).
+
+## Remarks
+
+The reduction to show hardness is from a version of topologically ordered [MCVP]({{< relref "./mcvp.md" >}}).
+
+The Fill Slots procedure is similar to one used in [[1]](#1) to prove that the *Edge Ranking Problem* is in $\P$. The result suggests that their algorithm may not parallelize well. FILL seems interesting because it involves only Boolean values. Additional details can be found in de la Torre, Greenlaw, and Schäffer [[2]](#2). Also, see [ER]({{< relref "./er.md" >}}).

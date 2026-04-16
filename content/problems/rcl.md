@@ -1,0 +1,31 @@
+---
+title: "Relaxed Consistent Labeling"
+acronym: "RCL"
+book_id: "A.6.6"
+categories: ["Logic"]
+status: "p-complete"
+tags: []
+references: [202, 203, 204]
+related_problems:
+  - id: phcs
+    relation: reduces-from
+  - id: nandcvp
+    relation: reduces-from
+---
+
+## Given
+
+A relaxed consistent labeling problem $G$ consisting of a set of variables $V = \\{v_1, \ldots, v_n\\}$ and a set of labels $L = \\{L_1, \ldots, L_n\\}$, where $L_i$ consists of the possible labels for $v_i$. A binary predicate $P$, where $P_{ij}(x, y) = 1$ if and only if the assignment of label $x$ to $v_i$ is compatible with the assignment of label $y$ to $v_j$. A designated variable $X$ and a designated label $f$.
+
+## Problem
+
+Is there a valid assignment of the label $f$ to $X$ in $G$?
+
+## Status
+
+$\P$-complete (Kasif [[1]](#1), Greenlaw, Hoover, and Ruzzo [[4]](#4)).
+
+## Remarks
+
+The reduction to show hardness is from [PHCS]({{< relref "./phcs.md" >}}) or [NANDCVP]({{< relref "./nandcvp.md" >}}).
+The *General Consistent Labeling Problem* is known to be $\NP$-complete. Kasif shows that several decision problems based on *arc consistency* algorithms for solving constraint satisfaction problems are also $\P$-complete [[2]](#2)[[3]](#3).

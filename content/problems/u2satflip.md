@@ -1,0 +1,33 @@
+---
+title: "Unweighted Two Satisfiability FLIP"
+acronym: "U2SATFLIP"
+book_id: "A.5.5"
+categories: ["Local Optimality"]
+status: "p-hard"
+tags: []
+references: [278, 324]
+related_problems:
+  - id: umcs
+    relation: reduces-from
+---
+
+## Given
+
+A Boolean formula $F$ in CNF with two literals per clause.
+
+## Problem
+
+Find a locally optimal assignment for $F$.
+
+## Definitions
+
+An assignment is *locally optimal* if it has maximum cost among its neighbors. The *cost* of the assignment is the number of clauses that are satisfied by the assignment; each clause has a weight of one. The *neighbors* of an assignment $s$ are assignments that can be obtained from $s$ by flipping the value of one variable.
+
+## Status
+
+$\P$-hard (Papadimitriou, Schäffer, and Yannakakis [[1]](#1), Schäffer and Yannakakis [[2]](#2)).
+
+## Remarks
+
+The reduction to show hardness is from [UMCS]({{< relref "./umcs.md" >}}).
+The weighted version of the problem in which each edge is given an integer weight encoded in binary is $\mathsf{PLS}$-complete [[1]](#1)[[2]](#2). If the edge weights are encoded in unary, the problem is $\mathsf{FP}$-complete.

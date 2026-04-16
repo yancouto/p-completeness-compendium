@@ -1,0 +1,38 @@
+---
+title: "3-Oriented Weighted Planar Partitioning"
+acronym: "3OWPP"
+book_id: "A.9.2"
+categories: ["Geometry"]
+status: "p-complete"
+tags: []
+references: [18]
+related_problems:
+  - id: pcvp
+    relation: reduces-from-variant-of
+  - id: mcvp
+    relation: see-also
+  - id: pcvp
+    relation: see-also
+  - id: pst
+    relation: see-also
+  - id: 2owpp
+    relation: variant
+---
+
+## Given
+
+A set of nonintersecting line segments $s_1, \ldots, s_n$ in the *Euclidean plane* ($\R \times \R$), a set of associated integer weights $w_1, \ldots, w_n$, and two designated segments $r$ and $t$. The segments are *3-oriented* meaning that there are only three different possible slopes for the segments.
+
+## Problem
+
+Do segments $r$ and $t$ "touch" in the partitioning of the plane constructed by extending segments in the order of their weights? Segments are extended until they reach another segment or a previous segment extension.
+
+## Status
+
+$\P$-complete (Atallah, Callahan, and Goodrich [[1]](#1)).
+
+## Remarks
+
+It is easy to see that the process of extending the segments can be performed in polynomial time. The reduction to show hardness is from the same variant of [PCVP]({{< relref "./pcvp.md" >}}) as in [PST]({{< relref "./pst.md" >}}).
+
+The complexity of the 2-oriented version of the problem is open [[1]](#1). In [[1]](#1) they remark that the problem has been reduced to an instance of [MCVP]({{< relref "./mcvp.md" >}}) that has a very restricted topology, although not planar. Thus, it is open whether or not this version of the problem is in $\NC$.

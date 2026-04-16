@@ -1,0 +1,33 @@
+---
+title: "Iterative Tree Array Acceptance"
+acronym: "ITAA"
+book_id: "A.7.13"
+categories: ["Formal Languages"]
+status: "p-hard"
+tags: []
+references: [165]
+related_problems:
+  - id: ctaa
+    relation: reduces-from
+---
+
+## Given
+
+A *real-time $\log n$ depth bounded iterative tree array* $M$ and an input string $x$ of length $n$.
+
+## Problem
+
+Does $M$ accept $x$?
+
+## Definitions
+
+See Ibarra, Jiang, and Chang [[1]](#1).
+
+## Status
+
+$\P$-hard (Ibarra, Jiang, and Chang [[1]](#1)).
+
+## Remarks
+
+Iterative tree arrays can simulate cellular automata, so the reduction to show hardness is from [CTAA]({{< relref "./ctaa.md" >}}).
+Note that under the appropriate resource bounds cellular tree automata can simulate iterative tree arrays [[1]](#1).
