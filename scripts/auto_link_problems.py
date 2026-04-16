@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import re
 import sys
 from dataclasses import dataclass
@@ -155,6 +156,24 @@ def load_problem_constraints(root: Path) -> ProblemConstraints:
         relations=relations,
         relation_reciprocals=relation_reciprocals,
     )
+
+
+def load_bibliography(root: Path) -> dict[str, dict[str, object]]:
+    bibliography_path = root / "data" / "bibliography.json"
+    if not bibliography_path.is_file():
+        raise ValueError(f"Missing bibliography data file: {bibliography_path}")
+
+    loaded = json.loads(bibliography_path.read_text(encoding="utf-8"))
+    if not isinstance(loaded, dict):
+        raise ValueError(f"Bibliography file must be a JSON object: {bibliography_path}")
+
+    bibliography: dict[str, dict[str, object]] = {}
+    for key, value in loaded.items():
+        key_str = str(key)
+        if not isinstance(value, dict):
+            raise ValueError(f"Bibliography entry '{key_str}' must be an object")
+        bibliography[key_str] = value
+    return bibliography
 
 
 def merge_spans(spans: Iterable[tuple[int, int]]) -> list[tuple[int, int]]:
@@ -439,6 +458,7 @@ def validate_problem_metadata(
     problem: ProblemFile,
     constraints: ProblemConstraints,
     valid_problem_ids: set[str],
+    bibliography: dict[str, dict[str, object]],
 ) -> list[str]:
     errors: list[str] = []
     prefix = f"{problem.path.name}:"
@@ -484,6 +504,16 @@ def validate_problem_metadata(
         else:
             ref_id = str(reference)
 
+        bib_entry = bibliography.get(ref_id)
+        if bib_entry is None:
+            errors.append(f"{prefix} unknown bibliography reference id '{ref_id}'")
+        else:
+            for required_field in ("authors", "title", "year"):
+                field_value = bib_entry.get(required_field)
+                if field_value is None or str(field_value).strip() == "":
+                    errors.append(
+                        f"{prefix} bibliography entry '{ref_id}' missing '{required_field}'"
+                    )
         if ref_id in seen_reference_ids:
             errors.append(f"{prefix} duplicate reference id '{ref_id}'")
         seen_reference_ids.add(ref_id)
@@ -702,6 +732,7 @@ def run(root: Path, check: bool) -> int:
         print(f"Problems directory not found: {problems_dir}", file=sys.stderr)
         return 2
     constraints = load_problem_constraints(root)
+    bibliography = load_bibliography(root)
 
     paths = sorted(path for path in problems_dir.glob("*.md") if path.name != "_index.md")
     problem_files = [parse_problem_file(path) for path in paths]
@@ -731,6 +762,7 @@ def run(root: Path, check: bool) -> int:
                 problem,
                 constraints=constraints,
                 valid_problem_ids=valid_problem_ids,
+                bibliography=bibliography,
             )
         )
 

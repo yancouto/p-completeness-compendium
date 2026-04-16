@@ -1,3 +1,4 @@
+import json
 import shutil
 import subprocess
 import sys
@@ -46,6 +47,19 @@ class AutoLinkProblemsTests(unittest.TestCase):
                   equivalent: equivalent
                   variant: variant
                 """
+            ),
+            encoding="utf-8",
+        )
+        (data_dir / "bibliography.json").write_text(
+            json.dumps(
+                {
+                    "1": {"authors": "Author One", "title": "Ref One", "year": "1991", "doi": None},
+                    "2": {"authors": "Author Two", "title": "Ref Two", "year": "1992", "doi": None},
+                    "101": {"authors": "Author 101", "title": "Ref 101", "year": "1993", "doi": None},
+                    "202": {"authors": "Author 202", "title": "Ref 202", "year": "1994", "doi": None},
+                    "303": {"authors": "Author 303", "title": "Ref 303", "year": "1995", "doi": None},
+                },
+                indent=2,
             ),
             encoding="utf-8",
         )
@@ -417,6 +431,31 @@ class AutoLinkProblemsTests(unittest.TestCase):
         result = self.run_script("--check")
         self.assertEqual(result.returncode, 2)
         self.assertIn("citation [3] points to missing reference", result.stderr)
+
+    def test_fails_on_unknown_bibliography_reference(self):
+        (self.temp_dir / "content" / "problems" / "a-3-8.md").write_text(
+            textwrap.dedent(
+                """\
+                ---
+                title: "Unknown Bibliography Reference"
+                acronym: "UNKNOWNREF"
+                status: "p-complete"
+                categories: ["Graph Theory"]
+                tags: []
+                book_id: "A.3.8"
+                references: [999]
+                ---
+
+                ## Remarks
+
+                Uses [[1]](#1).
+                """
+            ),
+            encoding="utf-8",
+        )
+        result = self.run_script("--check")
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("unknown bibliography reference id '999'", result.stderr)
 
 
 if __name__ == "__main__":
