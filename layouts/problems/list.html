@@ -57,7 +57,7 @@
 
     <div class="filter-group">
       <span class="search-label" id="status-filter-label">Status</span>
-      <div class="multi-select" data-filter-group="status" data-query-key="status" data-placeholder="All statuses">
+      <div class="multi-select" data-filter-group="status" data-query-key="status" data-placeholder="Any status">
         <button
           id="status-filter"
           class="multi-select-toggle"
@@ -65,7 +65,7 @@
           aria-haspopup="true"
           aria-expanded="false"
           aria-labelledby="status-filter-label status-filter">
-          <span class="multi-select-text">All statuses</span>
+          <span class="multi-select-text">Any status</span>
         </button>
         <div class="multi-select-panel" hidden>
           {{ range ($statuses | uniq | sort) }}

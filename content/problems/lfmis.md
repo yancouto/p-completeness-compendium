@@ -17,6 +17,8 @@ related_problems:
     relation: reduces-to
   - id: sccm
     relation: reduces-to
+  - id: lfm3s
+    relation: reduces-to
 ---
 
 ## Given

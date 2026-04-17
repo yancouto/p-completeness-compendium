@@ -61,6 +61,8 @@ related_problems:
     relation: reduces-to
   - id: lfdtml
     relation: reduces-to
+  - id: apa
+    relation: reduces-to
 ---
 
 ## Given
