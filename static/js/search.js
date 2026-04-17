@@ -31,6 +31,28 @@ document.addEventListener('DOMContentLoaded', function () {
     return values;
   }
 
+  function getProblemMatchRank(problem, term) {
+    if (problem.acronymLower.startsWith(term)) return 0;
+    if (problem.acronymLower.includes(term)) return 1;
+    if (problem.titleLower.startsWith(term)) return 2;
+    if (problem.titleLower.includes(term)) return 3;
+    return 4;
+  }
+
+  function compareProblemMatches(first, second, term) {
+    const firstRank = getProblemMatchRank(first, term);
+    const secondRank = getProblemMatchRank(second, term);
+    if (firstRank === 4 && secondRank === 4) return 0;
+
+    const rankDelta = firstRank - secondRank;
+    if (rankDelta !== 0) return rankDelta;
+
+    const acronymLengthDelta = first.acronymLower.length - second.acronymLower.length;
+    if (acronymLengthDelta !== 0) return acronymLengthDelta;
+
+    return first.titleLower.localeCompare(second.titleLower);
+  }
+
   function initHomeSearch() {
     const input = document.getElementById('home-search-input');
     const results = document.getElementById('home-search-results');
@@ -125,9 +147,14 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
 
-      matches = problems.filter(function (item) {
-        return item.titleLower.includes(term) || item.acronymLower.includes(term);
-      }).slice(0, 8);
+      matches = problems
+        .filter(function (item) {
+          return item.titleLower.includes(term) || item.acronymLower.includes(term);
+        })
+        .sort(function (first, second) {
+          return compareProblemMatches(first, second, term);
+        })
+        .slice(0, 8);
 
       activeIndex = -1;
       renderMatches();
@@ -183,6 +210,13 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!searchInput || !problemsGrid) return;
 
     const cards = Array.from(problemsGrid.querySelectorAll('.problem-card'));
+    const cardEntries = cards.map(function (card) {
+      return {
+        card: card,
+        titleLower: normalize(card.dataset.title),
+        acronymLower: normalize(card.dataset.acronym)
+      };
+    });
     const multiSelectNodes = Array.from(document.querySelectorAll('.multi-select[data-filter-group]'));
     const urlParams = new URLSearchParams(window.location.search);
     let openSelect = null;
@@ -251,6 +285,30 @@ document.addEventListener('DOMContentLoaded', function () {
       window.history.replaceState({}, '', newUrl);
     }
 
+    function reorderCards(searchTerm, visibleEntries) {
+      if (!searchTerm) {
+        cardEntries.forEach(function (entry) {
+          problemsGrid.appendChild(entry.card);
+        });
+        return;
+      }
+
+      const rankedVisible = visibleEntries.slice().sort(function (first, second) {
+        return compareProblemMatches(first, second, searchTerm);
+      });
+      const visibleCards = new Set(rankedVisible.map(function (entry) { return entry.card; }));
+
+      rankedVisible.forEach(function (entry) {
+        problemsGrid.appendChild(entry.card);
+      });
+
+      cardEntries.forEach(function (entry) {
+        if (!visibleCards.has(entry.card)) {
+          problemsGrid.appendChild(entry.card);
+        }
+      });
+    }
+
     function applyFilters() {
       const searchTerm = normalize(searchInput.value);
       const selectedByGroup = {};
@@ -263,8 +321,10 @@ document.addEventListener('DOMContentLoaded', function () {
       const selectedTag = selectedByGroup.tag || new Set();
 
       let visible = 0;
+      const visibleEntries = [];
 
-      cards.forEach(function (card) {
+      cardEntries.forEach(function (entry) {
+        const card = entry.card;
         const cardCategories = parsePipeList(card.dataset.categories);
         const cardTags = parsePipeList(card.dataset.tags);
         const cardStatus = normalize(card.dataset.status);
@@ -286,8 +346,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const shouldShow = matchesSearch && matchesCategory && matchesStatus && matchesTags;
         card.style.display = shouldShow ? '' : 'none';
-        if (shouldShow) visible += 1;
+        if (shouldShow) {
+          visible += 1;
+          visibleEntries.push(entry);
+        }
       });
+
+      reorderCards(searchTerm, visibleEntries);
 
       if (visibleCount) {
         visibleCount.textContent = String(visible);
