@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A finite set $S$, an initial partition $\pi_0$ of $S$, a designated set $S' \subseteq S$, and a set of binary relations $R_1, \ldots, R_k$ on $S$.
 

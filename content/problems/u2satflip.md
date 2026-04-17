@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 A Boolean formula $F$ in CNF with two literals per clause.
 

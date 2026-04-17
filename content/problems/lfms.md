@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 An undirected graph $G = (V, E)$ with an ordering on $V$, a designated vertex $v$, and a *polynomial time testable*, nontrivial, hereditary property $\pi$.
 

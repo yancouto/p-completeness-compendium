@@ -20,7 +20,7 @@ related_problems:
     relation: variant
 ---
 
-## Given
+## Input
 
 An undirected graph $G = (V, E)$, an edge $e$, and an integer $k$.
 

@@ -17,7 +17,7 @@ related_problems:
     relation: reduces-to
 ---
 
-## Given
+## Input
 
 An encoding $\overline{\alpha}$ of a Boolean circuit $\alpha$, inputs $x_1, \ldots, x_n$ and designated output $y$. In addition to the restrictions of [AM2CVP]({{< relref "problems/am2cvp.md" >}}), this version requires the circuit to be synchronous. 
 

@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 A collection $F$ of functional dependencies on a finite attribute set $\\{A_1, \ldots, A_m\\}$, a matrix $T = (T_{ij})$ for $0 \leq i \leq n$ and $1 \leq j \leq m$ called an *incomplete table* where $T_{0j} = A_j$ for $1 \leq j \leq m$, and the value of each $T_{ij}$ is either a nonnegative integer or the null value $*$ for $1 \leq i \leq n$ and $1 \leq j \leq m$. Refer to [[1]](#1) for definitions regarding this problem.
 

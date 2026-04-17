@@ -16,7 +16,7 @@ related_problems:
     relation: variant
 ---
 
-## Given
+## Input
 
 A directed graph $G = (V, E)$, a vertex $v$, and integers $k$ and $\ell$.
 

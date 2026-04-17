@@ -8,7 +8,7 @@ tags: []
 references: [303]
 ---
 
-## Given
+## Input
 
 A set of $n$ flat mirrors of lengths $l_1, \ldots, l_n$, their placements at rational points in the plane, a source point $S$, the trajectory of a single beam emitted from $S$, and a designated mirror $M$.
 

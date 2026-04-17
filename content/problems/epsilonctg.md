@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 An encoding $\overline{\alpha}$ of a Boolean circuit $\alpha$, plus inputs $x_1, \ldots, x_n$, and a number $\epsilon \in (0, 1]$. Let $t$ denote the number of gates in $\alpha$ that evaluate to true.
 

@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from-variant-of
 ---
 
-## Given
+## Input
 
 An undirected graph $G = (V, E)$ with unit weights on the edges, and a partition of $V$ into two equal size subsets $A$ and $B$.
 

@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 An undirected graph $G = (V, E)$ with a numbering on the vertices, and two designated vertices $u$ and $v$.
 

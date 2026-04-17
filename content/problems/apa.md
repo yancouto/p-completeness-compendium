@@ -1,7 +1,6 @@
 ---
 title: "Andersen's Pointer Analysis"
 acronym: "APA"
-book_id: "A.9.5"
 categories: ["Formal Languages"]
 status: "p-complete"
 tags: []
@@ -15,7 +14,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 A set $A$ of $n$ *pointers* and a set $S$ of $m$ *statements*. Two pointers $a, b \in A$.
 

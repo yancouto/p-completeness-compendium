@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 A set system $(S, P_S)$, and subsets $S_o \subseteq S$ and $S_f \subseteq S$.
 

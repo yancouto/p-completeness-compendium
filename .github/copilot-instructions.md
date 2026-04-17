@@ -45,7 +45,7 @@ confidence: "high"         # data quality indicator
 references: ["127", "281"] # bibliography IDs
 ---
 
-## Given
+## Input
 [Input description with LaTeX: $G = (V, E)$]
 
 ## Problem

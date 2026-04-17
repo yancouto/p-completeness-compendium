@@ -65,7 +65,7 @@ related_problems:
     relation: reduces-to
 ---
 
-## Given
+## Input
 
 An encoding $\overline{\alpha}$ of a Boolean circuit $\alpha$, inputs $x_1, \ldots, x_n$ and designated output $y$, with the additional assumption that $\alpha$ is monotone. That is, it is constructed solely of INPUT, AND and OR gates.
 

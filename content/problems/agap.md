@@ -21,7 +21,7 @@ related_problems:
     relation: reduces-to
 ---
 
-## Given
+## Input
 
 A directed graph $G = (V, E)$, a partition $V = A \cup B$ of the vertices, and designated vertices $s$ and $t$.
 

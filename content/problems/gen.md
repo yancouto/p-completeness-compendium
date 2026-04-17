@@ -27,7 +27,7 @@ related_problems:
     relation: reduces-to
 ---
 
-## Given
+## Input
 
 A finite set $W$, a binary operation $\bullet$ on $W$ (presented as a table), a subset $V \subseteq W$, and $w \in W$.
 

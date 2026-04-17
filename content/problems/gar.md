@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 A finite alphabet $\Sigma = \\{a_1, \ldots, a_n\\}$ with $n \geq 2$, two sets $P, N \subseteq \Sigma^\ast$ with $P \cap N = \varnothing$, and a positive integer $k$ less than or equal to $n$.
 

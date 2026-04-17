@@ -11,7 +11,7 @@ related_problems:
     relation: variant
 ---
 
-## Given
+## Input
 
 A graph $G = (V, E)$ and a vertex $s$.
 

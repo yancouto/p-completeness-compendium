@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 An undirected graph $G = (V, E)$ whose vertices and edges have integer weights coded in unary, and a configuration $C$.
 

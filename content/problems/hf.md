@@ -13,7 +13,7 @@ related_problems:
     relation: variant
 ---
 
-## Given
+## Input
 
 A directed graph $G = (V, E)$ with each edge $(v, w)$ labeled by a lower and upper bound on flow capacity $l(v, w)$, $u(v, w)$ $\geq 0$ and two distinguished vertices, source $s$ and sink $t$.
 

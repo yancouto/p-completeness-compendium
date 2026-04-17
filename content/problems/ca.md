@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 An initial configuration of a *one dimensional cellular automata*, a time bound $T$ expressed in unary, a state $q$, and a designated cell $c$ of the bi-infinite lattice.
 

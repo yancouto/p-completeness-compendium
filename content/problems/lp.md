@@ -15,7 +15,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 An integer $n \times d$ matrix $A$, an integer $n \times 1$ vector $b$, and an integer $1 \times d$ vector $c$.
 

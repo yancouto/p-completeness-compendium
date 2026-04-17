@@ -11,7 +11,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 Two undirected graphs $G = (V, E)$ and $H = (V', E')$. The vertices in $G$ and $H$ have maximum degree at most $k$, a constant independent of the sizes of $G$ and $H$.
 

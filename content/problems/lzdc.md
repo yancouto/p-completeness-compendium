@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 Two binary strings: $s$ and $t$.
 

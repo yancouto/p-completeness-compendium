@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A fully connected undirected network with $N$ vertices, a capacity $C(i, j)$ for each link $ij$ (counted in "trunks"), a list of tuples specifying call arrival and holding times, and a designated call $c$.
 

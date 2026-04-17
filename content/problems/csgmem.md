@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 A forward deterministic growing context-sensitive grammar $G = (N, T, P, S)$ and a string $x \in T^\ast$. 
 

@@ -27,7 +27,7 @@ related_problems:
     relation: reduces-to
 ---
 
-## Given
+## Input
 
 A string $x$, a description $M$ of a Turing machine $M$, and an integer $t$ coded in unary. (To be precise, the input is the string $x\\#\overline{M}\\#^t$, where $\\#$ is a delimiter character not otherwise present in the string.)
 

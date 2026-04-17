@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 An encoding of a finite labeled transition system $N$, and two designated states $p$ and $q$. 
 

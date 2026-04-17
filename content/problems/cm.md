@@ -8,7 +8,7 @@ tags: []
 references: [50]
 ---
 
-## Given
+## Input
 
 A directed graph $G = (V, E)$ with three distinguished vertices c, m, and g.
 

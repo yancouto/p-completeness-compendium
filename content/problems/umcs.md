@@ -15,7 +15,7 @@ related_problems:
     relation: reduces-to
 ---
 
-## Given
+## Input
 
 An undirected graph $G = (V, E)$.
 

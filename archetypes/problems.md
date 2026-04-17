@@ -17,7 +17,7 @@ related_problems:
     relation: "see-also"  # also: reduces-from, reduces-from-variant-of, reduces-to, equivalent, variant
 ---
 
-## Given
+## Input
 
 
 

@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 An initial configuration of the Game of Life, a time bound $T$ expressed in unary, and a designated cell $c$ of the grid. 
 

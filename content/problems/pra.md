@@ -8,7 +8,7 @@ tags: []
 references: [30]
 ---
 
-## Given
+## Input
 
 An $n^\text{th}$ degree polynomial $p \in \Z[x]$, and an integer $\mu$.
 

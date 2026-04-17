@@ -15,7 +15,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A straight-line program over a non-empty alphabet $\Sigma$ with operations taken from $\Phi = \Sigma \cup \\{\\{\epsilon\\}, \varnothing, \cup, \cdot\\}$, and a string $x$.
 

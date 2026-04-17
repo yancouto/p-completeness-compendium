@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 An $n$-vertex polygon $Q$ that may contain holes, and a designated vertex $u$.
 

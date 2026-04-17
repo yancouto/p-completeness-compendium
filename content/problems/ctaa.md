@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-to
 ---
 
-## Given
+## Input
 
 A sublinear time bounded *cellular tree automaton* (CTA) $M$ and an input string $x$.
 

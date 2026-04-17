@@ -8,7 +8,7 @@ tags: []
 references: [34]
 ---
 
-## Given
+## Input
 
 A four-tuple $(M, B, F, j)$, where $M$ is a $1 \times n$ Boolean vector, $B$ is an $n \times n$ Boolean matrix, $F$ is an $n \times 1$ Boolean vector, and $j$ is an integer in the range $0$ to $n$.
 

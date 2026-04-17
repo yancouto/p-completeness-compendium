@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 A finite monoid $(M, \oplus, 1)$ containing a nonsolvable group; an encoding $\overline{\alpha}$ of a circuit $\alpha$, whose gates are of type $\oplus$, inputs $x_1, \ldots, x_n \in M$, and designated output $y$.
 

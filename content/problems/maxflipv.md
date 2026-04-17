@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 An encoding $\overline{\alpha}$ of a Boolean circuit constructed of AND, OR, and NOT gates, plus inputs $x = x_1, \ldots, x_n$. The circuit's $m$ output values $y = y_1, \ldots, y_m$.
 

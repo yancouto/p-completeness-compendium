@@ -15,7 +15,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A bipartite graph $G = (V_1, V_2, E)$ with $|V_1| = |V_2| = n$ and a designated edge $uv$.
 

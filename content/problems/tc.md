@@ -11,7 +11,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A telephone line with a fixed channel capacity $k$, an integer $l$, and a sequence of calls $(s_1, f_1), \ldots, (s_n, f_n)$. 
 

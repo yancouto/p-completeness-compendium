@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 An undirected graph $G = (V, E)$ and an integer $k$.
 

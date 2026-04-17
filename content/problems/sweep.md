@@ -11,7 +11,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 An $n$-vertex polygon $P$ without holes.
 

@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 An $n$-bit prime $p$ and an $n$-bit positive integer $a$, such that $p$ does not divide $a$.
 

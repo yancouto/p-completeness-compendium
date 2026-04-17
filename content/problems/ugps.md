@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from-variant-of
 ---
 
-## Given
+## Input
 
 An undirected graph $G = (V, E)$ with $2n$ vertices.
 

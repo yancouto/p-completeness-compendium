@@ -11,7 +11,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 Two $n$-bit positive integers $a$ and $b$.
 

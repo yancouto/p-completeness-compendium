@@ -13,7 +13,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 An encoding $\overline{\alpha}$ of a Boolean circuit $\alpha$, inputs $x_1, \ldots, x_n$ and designated output $y$, with the additional assumption that the vertices in the circuit are numbered and listed in topological order.
 

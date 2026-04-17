@@ -11,7 +11,7 @@ related_problems:
     relation: variant
 ---
 
-## Given
+## Input
 
 A directed graph $G = (V, E)$ with each edge labeled in unary with a capacity $c_i \geq 0$, and two distinguished vertices, source $s$ and sink $t$.
 

@@ -15,7 +15,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A directed acyclic graph $G = (V, E)$ represented by fixed ordered adjacency lists with each edge $e$ labeled by a capacity $c(e) \geq 0$, and two distinguished vertices, source $s$ and sink $t$.
 

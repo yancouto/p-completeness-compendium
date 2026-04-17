@@ -19,7 +19,7 @@ related_problems:
     relation: variant
 ---
 
-## Given
+## Input
 
 A set of nonintersecting line segments $s_1, \ldots, s_n$ in the *Euclidean plane* ($\R \times \R$), a set of associated integer weights $w_1, \ldots, w_n$, and two designated segments $r$ and $t$. The segments are *3-oriented* meaning that there are only three different possible slopes for the segments.
 

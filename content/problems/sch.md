@@ -20,7 +20,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A set $S$ of $n$ points in the Euclidean plane, an integer $k$, and a designated point $p \in \R^2$.
 

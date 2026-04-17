@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A context-free grammar $G = (N, T, P, S)$.
 

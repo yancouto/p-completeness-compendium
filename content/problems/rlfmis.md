@@ -11,7 +11,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 An undirected, planar, bipartite graph $G = (V, E)$ with a numbering on the vertices in $V$.
 

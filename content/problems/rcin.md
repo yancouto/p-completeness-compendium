@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 A directed acyclic graph $G = (V, E)$, and two distinguished vertices $s$ and $t$. Additionally, a function $f$ that assigns a nonnegative integer to every vertex $v \in V$ such that $f(v)$ is less than or equal to the indegree of $v$.
 

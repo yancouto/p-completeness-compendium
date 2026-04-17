@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 An alternating graph $G = (V, E)$, two natural numbers $k$ and $m$ (where $k \leq m \leq \log |V|$), a coloring $c : E \to \\{1, \ldots, m\\}$, and two vertices $s$ and $t$.
 

@@ -15,7 +15,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A Boolean matrix $M$, and three integers $i$, $j$, and $k$.
 

@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 A context-free grammar $G = (N, T, P, S)$ and a string $x \in T^\ast$.
 

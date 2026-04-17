@@ -13,7 +13,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 A straight-line program over non-empty alphabet $\Sigma$ with operations taken from $\Phi = \Sigma \cup \\{\\{\epsilon\\}, \varnothing, \cup, \cdot\\}$, and a string $x$.
 

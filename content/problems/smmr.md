@@ -8,7 +8,7 @@ tags: ["CC"]
 references: [255, 346]
 ---
 
-## Given
+## Input
 
 A set of $n$ men and a set of $n$ women, for each person a ranking of the opposite sex according to their preference for a marriage partner, and an integer $k$, $1 \leq k \leq n$.
 

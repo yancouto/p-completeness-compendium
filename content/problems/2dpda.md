@@ -13,7 +13,7 @@ related_problems:
     relation: reduces-to
 ---
 
-## Given
+## Input
 
 A two-way deterministic pushdown automaton $M = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)$ and a string $x$.
 

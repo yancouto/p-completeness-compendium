@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 Two unrooted trees $T = (V, E)$ and $T' = (V', E')$.
 

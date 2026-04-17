@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from-variant-of
 ---
 
-## Given
+## Input
 
 An initial solution $R_0$ to a *two layer channel routing problem* and a time bound $t$. Refer to [[1]](#1) for background and definitions concerning routing problems.
 

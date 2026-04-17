@@ -15,7 +15,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A stationary Markov decision process $M = (S, c, p)$.
 

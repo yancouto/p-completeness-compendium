@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-to
 ---
 
-## Given
+## Input
 
 An $n^\text{th}$ degree polynomial $p \in \Q[x]$.
 

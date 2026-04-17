@@ -15,7 +15,7 @@ related_problems:
     relation: reduces-to
 ---
 
-## Given
+## Input
 
 An undirected graph $G = (V, E)$ with a numbering on the vertices, and two designated vertices $s$ and $t$.
 

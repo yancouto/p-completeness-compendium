@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 An undirected graph $G = (V, E)$ with $\Delta$ equal to the maximum degree of any vertex in $V$, an ordering $v_1, \ldots, v_n$ on the vertices of $V$, a designated color $c$, and a vertex $v$.
 

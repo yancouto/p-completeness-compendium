@@ -13,7 +13,7 @@ related_problems:
     relation: variant
 ---
 
-## Given
+## Input
 
 Two $n$-bit positive integers $a$ and $b$.
 

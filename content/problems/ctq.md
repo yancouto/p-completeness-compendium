@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 A group of $n$ companies $C_1, \ldots, C_n$ and a *partial* relation $\text{owns}(C_i, C_j, S)$, where $1 \leq i, j \leq n$, and two distinct integers $k$ and $l$. The relation $\text{owns}(C_i, C_j, S)$ indicates company $C_i$ owns $S\\%$ of company $C_j$'s stock.
 

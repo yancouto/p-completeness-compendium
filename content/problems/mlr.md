@@ -15,7 +15,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A set $L = \\{l_1, \ldots, l_q\\}$ of lists, where each list $l_j$, $1 \leq j \leq q$, contains one or more integers; an integer $e$, which is an element of some list; and a designated integer $i$.
 

@@ -43,7 +43,7 @@ related_problems:
     relation: reduces-to
 ---
 
-## Given
+## Input
 
 An encoding $\overline{\alpha}$ of a Boolean circuit $\alpha$, inputs $x_1, \ldots, x_n$ and designated output $y$.
 

@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 A nonstationary Markov decision process $M = (S, c, p)$ and an integer $T$. 
 

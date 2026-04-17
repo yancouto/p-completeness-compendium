@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 An undirected graph $G = (V, E)$ and an integer $k$.
 

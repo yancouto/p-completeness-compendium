@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from-variant-of
 ---
 
-## Given
+## Input
 
 A Boolean formula $F$ with clauses $c_1, \ldots, c_m$ and variables $x_1, \ldots, x_n$, plus an integer $l$.
 

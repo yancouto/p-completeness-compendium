@@ -13,7 +13,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 Input vectors $a_1, \ldots, a_n \in \Z^n$ that are linearly independent over $\Q$.
 

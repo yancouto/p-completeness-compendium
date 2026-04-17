@@ -13,7 +13,7 @@ related_problems:
     relation: reduces-to
 ---
 
-## Given
+## Input
 
 A Boolean formula $F$ in conjunctive normal form.
 

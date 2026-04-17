@@ -15,7 +15,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A set of pairs of terms $S = \\{(M_1, N_1), \ldots, (M_k, N_k)\\}$ that is left linear.
 

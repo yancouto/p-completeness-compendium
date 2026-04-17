@@ -11,7 +11,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A lattice $L$, a set of equations $E$ and $e, g_1, \ldots, g_n$ terms over $\mathcal{U}$.
 

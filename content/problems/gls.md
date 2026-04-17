@@ -15,7 +15,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 An ordered list of $n$ jobs $\\{J_1, \ldots, J_n\\}$, a positive integer execution time $T(J_i)$ for each job, and a non-preemptive schedule $L$. The jobs are to be scheduled on two identical processors.
 

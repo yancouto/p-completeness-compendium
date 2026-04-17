@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A set of $n$ nonintersecting line segments in the Euclidean plane and a designated segment $s$.
 

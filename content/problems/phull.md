@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 An integer $d$, a set $S$ of $n$ points in $\Q^d$, and a designated point $p \in \Q^d$.
 

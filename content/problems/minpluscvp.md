@@ -15,7 +15,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 An encoding $\overline{\alpha}$ of a $(\min, +)$ circuit $\alpha$ and rational inputs $x_1, \ldots, x_n$.
 

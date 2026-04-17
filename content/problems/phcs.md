@@ -13,7 +13,7 @@ related_problems:
     relation: reduces-to
 ---
 
-## Given
+## Input
 
 A set $S$ of Horn clauses in the propositional calculus.
 

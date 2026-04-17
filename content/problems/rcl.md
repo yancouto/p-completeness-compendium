@@ -13,7 +13,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 A relaxed consistent labeling problem $G$ consisting of a set of variables $V = \\{v_1, \ldots, v_n\\}$ and a set of labels $L = \\{L_1, \ldots, L_n\\}$, where $L_i$ consists of the possible labels for $v_i$. A binary predicate $P$, where $P_{ij}(x, y) = 1$ if and only if the assignment of label $x$ to $v_i$ is compatible with the assignment of label $y$ to $v_j$. A designated variable $X$ and a designated label $f$.
 

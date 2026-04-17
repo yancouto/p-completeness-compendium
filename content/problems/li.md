@@ -15,7 +15,7 @@ related_problems:
     relation: reduces-to
 ---
 
-## Given
+## Input
 
 An integer $n \times d$ matrix $A$ and an integer $n \times 1$ vector $b$.
 

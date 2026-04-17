@@ -16,7 +16,7 @@ related_problems:
     relation: variant
 ---
 
-## Given
+## Input
 
 An undirected bipartite graph $G = (A \cup B, E)$, a vertex $v$, and integers $\alpha$ and $\beta$.
 

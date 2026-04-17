@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 An encoding $\overline{\alpha}$ of a planar Boolean circuit $\alpha$, inputs $x_1, \ldots, x_n$ and designated output $y$. 
 

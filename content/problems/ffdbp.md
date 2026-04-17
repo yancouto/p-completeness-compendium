@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A list of $n$ items $v_1, \ldots, v_n$, where each $v_i$ is rational number between $0$ and $1$, and two distinguished indices $i$ and $b$.
 

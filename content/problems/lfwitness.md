@@ -8,7 +8,7 @@ tags: []
 references: [314]
 ---
 
-## Given
+## Input
 
 Let $M = (Q, \Sigma, \delta, s, F)$ be an unambiguous finite automaton and $n$ an integer encoded in unary.
 

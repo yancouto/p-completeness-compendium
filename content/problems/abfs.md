@@ -17,7 +17,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 An undirected graph $G = (V, E)$ with $E$ partitioned into two sets $M$ and $U$, a designated vertex $v$, and a designated start vertex $s$.
 

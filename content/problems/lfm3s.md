@@ -14,7 +14,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 A set $I$ of distinct integers.
 

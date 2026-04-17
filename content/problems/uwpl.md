@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A set of equations $E$ and $e_1 = e_2$ an equation.
 

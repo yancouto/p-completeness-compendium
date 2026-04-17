@@ -28,7 +28,7 @@ related_problems:
     relation: variant
 ---
 
-## Given
+## Input
 
 An undirected graph $G = (V, E)$, a vertex $v$, and an integer $k$.
 

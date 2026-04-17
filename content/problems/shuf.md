@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 A language $L$ over a finite alphabet $\Sigma$ described in terms of the operators $\cdot$, $\*$, $\cup$, $\cap$, $\Delta$, and $\dagger$; which denote concatenation, Kleene star, union, intersection, shuffle, and iterated shuffle, respectively; plus a designated word $w \in \Sigma^\ast$.
 

@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 An integer $n \times d$ matrix $A$ and an integer $n \times 1$ vector $b$.
 

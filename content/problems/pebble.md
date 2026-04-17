@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A fixed rank pebble game $G = (X, R, S, t)$.
 

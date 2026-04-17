@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 A finitely presented algebra $A = (M, \mathcal{A}, \Gamma)$ and a pair of terms $x$ and $y$.
 

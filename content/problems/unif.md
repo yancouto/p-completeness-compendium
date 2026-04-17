@@ -15,7 +15,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 Two symbolic terms $s$ and $t$.
 

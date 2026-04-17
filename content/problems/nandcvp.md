@@ -39,7 +39,7 @@ related_problems:
     relation: reduces-to
 ---
 
-## Given
+## Input
 
 An encoding $\overline{\alpha}$ of a Boolean circuit $\alpha$, inputs $x_1, \ldots, x_n$ and an output gate $y$. Circuit $\alpha$ is constructed only of NAND gates and is restricted to have fanout two for inputs and NAND gates.
 

@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 Integers $a, b_1, \ldots, b_n$.
 

@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A finitely presented algebra $A = (M, \mathcal{A}, \Gamma)$.
 

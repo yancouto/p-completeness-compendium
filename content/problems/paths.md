@@ -15,7 +15,7 @@ related_problems:
     relation: variant
 ---
 
-## Given
+## Input
 
 An undirected graph $G = (V, E)$, a subset $U \subseteq V$, an integer $k$, and a designated vertex $v$.
 

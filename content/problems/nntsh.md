@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A finite set $C = \\{C_1, \ldots, C_n\\}$ of cities, and a distance matrix $D$ with entries $(d_{ij})$ that are positive integers ($1 \leq i, j \leq n$), and two distinguished vertices $s$ and $l$.
 

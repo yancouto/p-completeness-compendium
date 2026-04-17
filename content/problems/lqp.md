@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 An extended logic program $P$, and a ground clause $C$ of the form $p(\overline{x}) \coloneq q_1(\overline{y}_1), \ldots, q_k(\overline{y}_k)$. 
 

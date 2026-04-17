@@ -15,7 +15,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 An $n \times n$ matrix $A$ with entries over the rationals and an integer $l$.
 

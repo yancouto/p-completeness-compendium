@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 Two players $H$ and $V$, a token, and an $m \times n$ Boolean matrix $M$.
 

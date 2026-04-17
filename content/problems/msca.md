@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from-variant-of
 ---
 
-## Given
+## Input
 
 A finite set $S$, a collection $C$ of subsets of $S$, a special subset $t$ of $S$, and an integer $i$.
 

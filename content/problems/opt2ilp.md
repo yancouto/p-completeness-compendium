@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A linear system of inequalities $Ax \leq b$ over $\Z$, where $A$ is an $n \times 2$ matrix and $b$ is an $n \times 1$ vector, and an ordered pair $u \in \Z^2$.
 

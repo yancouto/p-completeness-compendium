@@ -19,7 +19,7 @@ related_problems:
     relation: reduces-to
 ---
 
-## Given
+## Input
 
 An undirected graph $G = (V, E)$ with a numbering on the vertices in $V$, and two designated vertices $u$ and $v$.
 

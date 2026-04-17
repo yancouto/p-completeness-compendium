@@ -76,7 +76,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 Describe the input to the problem. Use LaTeX syntax for math: $x_1, \ldots, x_n$.
 There are macros for common complexity classes like $\P$ and $\NC$.

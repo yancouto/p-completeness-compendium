@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 An encoding $\overline{\alpha}$ of a Boolean circuit $\alpha$, plus inputs $x_1, \ldots, x_n$, and a number $\epsilon \in (0, 1]$. Let $d$ denote the maximum depth that a true value propagates to in $\alpha$ on the given input.
 

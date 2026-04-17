@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 An $\NC$ *real function* $C$ that behaves as a contractor on some interval $I$ contained in $(-\infty, +\infty)$. The endpoints of $I$ are specified as integers.
 

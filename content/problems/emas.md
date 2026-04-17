@@ -13,7 +13,7 @@ related_problems:
     relation: reduces-from-variant-of
 ---
 
-## Given
+## Input
 
 A directed graph $G = (V, E)$ with an ordering on the edges and a designated edge $e$.
 

@@ -19,7 +19,7 @@ related_problems:
     relation: equivalent
 ---
 
-## Given
+## Input
 
 An encoding $\overline{\alpha}$ of a circuit $\alpha$ composed of comparator gates, plus inputs $x_1, \ldots, x_n$, and a designated output $y$.
 

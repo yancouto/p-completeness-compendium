@@ -11,7 +11,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A hypergraph $H = (V, E)$, where the elements in $E$ are subsets (called *hyperedges*) of $V$.
 

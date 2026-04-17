@@ -15,7 +15,7 @@ related_problems:
     relation: reduces-to
 ---
 
-## Given
+## Input
 
 A path system $P = (X, R, S, T)$, where $S \subseteq X$, $T \subseteq X$, and $R \subseteq X \times X \times X$.
 

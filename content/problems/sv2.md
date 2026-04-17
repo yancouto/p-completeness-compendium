@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 Input vectors $a_1, a_2 \in \Z^2$ that are linearly independent over $\Q$, and a rational number $c \geq 1$.
 

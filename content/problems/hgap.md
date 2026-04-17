@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 A hierarchical graph $G = (V, E)$ and two designated vertices $s$ and $t$. 
 

@@ -13,7 +13,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 A two player game $G = (P_1, P_2, W_0, s, M)$.
 

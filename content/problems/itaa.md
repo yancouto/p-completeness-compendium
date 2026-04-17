@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 A *real-time $\log n$ depth bounded iterative tree array* $M$ and an input string $x$ of length $n$.
 

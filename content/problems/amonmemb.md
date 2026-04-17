@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from-variant-of
 ---
 
-## Given
+## Input
 
 A set of total functions $a_1, \ldots, a_r$ and a designated function $f$, all from the set $\\{1, 2, \ldots, m\\}$ to itself, with the property that $\langle a_1, \ldots, a_r \rangle \in B_2$.
 

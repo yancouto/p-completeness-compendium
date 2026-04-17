@@ -17,7 +17,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A linear system of inequalities $Ax \leq b$ over $\Q$, where each row of $A$ has at most two nonzero elements. $A$ is an $n \times d$ matrix and $b$ is an $n \times 1$ vector.
 

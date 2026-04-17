@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 Two $m \times n$ matrices $A$ and $B$ that have integer entries, and a designated natural number $k$, $1 \leq k \leq m$.
 

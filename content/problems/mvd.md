@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 A set $\Sigma$ of multivalued dependencies and a multivalued dependency $\sigma$.
 

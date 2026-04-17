@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 An $n$-input, $n$-output $\NC^0$ circuit computing a bijective function $f : \\{0, 1\\}^n \to \\{0, 1\\}^n$ and $y \in \\{0, 1\\}^n$.
 

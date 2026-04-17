@@ -11,7 +11,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 Positive $n$-bit integers $a$, $b$, and $c$.
 

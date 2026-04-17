@@ -8,7 +8,7 @@ tags: []
 references: [21, 185]
 ---
 
-## Given
+## Input
 
 A group $G$.
 

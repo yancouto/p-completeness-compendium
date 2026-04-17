@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 An undirected graph $G = (V, E)$ in which each vertex in $V$ has an $O(|V|)$ fixed length, label sequence of $m$ distinct numbers from $\\{1, \ldots, m\\}$, a designated source vertex $s$, and a designated vertex $t$.
 

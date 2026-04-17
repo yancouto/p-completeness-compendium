@@ -13,7 +13,7 @@ related_problems:
     relation: variant
 ---
 
-## Given
+## Input
 
 An undirected graph $G = (V, E)$, a subset $E' \subseteq V \times V$ with $E' \cap E = \varnothing$, and a designated edge $e = (u, v) \in E'$.
 

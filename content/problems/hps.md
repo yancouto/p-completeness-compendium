@@ -13,7 +13,7 @@ related_problems:
     relation: reduces-from-variant-of
 ---
 
-## Given
+## Input
 
 A directed, outforest $G = (V, E)$ specifying the precedence constraints among the $|V|$ unit time tasks that are represented by the vertices of $G$, a nondecreasing profile $\mu$, a designated task $j$, and a time slot $t$.
 

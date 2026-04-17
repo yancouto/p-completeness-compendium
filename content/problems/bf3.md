@@ -11,7 +11,7 @@ related_problems:
     relation: variant
 ---
 
-## Given
+## Input
 
 A three layered network $G = (V, E)$ with each edge labeled with a capacity $c_i \geq 0$, and two distinguished vertices, source $s$ and sink $t$.
 

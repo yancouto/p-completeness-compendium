@@ -11,7 +11,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A stationary Markov decision process $M = (S, c, p)$ and a real number $\beta \in (0, 1)$.
 

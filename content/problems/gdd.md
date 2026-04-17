@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 A multigraph $D = (V, E)$ with $V = \pi \cup \rho$, where $\pi = \\{p_1, \ldots, p_n\\}$ is the set of *process vertices* and $\rho = \\{r_1, \ldots, r_m\\}$ is the set of *resource vertices*; and a set $T = \\{t_1, \ldots, t_m\\}$, where $t_i$ denotes the number of units of $r_i$.
 

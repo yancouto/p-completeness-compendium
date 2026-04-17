@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A *well-founded relation* $(V, E)$ and $x_1, x_2 \in V$. Let $f$ be the *Mostowski epimorphism* of the relation. Refer to [[1]](#1) for definitions.
 

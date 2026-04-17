@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 A directed graph $G = (V, E)$ that is cyclically reducible (defined below) and a designated vertex $v$.
 

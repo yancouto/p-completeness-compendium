@@ -11,7 +11,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A set of $n$ unit length, horizontal, nonintersecting line segments in the Euclidean plane, a designated segment $s$, and an integer $d$.
 

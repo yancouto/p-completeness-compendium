@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 A fixed context free language $L$ over alphabet $\Sigma$, a directed graph $G = (V, E)$ with edges labeled by strings in $\Sigma^\ast$, and two vertices $s$ and $t$.
 

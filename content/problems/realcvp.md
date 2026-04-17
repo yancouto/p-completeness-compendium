@@ -11,7 +11,7 @@ related_problems:
     relation: reduces-from
 ---
 
-## Given
+## Input
 
 A feasible real function $V$ defined on $(-\infty, +\infty)$.
 

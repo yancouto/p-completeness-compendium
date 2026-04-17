@@ -15,7 +15,7 @@ related_problems:
     relation: variant
 ---
 
-## Given
+## Input
 
 A directed graph $G = (V, E)$ with each edge $e$ labeled by an integer capacity $c(e) \geq 0$, two distinguished vertices, source $s$ and sink $t$, and a value $f$.
 

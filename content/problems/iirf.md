@@ -8,7 +8,7 @@ tags: []
 references: [218]
 ---
 
-## Given
+## Input
 
 An $\NC$ real function $f$ defined on $[0, 1]$. The function is increasing and has the property that $f(0) < 0 < f(1)$. Thus, there is a unique root $x_0$ such that $f(x_0) = 0$. A real function $f$ is in $\NC$ if an approximation to $f(x)$ with error less than $2^{-n}$, for $x \in [-2^n, +2^n]$, can be computed in $\NC$.
 

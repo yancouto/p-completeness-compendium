@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 An encoding $\overline{\alpha}$ of an arithmetic circuit $\alpha$ with dyadic operations $+$, $-$, and $\ast$, together with inputs $x_1, \ldots, x_n$ from a ring.
 

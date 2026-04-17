@@ -17,7 +17,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A set of $n$ men and a set of $n$ women. For each person a ranking of the opposite sex according to their preference for a marriage partner. Note that a preference list does not need to include a ranking for every member of the opposite sex. This problem is sometimes called the *Stable Roommates Problem*.
 

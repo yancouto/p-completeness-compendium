@@ -11,7 +11,7 @@ related_problems:
     relation: variant
 ---
 
-## Given
+## Input
 
 A set of nonintersecting segments $s_1, \ldots, s_n$ in the Euclidean plane, a set of associated integer weights $w_1, \ldots, w_n$, and two designated segments $r$ and $t$. The segments are *2-oriented* meaning that there are only two different possible slopes for the segments.
 

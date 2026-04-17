@@ -11,7 +11,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 An undirected graph $G = (V, E)$ with an ordering on the edges in $E$ and having a maximum degree of five or less.
 

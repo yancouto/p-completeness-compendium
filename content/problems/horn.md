@@ -17,7 +17,7 @@ related_problems:
     relation: reduces-to
 ---
 
-## Given
+## Input
 
 A Horn formula $F$.
 

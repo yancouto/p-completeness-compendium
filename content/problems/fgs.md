@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A finitely presented algebra $A = (M, \mathcal{A}, \Gamma)$ and terms $x_1, \ldots, x_n, y$. Let $[x] = \\{y \in \tau \mid x \equiv y\\}$.
 

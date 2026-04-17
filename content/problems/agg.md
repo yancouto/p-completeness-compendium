@@ -13,7 +13,7 @@ related_problems:
     relation: reduces-to
 ---
 
-## Given
+## Input
 
 An acyclic directed graph $G = (V, E)$.
 

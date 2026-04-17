@@ -13,7 +13,7 @@ related_problems:
     relation: see-also
 ---
 
-## Given
+## Input
 
 A graph $G = (V, E)$, a source $s$ and a sink $s'$, a distinguished vertex $u$, a time $t$, nonnegative real conductances $k_{ij}$ for each edge $ij$, and nonnegative real capacities $\phi_l$ for each vertex $l \in V$ .
 
