@@ -56,6 +56,12 @@
     }, 1600);
   }
 
+  function handleHashChange() {
+    if (window.location.hash && /^#\d+$/.test(window.location.hash)) {
+      flashReferenceTarget(window.location.hash.slice(1));
+    }
+  }
+
   function setupReferenceCitationHighlights() {
     const links = document.querySelectorAll('.problem-content a[href^="#"]');
     links.forEach(function (link) {
@@ -68,15 +74,8 @@
       });
     });
 
-    if (window.location.hash && /^#\d+$/.test(window.location.hash)) {
-      flashReferenceTarget(window.location.hash.slice(1));
-    }
-
-    window.addEventListener('hashchange', function () {
-      if (window.location.hash && /^#\d+$/.test(window.location.hash)) {
-        flashReferenceTarget(window.location.hash.slice(1));
-      }
-    });
+    handleHashChange();
+    window.addEventListener('hashchange', handleHashChange);
   }
 
   document.addEventListener('DOMContentLoaded', function () {
