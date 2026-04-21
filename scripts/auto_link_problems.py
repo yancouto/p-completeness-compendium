@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import bisect
 import json
 import re
 import sys
@@ -194,12 +195,13 @@ def merge_spans(spans: Iterable[tuple[int, int]]) -> list[tuple[int, int]]:
 
 
 def is_in_spans(index: int, spans: list[tuple[int, int]]) -> bool:
-    for start, end in spans:
-        if start <= index < end:
-            return True
-        if index < start:
-            return False
-    return False
+    if not spans:
+        return False
+    idx = bisect.bisect_right(spans, (index, float("inf"))) - 1
+    if idx < 0:
+        return False
+    start, end = spans[idx]
+    return start <= index < end
 
 
 def build_excluded_spans(
