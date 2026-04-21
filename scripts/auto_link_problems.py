@@ -458,21 +458,26 @@ def link_reference_citations(body: str, reference_count: int) -> str:
     return "".join(result_parts)
 
 
-def validate_problem_metadata(
-    problem: ProblemFile,
-    constraints: ProblemConstraints,
-    valid_problem_ids: set[str],
-    bibliography: dict[str, dict[str, object]],
-) -> list[str]:
+def _validate_status(problem: ProblemFile, constraints: ProblemConstraints, prefix: str) -> list[str]:
     errors: list[str] = []
-    prefix = f"{problem.path.name}:"
-    frontmatter = problem.frontmatter
-
-    status_raw = frontmatter.get("status")
+    status_raw = problem.frontmatter.get("status")
     if status_raw is not None and str(status_raw) not in constraints.statuses:
         errors.append(f"{prefix} invalid status '{status_raw}'")
 
-    categories = frontmatter.get("categories")
+    stem_match = PROBLEM_STEM_PATTERN.match(problem.path.stem)
+    if stem_match is not None and status_raw is not None:
+        appendix = stem_match.group("appendix")
+        status = str(status_raw)
+        if appendix == "b" and status != "open":
+            errors.append(f"{prefix} appendix B problem must have status 'open' (found '{status}')")
+        if appendix == "a" and status == "open":
+            errors.append(f"{prefix} appendix A problem cannot have status 'open'")
+    return errors
+
+
+def _validate_categories(problem: ProblemFile, constraints: ProblemConstraints, prefix: str) -> list[str]:
+    errors: list[str] = []
+    categories = problem.frontmatter.get("categories")
     if categories is not None:
         if not isinstance(categories, list):
             errors.append(f"{prefix} categories must be a YAML list")
@@ -481,8 +486,12 @@ def validate_problem_metadata(
                 category_name = str(category)
                 if category_name not in constraints.categories:
                     errors.append(f"{prefix} invalid category '{category_name}'")
+    return errors
 
-    tags = frontmatter.get("tags")
+
+def _validate_tags(problem: ProblemFile, constraints: ProblemConstraints, prefix: str) -> list[str]:
+    errors: list[str] = []
+    tags = problem.frontmatter.get("tags")
     if tags is not None:
         if not isinstance(tags, list):
             errors.append(f"{prefix} tags must be a YAML list")
@@ -491,8 +500,16 @@ def validate_problem_metadata(
                 tag_name = str(tag)
                 if tag_name not in constraints.tags:
                     errors.append(f"{prefix} invalid tag '{tag_name}'")
+    return errors
 
-    references_value = frontmatter.get("references")
+
+def _validate_references(
+    problem: ProblemFile,
+    bibliography: dict[str, dict[str, object]],
+    prefix: str,
+) -> list[str]:
+    errors: list[str] = []
+    references_value = problem.frontmatter.get("references")
     references = (
         references_value
         if isinstance(references_value, list)
@@ -521,8 +538,17 @@ def validate_problem_metadata(
         if ref_id in seen_reference_ids:
             errors.append(f"{prefix} duplicate reference id '{ref_id}'")
         seen_reference_ids.add(ref_id)
+    return errors
 
-    related_entries = get_related_entries(frontmatter, problem.path, create=False)
+
+def _validate_related_entries(
+    problem: ProblemFile,
+    constraints: ProblemConstraints,
+    valid_problem_ids: set[str],
+    prefix: str,
+) -> list[str]:
+    errors: list[str] = []
+    related_entries = get_related_entries(problem.frontmatter, problem.path, create=False)
     if related_entries is not None:
         seen_relations: set[tuple[str, str]] = set()
         for entry in related_entries:
@@ -552,7 +578,11 @@ def validate_problem_metadata(
             if relation_key in seen_relations:
                 errors.append(f"{prefix} duplicate related_problems entry id='{target_id}' relation='{relation}'")
             seen_relations.add(relation_key)
+    return errors
 
+
+def _validate_citations(problem: ProblemFile, prefix: str) -> list[str]:
+    errors: list[str] = []
     reference_count = count_reference_entries(problem)
     excluded_spans = build_excluded_spans(
         problem.body,
@@ -567,8 +597,12 @@ def validate_problem_metadata(
                 f"{prefix} citation [{citation_number}] points to missing reference "
                 f"(available: 1..{reference_count})"
             )
+    return errors
 
-    book_id_raw = frontmatter.get("book_id")
+
+def _validate_book_id(problem: ProblemFile, prefix: str) -> list[str]:
+    errors: list[str] = []
+    book_id_raw = problem.frontmatter.get("book_id")
     if book_id_raw is not None and str(book_id_raw).strip() != "":
         book_id = str(book_id_raw)
         if BOOK_ID_PATTERN.match(book_id) is None:
@@ -584,15 +618,25 @@ def validate_problem_metadata(
                 errors.append(
                     f"{prefix} book_id '{book_id}' does not match filename-derived id '{expected_book_id}'"
                 )
+    return errors
 
-    stem_match = PROBLEM_STEM_PATTERN.match(problem.path.stem)
-    if stem_match is not None and status_raw is not None:
-        appendix = stem_match.group("appendix")
-        status = str(status_raw)
-        if appendix == "b" and status != "open":
-            errors.append(f"{prefix} appendix B problem must have status 'open' (found '{status}')")
-        if appendix == "a" and status == "open":
-            errors.append(f"{prefix} appendix A problem cannot have status 'open'")
+
+def validate_problem_metadata(
+    problem: ProblemFile,
+    constraints: ProblemConstraints,
+    valid_problem_ids: set[str],
+    bibliography: dict[str, dict[str, object]],
+) -> list[str]:
+    errors: list[str] = []
+    prefix = f"{problem.path.name}:"
+
+    errors.extend(_validate_status(problem, constraints, prefix))
+    errors.extend(_validate_categories(problem, constraints, prefix))
+    errors.extend(_validate_tags(problem, constraints, prefix))
+    errors.extend(_validate_references(problem, bibliography, prefix))
+    errors.extend(_validate_related_entries(problem, constraints, valid_problem_ids, prefix))
+    errors.extend(_validate_citations(problem, prefix))
+    errors.extend(_validate_book_id(problem, prefix))
 
     return errors
 
