@@ -8,9 +8,13 @@ import unittest
 from pathlib import Path
 import re
 
+import sys
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SCRIPT_PATH = REPO_ROOT / "scripts" / "auto_link_problems.py"
+
+sys.path.insert(0, str(REPO_ROOT / "scripts"))
+import auto_link_problems
 
 
 class AutoLinkProblemsTests(unittest.TestCase):
@@ -456,6 +460,147 @@ class AutoLinkProblemsTests(unittest.TestCase):
         result = self.run_script("--check")
         self.assertEqual(result.returncode, 2)
         self.assertIn("unknown bibliography reference id '999'", result.stderr)
+
+    def test_fails_on_invalid_related_problems_type(self):
+        (self.temp_dir / "content" / "problems" / "a-3-9.md").write_text(
+            textwrap.dedent(
+                """\
+                ---
+                title: "Invalid Related Problems Type"
+                acronym: "INVALIDRELS"
+                status: "p-complete"
+                categories: ["Graph Theory"]
+                tags: []
+                book_id: "A.3.9"
+                related_problems: "this should be a list, not a string"
+                ---
+
+                ## Remarks
+
+                Content here.
+                """
+            ),
+            encoding="utf-8",
+        )
+        result = self.run_script("--check")
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("'related_problems' must be a YAML list in", result.stderr)
+
+
+
+class TestUtilityFunctions(unittest.TestCase):
+    def test_merge_spans(self):
+        # Empty
+        self.assertEqual(auto_link_problems.merge_spans([]), [])
+
+        # Non-overlapping
+        self.assertEqual(
+            auto_link_problems.merge_spans([(1, 3), (5, 7)]),
+            [(1, 3), (5, 7)]
+        )
+
+        # Adjoining spans (should be merged)
+        self.assertEqual(
+            auto_link_problems.merge_spans([(1, 3), (3, 5)]),
+            [(1, 5)]
+        )
+
+        # Fully contained spans
+        self.assertEqual(
+            auto_link_problems.merge_spans([(1, 10), (3, 5)]),
+            [(1, 10)]
+        )
+
+        # Overlapping spans
+        self.assertEqual(
+            auto_link_problems.merge_spans([(1, 5), (3, 7)]),
+            [(1, 7)]
+        )
+
+    def test_is_in_spans(self):
+        spans = [(1, 5), (10, 15)]
+
+        # Empty
+        self.assertFalse(auto_link_problems.is_in_spans(3, []))
+
+        # Before any span
+        self.assertFalse(auto_link_problems.is_in_spans(0, spans))
+
+        # In first span
+        self.assertTrue(auto_link_problems.is_in_spans(1, spans))
+        self.assertTrue(auto_link_problems.is_in_spans(3, spans))
+
+        # End of first span (exclusive)
+        self.assertFalse(auto_link_problems.is_in_spans(5, spans))
+
+        # Between spans
+        self.assertFalse(auto_link_problems.is_in_spans(7, spans))
+
+        # In second span
+        self.assertTrue(auto_link_problems.is_in_spans(12, spans))
+
+        # End of second span (exclusive)
+        self.assertFalse(auto_link_problems.is_in_spans(15, spans))
+
+        # After all spans
+        self.assertFalse(auto_link_problems.is_in_spans(20, spans))
+
+
+class TestErrorPaths(unittest.TestCase):
+    def setUp(self):
+        self.temp_dir = Path(tempfile.mkdtemp(prefix="autolink-error-test-"))
+
+    def tearDown(self):
+        shutil.rmtree(self.temp_dir)
+
+    def test_load_problem_constraints_missing_file(self):
+        with self.assertRaisesRegex(ValueError, "Missing constraints data file"):
+            auto_link_problems.load_problem_constraints(self.temp_dir)
+
+    def test_load_problem_constraints_invalid_yaml(self):
+        data_dir = self.temp_dir / "data"
+        data_dir.mkdir(parents=True, exist_ok=True)
+        constraints_file = data_dir / "problem_constraints.yaml"
+        constraints_file.write_text("invalid: [yaml: content", encoding="utf-8")
+
+        with self.assertRaises(Exception): # YAML parser error
+            auto_link_problems.load_problem_constraints(self.temp_dir)
+
+    def test_load_bibliography_missing_file(self):
+        with self.assertRaisesRegex(ValueError, "Missing bibliography data file"):
+            auto_link_problems.load_bibliography(self.temp_dir)
+
+    def test_load_bibliography_invalid_json(self):
+        data_dir = self.temp_dir / "data"
+        data_dir.mkdir(parents=True, exist_ok=True)
+        bib_file = data_dir / "bibliography.json"
+        bib_file.write_text("invalid json", encoding="utf-8")
+
+        with self.assertRaises(ValueError): # JSON decode error
+            auto_link_problems.load_bibliography(self.temp_dir)
+
+    def test_load_bibliography_not_a_dict(self):
+        data_dir = self.temp_dir / "data"
+        data_dir.mkdir(parents=True, exist_ok=True)
+        bib_file = data_dir / "bibliography.json"
+        bib_file.write_text('["not", "a", "dict"]', encoding="utf-8")
+
+        with self.assertRaisesRegex(ValueError, "Bibliography file must be a JSON object"):
+            auto_link_problems.load_bibliography(self.temp_dir)
+
+    def test_parse_problem_file_missing_frontmatter(self):
+        file_path = self.temp_dir / "no_frontmatter.md"
+        file_path.write_text("Just some text.", encoding="utf-8")
+
+        with self.assertRaisesRegex(ValueError, "Missing or malformed frontmatter"):
+            auto_link_problems.parse_problem_file(file_path)
+
+    def test_parse_problem_file_malformed_frontmatter(self):
+        file_path = self.temp_dir / "malformed.md"
+        file_path.write_text("---\nmalformed: [yaml\n---\n", encoding="utf-8")
+
+        with self.assertRaises(Exception): # YAML parser error
+            auto_link_problems.parse_problem_file(file_path)
 
 
 if __name__ == "__main__":
