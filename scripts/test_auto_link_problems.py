@@ -573,6 +573,42 @@ class TestUtilityFunctions(unittest.TestCase):
             auto_link_problems.format_reference_citation_link(101, "a"), "[[101a]](#101)"
         )
 
+    def test_build_acronym_index(self):
+        # Problems with acronyms
+        p1 = MagicMock(spec=auto_link_problems.ProblemFile)
+        p1.acronym = "ABC"
+        p1.path = Path("abc.md")
+
+        p2 = MagicMock(spec=auto_link_problems.ProblemFile)
+        p2.acronym = "DEF"
+        p2.path = Path("def.md")
+
+        # Problem without acronym
+        p3 = MagicMock(spec=auto_link_problems.ProblemFile)
+        p3.acronym = None
+        p3.path = Path("ghi.md")
+
+        # Problem that is a target for a custom acronym
+        # NANDCVP is the target for NORCVP in CUSTOM_ACRONYM_TARGETS
+        p4 = MagicMock(spec=auto_link_problems.ProblemFile)
+        p4.acronym = "NANDCVP"
+        p4.path = Path("nandcvp.md")
+
+        problems = [p1, p2, p3, p4]
+        index = auto_link_problems.build_acronym_index(problems)
+
+        self.assertEqual(
+            index,
+            {
+                "ABC": "abc.md",
+                "DEF": "def.md",
+                "NANDCVP": "nandcvp.md",
+                "NORCVP": "nandcvp.md",
+            },
+        )
+
+    def test_build_acronym_index_empty(self):
+        self.assertEqual(auto_link_problems.build_acronym_index([]), {})
 
 class TestErrorPaths(unittest.TestCase):
     def setUp(self):
