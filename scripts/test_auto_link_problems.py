@@ -9,11 +9,24 @@ from pathlib import Path
 import re
 
 import sys
+from unittest.mock import MagicMock
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SCRIPT_PATH = REPO_ROOT / "scripts" / "auto_link_problems.py"
 
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
+
+# Mock ruamel.yaml to allow importing auto_link_problems for unit tests
+# without having to install all dependencies in limited environments.
+# This is only done if the module cannot be imported normally.
+try:
+    import ruamel.yaml
+except ImportError:
+    mock_yaml = MagicMock()
+    sys.modules["ruamel"] = MagicMock()
+    sys.modules["ruamel.yaml"] = mock_yaml
+    sys.modules["ruamel.yaml.comments"] = MagicMock()
+
 import auto_link_problems
 
 
@@ -544,6 +557,21 @@ class TestUtilityFunctions(unittest.TestCase):
 
         # After all spans
         self.assertFalse(auto_link_problems.is_in_spans(20, spans))
+
+    def test_format_reference_citation_link(self):
+        # Basic case
+        self.assertEqual(
+            auto_link_problems.format_reference_citation_link(1, ""), "[[1]](#1)"
+        )
+        # With detail
+        self.assertEqual(
+            auto_link_problems.format_reference_citation_link(2, ", Theorem 1"),
+            "[[2, Theorem 1]](#2)",
+        )
+        # Number as integer
+        self.assertEqual(
+            auto_link_problems.format_reference_citation_link(101, "a"), "[[101a]](#101)"
+        )
 
 
 class TestErrorPaths(unittest.TestCase):
