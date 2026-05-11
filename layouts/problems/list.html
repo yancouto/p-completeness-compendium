@@ -128,7 +128,8 @@
              data-acronym="{{ .Params.acronym | default "" | lower }}"
              data-categories="{{ delimit $categoryValues "|" }}"
              data-status="{{ lower $status }}"
-             data-tags="{{ delimit $tagValues "|" }}">
+             data-tags="{{ delimit $tagValues "|" }}"
+             data-content="{{ .Plain | lower }}">
       <div class="card-header">
         <span class="status status-{{ $status }}">
           {{ if eq $status "open" }}Open{{ else if eq $status "p-hard" }}P-hard{{ else }}P-complete{{ end }}

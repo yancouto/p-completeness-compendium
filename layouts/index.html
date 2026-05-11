@@ -42,7 +42,7 @@
   {{ $items := slice }}
   {{ range sort $problems "Title" }}
     {{ $status := .Params.status | default "p-complete" }}
-    {{ $items = $items | append (dict "title" .Title "acronym" (.Params.acronym | default "") "status" $status "url" .RelPermalink) }}
+    {{ $items = $items | append (dict "title" .Title "acronym" (.Params.acronym | default "") "status" $status "url" .RelPermalink "content" .Plain) }}
   {{ end }}
   <script id="home-problems-data" type="application/json">{{ $items | jsonify }}</script>
 {{ end }}

@@ -81,7 +81,8 @@ document.addEventListener('DOMContentLoaded', function () {
         status: normalize(item.status) || 'p-complete',
         url: item.url || '#',
         titleLower: normalize(item.title),
-        acronymLower: normalize(item.acronym)
+        acronymLower: normalize(item.acronym),
+        contentLower: normalize(item.content)
       };
     });
 
@@ -149,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       matches = problems
         .filter(function (item) {
-          return item.titleLower.includes(term) || item.acronymLower.includes(term);
+          return item.titleLower.includes(term) || item.acronymLower.includes(term) || item.contentLower.includes(term);
         })
         .sort(function (first, second) {
           return compareProblemMatches(first, second, term);
@@ -332,7 +333,8 @@ document.addEventListener('DOMContentLoaded', function () {
           card.dataset.title || '',
           card.dataset.acronym || '',
           card.dataset.categories || '',
-          card.dataset.tags || ''
+          card.dataset.tags || '',
+          card.dataset.content || ''
         ].join(' ');
 
         const matchesSearch = !searchTerm || normalize(searchableText).includes(searchTerm);
