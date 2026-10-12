@@ -1691,5 +1691,23 @@
     "title": "Parallel Algorithms for Problems Involving Directed Graphs",
     "year": "1986",
     "doi": "10.17918/00005692"
+  },
+  "380":{
+    "authors": "C. Moore",
+    "title": "Majority-vote cellular automata, Ising dynamics, and P-completeness",
+    "year": "1997",
+    "doi": "10.1023/B:JOSS.0000015172.31951.7b"
+  },
+  "381":{
+    "authors": "P. Montealegre and M. Ríos-Wilson",
+    "title": "The Two-Dimensional Majority Rule is P-Complete",
+    "year": "2026",
+    "doi": "10.48550/arXiv.2610.04311"
+  },
+  "382":{
+    "authors": "E. Goles-Chacc, F. Fogelman-Soulie, and D. Pellegrin",
+    "title": "Decreasing energy functions as a tool for studying threshold networks",
+    "year": "1985",
+    "doi": "10.1016/0166-218X(85)90029-0"
   }
 }
