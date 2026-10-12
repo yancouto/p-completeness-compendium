@@ -2,7 +2,7 @@
 title: "One Dimensional Cellular Automata"
 acronym: "CA"
 book_id: "A.12.3"
-categories: ["Miscellaneous"]
+categories: ["Discrete Dynamical Systems"]
 status: "p-complete"
 tags: []
 references: [239, 333, 8, 262]
