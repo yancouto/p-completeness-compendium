@@ -1,9 +1,9 @@
 ---
-title: 'd-Dimensional Majority Cellular Automata Prediction'
+title: '$d$-Dimensional Majority Cellular Automata Prediction'
 acronym: "MAJPRED"
 categories: ["Discrete Dynamical Systems"]
 status: "p-complete"
-tags: []
+tags: ["majority", "voting"]
 references: [380, 381, 382]
 related_problems:
   - id: mcvp
@@ -13,7 +13,7 @@ related_problems:
 ## Input
 
 An integer $d \geq 2$, an integer $n \geq 3$, an initial configuration
-$x \in \{-1,+1\}^{(\mathbb{Z}/n\mathbb{Z})^d}$, a time horizon $T \geq 0$
+$x \in \\{-1,+1\\}^{(\mathbb{Z}/n\mathbb{Z})^d}$, a time horizon $T \geq 0$
 (encoded in binary), and a designated cell $v \in (\mathbb{Z}/n\mathbb{Z})^d$.
 
 ## Problem
@@ -35,7 +35,7 @@ x_v^{(t)}+\sum_{u\sim v}x_u^{(t)}
 \right),
 $$
 
-where $u\sim v$ denotes the $2d$ nearest neighbors of $v$.
+where $u\sim v$ denotes the $2d$ nearest neighbors of $v$ (von Neumann neigborhood).
 
 ## Status
 

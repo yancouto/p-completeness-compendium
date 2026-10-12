@@ -1709,5 +1709,24 @@
     "title": "Decreasing energy functions as a tool for studying threshold networks",
     "year": "1985",
     "doi": "10.1016/0166-218X(85)90029-0"
+  },
+  "383":{
+    "authors": "C. Moore and M. Nilsson",
+    "title": "The computational complexity of sandpiles",
+    "year": "1999",
+    "doi": "10.1023/A:1004524500416"
+  },
+  "384":{
+    "authors": "P. Concha-Vega, E. Goles, P. Montealegre, and K. Perrot",
+    "title": "Sandpiles prediction and crossover on $\\mathbb{Z}^2$ within Moore neighborhood",
+    "year": "2024",
+    "doi": "10.1007/s11047-024-10002-9"
+  },
+  "385":{
+    "authors": "P. Concha-Vega and K. Perrot",
+    "title": "Timed Prediction Problem for Sandpile Models",
+    "year": "2025",
+    "doi": "10.1007/978-3-032-01570-9_14"
   }
+
 }
