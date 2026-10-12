@@ -49,10 +49,7 @@ Montealegre and Ríos-Wilson [[2]](#2) subsequently established
 $\P$-completeness in dimension $d=2$, resolving the remaining case
 for dimensions $d \geq 2$.
 
-The problem belongs to $\P$ even when $T$ is encoded in binary.
-By a theorem of Goles and Olivos [[3]](#3), the synchronous majority
-dynamics on a finite undirected graph eventually reaches a fixed
-point or a cycle of period two, with a transient of polynomial length.
-Consequently, the state at time $T$ can be computed in polynomial
-time by simulating the dynamics until the eventual cycle is reached
-and then reducing $T$ modulo the cycle length.
+The time horizon $T$ is encoded in binary. Membership in $\P$
+follows from the polynomial bound on the transient of the majority
+dynamics, based on the energy-function approach of Goles,
+Fogelman-Soulié, and Pellegrin [[3]](#3).
