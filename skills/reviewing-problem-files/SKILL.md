@@ -27,12 +27,19 @@ Canonical body order:
 
 In practice, `Input`, `Problem`, `Status`, and `Remarks` should be present.
 
-## Frontmatter checks
+## Frontmatter & filename checks
 
+- The filename stem in `content/problems/<id>.md` must match the lowercased `acronym` (e.g., `acronym: "MAJPRED"` -> `majpred.md`).
+- `title` should be plain text without `$...$` LaTeX delimiters (e.g., `"d-Dimensional ..."` or `"k-Core"` rather than `'$d$-Dimensional ...'`), because `title` is rendered as raw text in the HTML `<title>` element and search autocomplete.
 - `status` must be one of: `p-complete`, `p-hard`, `open`.
 - `categories`, `tags`, and `related_problems[*].relation` must use values from `data/problem_constraints.yaml`.
+  - `tags` is reserved for complexity classes defined in `data/problem_constraints.yaml` (`CC`, `RNC`) and should be `tags: []` for standard problems (not free-form topic keywords).
 - `book_id` is optional for non-book entries.
 - `references` can mix bibliography IDs and inline objects.
+
+## Content & section checks
+
+- For problems parameterized by a fixed constant (e.g., dimension $d$), `## Input` should state *"For a fixed integer $d \geq \dots$"* rather than listing the fixed parameter as part of the instance input.
 
 ## Status and citation checks
 
@@ -45,11 +52,15 @@ Prefer status sentence forms:
 
 Body citations should use linked format `[[i]](#i)`.
 
-## Linking checks
+## Linking & automated validation checks
 
 - Cross-problem links should use Hugo relref:
   - `[CVP]({{< relref "./cvp.md" >}})`
 - Avoid raw relative links like `(./cvp.md)`.
+- Always run `uv run python scripts/auto_link_problems.py` (`make autolink`) and `uv run python scripts/auto_link_problems.py --check` to:
+  - Validate frontmatter fields against `data/problem_constraints.yaml` and `data/bibliography.json`.
+  - Auto-link problem acronyms in prose.
+  - Synchronize reciprocal `related_problems` entries (e.g., adding `reduces-to` on the source problem when `reduces-from` is added on a new problem).
 
 ## References policy
 
@@ -59,10 +70,12 @@ Body citations should use linked format `[[i]](#i)`.
 
 ## Quick review checklist
 
-1. Frontmatter keys present, ordered consistently, and using allowed vocabularies.
-2. Required sections present and in canonical order.
-3. Status line uses canonical math notation and linked citations.
-4. In-text citations use `[[i]](#i)`.
-5. Problem cross-links use `relref`.
-6. References are complete (ID-backed or inline object backed).
-7. Remarks include reduction source / variants where relevant.
+1. Filename matches lowercased `acronym`, and `title` contains no raw `$...$` LaTeX.
+2. Frontmatter keys present, ordered consistently, and using allowed vocabularies (`tags: []` unless `CC`/`RNC`).
+3. Required sections present and in canonical order, with fixed parameters stated as fixed in `## Input`.
+4. Status line uses canonical math notation and linked citations.
+5. In-text citations use `[[i]](#i)`.
+6. Problem cross-links use `relref`.
+7. References are complete (ID-backed or inline object backed).
+8. Remarks include reduction source / variants where relevant.
+9. `uv run python scripts/auto_link_problems.py --check` passes with no changes or validation errors.
