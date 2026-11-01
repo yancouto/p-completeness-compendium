@@ -63,6 +63,10 @@ related_problems:
     relation: reduces-to
   - id: apa
     relation: reduces-to
+  - id: majpred
+    relation: reduces-to
+  - id: sandpred
+    relation: reduces-to
 ---
 
 ## Input

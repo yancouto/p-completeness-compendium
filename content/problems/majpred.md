@@ -1,18 +1,18 @@
 ---
-title: '$d$-Dimensional Majority Cellular Automata Prediction'
+title: "d-Dimensional Majority Cellular Automata Prediction"
 acronym: "MAJPRED"
 categories: ["Discrete Dynamical Systems"]
 status: "p-complete"
-tags: ["majority", "voting"]
+tags: []
 references: [380, 381, 382]
 related_problems:
   - id: mcvp
-    relation: "reduces-from"  # also: reduces-from, reduces-from-variant-of, reduces-to, equivalent, variant
+    relation: reduces-from
 ---
 
 ## Input
 
-An integer $d \geq 2$, an integer $n \geq 3$, an initial configuration
+For a fixed integer $d \geq 2$, an integer $n \geq 3$, an initial configuration
 $x \in \\{-1,+1\\}^{(\mathbb{Z}/n\mathbb{Z})^d}$, a time horizon $T \geq 0$
 (encoded in binary), and a designated cell $v \in (\mathbb{Z}/n\mathbb{Z})^d$.
 
@@ -35,15 +35,15 @@ x_v^{(t)}+\sum_{u\sim v}x_u^{(t)}
 \right),
 $$
 
-where $u\sim v$ denotes the $2d$ nearest neighbors of $v$ (von Neumann neigborhood).
+where $u\sim v$ denotes the $2d$ nearest neighbors of $v$ (von Neumann neighborhood).
 
 ## Status
 
-$\P$-complete under logspace many-one reductions for every fixed
-dimension $d \geq 2$.
+$\P$-complete under $\LOGSPACE$ reductions (Moore [[1]](#1), Montealegre and Ríos-Wilson [[2]](#2)).
 
 ## Remarks
 
+The reductions to show hardness are from [MCVP]({{< relref "./mcvp.md" >}}).
 Moore [[1]](#1) proved $\P$-completeness for every dimension $d \geq 3$.
 Montealegre and Ríos-Wilson [[2]](#2) subsequently established
 $\P$-completeness in dimension $d=2$, resolving the remaining case

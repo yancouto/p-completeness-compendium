@@ -1692,41 +1692,40 @@
     "year": "1986",
     "doi": "10.17918/00005692"
   },
-  "380":{
+  "380": {
     "authors": "C. Moore",
     "title": "Majority-vote cellular automata, Ising dynamics, and P-completeness",
     "year": "1997",
     "doi": "10.1023/B:JOSS.0000015172.31951.7b"
   },
-  "381":{
+  "381": {
     "authors": "P. Montealegre and M. Ríos-Wilson",
     "title": "The Two-Dimensional Majority Rule is P-Complete",
     "year": "2026",
     "doi": "10.48550/arXiv.2610.04311"
   },
-  "382":{
-    "authors": "E. Goles-Chacc, F. Fogelman-Soulie, and D. Pellegrin",
+  "382": {
+    "authors": "E. Goles-Chacc, F. Fogelman-Soulié, and D. Pellegrin",
     "title": "Decreasing energy functions as a tool for studying threshold networks",
     "year": "1985",
     "doi": "10.1016/0166-218X(85)90029-0"
   },
-  "383":{
+  "383": {
     "authors": "C. Moore and M. Nilsson",
     "title": "The computational complexity of sandpiles",
     "year": "1999",
     "doi": "10.1023/A:1004524500416"
   },
-  "384":{
+  "384": {
     "authors": "P. Concha-Vega, E. Goles, P. Montealegre, and K. Perrot",
     "title": "Sandpiles prediction and crossover on $\\mathbb{Z}^2$ within Moore neighborhood",
     "year": "2024",
     "doi": "10.1007/s11047-024-10002-9"
   },
-  "385":{
+  "385": {
     "authors": "P. Concha-Vega and K. Perrot",
     "title": "Timed Prediction Problem for Sandpile Models",
     "year": "2025",
     "doi": "10.1007/978-3-032-01570-9_14"
   }
-
 }

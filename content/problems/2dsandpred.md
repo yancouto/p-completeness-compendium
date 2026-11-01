@@ -1,15 +1,15 @@
 ---
-title: 'Two-Dimensional Abelian Sandpile Prediction'
+title: "Two-Dimensional Abelian Sandpile Prediction"
 acronym: "2DSANDPRED"
 categories: ["Discrete Dynamical Systems"]
 status: "open"
-tags: ["sandpiles", "chip-firing"]
+tags: []
 references: [383, 384]
 related_problems:
-  - id: sandpile
-    relation: "variant"
-  - id: tsp2d
-    relation: "variant"
+  - id: sandpred
+    relation: variant
+  - id: timedsandpred
+    relation: variant
 ---
 
 ## Input
@@ -39,8 +39,7 @@ toppling unstable sites.
 
 ## Status
 
-Open: the problem is in $\P$, but its $\P$-completeness in dimension
-two is unresolved.
+Open (Moore and Nilsson [[1]](#1), Concha-Vega et al. [[2]](#2)).
 
 ## Remarks
 

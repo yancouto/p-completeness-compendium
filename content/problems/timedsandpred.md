@@ -1,15 +1,15 @@
 ---
-title: 'Two-Dimensional Timed Sandpile Prediction'
+title: "Two-Dimensional Timed Sandpile Prediction"
 acronym: "TIMEDSANDPRED"
 categories: ["Discrete Dynamical Systems"]
 status: "open"
-tags: ["sandpiles", "chip-firing"]
+tags: []
 references: [385]
 related_problems:
-  - id: sp2d
-    relation: "variant"
-  - id: sandpile
-    relation: "variant"
+  - id: 2dsandpred
+    relation: variant
+  - id: sandpred
+    relation: variant
 ---
 
 ## Input
@@ -46,7 +46,7 @@ the first update after the grain is added.
 
 ## Status
 
-Open.
+Open (Concha-Vega and Perrot [[1]](#1)).
 
 ## Remarks
 

@@ -1,22 +1,22 @@
 ---
-title: '$d$-Dimensional Abelian Sandpile Prediction'
+title: "d-Dimensional Abelian Sandpile Prediction"
 acronym: "SANDPRED"
 categories: ["Discrete Dynamical Systems"]
 status: "p-complete"
-tags: ["sandpiles", "chip-firing"]
+tags: []
 references: [383]
 related_problems:
   - id: mcvp
-    relation: "reduces-from"
-  - id: sp2d
-    relation: "variant"
-  - id: tsp2d
-    relation: "variant"
+    relation: reduces-from
+  - id: 2dsandpred
+    relation: variant
+  - id: timedsandpred
+    relation: variant
 ---
 
 ## Input
 
-An integer $d \geq 3$, an integer $n \geq 1$, a stable configuration
+For a fixed integer $d \geq 3$, an integer $n \geq 1$, a stable configuration
 $x \in \\{0,\ldots,2d-1\\}^{[n]^d}$, and two sites $u,v \in [n]^d$.
 
 ## Problem
@@ -46,11 +46,11 @@ during stabilization is independent of the order of topplings.
 
 ## Status
 
-$\P$-complete under logspace many-one reductions for every fixed
-dimension $d \geq 3$.
+$\P$-complete under $\LOGSPACE$ reductions (Moore and Nilsson [[1]](#1)).
 
 ## Remarks
 
+The reduction to show hardness is from [MCVP]({{< relref "./mcvp.md" >}}).
 Moore and Nilsson [[1]](#1) proved $\P$-completeness of the
 Abelian sandpile prediction problem in dimensions $d \geq 3$.
 

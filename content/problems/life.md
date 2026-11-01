@@ -2,7 +2,7 @@
 title: "Game of Life"
 acronym: "LIFE"
 book_id: "A.11.5"
-categories: ["Games"]
+categories: ["Games", "Discrete Dynamical Systems"]
 status: "p-complete"
 tags: []
 references: [33]
